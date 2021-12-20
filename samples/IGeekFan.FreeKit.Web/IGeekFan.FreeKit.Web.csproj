@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.0.100" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\github\luoyunchong\IGeekFan.FreeKit\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
+		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
+		<ProjectReference Include="..\Module1\Module1.csproj" />
+		<ProjectReference Include="..\Module2\Module2.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+<Project>
+
+	<PropertyGroup>
+		<RepositoryUrl>https://github.com/luoyunchong/IGeekFan.FreeKit</RepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>igeekfan;luoyunchong</Authors>
+		<Copyright>MIT License</Copyright>
+		<AssemblyName >$(AssemblyName)</AssemblyName>
+		<PackageProjectUrl>https://github.com/luoyunchong/IGeekFan.FreeKit</PackageProjectUrl>
+		<Version>0.0.1</Version>
+		<AssemblyVersion>0.0.1.0</AssemblyVersion>
+		<FileVersion>0.0.1.0</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+	</ItemGroup>
+</Project>

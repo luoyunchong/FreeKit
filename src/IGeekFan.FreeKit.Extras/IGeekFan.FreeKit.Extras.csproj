@@ -1,0 +1,40 @@
+﻿ <Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>ASP.NET Core Extras about FreeSql、CurrentUser、Aop+Transactional.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.0.100" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+		<PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Properties\CoreStrings.Designer.tt">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>CoreStrings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\CoreStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CoreStrings.Designer.tt</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\CoreStrings.resx">
+			<CustomToolNamespace>IGeekFan.FreeKit</CustomToolNamespace>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

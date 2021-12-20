@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A395AA61-C752-410E-AD37-1015A8398A2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BC4330FE-DF00-4BFA-B9D9-D167626825BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{DF70C8BE-1933-45BB-9B6E-9F00380332A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.Identity.FreeSql", "src\IGeekFan.AspNetCore.Identity.FreeSql\IGeekFan.AspNetCore.Identity.FreeSql.csproj", "{337581CC-9966-462C-BB9F-25619B86CA6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{352AE823-4116-443B-9B3B-27EFF6633A7B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		src\Directory.Build.props = src\Directory.Build.props
+		.github\workflows\docfx.yml = .github\workflows\docfx.yml
+		.github\workflows\gitee-mirror.yml = .github\workflows\gitee-mirror.yml
+		LICENSE = LICENSE
+		NuGet.config = NuGet.config
+		README.md = README.md
+		tools\Resources.tt = tools\Resources.tt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.Modularity", "src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj", "{11304600-B171-45F9-A454-3BECE884DBCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.Web", "samples\IGeekFan.FreeKit.Web\IGeekFan.FreeKit.Web.csproj", "{0CD2BC48-40E0-4441-BFB5-0D89713AA76D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module2", "samples\Module2\Module2.csproj", "{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module1", "samples\Module1\Module1.csproj", "{5D2474A2-CC07-4256-B107-2EFCA1592BD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.Extras", "src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj", "{5307E451-6BD2-4122-A08E-A479447C7DF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Localization.FreeSql", "src\IGeekFan.Localization.FreeSql\IGeekFan.Localization.FreeSql.csproj", "{AC8BC2FE-7BAD-4C76-92AC-1221DF207359}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Localization", "samples\Sample.Localization\Sample.Localization.csproj", "{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337581CC-9966-462C-BB9F-25619B86CA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337581CC-9966-462C-BB9F-25619B86CA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337581CC-9966-462C-BB9F-25619B86CA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337581CC-9966-462C-BB9F-25619B86CA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11304600-B171-45F9-A454-3BECE884DBCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11304600-B171-45F9-A454-3BECE884DBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11304600-B171-45F9-A454-3BECE884DBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11304600-B171-45F9-A454-3BECE884DBCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD2BC48-40E0-4441-BFB5-0D89713AA76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD2BC48-40E0-4441-BFB5-0D89713AA76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD2BC48-40E0-4441-BFB5-0D89713AA76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD2BC48-40E0-4441-BFB5-0D89713AA76D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2474A2-CC07-4256-B107-2EFCA1592BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2474A2-CC07-4256-B107-2EFCA1592BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2474A2-CC07-4256-B107-2EFCA1592BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2474A2-CC07-4256-B107-2EFCA1592BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5307E451-6BD2-4122-A08E-A479447C7DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5307E451-6BD2-4122-A08E-A479447C7DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5307E451-6BD2-4122-A08E-A479447C7DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5307E451-6BD2-4122-A08E-A479447C7DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8BC2FE-7BAD-4C76-92AC-1221DF207359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8BC2FE-7BAD-4C76-92AC-1221DF207359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8BC2FE-7BAD-4C76-92AC-1221DF207359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8BC2FE-7BAD-4C76-92AC-1221DF207359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{337581CC-9966-462C-BB9F-25619B86CA6F} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{11304600-B171-45F9-A454-3BECE884DBCA} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{0CD2BC48-40E0-4441-BFB5-0D89713AA76D} = {DF70C8BE-1933-45BB-9B6E-9F00380332A2}
+		{9EA96D84-AC7D-47A6-8F9C-B7B8CC714BF9} = {DF70C8BE-1933-45BB-9B6E-9F00380332A2}
+		{5D2474A2-CC07-4256-B107-2EFCA1592BD5} = {DF70C8BE-1933-45BB-9B6E-9F00380332A2}
+		{5307E451-6BD2-4122-A08E-A479447C7DF8} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{AC8BC2FE-7BAD-4C76-92AC-1221DF207359} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3} = {DF70C8BE-1933-45BB-9B6E-9F00380332A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}
+	EndGlobalSection
+EndGlobal

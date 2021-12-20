@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageTags>aspnetcore;freesql;freekit;identity;</PackageTags>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Description>ASP.NET Core Identity provider that uses FreeSql.</Description>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FreeSql" Version="3.0.100" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.0.100" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\CoreStrings.Designer.tt">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>CoreStrings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\CoreStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CoreStrings.Designer.tt</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\CoreStrings.zh-CN.resx">
+		  <CustomToolNamespace>IGeekFan.AspNetCore.Identity.FreeSql</CustomToolNamespace>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\CoreStrings.resx">
+			<CustomToolNamespace>IGeekFan.AspNetCore.Identity.FreeSql</CustomToolNamespace>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>
