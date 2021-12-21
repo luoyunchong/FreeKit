@@ -42,6 +42,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.Email", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit", "src\IGeekFan.FreeKit\IGeekFan.FreeKit.csproj", "{C2F54A9B-BDF4-4690-B562-A47020034628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.FreeKit.xUnit", "test\IGeekFan.FreeKit.xUnit\IGeekFan.FreeKit.xUnit.csproj", "{D452D043-D25B-4821-ABAD-CDADBE69DBA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{C2F54A9B-BDF4-4690-B562-A47020034628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2F54A9B-BDF4-4690-B562-A47020034628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2F54A9B-BDF4-4690-B562-A47020034628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{F50DEBD1-49A9-4B82-9479-15E5CC99ECE3} = {DF70C8BE-1933-45BB-9B6E-9F00380332A2}
 		{DB34C3A8-F6C8-422C-AA28-51EDA913C4A8} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{C2F54A9B-BDF4-4690-B562-A47020034628} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{D452D043-D25B-4821-ABAD-CDADBE69DBA3} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}
