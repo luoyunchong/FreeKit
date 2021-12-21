@@ -11,6 +11,7 @@ public class PagedResultDto<T> : BasePagingInfo where T : class
         Count = data.Count;
         Data = data;
     }
+
     public PagedResultDto(IReadOnlyList<T> data, BasePagingInfo page) : this(data)
     {
         PageNumber = page.PageNumber;

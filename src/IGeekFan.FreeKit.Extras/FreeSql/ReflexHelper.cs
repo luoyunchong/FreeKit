@@ -1,11 +1,5 @@
 ﻿using FreeSql.DataAnnotations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
@@ -15,7 +9,7 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 public class ReflexHelper
 {
     /// <summary>
-    /// 扫描 IEntity类所在程序集，反射得到类上有特性标签为TableAttribute 的所有类
+    /// 扫描type所在程序集，反射得到类上有特性标签为TableAttribute 的所有类
     /// </summary>
     /// <returns></returns>
     public static Type[]? GetTypesByTableAttribute(Type type)
@@ -36,6 +30,29 @@ public class ReflexHelper
                 }
             }
         };
+        return tableAssembies.ToArray();
+    }
+
+    /// <summary>
+    /// 扫描type所在程序集，反射得到某命名空间下的所有类
+    /// </summary>
+    /// <param name="assemblyType"></param>
+    /// <param name="entitiesFullName"></param>
+    /// <returns></returns>
+    public static Type[] GetTypesByNameSpace(Type assemblyType, List<string> entitiesFullName)
+    {
+        List<Type> tableAssembies = new List<Type>();
+        Assembly? assembly = Assembly.GetAssembly(assemblyType);
+        foreach (Type type in assembly.GetExportedTypes())
+        {
+            foreach (var fullname in entitiesFullName)
+            {
+                if (type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
+                {
+                    tableAssembies.Add(type);
+                }
+            }
+        }
         return tableAssembies.ToArray();
     }
 }

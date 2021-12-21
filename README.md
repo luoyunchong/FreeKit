@@ -2,7 +2,7 @@
 
 
 <div align="center">
-<h1 align="center"> <img alt="MrinDoc logo" src="docs/images/logo.png" width="40px" />  IGeekFan.FreeKit </h1>
+<h1 align="center"> <img alt="logo" src="docs/images/logo.png" width="40px" />  IGeekFan.FreeKit </h1>
 
 **Freekit** 为.NET Core提供了更多的扩展实现
 
@@ -16,19 +16,19 @@
 
 ## Nuget Packages
 
-Package name                              | Version                     | Downloads
-------------------------------------------|-----------------------------|-------------
-`IGeekFan.AspNetCore.Identity.FreeSql` | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.Identity.FreeSql.svg?style=flat-square&label=nuget&color=fedcba)](https://www.nuget.org/packages/IGeekFan.AspNetCore.Identity.FreeSql/) | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.Identity.FreeSql.svg)
-`IGeekFan.FreeKit.Extras` | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Extras.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Extras/) | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Extras.svg)
-`IGeekFan.FreeKit.Modularity` | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Modularity.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Modularity/) | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Modularity.svg)
+| Package name                           | Version                                                                                                                                                                                              | Downloads                                                                              |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `IGeekFan.AspNetCore.Identity.FreeSql` | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.Identity.FreeSql.svg?style=flat-square&label=nuget&color=fedcba)](https://www.nuget.org/packages/IGeekFan.AspNetCore.Identity.FreeSql/) | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.Identity.FreeSql.svg) |
+| `IGeekFan.FreeKit.Extras`              | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Extras.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Extras/)                                        | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Extras.svg)              |
+| `IGeekFan.FreeKit.Modularity`          | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Modularity.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Modularity/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Modularity.svg)          |
 
 ## MyGet Packages
 
-Package name                              | Version                     
-------------------------------------------|-----------------------------
-`IGeekFan.AspNetCore.Identity.FreeSql` | [![MyGet](https://img.shields.io/myget/igekfan/vpre/IGeekFan.AspNetCore.Identity.FreeSql.svg?style=flat-square)](https://www.myget.org/feed/aspectcore/package/nuget/IGeekFan.AspNetCore.Identity.FreeSql) 
-`IGeekFan.FreeKit.Extras` | [![MyGet](https://img.shields.io/myget/igekfan/vpre/IGeekFan.FreeKit.Extras.svg?style=flat-square)](https://www.myget.org/feed/aspectcore/package/nuget/IGeekFan.FreeKit.Extras)
-`IGeekFan.FreeKit.Modularity` | [![MyGet](https://img.shields.io/myget/igekfan/vpre/IGeekFan.FreeKit.Modularity.svg?style=flat-square)](https://www.myget.org/feed/aspectcore/package/nuget/IGeekFan.FreeKit.Modularity)
+| Package name                           | Version                                                                                                                                                                                                  |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `IGeekFan.AspNetCore.Identity.FreeSql` | [![MyGet](https://img.shields.io/myget/igeekfan/vpre/IGeekFan.AspNetCore.Identity.FreeSql.svg?style=flat-square)](https://www.myget.org/feed/igeekfan/package/nuget/IGeekFan.AspNetCore.Identity.FreeSql) |
+| `IGeekFan.FreeKit.Extras`              | [![MyGet](https://img.shields.io/myget/igeekfan/vpre/IGeekFan.FreeKit.Extras.svg?style=flat-square)](https://www.myget.org/feed/igeekfan/package/nuget/IGeekFan.FreeKit.Extras)                           |
+| `IGeekFan.FreeKit.Modularity`          | [![MyGet](https://img.shields.io/myget/igeekfan/vpre/IGeekFan.FreeKit.Modularity.svg?style=flat-square)](https://www.myget.org/feed/igeekfan/package/nuget/IGeekFan.FreeKit.Modularity)                   |
 
 
 

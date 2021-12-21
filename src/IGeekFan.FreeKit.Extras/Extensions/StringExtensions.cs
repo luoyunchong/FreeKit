@@ -7,6 +7,11 @@ public static class StringExtensions
 {
     private static readonly char[] Delimeters = { ' ', '-', '_' };
 
+    public static long ToLong(this string @this)
+    {
+        return Convert.ToInt64(@this);
+    }
+
     /// <summary>
     /// Indicates whether this string is null or an System.String.Empty string.
     /// </summary>

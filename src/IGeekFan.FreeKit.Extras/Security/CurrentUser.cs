@@ -1,10 +1,26 @@
 ﻿using System.Security.Claims;
 using IGeekFan.FreeKit.Extras.Dependency;
+using IGeekFan.FreeKit.Extras.Extensions;
 using Microsoft.AspNetCore.Http;
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
-public class CurrentUser : ICurrentUser, ITransientDependency
+public class CurrentUser : CurrentUser<long>, ICurrentUser, ITransientDependency
+{
+    public CurrentUser(IHttpContextAccessor httpContextAccessor):base(httpContextAccessor)
+    {
+    }
+    public long? Id
+    {
+        get
+        {
+            string? userId = ClaimsPrincipal?.FindUserId();
+            if (userId == null) return null;
+            return userId.ToLong();
+        }
+    }
+}
+public class CurrentUser<T> : ICurrentUser<T>
 {
     private static readonly Claim[] EmptyClaimsArray = Array.Empty<Claim>();
     protected readonly ClaimsPrincipal ClaimsPrincipal;
@@ -14,8 +30,7 @@ public class CurrentUser : ICurrentUser, ITransientDependency
     }
 
     public bool IsAuthenticated => ClaimsPrincipal?.FindUserId() != null ? true : false;
-    public string Id => ClaimsPrincipal?.FindUserId();
-
+    public T Id => throw new Exception("需要重写");
     public string? UserName => ClaimsPrincipal?.FindUserName();
     public string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
     public string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;

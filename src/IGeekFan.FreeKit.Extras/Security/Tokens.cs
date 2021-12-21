@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace IGeekFan.FreeKit.Extras.Security;
+﻿namespace IGeekFan.FreeKit.Extras.Security;
 
 [Serializable]
 public class Tokens

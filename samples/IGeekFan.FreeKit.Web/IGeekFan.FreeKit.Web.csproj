@@ -12,8 +12,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\..\github\luoyunchong\IGeekFan.FreeKit\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
 		<ProjectReference Include="..\Module1\Module1.csproj" />
 		<ProjectReference Include="..\Module2\Module2.csproj" />
 	</ItemGroup>

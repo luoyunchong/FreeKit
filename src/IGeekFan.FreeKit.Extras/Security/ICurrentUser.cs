@@ -2,9 +2,13 @@
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
-public interface ICurrentUser
+public interface ICurrentUser: ICurrentUser<long?>
 {
-    string Id { get; }
+
+}
+public interface ICurrentUser<T>
+{
+    T Id { get; }
 
     string UserName { get; }
 
@@ -22,12 +26,12 @@ public interface ICurrentUser
 
 public static class CurrentUserExtensions
 {
-    public static Guid? GetGuidUserId(this ICurrentUser currentUser)
+    public static Guid? GetGuidUserId(this ICurrentUser<string> currentUser)
     {
         if (currentUser.Id == null) return null;
         return Guid.Parse(currentUser.Id);
     }
-    public static long? GetLongUserId(this ICurrentUser currentUser)
+    public static long? GetLongUserId(this ICurrentUser<string> currentUser)
     {
         if (currentUser.Id == null) return null;
         return long.Parse(currentUser.Id);
