@@ -7,8 +7,6 @@
 		<PackageTags>aspnetcore;freesql;freekit;identity;</PackageTags>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Description>ASP.NET Core Identity provider that uses FreeSql.</Description>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		
 	</PropertyGroup>
 
 	<ItemGroup>

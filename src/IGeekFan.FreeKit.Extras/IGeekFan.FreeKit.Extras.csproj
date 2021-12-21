@@ -5,7 +5,6 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>ASP.NET Core Extras about FreeSql、CurrentUser、Aop+Transactional.</Description>
 	</PropertyGroup>
 

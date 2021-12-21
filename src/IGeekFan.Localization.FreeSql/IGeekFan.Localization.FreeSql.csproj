@@ -5,7 +5,6 @@
 		<PackageTags>freesql;freekit;localization;</PackageTags>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Description>.net core localization FreeSql</Description>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
