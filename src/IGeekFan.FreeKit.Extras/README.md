@@ -21,6 +21,7 @@ dotnet add package IGeekFan.FreeKit.Extras
 - 当前用户
 - 简化单库的配置
 - FluentAPI基于接口的配置实体
+- 注入以Service为后缀接口所在的程序集
 
 
 #### UseConnectionString扩展方法 简化单库的配置
@@ -71,36 +72,7 @@ dotnet add package IGeekFan.FreeKit.Extras
 
 通过 Autofac配置哪些类需要基于特性标签的AOP事务
 ```csharp
-    /// <summary>
-    /// 注入Application层中的Service
-    /// </summary>
-    public class ServiceModule : Autofac.Module
-    {
-        protected override void Load(ContainerBuilder builder)
-        {
-            builder.RegisterType<UnitOfWorkInterceptor>();
-            builder.RegisterType<UnitOfWorkAsyncInterceptor>();
 
-            List<Type> interceptorServiceTypes = new List<Type>()
-            {
-                typeof(UnitOfWorkInterceptor)
-            };
-
-            string[] notIncludes = new string[]
-            {
-            };
-
-            Assembly servicesDllFile = Assembly.Load("LinCms.Application");
-            builder.RegisterAssemblyTypes(servicesDllFile)
-                .Where(a => a.Name.EndsWith("Service") && !notIncludes.Where(r => r == a.Name).Any() && !a.IsAbstract && !a.IsInterface && a.IsPublic)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope()
-                .PropertiesAutowired()// 属性注入
-                .InterceptedBy(interceptorServiceTypes.ToArray())
-                .EnableInterfaceInterceptors();
-
-        }
-    }
 ```
 
 如果依旧是Startup的模式，可通过ConfigureContainer配置服务
@@ -180,16 +152,39 @@ public class TestController : Controller
 }
 
 ```
+
+1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
 ```csharp
 builder.Host
     .UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>((webBuilder, containerBuilder) =>
     {
-        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName.Contains("IGeekFan.FreeKit.Extras")|| r.FullName.Contains("Module1")).ToArray();
+        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => 
+r.FullName.Contains("IGeekFan.FreeKit.Extras")|| 
+r.FullName.Contains("Module1")
+).ToArray();
 
         containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
     });
 ```
+
+其中`FreeKitModule`的参数支持`params Type[]types`或`params Assembly[]assemblies`,即哪些[程序集](https://docs.microsoft.com/zh-cn/dotnet/standard/assembly/)中的类需要注入到依赖注入的集合中。
+
+2.根据程序集中的某个类获取程序集
+```
+Assembly[] currentAssemblies2 = new Assembly[] { typeof(FreeKitModule).Assembly, typeof(Module1.Module1Startup).Assembly };
+containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies2));
+```
+3.直接使用params Assembly[] 的特性，直接作为FreeKitModule的参数
+```csharp
+containerBuilder.RegisterModule(new FreeKitModule( typeof(FreeKitModule).Assembly, typeof(Program).Assembly))
+```
+4，通过params Type[]，内部解析Assembly。
+```csharp
+containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule), typeof(Program)))
+```
+
+其中，此程序集中的类 如果继承了`IScopedDependency`,`ISingletonDependency`、`ITransientDependency`这些接口， 都会按照对应的生命周期注入到依赖注入的集合中 ，可直接使用。
 
 ### 实体审计类
 
