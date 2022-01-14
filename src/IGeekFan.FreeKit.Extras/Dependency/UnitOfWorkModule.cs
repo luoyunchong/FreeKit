@@ -7,11 +7,22 @@ namespace IGeekFan.FreeKit.Extras.Dependency;
 
 public class UnitOfWorkModule : Autofac.Module
 {
-    private readonly Assembly[] assemblies;
+    private readonly Assembly[] _currentAssemblies;
 
-    public UnitOfWorkModule(Assembly[] assemblies)
+    public UnitOfWorkModule(params Assembly[] currentAssemblies)
     {
-        this.assemblies = assemblies;
+        _currentAssemblies = currentAssemblies;
+    }
+    public UnitOfWorkModule(params Type[] types)
+    {
+        if (types != null && types.Length != 0)
+        {
+            _currentAssemblies = new Assembly[types.Length];
+            foreach (Type type in types)
+            {
+                _currentAssemblies.AddIfNotContains(type.Assembly);
+            }
+        }
     }
 
     protected override void Load(ContainerBuilder builder)
@@ -28,8 +39,8 @@ public class UnitOfWorkModule : Autofac.Module
         {
 
         };
-        //Assembly servicesDllFile = Assembly.Load("LinCms.Application");
-        builder.RegisterAssemblyTypes(assemblies)
+
+        builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(a => a.Name.EndsWith("Service") && !notIncludes.Where(r => r == a.Name).Any() && !a.IsAbstract && !a.IsInterface && a.IsPublic)
             .AsImplementedInterfaces()
             .InstancePerLifetimeScope()

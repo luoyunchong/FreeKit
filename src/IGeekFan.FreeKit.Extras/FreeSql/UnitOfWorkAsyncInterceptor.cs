@@ -118,8 +118,8 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     /// <summary>
     /// 拦截返回结果为Task<TResult>的方法
     /// </summary>
-    /// <param name="invocation"></param>
     /// <typeparam name="TResult"></typeparam>
+    /// <param name="invocation"></param>
     public void InterceptAsynchronous<TResult>(IInvocation invocation)
     {
         invocation.ReturnValue = InternalInterceptAsynchronous<TResult>(invocation);
