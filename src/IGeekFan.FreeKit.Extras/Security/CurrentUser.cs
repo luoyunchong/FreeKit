@@ -7,7 +7,7 @@ namespace IGeekFan.FreeKit.Extras.Security;
 
 public class CurrentUser : CurrentUser<long>, ICurrentUser, ITransientDependency
 {
-    public CurrentUser(IHttpContextAccessor httpContextAccessor):base(httpContextAccessor)
+    public CurrentUser(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
     }
     public long? Id
@@ -20,6 +20,11 @@ public class CurrentUser : CurrentUser<long>, ICurrentUser, ITransientDependency
         }
     }
 }
+
+/// <summary>
+/// 当前用户
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class CurrentUser<T> : ICurrentUser<T>
 {
     private static readonly Claim[] EmptyClaimsArray = Array.Empty<Claim>();
@@ -29,10 +34,19 @@ public class CurrentUser<T> : ICurrentUser<T>
         ClaimsPrincipal = httpContextAccessor.HttpContext?.User ?? Thread.CurrentPrincipal as ClaimsPrincipal;
     }
 
+    /// <summary>
+    /// 是否登录
+    /// </summary>
     public bool IsAuthenticated => ClaimsPrincipal?.FindUserId() != null ? true : false;
+    /// <summary>
+    /// 用户Id
+    /// </summary>
     public T Id => throw new Exception("需要重写");
     public string? UserName => ClaimsPrincipal?.FindUserName();
     public string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
+    /// <summary>
+    /// 邮件
+    /// </summary>
     public string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 
     public string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();

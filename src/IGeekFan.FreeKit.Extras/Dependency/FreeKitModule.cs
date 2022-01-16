@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using IGeekFan.FreeKit.Extras.FreeSql;
-using Microsoft.AspNetCore.Http;
 using System.Reflection;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;
@@ -18,9 +17,9 @@ public class FreeKitModule : Autofac.Module
         if (types != null && types.Length > 0)
         {
             _currentAssemblies = new Assembly[types.Length];
-            foreach (Type? item in types)
+            for (int i = 0; i < types.Length; i++)
             {
-                _currentAssemblies.AddIfNotContains(item.Assembly);
+                _currentAssemblies[i]=types[i].Assembly;
             }
         }
     }

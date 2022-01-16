@@ -18,9 +18,9 @@ public class UnitOfWorkModule : Autofac.Module
         if (types != null && types.Length != 0)
         {
             _currentAssemblies = new Assembly[types.Length];
-            foreach (Type type in types)
+            for (int i = 0; i < types.Length; i++)
             {
-                _currentAssemblies.AddIfNotContains(type.Assembly);
+                _currentAssemblies[i] = types[i].Assembly;
             }
         }
     }
