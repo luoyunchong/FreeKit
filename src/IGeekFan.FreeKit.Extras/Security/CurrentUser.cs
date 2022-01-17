@@ -10,6 +10,10 @@ public class CurrentUser : CurrentUser<long>, ICurrentUser, ITransientDependency
     public CurrentUser(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
     }
+
+    /// <summary>
+    /// 用户Id
+    /// </summary>
     public long? Id
     {
         get
@@ -39,16 +43,24 @@ public class CurrentUser<T> : ICurrentUser<T>
     /// </summary>
     public bool IsAuthenticated => ClaimsPrincipal?.FindUserId() != null ? true : false;
     /// <summary>
-    /// 用户Id
+    /// 用户Id，唯一值
     /// </summary>
     public T Id => throw new Exception("需要重写");
+    /// <summary>
+    /// 登录名，唯一值
+    /// </summary>
     public string? UserName => ClaimsPrincipal?.FindUserName();
+    /// <summary>
+    /// 昵称
+    /// </summary>
     public string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
     /// <summary>
     /// 邮件
     /// </summary>
     public string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-
+    /// <summary>
+    /// 角色
+    /// </summary>
     public string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
 
     public virtual Claim? FindClaim(string claimType)

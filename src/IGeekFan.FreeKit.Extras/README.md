@@ -1,4 +1,4 @@
-﻿## IGeekFan.FreeKit.Extras
+﻿# IGeekFan.FreeKit.Extras
 该项目是基于FreeSql实现的一些扩展包、AOP事务，当前用户，简化依赖注入
 - 依赖项
 ```xml
@@ -6,25 +6,25 @@
 <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
 <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
 <PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.0.0" />
-
 ```
 根据自己访问数据库的不同，安装对应的[Provider](http://freesql.net/guide/install.html#packages)
+
 ```
 dotnet add package FreeSql.Provider.Sqlite
 dotnet add package IGeekFan.FreeKit.Extras
 ```
 
-### FreeSql扩展包
+### 一些扩展包
+- 简化FreeSql单库的配置：UseConnectionString扩展方法 
 - 基于特性标签的AOP事务
 - 基于接口的注入
 - 通用CRUD的
-- 当前用户
-- 简化单库的配置
+- Security 当前登录人信息
 - FluentAPI基于接口的配置实体
 - 注入以Service为后缀接口所在的程序集
+- CaseQuery 支持Get请求参数key，大小驼峰转换
 
-
-#### UseConnectionString扩展方法 简化单库的配置
+#### 简化FreeSql单库的配置：UseConnectionString扩展方法 
 ```csharp
     public static IServiceCollection AddFreeSql(this IServiceCollection services, IConfiguration configuration)
     {
@@ -68,7 +68,7 @@ dotnet add package IGeekFan.FreeKit.Extras
 
 #### 基于特性标签的AOP事务
 
-- **[Transactional]**
+- 特性标签 **[Transactional]**
 
 通过 Autofac配置哪些类需要基于特性标签的AOP事务
 ```csharp
@@ -103,6 +103,9 @@ builder.Host
 ```
 
 #### 基于接口的注入
+
+只需要继承如下接口，会自动按照对应的生命周期注入到DI中。
+
 - IScopedDependency 范围
 - ISingletonDependency 单例
 - ITransientDependency 瞬时
@@ -186,17 +189,19 @@ containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule), typeof(
 
 其中，此程序集中的类 如果继承了`IScopedDependency`,`ISingletonDependency`、`ITransientDependency`这些接口， 都会按照对应的生命周期注入到依赖注入的集合中 ，可直接使用。
 
-### 实体审计类
+#### CurrentUser 当前登录人信息
+
+如何使用
+```
+
+```
+因为我们无法确定用户Id的类型，可能是`long`,也可能是`Guid`，ICurrentUser<T>是泛型的，默认有一个实现`ICurrentUser:ICurrentUser<long>`
+
+#### 实体审计类
 
 - FullAduitEntity
-- Entity
-- ICreateAduitEntity
-- IUpdateAuditEntity
-- IDeleteAduitEntity
-- ISoftDelete
 
-
-### CaseQuery转换
+#### CaseQuery 支持Get请求参数key，大小驼峰转换
 `HttpGet`请求时，参数的key和实体相同，比如创建如下类。
 ```csharp
 public class QueryModel
@@ -222,7 +227,7 @@ public IEnumerable<WeatherForecast> Get([FromQuery] QueryModel queryModel)
 - LowerCase（小写）
 - CamelCase（首字母小写）
 
-#### 使用方式 
+- 使用方式 
 
 在AddControllers中注入实现
 ```csharp

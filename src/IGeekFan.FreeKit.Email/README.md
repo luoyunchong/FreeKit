@@ -1,4 +1,4 @@
-## IGeekFan.FreeKit
+# IGeekFan.FreeKit.Email
 
 1. 安装包
 ```

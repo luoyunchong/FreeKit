@@ -16,11 +16,14 @@
 
 ## Nuget Packages
 
-| Package name                           | Version                                                                                                                                                                                              | Downloads                                                                              |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Package name| Version| Downloads|
+| ------- | ------- | ------- |
 | `IGeekFan.AspNetCore.Identity.FreeSql` | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.Identity.FreeSql.svg?style=flat-square&label=nuget&color=fedcba)](https://www.nuget.org/packages/IGeekFan.AspNetCore.Identity.FreeSql/) | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.Identity.FreeSql.svg) |
-| `IGeekFan.FreeKit.Extras`              | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Extras.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Extras/)                                        | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Extras.svg)              |
-| `IGeekFan.FreeKit.Modularity`          | [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Modularity.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Modularity/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Modularity.svg)          |
+| `IGeekFan.FreeKit`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.svg)|    
+| `IGeekFan.FreeKit.Extras`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Extras.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Extras/)                                        | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Extras.svg)|
+| `IGeekFan.FreeKit.Modularity`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Modularity.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Modularity/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Modularity.svg)|
+| `IGeekFan.FreeKit.Email`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Email.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Email/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Email.svg)|
+| `IGeekFan.Localization.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.Localization.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.Localization.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.Localization.FreeSql.svg)|
 
 ## MyGet Packages
 
@@ -30,8 +33,23 @@
 | `IGeekFan.FreeKit.Extras`              | [![MyGet](https://img.shields.io/myget/igeekfan/vpre/IGeekFan.FreeKit.Extras.svg?style=flat-square)](https://www.myget.org/feed/igeekfan/package/nuget/IGeekFan.FreeKit.Extras)                           |
 | `IGeekFan.FreeKit.Modularity`          | [![MyGet](https://img.shields.io/myget/igeekfan/vpre/IGeekFan.FreeKit.Modularity.svg?style=flat-square)](https://www.myget.org/feed/igeekfan/package/nuget/IGeekFan.FreeKit.Modularity)                   |
 
-
-
 ## IGeekFan.AspNetCore.Identity.FreeSql
 
 `asp.net core 6` 的`identity`的`freesql`实现
+
+## IGeekFan.FreeKit
+
+- AduitEntity 审计日志实体
+- Dependency 依赖注入接口
+
+## IGeekFan.FreeKit.Extras
+
+- FreeSql扩展+Autofac UnitOfWork
+- FreeSql+AduitEntity
+- Autofac+ITransientDependency+IScopedDependency+ISingletonDependency
+- CaseQuery 
+- Security 登录人信息
+
+## IGeekFan.FreeKit.Email
+
+- 查看[IGeekFan.FreeKit.Email](./src/IGeekFan.FreeKit.Email/README.md)**文档**

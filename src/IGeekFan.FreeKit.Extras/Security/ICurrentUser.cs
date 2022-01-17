@@ -1,12 +1,13 @@
-﻿using System.Security.Claims;
+﻿using IGeekFan.FreeKit.Extras.Dependency;
+using System.Security.Claims;
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
-public interface ICurrentUser: ICurrentUser<long?>
+public interface ICurrentUser : ICurrentUser<long?>
 {
 
 }
-public interface ICurrentUser<T>
+public interface ICurrentUser<T> : ITransientDependency
 {
     T Id { get; }
 
