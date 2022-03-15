@@ -10,7 +10,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.RapiDoc/master/LICENSE)
 <p>
     <span>English</span> |  
-    <a href="README.zh-CN.md">中文</a>
+    <a href="README.md">English</a>
 </p>
 </div>
 

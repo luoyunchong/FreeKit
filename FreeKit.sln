@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		NuGet.config = NuGet.config
 		README.md = README.md
+		README.zh-CN.md = README.zh-CN.md
 		tools\Resources.tt = tools\Resources.tt
 	EndProjectSection
 EndProject
@@ -42,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.Email", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit", "src\IGeekFan.FreeKit\IGeekFan.FreeKit.csproj", "{C2F54A9B-BDF4-4690-B562-A47020034628}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.FreeKit.xUnit", "test\IGeekFan.FreeKit.xUnit\IGeekFan.FreeKit.xUnit.csproj", "{D452D043-D25B-4821-ABAD-CDADBE69DBA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.xUnit", "test\IGeekFan.FreeKit.xUnit\IGeekFan.FreeKit.xUnit.csproj", "{D452D043-D25B-4821-ABAD-CDADBE69DBA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

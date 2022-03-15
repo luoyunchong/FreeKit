@@ -10,7 +10,7 @@
                         "**/bin/**",
                         "**/obj/**"
                     ],
-                    "src": "../"
+                    "src": "../src/"
                 }
             ],
             "dest": "obj/temp/docfxapi",
@@ -64,7 +64,7 @@
             "_appTitle": "FreeKit API Docs",
             "_appLogoPath": "./images/logo.svg",
             "_gitContribute": {
-                "repo": "https://github.com/luoyunchong/IGeekFan.FreeKit",
+                "repo": "https://github.com/luoyunchong/FreeKit",
                 "branch": "master"
             },
             "_enableSearch": true
