@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Sample.Localization.Controllers
 {
@@ -16,13 +17,22 @@ namespace Sample.Localization.Controllers
         {
             _logger = logger;
             this.freeSql = freeSql;
-            this.stringLocalizer = localizerFactory.Create(null); ;
+            this.stringLocalizer = localizerFactory.Create(null);
         }
 
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return stringLocalizer["Request Localization"] + id;
+        }
+
+        [HttpGet("GetProvider")]
+        public async Task<ProviderCultureResult> GetProvider()
+        {
+            var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
+            var providerResult = await requestCultureFeature.Provider.DetermineProviderCultureResult(HttpContext);
+
+            return providerResult;
         }
 
         [HttpGet]

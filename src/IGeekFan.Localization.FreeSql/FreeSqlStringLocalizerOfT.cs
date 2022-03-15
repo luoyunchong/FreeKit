@@ -51,7 +51,7 @@ namespace IGeekFan.Localization.FreeSql
         {
             return _db.Select<LocalResource>()
                 .Include(r => r.Culture)
-                .Where(r => r.Culture.Name == CultureInfo.CurrentCulture.Name&&r.Key==name)
+                .Where(r => r.Culture.Name == CultureInfo.CurrentCulture.Name && r.Key == name)
                 .First()?.Value;
         }
     }

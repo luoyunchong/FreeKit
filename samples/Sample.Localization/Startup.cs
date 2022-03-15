@@ -22,12 +22,14 @@ namespace Sample.Localization
         {
             Configuration = configuration;
 
-            IConfigurationSection Mysql = Configuration.GetSection("Mysql");
+            IConfigurationSection configurationSection = Configuration.GetSection("ConnectionStrings:DB");
             Fsql = new FreeSqlBuilder()
-                .UseConnectionString(DataType.MySql, Mysql.Value)
+                .UseConnectionString(DataType.Sqlite, configurationSection.Value)
                 .UseAutoSyncStructure(true)
                 .UseMonitorCommand(cmd => Trace.WriteLine(cmd.CommandText))
                 .Build();
+
+            Fsql.CodeFirst.SeedData();
         }
         public IFreeSql Fsql { get; }
         public IConfiguration Configuration { get; }
@@ -55,7 +57,7 @@ namespace Sample.Localization
             };
             var options = new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture("en-US"),
+                DefaultRequestCulture = new RequestCulture("zh-CN"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             };

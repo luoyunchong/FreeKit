@@ -27,8 +27,8 @@ namespace IGeekFan.Localization.FreeSql.Models
         [Column(StringLength = 10)]
         public string Name { get; set; }
 
-        
-        [Column(StringLength =64)]
+
+        [Column(StringLength = 64)]
         public string DisplayName { get; set; }
 
         public virtual ICollection<LocalResource> Resources { get; set; }

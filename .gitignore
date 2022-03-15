@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /src/Services/igeekfan-freekit-todo/dist
 /deploy-myget.cmd
+/deploy-nuget.cmd

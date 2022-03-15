@@ -33,7 +33,7 @@
 <form id="theForm" method="get">
     <div class="form-group" style="width: 300px;margin-bottom:1rem;">
         <label for="culture">@SR["Culture"]: </label>
-        <select id="culture" name="culture" class="form-control">
+        <select id="culture" name="culture" class="form-control" asp-for="@(requestCulture.Culture.Name)">
             <option value="">-- select --</option>
             <option value="@(new CultureInfo("en-US").Name)">@(new CultureInfo("en-US").DisplayName)</option>
             <option value="@(new CultureInfo("fr-FR").Name)">@(new CultureInfo("fr-FR").DisplayName)</option>
@@ -43,7 +43,7 @@
     </div>
     <div class="form-group" style="width: 300px;margin-bottom: 1rem;">
         <label for="uiCulture">@SR["UI Culture"]: </label>
-        <select id="uiCulture" name="ui-culture" class="form-control">
+        <select id="uiCulture" name="ui-culture" class="form-control " asp-for="@(requestCulture.UICulture.Name)">
             <option value="">-- select --</option>
             <option value="@(new CultureInfo("en-US").Name)">@(new CultureInfo("en-US").DisplayName)</option>
             <option value="@(new CultureInfo("fr-FR").Name)">@(new CultureInfo("fr-FR").DisplayName)</option>

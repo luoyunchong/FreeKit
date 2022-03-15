@@ -34,7 +34,7 @@ jobs:
         with:
           dotnet-version: 6.0.100
       - name: Install dependencies
-        run:  dotnet restore IGeekFan.FreeKit.sln
+        run: dotnet restore IGeekFan.FreeKit.sln
       - name: Setup DocFX
         uses: crazy-max/ghaction-chocolatey@v1
         with:
