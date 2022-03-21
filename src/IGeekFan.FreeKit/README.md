@@ -3,7 +3,7 @@
 该项目无任何依赖
 
 - 安装
-```
+```bash
 dotnet add package IGeekFan.FreeKit
 ```
 

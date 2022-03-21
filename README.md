@@ -1,8 +1,7 @@
 # IGeekFan.FreeKit
 
-
 <div align="center">
-<h1 align="center"> <img alt="logo" src="docs/images/logo.png" width="40px" />  IGeekFan.FreeKit </h1>
+<h1 align="center"> .NET <img alt="logo" src="docs/images/logo.png" width="80px"/>YEARS </h1>
 
 **Freekit** 为.NET Core提供了更多的扩展实现
 
@@ -30,18 +29,24 @@
 | Package name                           | Version                                                                                                                                                                                                  |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `IGeekFan.AspNetCore.Identity.FreeSql` | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.Identity.FreeSql) |
-| `IGeekFan.FreeKit.Extras`              | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Extras)                           |
-| `IGeekFan.FreeKit.Modularity`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Modularity)                   |
+| `IGeekFan.FreeKit`                          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit)|
+| `IGeekFan.FreeKit.Extras`                 | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Extras)|
+| `IGeekFan.FreeKit.Modularity`            | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Modularity)|   
+| `IGeekFan.FreeKit.Email`                  | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Email)|   
+| `IGeekFan.Localization.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Localization.FreeSql)|
+
+
 
 ## IGeekFan.AspNetCore.Identity.FreeSql
 
 `asp.net core 6` 的`identity`的`freesql`实现
+- 查看[IGeekFan.AspNetCore.Identity.FreeSql](./src/IGeekFan.AspNetCore.Identity.FreeSql/README.md)**文档**
 
 ## IGeekFan.FreeKit
 
 - AduitEntity 审计日志实体
 - Dependency 依赖注入接口
-
+- 查看[IGeekFan.FreeKit](./src/IGeekFan.FreeKit/README.md)**文档**
 ## IGeekFan.FreeKit.Extras
 
 - FreeSql扩展+Autofac UnitOfWork
@@ -49,7 +54,7 @@
 - Autofac+ITransientDependency+IScopedDependency+ISingletonDependency
 - CaseQuery 
 - Security 登录人信息
-
+- 查看[IGeekFan.FreeKit.Extras](./src/IGeekFan.FreeKit.Extras/README.md)**文档**
 ## IGeekFan.FreeKit.Email
 
 - 查看[IGeekFan.FreeKit.Email](./src/IGeekFan.FreeKit.Email/README.md)**文档**

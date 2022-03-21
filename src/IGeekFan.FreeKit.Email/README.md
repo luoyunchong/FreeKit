@@ -3,7 +3,7 @@
 该包是一个独立的开发包，内部由MailKit实现发送邮件。
 
 1. 安装包
-```
+```bash
 dotnet add package IGeekFan.FreeKit.Email
 ```
 - ConfigureServices方法
