@@ -53,3 +53,4 @@ foreach ($project in $projects) {
 if ($errorCount > 0) {
     Write-Host ("******* $errorCount error(s) occured *******") -ForegroundColor red
 }
+Set-Location $packFolder

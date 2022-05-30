@@ -31,7 +31,7 @@ foreach ($project in $projects) {
 
     Set-Location $projectFolder
     dotnet clean
-    dotnet build
+    dotnet build --configuration Release
 
     if (-Not $?) {
         Write-Error "Packaging failed for the project: $projectName" 

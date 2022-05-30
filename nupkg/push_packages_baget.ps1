@@ -30,12 +30,14 @@ foreach ($project in $projects) {
     $i += 1
     $projectName = ($project -split '/')[-1]
     $nugetPackageName = $projectName + "." + $version.Trim() + ".nupkg"	
+   # $nugetsPackageName = $projectName + "." + $version.Trim() + ".snupkg"	
     $nugetPackageExists = Test-Path $nugetPackageName -PathType leaf
  
     Write-Info "[$i / $totalProjectsCount] - Pushing: $nugetPackageName"
 	
     if ($nugetPackageExists) {
         dotnet nuget push $nugetPackageName --skip-duplicate -s $nugetUrl -k "$apiKey"		
+       # dotnet nuget push $nugetsPackageName --skip-duplicate -s $nugetUrl -k "$apiKey"		
         #Write-Host ("Deleting package from local: " + $nugetPackageName)
         #Remove-Item $nugetPackageName -Force
     }
@@ -51,3 +53,4 @@ foreach ($project in $projects) {
 if ($errorCount > 0) {
     Write-Host ("******* $errorCount error(s) occured *******") -ForegroundColor red
 }
+Set-Location $packFolder
