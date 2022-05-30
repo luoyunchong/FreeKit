@@ -364,3 +364,5 @@ FodyWeavers.xsd
 /src/Services/igeekfan-freekit-todo/dist
 /deploy-myget.cmd
 /deploy-nuget.cmd
+nupkg/nuget-api-key.txt
+nupkg/baget-api-key.txt

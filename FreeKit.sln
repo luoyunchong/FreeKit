@@ -45,6 +45,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit", "src\IGe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.FreeKit.xUnit", "test\IGeekFan.FreeKit.xUnit\IGeekFan.FreeKit.xUnit.csproj", "{D452D043-D25B-4821-ABAD-CDADBE69DBA3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{230441A9-9628-4BE1-96BC-CCDFE5AE04EA}"
+	ProjectSection(SolutionItems) = preProject
+		nupkg\build-all-release.ps1 = nupkg\build-all-release.ps1
+		nupkg\build-all.ps1 = nupkg\build-all.ps1
+		nupkg\common.ps1 = nupkg\common.ps1
+		nupkg\pack.ps1 = nupkg\pack.ps1
+		nupkg\push_packages_baget.ps1 = nupkg\push_packages_baget.ps1
+		nupkg\push_packages_nuget.ps1 = nupkg\push_packages_nuget.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
