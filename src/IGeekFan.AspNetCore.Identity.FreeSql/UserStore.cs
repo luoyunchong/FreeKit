@@ -164,7 +164,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
             throw new ArgumentNullException(nameof(user));
         }
 
-        Context.Attach(user);
+        //Context.Attach(user);
         user.ConcurrencyStamp = Guid.NewGuid().ToString();
         Context.Update(user);
         try
@@ -426,7 +426,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
             throw new ArgumentNullException(nameof(user));
         }
 
-        return await UserClaims.Where(uc => uc.UserId.Equals(user.Id)).ToListAsync(c => c.ToClaim(), cancellationToken);
+        return await UserClaims.Where(uc => uc.UserId.Equals(user.Id)).ToListAsync(c => new Claim(c.ClaimType, c.ClaimValue), cancellationToken);
     }
 
     /// <summary>

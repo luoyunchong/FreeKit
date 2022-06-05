@@ -134,8 +134,7 @@
     <comment>error when a role does not exist</comment>
   </data>
   <data name="ValueCannotBeNullOrEmpty" xml:space="preserve">
-    <value>Value cannot be null or empty.
-值不能为null或空。</value>
+    <value>值不能为null或空。</value>
     <comment>error when something cannot be null or empty</comment>
   </data>
 </root>

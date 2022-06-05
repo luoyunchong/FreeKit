@@ -16,7 +16,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<AssemblyName >$(AssemblyName)</AssemblyName>
 		<PackageProjectUrl>https://github.com/luoyunchong/IGeekFan.FreeKit</PackageProjectUrl>
-		<Version>0.0.5</Version>
+		<Version>0.0.503</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
