@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	 <PackageReference Include="FreeSql.DbContext" Version="3.2.651" />
-	 <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.651" />
+	 <PackageReference Include="FreeSql.DbContext" Version="3.2.661" />
+	 <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.661" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.5" />
   </ItemGroup>
 
