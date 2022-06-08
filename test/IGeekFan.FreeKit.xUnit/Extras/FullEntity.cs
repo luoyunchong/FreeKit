@@ -1,13 +1,4 @@
-﻿using IGeekFan.FreeKit.Email;
-using Microsoft.Extensions.Options;
-using MimeKit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit.Abstractions;
-using Xunit.Sdk;
+﻿using Xunit.Abstractions;
 using Xunit;
 
 namespace IGeekFan.FreeKit.xUnit.Extras

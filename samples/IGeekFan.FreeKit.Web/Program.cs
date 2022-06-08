@@ -1,5 +1,4 @@
 using Autofac;
-using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using IGeekFan.FreeKit.Extras.Dependency;
 using IGeekFan.FreeKit.Extras.SnakeCaseQuery;

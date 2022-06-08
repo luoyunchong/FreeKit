@@ -34,6 +34,9 @@ public class IdentityContext : IdentityDbContext<AppUser, AppRole, Guid>
     protected override void OnModelCreating(ICodeFirst codefirst)
     {
         base.OnModelCreating(codefirst);
+        codefirst.ApplyConfiguration(new AppUserConfiguration());
+        codefirst.ApplyConfiguration(new AppRoleConfiguration());
+        codefirst.SyncStructure(typeof(AppUser),typeof(AppRole))
     }
 }
 

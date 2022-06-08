@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Description>
-			Components for performing health checks using FreeSql.
-		</Description>
+		<Description>Components for performing health checks using FreeSql.	</Description>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -18,4 +16,7 @@
 		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.5" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests" />
+	</ItemGroup>
 </Project>

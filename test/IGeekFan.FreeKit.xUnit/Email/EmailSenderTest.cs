@@ -1,5 +1,4 @@
 ﻿using IGeekFan.FreeKit.Email;
-using IGeekFan.FreeKit.xUnit;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using Xunit;

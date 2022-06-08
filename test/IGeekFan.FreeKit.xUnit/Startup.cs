@@ -2,7 +2,6 @@
 using Autofac;
 using System.Reflection;
 using Autofac.Extensions.DependencyInjection;
-using Castle.Core.Configuration;
 using IGeekFan.FreeKit.Email;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

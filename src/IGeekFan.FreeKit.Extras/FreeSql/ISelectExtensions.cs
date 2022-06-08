@@ -1,5 +1,4 @@
 ﻿using FreeSql;
-using FreeSql.Internal.Model;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 

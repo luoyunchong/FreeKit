@@ -1,8 +1,6 @@
 ﻿using FreeSql;
 using FreeSql.Internal;
 using Microsoft.AspNetCore.Identity;
-using System.Globalization;
-using System.Resources;
 using System.Security.Claims;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql;

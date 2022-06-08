@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using IGeekFan.FreeKit.Extras.FreeSql;
 using System.Reflection;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;

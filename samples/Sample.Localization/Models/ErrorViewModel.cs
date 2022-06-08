@@ -1,5 +1,3 @@
-using System;
-
 namespace Sample.Localization.Models
 {
     public class ErrorViewModel
