@@ -118,23 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CanOnlyProtectStrings" xml:space="preserve">
-    <value>[ProtectedPersonalData] only works strings by default.</value>
+    <value>默认情况下，[ProtectedPersonalData]仅适用于字符串。</value>
     <comment>error when attribute is used on a non string property.</comment>
   </data>
   <data name="NotIdentityRole" xml:space="preserve">
-    <value>AddFreeSqlStores can only be called with a role that derives from IdentityRole&lt;TKey&gt;.</value>
+    <value>只能使用从IdentityRole&lt;TKey&gt;派生的角色调用AddFreeSqlStores</value>
     <comment>error when the role does not derive from IdentityRole</comment>
   </data>
   <data name="NotIdentityUser" xml:space="preserve">
-    <value>AddFreeSqlStores can only be called with a user that derives from IdentityUser&lt;TKey&gt;.</value>
+    <value>AddFreeSqlStores只能由从IdentityUser&lt;TKey&gt;派生的用户调用。</value>
     <comment>error when the user does not derive from IdentityUser</comment>
   </data>
   <data name="RoleNotFound" xml:space="preserve">
-    <value>Role {name} does not exist.</value>
+    <value>角色{name} 不存在。</value>
     <comment>error when a role does not exist</comment>
   </data>
   <data name="ValueCannotBeNullOrEmpty" xml:space="preserve">
-    <value>Value cannot be null or empty.</value>
+    <value>值不能为null或空。</value>
     <comment>error when something cannot be null or empty</comment>
   </data>
 </root>

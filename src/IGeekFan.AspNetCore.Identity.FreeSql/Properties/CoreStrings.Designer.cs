@@ -4,41 +4,59 @@
 using System;
 using System.Reflection;
 using System.Resources;
+using System.Globalization;
 using System.Threading;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql
 {
     /// <summary>
-    ///     This is an internal API that supports the FreeSql infrastructure and not subject to
+    ///     This is an internal API that supports the FreeKit infrastructure and not subject to
     ///     the same compatibility standards as public APIs. It may be changed or removed without notice in
     ///     any release. You should only use it directly in your code with extreme caution and knowing that
-    ///     doing so can result in application failures when updating to a new FreeSql release.
+    ///     doing so can result in application failures when updating to a new FreeKit release.
     /// </summary>
     internal static class CoreStrings
     {
-        private static readonly ResourceManager _resourceManager
-            = new ResourceManager("IGeekFan.AspNetCore.Identity.FreeSql.Properties.CoreStrings", typeof(CoreStrings).Assembly);
+        private static readonly ResourceManager _resourceManager = new ResourceManager("IGeekFan.AspNetCore.Identity.FreeSql.Properties.CoreStrings", typeof(CoreStrings).Assembly);
+		
+        private static CultureInfo _resourceCulture;
+		
+        /// <summary>
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
+        /// </summary>
+        public static CultureInfo Culture
+        {
+            get
+            {
+                return _resourceCulture;
+            }
+            set
+            {
+                _resourceCulture = value;
+            }
+        }
 
         /// <summary>
-        ///     [ProtectedPersonalData] only works strings by default.
+        /// 默认情况下，[ProtectedPersonalData]仅适用于字符串。
         /// </summary>
         public static string CanOnlyProtectStrings
             => GetString("CanOnlyProtectStrings");
 
         /// <summary>
-        ///     AddFreeSqlStores can only be called with a role that derives from IdentityRole&lt;TKey&gt;.
+        /// 只能使用从IdentityRole&lt;TKey&gt;派生的角色调用AddFreeSqlStores
         /// </summary>
         public static string NotIdentityRole
             => GetString("NotIdentityRole");
 
         /// <summary>
-        ///     AddFreeSqlStores can only be called with a user that derives from IdentityUser&lt;TKey&gt;.
+        /// AddFreeSqlStores只能由从IdentityUser&lt;TKey&gt;派生的用户调用。
         /// </summary>
         public static string NotIdentityUser
             => GetString("NotIdentityUser");
 
         /// <summary>
-        ///     Role {name} does not exist.
+        /// 角色{name} 不存在。
         /// </summary>
         public static string RoleNotFound(object name)
             => string.Format(
@@ -46,14 +64,14 @@ namespace IGeekFan.AspNetCore.Identity.FreeSql
                 name);
 
         /// <summary>
-        ///     Value cannot be null or empty.
+        /// 值不能为null或空。
         /// </summary>
         public static string ValueCannotBeNullOrEmpty
             => GetString("ValueCannotBeNullOrEmpty");
 
         private static string GetString(string name, params string[] formatterNames)
         {
-            var value = _resourceManager.GetString(name);
+            var value = _resourceManager.GetString(name,_resourceCulture);
             for (var i = 0; i < formatterNames.Length; i++)
             {
                 value = value.Replace("{" + formatterNames[i] + "}", "{" + i + "}");

@@ -8,8 +8,7 @@
 [![.NET IDE Rider](https://img.shields.io/static/v1?style=float&logo=rider&label=Rider&message=jetbrains&color=red)](https://www.jetbrains.com/rider/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.RapiDoc/master/LICENSE)
 <p>
-    <span>English</span> |  
-    <a href="README.zh-CN.md">中文</a>
+     <a href="README.md">英文</a> |  <a href="README.zh-CN.md">中文</a>
 </p>
 </div>
 
@@ -23,6 +22,7 @@
 | `IGeekFan.FreeKit.Modularity`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Modularity.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Modularity/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Modularity.svg)|
 | `IGeekFan.FreeKit.Email`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Email.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Email/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Email.svg)|
 | `IGeekFan.Localization.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.Localization.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.Localization.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.Localization.FreeSql.svg)|
+| `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.svg)|
 
 ## BaGet Packages
 
@@ -34,6 +34,8 @@
 | `IGeekFan.FreeKit.Modularity`            | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Modularity)|   
 | `IGeekFan.FreeKit.Email`                  | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Email)|   
 | `IGeekFan.Localization.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Localization.FreeSql)|
+| `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql)|
+
 
 
 

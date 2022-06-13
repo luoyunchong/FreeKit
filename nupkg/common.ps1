@@ -72,5 +72,6 @@ $projects = (
     "src/IGeekFan.FreeKit.Email",
     "src/IGeekFan.FreeKit.Extras",
     "src/IGeekFan.FreeKit.Modularity",
-    "src/IGeekFan.Localization.FreeSql"
+    "src/IGeekFan.Localization.FreeSql",
+    "src/Middleware/HealthChecks.FreeSql/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql"
 )

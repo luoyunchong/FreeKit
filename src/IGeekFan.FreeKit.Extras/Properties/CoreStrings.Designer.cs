@@ -4,9 +4,10 @@
 using System;
 using System.Reflection;
 using System.Resources;
+using System.Globalization;
 using System.Threading;
 
-namespace IGeekFan.FreeKit.Extras
+namespace IGeekFan.FreeKit
 {
     /// <summary>
     ///     This is an internal API that supports the FreeKit infrastructure and not subject to
@@ -16,18 +17,35 @@ namespace IGeekFan.FreeKit.Extras
     /// </summary>
     internal static class CoreStrings
     {
-        private static readonly ResourceManager _resourceManager
-            = new ResourceManager("IGeekFan.FreeKit.Extras.Properties.CoreStrings", typeof(CoreStrings).Assembly);
+        private static readonly ResourceManager _resourceManager = new ResourceManager("IGeekFan.FreeKit.Extras.Properties.CoreStrings", typeof(CoreStrings).Assembly);
+		
+        private static CultureInfo _resourceCulture;
+		
+        /// <summary>
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
+        /// </summary>
+        public static CultureInfo Culture
+        {
+            get
+            {
+                return _resourceCulture;
+            }
+            set
+            {
+                _resourceCulture = value;
+            }
+        }
 
         /// <summary>
-        ///     Data not in date format
+        /// Data not in date format
         /// </summary>
         public static string Expect_Date
             => GetString("Expect_Date");
 
         private static string GetString(string name, params string[] formatterNames)
         {
-            var value = _resourceManager.GetString(name);
+            var value = _resourceManager.GetString(name,_resourceCulture);
             for (var i = 0; i < formatterNames.Length; i++)
             {
                 value = value.Replace("{" + formatterNames[i] + "}", "{" + i + "}");

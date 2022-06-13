@@ -34,7 +34,7 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedResource Update="Properties\CoreStrings.zh-CN.resx">
+		<EmbeddedResource Update="Properties\CoreStrings.zh-Hans.resx">
 		  <CustomToolNamespace>IGeekFan.AspNetCore.Identity.FreeSql</CustomToolNamespace>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Properties\CoreStrings.resx">
