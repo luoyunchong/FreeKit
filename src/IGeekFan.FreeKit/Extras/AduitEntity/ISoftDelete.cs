@@ -1,4 +1,5 @@
 ﻿namespace IGeekFan.FreeKit.Extras.AduitEntity;
+
 /// <summary>
 ///  软删除标志
 /// </summary>

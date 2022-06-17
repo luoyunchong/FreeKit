@@ -3,11 +3,13 @@
 namespace IGeekFan.FreeKit.Extras.AduitEntity;
 
 [Serializable]
-public class FullAduitEntity : FullAduitEntity<long, long?>
+public class FullAduitEntity : FullAduitEntity<long, long>, IFullAduitEntity<long, long>
 {
 }
 
 public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAuditEntity<U>, IDeleteAduitEntity<U>
+    where T : struct
+    where U : struct
 {
     /// <summary>
     /// 创建者ID
@@ -49,7 +51,7 @@ public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAu
     /// 删除人id
     /// </summary>
     [Column(Position = -2)]
-    public U DeleteUserId { get; set; }
+    public Nullable<U> DeleteUserId { get; set; }
 
     /// <summary>
     /// 删除人
@@ -68,6 +70,5 @@ public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAu
     /// </summary>
     [Column(Position = -1)]
     public bool IsDeleted { get; set; }
-
 }
 
