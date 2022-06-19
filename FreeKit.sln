@@ -63,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealthChecks.FreeSql", "Hea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests", "src\Middleware\HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests.csproj", "{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.AspNetCore.Identity.FreeSql.Test", "test\IGeekFan.AspNetCore.Identity.FreeSql.Test\IGeekFan.AspNetCore.Identity.FreeSql.Test.csproj", "{C46067D3-B147-4C9B-824E-B303FB30DE7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,10 @@ Global
 		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +147,7 @@ Global
 		{6842D106-9C24-4B98-B07E-C83FF82D70A0} = {9D769B72-8739-4A0D-A833-0F5AB85358B7}
 		{9D769B72-8739-4A0D-A833-0F5AB85358B7} = {CBB1BF92-59BF-4842-B622-DC2D02CB6137}
 		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F} = {9D769B72-8739-4A0D-A833-0F5AB85358B7}
+		{C46067D3-B147-4C9B-824E-B303FB30DE7D} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}

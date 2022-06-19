@@ -17,6 +17,6 @@ public abstract class EntityDto<TKey> : IEntityDto<TKey>
     public TKey Id { get; set; }
 }
 
-public abstract class EntityDto : EntityDto<long>
+public abstract class EntityDto : EntityDto<Guid>
 {
 }

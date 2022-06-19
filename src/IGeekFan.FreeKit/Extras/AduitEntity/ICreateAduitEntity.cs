@@ -26,7 +26,7 @@ public interface ICreateAduitEntity<T> where T : struct
 /// <summary>
 /// 使用此接口可存储创建者信息（创建者id，创建人，创建时间）
 /// </summary>
-public interface ICreateAduitEntity : ICreateAduitEntity<long>
+public interface ICreateAduitEntity : ICreateAduitEntity<Guid>
 {
 
 }

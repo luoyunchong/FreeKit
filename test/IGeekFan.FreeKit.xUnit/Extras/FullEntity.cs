@@ -6,7 +6,7 @@ namespace IGeekFan.FreeKit.xUnit.Extras
     public class FullEntity : FullAduitEntity
     {
     }
-    public class UseFullEntity : FullAduitEntity<Guid, Guid?>
+    public class UseFullEntity : FullAduitEntity<Guid, Guid>
     {
     }
 
@@ -22,8 +22,8 @@ namespace IGeekFan.FreeKit.xUnit.Extras
         public async Task OutputTestFull()
         {
             var full = new UseFullEntity();
-            full.CreateUserId = null;
-            full.UpdateUserId = null;
+            full.CreateUserId = Guid.NewGuid();
+            full.UpdateUserId = Guid.NewGuid();
             full.DeleteUserId = null;
 
             full.CreateTime = DateTime.Now;
@@ -38,8 +38,8 @@ namespace IGeekFan.FreeKit.xUnit.Extras
         public async Task OutputTest()
         {
             var full = new FullEntity();
-            full.CreateUserId = null;
-            full.UpdateUserId = null;
+            full.CreateUserId = Guid.Empty;
+            full.UpdateUserId = Guid.Empty;
             full.DeleteUserId = null;
 
             full.CreateTime = DateTime.Now;

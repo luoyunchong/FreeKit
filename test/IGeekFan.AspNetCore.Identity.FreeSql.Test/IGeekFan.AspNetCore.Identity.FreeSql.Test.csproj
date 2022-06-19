@@ -1,20 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<RootNamespace>Microsoft.AspNetCore.Diagnostics.HealthChecks</RootNamespace>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.664" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.5" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.6" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
 		<PackageReference Include="xunit" Version="2.4.1" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
@@ -25,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
+		<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Identity.FreeSql\IGeekFan.AspNetCore.Identity.FreeSql.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -26,7 +26,7 @@ public interface IDeleteAduitEntity<T> : ISoftDelete where T : struct
 /// <summary>
 /// 使用此接口可存储删除信息（删除人id，删除人，删除时间）
 /// </summary>
-public interface IDeleteAduitEntity : IDeleteAduitEntity<long>
+public interface IDeleteAduitEntity : IDeleteAduitEntity<Guid>
 {
 
 }

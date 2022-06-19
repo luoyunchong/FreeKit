@@ -3,10 +3,15 @@
 namespace IGeekFan.FreeKit.Extras.AduitEntity;
 
 [Serializable]
-public class FullAduitEntity : FullAduitEntity<long, long>, IFullAduitEntity<long, long>
+public class FullAduitEntity : FullAduitEntity<Guid, Guid>, IFullAduitEntity<Guid, Guid>
 {
 }
 
+/// <summary>
+/// 实体基类
+/// </summary>
+/// <typeparam name="T">当前主键类型</typeparam>
+/// <typeparam name="U">用户表主键类型</typeparam>
 public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAuditEntity<U>, IDeleteAduitEntity<U>
     where T : struct
     where U : struct
@@ -33,13 +38,13 @@ public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAu
     /// 最后修改人Id
     /// </summary>
     [Column(Position = -3)]
-    public U UpdateUserId { get; set; }
+    public U? UpdateUserId { get; set; }
 
     /// <summary>
     /// 修改人
     /// </summary>
     [Column(Position = -3)]
-    public string UpdateUserName { get; set; }
+    public string? UpdateUserName { get; set; }
 
     /// <summary>
     /// 修改时间
@@ -51,13 +56,13 @@ public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAu
     /// 删除人id
     /// </summary>
     [Column(Position = -2)]
-    public Nullable<U> DeleteUserId { get; set; }
+    public U? DeleteUserId { get; set; }
 
     /// <summary>
     /// 删除人
     /// </summary>
     [Column(Position = -2)]
-    public string DeleteUserName { get; set; }
+    public string? DeleteUserName { get; set; }
 
     /// <summary>
     /// 删除时间
