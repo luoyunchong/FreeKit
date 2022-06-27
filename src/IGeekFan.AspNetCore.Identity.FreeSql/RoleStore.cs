@@ -159,8 +159,8 @@ public class RoleStore<TRole, TContext, TKey, TUserRole, TRoleClaim> :
         {
             throw new ArgumentNullException(nameof(role));
         }
-        Context.Attach(role);
-        role.ConcurrencyStamp = Guid.NewGuid().ToString();
+        //Context.Attach(role);
+        //role.ConcurrencyStamp = Guid.NewGuid().ToString();
         Context.Update(role);
         try
         {

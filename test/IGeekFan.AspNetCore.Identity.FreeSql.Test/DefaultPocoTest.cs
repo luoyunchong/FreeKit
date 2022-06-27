@@ -1,49 +1,20 @@
-﻿using FreeSql.Internal;
-using FreeSql;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity.Test;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Diagnostics;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test
 {
-
-    public class DefaultPocoTest
+    public class DefaultPocoTest : IClassFixture<ScratchDatabaseFixture>
     {
         private readonly ApplicationBuilder _builder;
-        public DefaultPocoTest()
+        
+        public DefaultPocoTest(ScratchDatabaseFixture fixture)
         {
-            string connectionString = "Data Source=hello.db";
-
-            var services = new ServiceCollection();
-            IFreeSql fsql = new FreeSqlBuilder()
-                .UseConnectionString(DataType.Sqlite, connectionString)
-                .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
-                .UseAutoSyncStructure(true) //自动同步实体结构到数据库，FreeSql不会扫描程序集，只有CRUD时才会生成表。
-                .UseMonitorCommand(cmd =>
-                {
-                    Trace.WriteLine(cmd.CommandText + ";");
-                })
-                .Build();
-
-            services.AddSingleton(fsql);
-            services.AddFreeRepository();
-            services.AddScoped<UnitOfWorkManager>();
-            services
-                .AddSingleton<IConfiguration>(new ConfigurationBuilder().Build())
-                .AddFreeDbContext<IdentityDbContext>(options => options
-                    .UseFreeSql(fsql)
-                    .UseOptions(new DbContextOptions()
-                    {
-                        EnableCascadeSave = true
-                    }));
-
+            var services = DbUtil.Create<IdentityDbContext>();
+            
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddFreeSqlStores<IdentityDbContext>();
-
-            services.AddLogging();
 
             var provider = services.BuildServiceProvider();
 
@@ -55,7 +26,6 @@ namespace IGeekFan.AspNetCore.Identity.FreeSql.Test
                 dbcontext.Orm.CodeFirst.IsAutoSyncStructure = true;
                 dbcontext.Orm.CodeFirst.SyncStructure(typeof(IdentityUser), typeof(IdentityRole));
             }
-
         }
 
         [Fact]
@@ -74,4 +44,5 @@ namespace IGeekFan.AspNetCore.Identity.FreeSql.Test
             IdentityResultAssert.IsSuccess(await userManager.DeleteAsync(user));
         }
     }
+
 }

@@ -163,7 +163,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
         }
 
         //Context.Attach(user);
-        user.ConcurrencyStamp = Guid.NewGuid().ToString();
+        //user.ConcurrencyStamp = Guid.NewGuid().ToString();
         Context.Update(user);
         try
         {
@@ -264,7 +264,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// <returns>The user role if it exists.</returns>
     protected override Task<TUserRole> FindUserRoleAsync(TKey userId, TKey roleId, CancellationToken cancellationToken)
     {
-        return UserRoles.Select.WhereDynamic(new object[] { userId, roleId }).FirstAsync(cancellationToken);
+        return UserRoles.Select.WhereDynamic(new { UserId = userId, RoleId = roleId }).FirstAsync(cancellationToken);
     }
 
     /// <summary>
@@ -376,7 +376,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
         }
         var userId = user.Id;
 
-        var query = Roles.Select.InnerJoin<TUserRole>((a, b) => a.Id.Equals(b.RoleId));
+        var query = Roles.Select.InnerJoin<TUserRole>((a, b) => a.Id.Equals(b.RoleId) && b.UserId.Equals(userId));
 
         return await query.ToListAsync(r => r.Name, cancellationToken);
     }
@@ -482,6 +482,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
             matchedClaim.ClaimValue = newClaim.Value;
             matchedClaim.ClaimType = newClaim.Type;
         }
+        UserClaims.UpdateRange(matchedClaims);
     }
 
     /// <summary>
@@ -611,12 +612,17 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// <returns>
     /// The task object containing the results of the asynchronous lookup operation, the user if any associated with the specified normalized email address.
     /// </returns>
-    public override Task<TUser> FindByEmailAsync(string normalizedEmail, CancellationToken cancellationToken = default(CancellationToken))
+    public override async Task<TUser> FindByEmailAsync(string normalizedEmail, CancellationToken cancellationToken = default(CancellationToken))
     {
         cancellationToken.ThrowIfCancellationRequested();
         ThrowIfDisposed();
 
-        return Users.Where(u => u.NormalizedEmail == normalizedEmail).FirstAsync(cancellationToken);
+        var users = await Users.Where(u => u.NormalizedEmail == normalizedEmail).ToListAsync(cancellationToken);
+        if (users.Count > 1)
+        {
+            throw new InvalidOperationException(CoreStrings.DuplicateEmail);
+        }
+        return users.FirstOrDefault();
     }
 
     /// <summary>
@@ -663,7 +669,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
 
         if (role != null)
         {
-            var query = Users.InnerJoin<TUserRole>((user, userrole) => user.Id.Equals(userrole.UserId));
+            var query = Users.InnerJoin<TUserRole>((user, userrole) => user.Id.Equals(userrole.UserId) && userrole.RoleId.Equals(role.Id));
 
             return await query.ToListAsync(false, cancellationToken);
         }
@@ -679,7 +685,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
     /// <returns>The user token if it exists.</returns>
     protected override Task<TUserToken> FindTokenAsync(TUser user, string loginProvider, string name, CancellationToken cancellationToken)
-        => UserTokens.Select.WhereDynamic(new object[] { user.Id, loginProvider, name }).FirstAsync(cancellationToken);
+        => UserTokens.Select.WhereDynamic(new { UserId = user.Id, LoginProvider = loginProvider, Name = name }).FirstAsync(cancellationToken);
 
     /// <summary>
     /// Add a new user token.
@@ -690,6 +696,37 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     {
         UserTokens.Add(token);
         return Task.CompletedTask;
+    }
+
+    /// <summary>
+    /// Sets the token value for a particular user.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="loginProvider">The authentication provider for the token.</param>
+    /// <param name="name">The name of the token.</param>
+    /// <param name="value">The value of the token.</param>
+    /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+    /// <returns>The <see cref="Task"/> that represents the asynchronous operation.</returns>
+    public override async Task SetTokenAsync(TUser user, string loginProvider, string name, string value, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        ThrowIfDisposed();
+
+        if (user == null)
+        {
+            throw new ArgumentNullException(nameof(user));
+        }
+
+        var token = await FindTokenAsync(user, loginProvider, name, cancellationToken);
+        if (token == null)
+        {
+            await AddUserTokenAsync(CreateUserToken(user, loginProvider, name, value));
+        }
+        else
+        {
+            token.Value = value;
+            UserTokens.Update(token);
+        }
     }
 
     /// <summary>

@@ -900,26 +900,8 @@ public abstract class UserStoreBaseISelect<TUser, TKey, TUserClaim, TUserLogin, 
     /// <param name="value">The value of the token.</param>
     /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
     /// <returns>The <see cref="Task"/> that represents the asynchronous operation.</returns>
-    public virtual async Task SetTokenAsync(TUser user, string loginProvider, string name, string value, CancellationToken cancellationToken)
-    {
-        cancellationToken.ThrowIfCancellationRequested();
-        ThrowIfDisposed();
-
-        if (user == null)
-        {
-            throw new ArgumentNullException(nameof(user));
-        }
-
-        var token = await FindTokenAsync(user, loginProvider, name, cancellationToken);
-        if (token == null)
-        {
-            await AddUserTokenAsync(CreateUserToken(user, loginProvider, name, value));
-        }
-        else
-        {
-            token.Value = value;
-        }
-    }
+    public abstract Task SetTokenAsync(TUser user, string loginProvider, string name, string value, CancellationToken cancellationToken);
+    
 
     /// <summary>
     /// Deletes a token for a user.

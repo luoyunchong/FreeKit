@@ -130,7 +130,7 @@ public abstract class IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRol
             b.HasIndex(r => r.NormalizedName).HasName("RoleNameIndex").IsUnique();
             b.ToTable("AspNetRoles");
             //b.Property(r => r.ConcurrencyStamp).IsRowVersion();
-
+            //b.Property(u => u.ConcurrencyStamp).IsRowVersion().Help().MapType(typeof(byte[]));
             b.Property(u => u.Name).HasMaxLength(256);
             b.Property(u => u.NormalizedName).HasMaxLength(256);
 
@@ -141,6 +141,7 @@ public abstract class IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRol
         builder.Entity<TRoleClaim>(b =>
         {
             b.HasKey(rc => rc.Id);
+            b.Property(r => r.Id).Help().IsIdentity(true);
             b.ToTable("AspNetRoleClaims");
         });
 

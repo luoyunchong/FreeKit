@@ -44,6 +44,12 @@ namespace IGeekFan.AspNetCore.Identity.FreeSql
             => GetString("CanOnlyProtectStrings");
 
         /// <summary>
+        /// 存在重复邮箱地址
+        /// </summary>
+        public static string DuplicateEmail
+            => GetString("DuplicateEmail");
+
+        /// <summary>
         /// 只能使用从IdentityRole&lt;TKey&gt;派生的角色调用AddFreeSqlStores
         /// </summary>
         public static string NotIdentityRole

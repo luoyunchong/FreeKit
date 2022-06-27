@@ -114,11 +114,11 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
     /// </param>
     protected override void OnModelCreating(ICodeFirst builder)
     {
-        if (IdentityOptions == null) return;
+        //if (IdentityOptions == null) return;
 
-        var storeOptions = IdentityOptions.Stores;
+        var storeOptions = IdentityOptions?.Stores;
         var maxKeyLength = storeOptions?.MaxLengthForKeys ?? 0;
-        var c = storeOptions?.ProtectPersonalData ?? false;
+        var protectPersonalData = storeOptions?.ProtectPersonalData ?? false;
         //PersonalDataConverter converter = null;
 
         builder.Entity<TUser>(b =>
@@ -127,7 +127,7 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
             b.HasIndex(u => u.NormalizedUserName).HasName("UserNameIndex").IsUnique();
             b.HasIndex(u => u.NormalizedEmail).HasName("EmailIndex");
             b.ToTable("AspNetUsers");
-            //b.Property(u => u.ConcurrencyStamp).IsRowVersion();
+            //b.Property(u => u.ConcurrencyStamp).IsRowVersion().Help().MapType(typeof(byte[]));
 
             b.Property(u => u.UserName).HasMaxLength(256);
             b.Property(u => u.NormalizedUserName).HasMaxLength(256);
@@ -157,6 +157,7 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
         builder.Entity<TUserClaim>(b =>
         {
             b.HasKey(uc => uc.Id);
+            b.Property(r => r.Id).Help().IsIdentity(true);
             b.ToTable("AspNetUserClaims");
         });
 
