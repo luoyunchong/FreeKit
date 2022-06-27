@@ -37,12 +37,6 @@ namespace IGeekFan.FreeKit
             }
         }
 
-        /// <summary>
-        /// Data not in date format
-        /// </summary>
-        public static string Expect_Date
-            => GetString("Expect_Date");
-
         private static string GetString(string name, params string[] formatterNames)
         {
             var value = _resourceManager.GetString(name,_resourceCulture);

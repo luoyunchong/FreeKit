@@ -55,15 +55,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{230441A9
 		nupkg\push_packages_nuget.ps1 = nupkg\push_packages_nuget.ps1
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middleware", "Middleware", "{CBB1BF92-59BF-4842-B622-DC2D02CB6137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.Identity.FreeSql.Test", "test\IGeekFan.AspNetCore.Identity.FreeSql.Test\IGeekFan.AspNetCore.Identity.FreeSql.Test.csproj", "{C46067D3-B147-4C9B-824E-B303FB30DE7D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql", "src\Middleware\HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj", "{6842D106-9C24-4B98-B07E-C83FF82D70A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.DataProtection.FreeSql", "src\IGeekFan.AspNetCore.DataProtection.FreeSql\IGeekFan.AspNetCore.DataProtection.FreeSql.csproj", "{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealthChecks.FreeSql", "HealthChecks.FreeSql", "{9D769B72-8739-4A0D-A833-0F5AB85358B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql", "src\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj", "{26F7016C-FD7A-4C9E-9703-1CA707B9028A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests", "src\Middleware\HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests.csproj", "{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests", "test\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests.csproj", "{B2A29967-D00A-4150-914F-DB9B613CA916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.AspNetCore.Identity.FreeSql.Test", "test\IGeekFan.AspNetCore.Identity.FreeSql.Test\IGeekFan.AspNetCore.Identity.FreeSql.Test.csproj", "{C46067D3-B147-4C9B-824E-B303FB30DE7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.DataProtection.FreeRedis", "src\IGeekFan.AspNetCore.DataProtection.FreeRedis\IGeekFan.AspNetCore.DataProtection.FreeRedis.csproj", "{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.AspNetCore.DataProtection.FreeSql.Tests", "test\IGeekFan.AspNetCore.DataProtection.FreeSql.Tests\IGeekFan.AspNetCore.DataProtection.FreeSql.Tests.csproj", "{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,18 +117,30 @@ Global
 		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D452D043-D25B-4821-ABAD-CDADBE69DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6842D106-9C24-4B98-B07E-C83FF82D70A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6842D106-9C24-4B98-B07E-C83FF82D70A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6842D106-9C24-4B98-B07E-C83FF82D70A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6842D106-9C24-4B98-B07E-C83FF82D70A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46067D3-B147-4C9B-824E-B303FB30DE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F7016C-FD7A-4C9E-9703-1CA707B9028A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F7016C-FD7A-4C9E-9703-1CA707B9028A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F7016C-FD7A-4C9E-9703-1CA707B9028A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F7016C-FD7A-4C9E-9703-1CA707B9028A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A29967-D00A-4150-914F-DB9B613CA916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A29967-D00A-4150-914F-DB9B613CA916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A29967-D00A-4150-914F-DB9B613CA916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A29967-D00A-4150-914F-DB9B613CA916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,11 +157,12 @@ Global
 		{DB34C3A8-F6C8-422C-AA28-51EDA913C4A8} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{C2F54A9B-BDF4-4690-B562-A47020034628} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{D452D043-D25B-4821-ABAD-CDADBE69DBA3} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
-		{CBB1BF92-59BF-4842-B622-DC2D02CB6137} = {A395AA61-C752-410E-AD37-1015A8398A2F}
-		{6842D106-9C24-4B98-B07E-C83FF82D70A0} = {9D769B72-8739-4A0D-A833-0F5AB85358B7}
-		{9D769B72-8739-4A0D-A833-0F5AB85358B7} = {CBB1BF92-59BF-4842-B622-DC2D02CB6137}
-		{8A36F5D1-9C94-4589-8CF3-FADB49AC380F} = {9D769B72-8739-4A0D-A833-0F5AB85358B7}
 		{C46067D3-B147-4C9B-824E-B303FB30DE7D} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
+		{4AA338A9-E4FF-47C8-BBE4-DB085DE95C1E} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{26F7016C-FD7A-4C9E-9703-1CA707B9028A} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{B2A29967-D00A-4150-914F-DB9B613CA916} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
+		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}
