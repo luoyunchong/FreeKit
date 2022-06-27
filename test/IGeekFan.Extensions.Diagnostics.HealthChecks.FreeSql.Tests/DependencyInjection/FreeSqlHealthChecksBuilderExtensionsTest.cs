@@ -9,11 +9,12 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public class FreeSqlHealthChecksBuilderExtensionsTest
     {
+        
         [Fact]
         public void AddDbContextCheck_RegistersDbContextHealthCheck()
         {
             // Arrange
-            var serviceCollection = Util.GetFreeSqlServiceCollection();
+            var serviceCollection = FreeUtil.GetFreeSqlServiceCollection<TestDbContext>();
 
             var builder = serviceCollection.AddHealthChecks();
 

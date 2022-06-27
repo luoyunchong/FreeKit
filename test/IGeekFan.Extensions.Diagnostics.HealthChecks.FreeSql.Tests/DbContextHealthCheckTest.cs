@@ -127,10 +127,10 @@ public class DbContextHealthCheckTest
         Func<TestDbContext, CancellationToken, Task<bool>> testQuery = null,
         HealthStatus? failureStatus = HealthStatus.Unhealthy)
     {
-        var serviceCollection = Util.GetFreeSqlServiceCollection();
+        var serviceCollection = Microsoft.Extensions.DependencyInjection.FreeUtil.GetFreeSqlServiceCollection<TestDbContext>();
 
         var builder = serviceCollection.AddHealthChecks();
-        builder.AddDbContextCheck<TestDbContext>("test", failureStatus, new[] { "tag1", "tag2", }, testQuery);
+        builder.AddDbContextCheck("test", failureStatus, new[] { "tag1", "tag2", }, testQuery);
         return serviceCollection.BuildServiceProvider();
     }
 }

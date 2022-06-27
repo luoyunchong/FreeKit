@@ -8,9 +8,9 @@ using System.Diagnostics;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public class Util
+    public class FreeUtil
     {
-        public static ServiceCollection GetFreeSqlServiceCollection()
+        public static ServiceCollection GetFreeSqlServiceCollection<T>() where T : DbContext
         {
             var serviceCollection = new ServiceCollection();
             IFreeSql fsql = new FreeSqlBuilder()
@@ -23,13 +23,13 @@ namespace Microsoft.Extensions.DependencyInjection
                 })
                 .Build();
 
-            serviceCollection.AddFreeDbContext<TestDbContext>(
+            serviceCollection.AddFreeDbContext<T>(
                 options => options
-                .UseFreeSql(fsql)
-                .UseOptions(new DbContextOptions()
-                {
-                    EnableCascadeSave = true
-                })
+                    .UseFreeSql(fsql)
+                    .UseOptions(new DbContextOptions()
+                    {
+                        EnableCascadeSave = true
+                    })
             );
             return serviceCollection;
         }

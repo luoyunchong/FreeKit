@@ -10,7 +10,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.664" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.6" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
 		<PackageReference Include="xunit" Version="2.4.1" />
@@ -25,7 +25,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql\IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
 	</ItemGroup>
 
 </Project>

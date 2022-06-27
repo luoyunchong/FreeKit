@@ -67,11 +67,15 @@ $solutions = (
 
 # List of projects
 $projects = (
-    "src/IGeekFan.AspNetCore.Identity.FreeSql",
     "src/IGeekFan.FreeKit",
     "src/IGeekFan.FreeKit.Email",
     "src/IGeekFan.FreeKit.Extras",
     "src/IGeekFan.FreeKit.Modularity",
     "src/IGeekFan.Localization.FreeSql",
-    "src/Middleware/HealthChecks.FreeSql/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql"
+    "src/IGeekFan.AspNetCore.Identity.FreeSql",
+    "src/IGeekFan.AspNetCore.DataProtection.FreeSql",
+    "src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql",
+    "src/IGeekFan.AspNetCore.DataProtection.FreeRedis",
+    "src/IGeekFan.AspNetCore.DataProtection.FreeSql",
+
 )
