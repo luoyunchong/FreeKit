@@ -29,7 +29,11 @@ namespace IGeekFan.FreeKit.xUnit
                 .ConfigureContainer<ContainerBuilder>((webBuilder, containerBuilder) =>
                  {
                      //1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
-                     Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName.Contains("IGeekFan.FreeKit.Email") || r.FullName.Contains("IGeekFan.FreeKit.xUnit")).ToArray();
+                     Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => 
+                     r.FullName.Contains("IGeekFan.FreeKit.Email")
+                  || r.FullName.Contains("IGeekFan.FreeKit.xUnit")
+                  || r.FullName.Contains("IGeekFan.FreeKit.Extras")
+                     ).ToArray();
                      containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
 
                      ////2.根据程序集中的某个类获取程序集
@@ -76,6 +80,7 @@ namespace IGeekFan.FreeKit.xUnit
             });
             services.AddSingleton(fsql);
             services.AddHttpClient();
+            services.AddHttpContextAccessor();
         }
 
         // 可以添加要用到的方法参数，会自动从注册的服务中获取服务实例，类似于 asp.net core 里 Configure 方法

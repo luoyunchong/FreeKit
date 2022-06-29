@@ -41,7 +41,7 @@
 | `IGeekFan.Localization.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Localization.FreeSql)|
 | `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql)|
 | `IGeekFan.AspNetCore.DataProtection.FreeRedis`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeRedis)|
-| `IGeekFan.AspNetCore.DataProtection.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeSql)|
+| `IGeekFan.AspNetCore.DataProtection.FreeSql`            | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeSql)|
 
 
 

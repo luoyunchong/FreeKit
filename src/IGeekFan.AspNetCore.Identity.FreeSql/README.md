@@ -8,7 +8,6 @@ dotnet add package IGeekFan.AspNetCore.Identity.FreeSql
 - 新增FreeSql相关包
 ```bash
 dotnet add package FreeSql.Provider.MySqlConnector
-dotnet add package FreeSql.DbContext
 ```
 ### 扩展用户、角色
 ```csharp
