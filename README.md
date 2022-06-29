@@ -23,6 +23,11 @@
 | `IGeekFan.FreeKit.Email`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.FreeKit.Email.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.FreeKit.Email/)                                | ![downloads](https://img.shields.io/nuget/dt/IGeekFan.FreeKit.Email.svg)|
 | `IGeekFan.Localization.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.Localization.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.Localization.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.Localization.FreeSql.svg)|
 | `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.svg)|
+| `IGeekFan.AspNetCore.DataProtection.FreeRedis`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.DataProtection.FreeRedis.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.AspNetCore.DataProtection.FreeRedis/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.DataProtection.FreeRedis.svg)|
+| `IGeekFan.AspNetCore.DataProtection.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.DataProtection.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.AspNetCore.DataProtection.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.DataProtection.FreeSql.svg)|
+
+
+
 
 ## BaGet Packages
 
@@ -35,6 +40,8 @@
 | `IGeekFan.FreeKit.Email`                  | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Email)|   
 | `IGeekFan.Localization.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Localization.FreeSql)|
 | `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql)|
+| `IGeekFan.AspNetCore.DataProtection.FreeRedis`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeRedis)|
+| `IGeekFan.AspNetCore.DataProtection.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeSql)|
 
 
 

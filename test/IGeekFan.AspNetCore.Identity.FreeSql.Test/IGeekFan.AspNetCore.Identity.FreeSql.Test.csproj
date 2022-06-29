@@ -7,23 +7,21 @@
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
 
+
 	<ItemGroup>
-	  <None Remove="config.json" />
+		<Content Include="config.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<Compile Include="..\Shared\**\*.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="config.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
-	</ItemGroup>
-	<ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-	</ItemGroup>
-	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="3.2.664" />
-		<!--<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />-->
+		<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />
 		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.6" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+		<PackageReference Include="Moq" Version="4.18.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.0" />
 		<PackageReference Include="xunit" Version="2.4.1" />

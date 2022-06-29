@@ -10,6 +10,7 @@ namespace IGeekFan.AspNetCore.Identity.FreeSql.Test
 {
     public class ScratchDatabaseFixture
     {
+        public string CreateConnection => $"DataSource=D{Guid.NewGuid()}.db";
         public string Connection { get; }
         public ScratchDatabaseFixture()
         {
