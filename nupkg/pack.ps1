@@ -1,5 +1,11 @@
 . ".\common.ps1"
 
+
+$PACKAGE_PATH = "packages"
+if (!(Test-Path $PACKAGE_PATH)) {
+    New-Item -type Directory -Path  $PACKAGE_PATH
+}
+
 # Delete old packages
 Set-Location (Join-Path $rootFolder "nupkg/packages") 
 Remove-Item "*.nupkg"
@@ -25,7 +31,9 @@ foreach ($project in $projects) {
     # Create nuget pack
     Write-Info "[$i / $projectsCount] - Packing project: $projectName"
 
+    # Delete 之前的版本信息
     $projectPackPath = Join-Path $projectFolder ("/bin/Release")
+    Set-Location $projectPackPath
     Remove-Item "*.nupkg"
     Remove-Item "*.snupkg"
 

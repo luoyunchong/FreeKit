@@ -35,7 +35,7 @@ foreach ($project in $projects) {
     $nugetPackageName = $projectName + "." + $version.Trim() + ".nupkg"	
  
     Write-Info "[$i / $totalProjectsCount] - Deleting: $nugetPackageName"
-    #dotnet nuget delete IGeekFan.Localization.FreeSql 0.0.3 --non-interactive -k oy2jxmgb4k3hmg65v7vauqjldawwh5gefbxgg2sdwpkmfy -s https://api.nuget.org/v3/index.json
+    #dotnet nuget delete IGeekFan.Localization.FreeSql 0.0.3 --non-interactive -k [apiKey] -s https://api.nuget.org/v3/index.json
     dotnet nuget delete $projectName $version --non-interactive -s $nugetUrl -k "$apiKey"		
     Write-Host ("Deleting package from local: " + $nugetPackageName)
     #Remove-Item $nugetPackageName -Force
