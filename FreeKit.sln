@@ -56,6 +56,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{230441A9
 		nupkg\common.ps1 = nupkg\common.ps1
 		nupkg\pack.ps1 = nupkg\pack.ps1
 		nupkg\push_packages_baget.ps1 = nupkg\push_packages_baget.ps1
+		nupkg\push_packages_github.ps1 = nupkg\push_packages_github.ps1
 		nupkg\push_packages_nuget.ps1 = nupkg\push_packages_nuget.ps1
 	EndProjectSection
 EndProject

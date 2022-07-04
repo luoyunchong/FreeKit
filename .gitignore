@@ -367,3 +367,4 @@ FodyWeavers.xsd
 nupkg/nuget-api-key.txt
 nupkg/baget-api-key.txt
 nupkg/nuget-api-key-delete.txt
+nupkg/github-api-key.txt
