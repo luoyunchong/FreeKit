@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql" Version="3.2.664" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.6" />
+		<PackageReference Include="FreeSql" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="$(DefaultAspNetCoreVersion)" />
 	</ItemGroup>
 </Project>

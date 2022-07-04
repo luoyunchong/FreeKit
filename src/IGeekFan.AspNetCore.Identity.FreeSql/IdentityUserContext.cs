@@ -127,6 +127,7 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
             b.HasIndex(u => u.NormalizedUserName).HasName("UserNameIndex").IsUnique();
             b.HasIndex(u => u.NormalizedEmail).HasName("EmailIndex");
             b.ToTable("AspNetUsers");
+            b.Property(u => u.ConcurrencyStamp).IsRowVersion();
             //b.Property(u => u.ConcurrencyStamp).IsRowVersion().Help().MapType(typeof(byte[]));
 
             b.Property(u => u.UserName).HasMaxLength(256);

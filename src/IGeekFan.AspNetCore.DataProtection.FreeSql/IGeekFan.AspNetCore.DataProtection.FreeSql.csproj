@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>$(DefaultNetCoreTargetFramework)</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSql.DbContext" Version="3.2.664" />
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="6.0.6" />
+    <PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeeSqlVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="$(DefaultAspNetCoreVersion)" />
   </ItemGroup>
 
 </Project>

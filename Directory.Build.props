@@ -1,0 +1,7 @@
+<Project>
+	<PropertyGroup>
+		<DefaultNetCoreTargetFramework>net6.0</DefaultNetCoreTargetFramework>
+		<DefaultFreeeSqlVersion>3.2.665</DefaultFreeeSqlVersion>
+		<DefaultAspNetCoreVersion>6.0.6</DefaultAspNetCoreVersion>
+	</PropertyGroup>
+</Project>

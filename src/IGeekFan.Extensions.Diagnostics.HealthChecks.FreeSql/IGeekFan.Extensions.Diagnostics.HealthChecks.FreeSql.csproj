@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<Description>Components for performing health checks using FreeSql.	</Description>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>$(DefaultNetCoreTargetFramework)</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -12,8 +12,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.DbContext" Version="3.2.664" />
-		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.6" />
+		<PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="$(DefaultAspNetCoreVersion)" />
 	</ItemGroup>
 
 	<ItemGroup>
