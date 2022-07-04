@@ -91,7 +91,7 @@ public static class IdentityFreeSqlBuilderExtensions
 
     }
 
-    private static Type FindGenericBaseType(Type currentType, Type genericBaseType)
+    private static Type? FindGenericBaseType(Type currentType, Type genericBaseType)
     {
         var type = currentType;
         while (type != null)
