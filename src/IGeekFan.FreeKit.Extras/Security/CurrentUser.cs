@@ -1,10 +1,9 @@
 ﻿using System.Security.Claims;
-using IGeekFan.FreeKit.Extras.Dependency;
 using Microsoft.AspNetCore.Http;
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
-public class CurrentUser : CurrentUser<string>, ICurrentUser, ITransientDependency
+public class CurrentUser : CurrentUser<string>, ICurrentUser
 {
     public CurrentUser(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
@@ -27,7 +26,7 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser, ITransientDependen
 /// 当前用户
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class CurrentUser<T> : ICurrentUser<T> 
+public abstract class CurrentUser<T> : ICurrentUser<T>
 {
     private static readonly Claim[] EmptyClaimsArray = Array.Empty<Claim>();
     protected readonly ClaimsPrincipal ClaimsPrincipal;

@@ -14,18 +14,15 @@ public static class StringExtensions
     /// <summary>
     /// Indicates whether this string is null or an System.String.Empty string.
     /// </summary>
-    public static bool IsNullOrEmpty(this string str)
-    {
-        return string.IsNullOrEmpty(str);
-    }
+    public static bool IsNullOrEmpty(this string str) => string.IsNullOrEmpty(str);
+    public static bool IsNotNullOrEmpty(this string str) => !string.IsNullOrEmpty(str);
 
     /// <summary>
     /// indicates whether this string is null, empty, or consists only of white-space characters.
     /// </summary>
-    public static bool IsNullOrWhiteSpace(this string str)
-    {
-        return string.IsNullOrWhiteSpace(str);
-    }
+    public static bool IsNullOrWhiteSpace(this string str) => string.IsNullOrWhiteSpace(str);
+
+    public static bool IsNotNullOrWhiteSpace(this string str) => !string.IsNullOrWhiteSpace(str);
 
     /// <summary>
     /// 帕斯卡命名法：大驼峰

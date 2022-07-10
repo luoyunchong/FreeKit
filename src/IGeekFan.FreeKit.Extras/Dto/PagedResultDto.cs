@@ -1,4 +1,5 @@
-﻿using FreeSql.Internal.Model;
+﻿using System.Collections.Generic;
+using FreeSql.Internal.Model;
 
 namespace IGeekFan.FreeKit.Extras.Dto;
 
@@ -17,6 +18,12 @@ public class PagedResultDto<T> : BasePagingInfo where T : class
         PageNumber = page.PageNumber;
         PageSize = page.PageSize;
         Count = page.Count;
+        Data = data;
+    }
+    
+    public PagedResultDto(IReadOnlyList<T> data, long count) : this(data)
+    {
+        Count = count;
         Data = data;
     }
 
