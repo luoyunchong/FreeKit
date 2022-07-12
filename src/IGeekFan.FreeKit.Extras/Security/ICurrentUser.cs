@@ -8,7 +8,7 @@ public interface ICurrentUser : ICurrentUser<string>
 {
 
 }
-public interface ICurrentUser<T> 
+public interface ICurrentUser<T> : ITransientDependency
 {
     /// <summary>
     /// 是否登录

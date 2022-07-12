@@ -3,14 +3,26 @@ using System.Reflection;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;
 
+/// <summary>
+///  批量注册:只需要继承接口ITransientDependency/IScopedDependency/ISingletonDependency，即可自动加入DI中
+/// </summary>
 public class FreeKitModule : Autofac.Module
 {
     private readonly Assembly[] _currentAssemblies;
 
+    /// <summary>
+    /// 根据程序集批量注册服务
+    /// </summary>
+    /// <param name="currentAssemblies">需要处理的程序集</param>
     public FreeKitModule(params Assembly[] currentAssemblies)
     {
         _currentAssemblies = currentAssemblies;
     }
+
+    /// <summary>
+    ///  根据Type批量注册其程序集下所有继承ITransientDependency/IScopedDependency/ISingletonDependency的类
+    /// </summary>
+    /// <param name="types"></param>
     public FreeKitModule(params Type[] types)
     {
         if (types != null && types.Length > 0)
@@ -18,7 +30,7 @@ public class FreeKitModule : Autofac.Module
             _currentAssemblies = new Assembly[types.Length];
             for (int i = 0; i < types.Length; i++)
             {
-                _currentAssemblies[i]=types[i].Assembly;
+                _currentAssemblies[i] = types[i].Assembly;
             }
         }
     }
@@ -26,7 +38,6 @@ public class FreeKitModule : Autofac.Module
     {
         //AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName == "IGeekFan.FreeKit.Extras").ToArray();
         //typeof(FreeKitModule).Assembly
-        //builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
         if (_currentAssemblies == null || _currentAssemblies.Length == 0)
         {
             return;
