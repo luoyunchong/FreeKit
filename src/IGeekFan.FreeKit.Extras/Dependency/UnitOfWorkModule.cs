@@ -35,13 +35,10 @@ public class UnitOfWorkModule : Autofac.Module
             typeof(UnitOfWorkInterceptor),
         };
 
-        string[] notIncludes = new string[]
-        {
-
-        };
+        bool Predicate(Type a) => !a.IsDefined(typeof(DisableConventionalRegistrationAttribute), true) && a.Name.EndsWith("Service") && !a.IsAbstract && !a.IsInterface && a.IsPublic;
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
-            .Where(a => a.Name.EndsWith("Service") && !notIncludes.Where(r => r == a.Name).Any() && !a.IsAbstract && !a.IsInterface && a.IsPublic)
+            .Where(Predicate)
             .AsImplementedInterfaces()
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入

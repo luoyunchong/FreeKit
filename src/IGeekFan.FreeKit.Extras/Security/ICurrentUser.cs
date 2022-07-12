@@ -1,6 +1,5 @@
 ﻿using System.Security.Claims;
 using IGeekFan.FreeKit.Extras.Dependency;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
