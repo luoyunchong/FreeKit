@@ -16,18 +16,18 @@ builder.Host
     .UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>((webBuilder, containerBuilder) =>
     {
-        //1.»ñÈ¡ËùÓÐµÄ³ÌÐò¼¯ºÏ£¬È»ºó¸ù¾ÝFullName£¬Ò»°ãÎªÏîÄ¿Ãû£¬¹ýÂË¾ßÌåµÄ³ÌÐò¼¯
+        //1.èŽ·å–æ‰€æœ‰çš„ç¨‹åºé›†åˆï¼Œç„¶åŽæ ¹æ®FullNameï¼Œä¸€èˆ¬ä¸ºé¡¹ç›®åï¼Œè¿‡æ»¤å…·ä½“çš„ç¨‹åºé›†
         Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName.Contains("IGeekFan.FreeKit.Extras") || r.FullName.Contains("Module1")).ToArray();
         containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
 
-        ////2.¸ù¾Ý³ÌÐò¼¯ÖÐµÄÄ³¸öÀà»ñÈ¡³ÌÐò¼¯
+        ////2.æ ¹æ®ç¨‹åºé›†ä¸­çš„æŸä¸ªç±»èŽ·å–ç¨‹åºé›†
         //Assembly[] currentAssemblies2 = new Assembly[] { typeof(FreeKitModule).Assembly, typeof(Module1.Module1Startup).Assembly };
         //containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies2));
 
-        ////3.Ö±½ÓÊ¹ÓÃparams Assembly[] µÄÌØÐÔ£¬Ö±½Ó×÷ÎªFreeKitModuleµÄ²ÎÊý
+        ////3.ç›´æŽ¥ä½¿ç”¨params Assembly[] çš„ç‰¹æ€§ï¼Œç›´æŽ¥ä½œä¸ºFreeKitModuleçš„å‚æ•°
         //containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule).Assembly, typeof(Module1.Module1Startup).Assembly));
 
-        ////4£¬Í¨¹ýparams Type[]£¬ÄÚ²¿½âÎöAssembly¡£
+        ////4ï¼Œé€šè¿‡params Type[]ï¼Œå†…éƒ¨è§£æžAssemblyã€‚
         //containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule), typeof(Module1.Module1Startup)));
 
     });
@@ -49,7 +49,7 @@ IFreeSql fsql = new FreeSql.FreeSqlBuilder()
     .UseConnectionString(FreeSql.DataType.Sqlite, builder.Configuration["ConnectionStrings:DefaultConnection"])
     .UseAutoSyncStructure(true)
     .UseMonitorCommand(
-        cmd => Trace.WriteLine("\r\nÏß³Ì" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
+        cmd => Trace.WriteLine("\r\nçº¿ç¨‹" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
   ).Build();
 builder.Services.AddSingleton(fsql);
 // Register a convention allowing to us to prefix routes to modules.

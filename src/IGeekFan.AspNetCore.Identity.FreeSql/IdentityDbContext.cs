@@ -54,6 +54,8 @@ public class IdentityDbContext<TUser, TRole, TKey> : IdentityDbContext<TUser, TR
     /// <summary>
     /// Initializes a new instance of the db context.
     /// </summary>
+    /// <param name="identityOptions">The options to be used by a <see cref="IdentityOptions"/>.</param>
+    /// <param name="fsql">The options to be used by a <see cref="IFreeSql"/>.</param>
     /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
     public IdentityDbContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(identityOptions, fsql, options) { }
 
@@ -87,6 +89,8 @@ public abstract class IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRol
     /// <summary>
     /// Initializes a new instance of the class.
     /// </summary>
+    /// <param name="identityOptions"></param>
+    /// <param name="fsql"></param>
     /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
     public IdentityDbContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(identityOptions, fsql, options) { }
 

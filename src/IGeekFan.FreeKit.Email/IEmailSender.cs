@@ -8,7 +8,13 @@ namespace IGeekFan.FreeKit.Email
     public interface IEmailSender : ITransientDependency
     {
         /// <summary>
-        /// Sends an email.
+        /// Send an Email.
+        /// </summary>
+        /// <param name="message"></param>
+        void Send(MimeMessage message);
+
+        /// <summary>
+        /// Sends an Email.
         /// </summary>
         /// <param name="message">Mail to be sent</param>
         /// <param name="cancellationToken"></param>

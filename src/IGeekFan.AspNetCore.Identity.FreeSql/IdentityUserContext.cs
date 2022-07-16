@@ -15,7 +15,9 @@ public class IdentityUserContext<TUser> : IdentityUserContext<TUser, string> whe
     /// <summary>
     /// Initializes a new instance of <see cref="IdentityUserContext{TUser}"/>.
     /// </summary>
-    /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
+    /// <param name="identityOptions">The options to be used by a <see cref="IdentityOptions"/></param>
+    /// <param name="fsql">The options to be used by a <see cref="IFreeSql"/></param>
+    /// <param name="options">The options to be used by a <see cref="DbContextOptions"/></param>
     public IdentityUserContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(identityOptions, fsql, options) { }
 
     /// <summary>
@@ -63,6 +65,8 @@ public abstract class IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, T
     /// <summary>
     /// Initializes a new instance of the class.
     /// </summary>
+    /// <param name="identityOptions"></param>
+    /// <param name="fsql"></param>
     /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
     public IdentityUserContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(fsql, options)
     {
