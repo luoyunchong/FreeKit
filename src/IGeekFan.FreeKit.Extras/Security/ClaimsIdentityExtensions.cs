@@ -1,4 +1,7 @@
-﻿using IGeekFan.FreeKit.Extras.Extensions;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using IGeekFan.FreeKit.Extras.Extensions;
 using System.Security.Claims;
 
 namespace IGeekFan.FreeKit.Extras.Security;
@@ -44,6 +47,5 @@ public static class ClaimsIdentityExtensions
         Claim? userNameOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name);
         return userNameOrNull?.Value;
     }
-
 }
 

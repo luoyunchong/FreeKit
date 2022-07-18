@@ -1,4 +1,7 @@
-﻿using System.Security.Claims;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 
 namespace IGeekFan.FreeKit.Extras.Security;
@@ -23,7 +26,7 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser
 
 
 /// <summary>
-/// 当前用户
+/// 当前用户上下文
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public abstract class CurrentUser<T> : ICurrentUser<T>
