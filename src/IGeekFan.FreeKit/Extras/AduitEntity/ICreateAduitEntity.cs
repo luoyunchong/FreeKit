@@ -4,17 +4,17 @@
 /// 参考<see cref="ICreateAduitEntity"/> 
 /// </summary>
 /// <typeparam name="T">用户表主键</typeparam>
-public interface ICreateAduitEntity<T> where T : struct
+public interface ICreateAduitEntity<T> where T : struct, IEquatable<T>
 {
     /// <summary>
     /// 创建者ID
     /// </summary>
-    T CreateUserId { get; set; }
+    T? CreateUserId { get; set; }
 
     /// <summary>
     /// 创建人
     /// </summary>
-    string CreateUserName { get; set; }
+    string? CreateUserName { get; set; }
 
 
     /// <summary>

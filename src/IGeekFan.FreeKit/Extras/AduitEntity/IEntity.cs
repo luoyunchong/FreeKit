@@ -1,5 +1,5 @@
 ﻿namespace IGeekFan.FreeKit.Extras.AduitEntity;
-public interface IEntity<T>
+public interface IEntity<T> where T : IEquatable<T>
 {
     /// <summary>
     /// 主键Id

@@ -3,11 +3,11 @@
 /// <summary>
 /// 
 /// </summary>
-/// <typeparam name="T">当前表主键类型</typeparam>
-/// <typeparam name="U">用户表id类型</typeparam>
-public interface IFullAduitEntity<T, U> : ICreateAduitEntity<U>, IUpdateAuditEntity<U>, IDeleteAduitEntity<U>
-    where T : struct
-    where U : struct
+/// <typeparam name="TKey">当前表主键类型</typeparam>
+/// <typeparam name="UKey">用户表id类型</typeparam>
+public interface IFullAduitEntity<TKey, UKey> : ICreateAduitEntity<UKey>, IUpdateAuditEntity<UKey>, IDeleteAduitEntity<UKey>
+    where TKey : IEquatable<TKey>
+    where UKey : struct, IEquatable<UKey>
 {
 
 }

@@ -4,7 +4,7 @@
 /// 参考<see cref="IDeleteAduitEntity"/> 
 /// </summary>
 /// <typeparam name="T">用户表主键</typeparam>
-public interface IDeleteAduitEntity<T> : ISoftDelete where T : struct
+public interface IDeleteAduitEntity<T> : ISoftDelete where T : struct, IEquatable<T>
 {
     /// <summary>
     /// 删除人id
@@ -14,7 +14,7 @@ public interface IDeleteAduitEntity<T> : ISoftDelete where T : struct
     /// <summary>
     /// 删除人
     /// </summary>
-    string DeleteUserName { get; set; }
+    string? DeleteUserName { get; set; }
 
     /// <summary>
     /// 删除时间

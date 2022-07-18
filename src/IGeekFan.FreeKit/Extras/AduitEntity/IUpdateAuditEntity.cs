@@ -4,7 +4,7 @@
 /// 参考<see cref="IUpdateAuditEntity"/> 
 /// </summary>
 /// <typeparam name="T">用户表主键</typeparam>
-public interface IUpdateAuditEntity<T> where T : struct
+public interface IUpdateAuditEntity<T> where T : struct, IEquatable<T>
 {
     /// <summary>
     /// 最后修改人Id

@@ -13,20 +13,20 @@ public class FullAduitEntity : FullAduitEntity<Guid, Guid>, IFullAduitEntity<Gui
 /// <typeparam name="T">当前主键类型</typeparam>
 /// <typeparam name="U">用户表主键类型</typeparam>
 public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAuditEntity<U>, IDeleteAduitEntity<U>
-    where T : struct
-    where U : struct
+    where T :  IEquatable<T>
+    where U : struct, IEquatable<U>
 {
     /// <summary>
     /// 创建者ID
     /// </summary>
     [Column(Position = -4)]
-    public U CreateUserId { get; set; }
+    public U? CreateUserId { get; set; }
 
     /// <summary>
     /// 创建人
     /// </summary>
     [Column(Position = -4)]
-    public string CreateUserName { get; set; }
+    public string? CreateUserName { get; set; }
 
     /// <summary>
     /// 创建时间
