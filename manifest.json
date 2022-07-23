@@ -1,0 +1,1617 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/FreeKit/FreeKit/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "V0RDedOPkx35NP5eNYZvlADTO8ExFRW7jdr2OOVJDMw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "uY7flZp9ZZrN68cLn+P/tNud0qcZb087bDvA1XaNrwk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/CamelCaseValueProviderFactory.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/CamelCaseValueProviderFactory.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/DefaultQueryValue.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/DefaultQueryValue.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "J8pv51CSqm7rA4zCGH1dOPzamQly04hvGFellFEAELE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeRedis.RedisXmlRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeRedis.RedisXmlRepository.html",
+          "hash": "mVIDfIZUxb3izJgxYqK2dzNaapIXgAxius79nvWHTnI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeRedis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeRedis.html",
+          "hash": "WMStf8PlwkbCy7F18FNRFPOKTI6DRudvI/g6wyRzg2M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeSql.DataProtectionKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeSql.DataProtectionKey.html",
+          "hash": "aYHUdoIboXwxmEBmwio1O7Vj0NFHQ28PzdUIFCg+8Ec="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeSql.FreeSqlXmlRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeSql.FreeSqlXmlRepository-1.html",
+          "hash": "6vxJ7xvBKoOS6bPXyLWVZbPR90KrWYpiQVW/J5UUltM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeSql.IDataProtectionKeyContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeSql.IDataProtectionKeyContext.html",
+          "hash": "g6cN0XuPRG50wqEyfsnZS8lHvFpEOFjgXcgdnQGQz6s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.DataProtection.FreeSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.DataProtection.FreeSql.html",
+          "hash": "rCuDFHFpbAlqgr8qXiGdNDUH6CAgfFTI3RIeMcT3jdM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.ISelectRoleStore-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.ISelectRoleStore-1.html",
+          "hash": "KlhO3WdEMTlfUCF3O+ufBr1ofMnUekl+9N++p1c/ROU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.html",
+          "hash": "Bze9AyBtMxEOvN0uYqKpR/tBxKdY74nO1FBVX1V0Axk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-1.html",
+          "hash": "8tuZZRThzUmNISUptwgCmBtr/59nFeV6co7VJoJlz8g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-3.html",
+          "hash": "HmQwEuVtvah+UvwE1Rps2M0JQUsEeFg2dkeSeAJkjlE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext-8.html",
+          "hash": "Vh7uEMEZekFltcpaHZwoQ7h85DUUuLEtUlzt7ekTqH0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityDbContext.html",
+          "hash": "5woYR2WXoPrOS810f0drfdQbotA+7qLQ1vQSZgARiF0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityFreeSqlBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityFreeSqlBuilderExtensions.html",
+          "hash": "9x4ARdfqs4fBLHAiR67njSvOLTP+TX1HRYO69CMvsQM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-1.html",
+          "hash": "UxS4Juw6QQWaJ49hsYcQTDzN0ooT4aR+rYlFAd82zvA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-2.html",
+          "hash": "TfKo8HkRVgOGm4g/c0TlsqGvjPZ+o+/1hUQUWhNuuhc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.IdentityUserContext-5.html",
+          "hash": "WZb4JhiJTWNjrpOWONQyibf72RtEWi783koyRIu0WNw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-1.html",
+          "hash": "9A1nfJpVfqkKtj2fNO5Pr4LOZQsT36vqfniMui0jwC4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-2.html",
+          "hash": "liz7gFtB1g9BNk0B5dqTRPDnmBo0LuCDd/dqAC3r7gc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-3.html",
+          "hash": "J0rQlY809UYaWYgrfSEbLi2uPqd+cVxHY0qEIrDvVO8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-5.html",
+          "hash": "CCSwYyfWMslTwy+xd5YVtRP9IAn2ILWFxsZCt3spcAc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-1.html",
+          "hash": "VK5UiSaA0Y6P0vitT4I9YZxFuL+gY3A440TUynZAPqs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-2.html",
+          "hash": "+53jN5NXx0qXln/f5PXNLFlgn7QgCKxuHD07psIKywU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-3.html",
+          "hash": "a9UVK5SArkm98/KEqJl9ku2QczljN7kDDm2gfffzH+k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-6.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserOnlyStore-6.html",
+          "hash": "UCVsK7Qon1kxvFE2enUe1le4a5fyVGvYKUQy/dOKxac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-1.html",
+          "hash": "0lzAHHZGOrMoDKKDcKjm+hw3Kp3nRcCMPhgU+ROBVkw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-3.html",
+          "hash": "n/yHQBRv8Fkv4WdWffo+vVC7Uc0Ku9WBr5FpYjkF2x0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-4.html",
+          "hash": "UqVUENIGSEIDsN8S8EwgkqXQy7U9NJ+eJmFnBQmNZh8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html",
+          "hash": "Ao/BYKKdJTQfUwiipBiDRBT569z95VqoUP3CH+ipUGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStore.html",
+          "hash": "g35Dwb6jbYlMXbUjudaxgSwKuxjUGVsvCF98HPJU/sw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html",
+          "hash": "olz2DZJUWuBMPs8qz1CztM73emCd4FAW+vHw/SsW2YM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html",
+          "hash": "xcOlcmzF/PTdAegybXIfD2zMbqHsBXV6+s2FIlGokMc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.AspNetCore.Identity.FreeSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.AspNetCore.Identity.FreeSql.html",
+          "hash": "uVWeE6ijrCnMH5EsVBejTQvjF8A4iOXVoS8E6ayCY9A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Email.EmailSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Email.EmailSender.html",
+          "hash": "80/ZBpujPmaZkviHQD6T/5Yee/tFrXo6STAY6tB8Qqw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Email.EmailSenderDependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Email.EmailSenderDependencyInjection.html",
+          "hash": "DQ0PuVIkFeSRytTYu5tgWE9/zSlaHCpvgebOp6Uj/GQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Email.IEmailSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Email.IEmailSender.html",
+          "hash": "h5NXsthB13JfJlBVnVQ/Jq6I4k46QyHqw9ZH7dzmHhM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Email.MailKitOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Email.MailKitOptions.html",
+          "hash": "YhuR7Oy6ZVRU43tzOr5u2EH2pwDXVTkW90UQmPYnx6Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Email.html",
+          "hash": "I9TbZ5M6YF6ZpQ5vLipgIta8BKHmbB8IntMwT30ioDk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.CreateAduitEntity-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.CreateAduitEntity-2.html",
+          "hash": "f4CDJCmqkzDLH6ADintZoyKDtw9F2jmSBK4EVK5ij6s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.CreateAduitEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.CreateAduitEntity.html",
+          "hash": "+z2+ILkUu51sYdn4LaLIK5HIHKZ+PKN8BxXvJAhTY9g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.Entity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.Entity-1.html",
+          "hash": "r0hFbSGHaYh6lPicJrXgOmzF3zGYuBuWh99CvLexsXs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.Entity.html",
+          "hash": "f9DIqFH6LamVLetdquW4iHGUYS4jvekvioWu5q/ntTA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.EntityDto-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.EntityDto-1.html",
+          "hash": "a7/SPi9RnJEsCIo8r9KwJ+uKoNuh3awXCHMKtdjZdW0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.EntityDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.EntityDto.html",
+          "hash": "8Z2a7ZPbi9GBi+B9fcHXiBrrB6x/FT73waj5HwOJ2kM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.FullAduitEntity-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.FullAduitEntity-2.html",
+          "hash": "HZAhDcqZ8O/k46jrsCfYNkxdayCNYRW9tM1AUgm8qYw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.FullAduitEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.FullAduitEntity.html",
+          "hash": "FOefmH+of7TwWcWUnAPlk5MWCSS5sGvDIIIyb4kuXF0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.ICreateAduitEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.ICreateAduitEntity-1.html",
+          "hash": "AVeQqIaybuDxbqcnBq8vS7NYxaiviB3qdYBHzeYqZ7Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.ICreateAduitEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.ICreateAduitEntity.html",
+          "hash": "eLvUWoNWZcBTNt6xUGeR/Sr60tGLec3iL6f4wj3U6T4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IDeleteAduitEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IDeleteAduitEntity-1.html",
+          "hash": "CKGPwWWKWiETc55ui/aIs83jQdfAcDjrBNeLi5/i1PM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IDeleteAduitEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IDeleteAduitEntity.html",
+          "hash": "AGTxw6+gQp9+cZ2QPHDrLg31T3C6xyHExkOQVETjORc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IEntity-1.html",
+          "hash": "GRxr/FP331Nvl7DcUfV8bjaUKVzwQmcxajkqBEtIWOs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IEntity.html",
+          "hash": "O8NV6FgWHsNFbJ7RKnP1W2pzG1RlVbtK0HOskWk8trc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IEntityDto-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IEntityDto-1.html",
+          "hash": "LDeMDwycBjWedM4Flt/wTlhcLOTWUedOYCFqSaIhRn4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IEntityDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IEntityDto.html",
+          "hash": "8FcHJskYcO77sgg6uNExsksEbnVShXWyrF6zs7e4Hyc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IFullAduitEntity-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IFullAduitEntity-2.html",
+          "hash": "j3j7BbtjtYAkIv82LyShYx5FFIjWBn4ls9XpOq4PMW4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.ISoftDelete.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.ISoftDelete.html",
+          "hash": "CvS72uUa5qXUX3fuOqPPlbr5LxHp3AXB6OxSuOFyo8I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IUpdateAuditEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IUpdateAuditEntity-1.html",
+          "hash": "lnFKvMZoQx80VV5/OTVi4IuRMXUM63J2sRBZoPi+mwA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.IUpdateAuditEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.IUpdateAuditEntity.html",
+          "hash": "Swvhq6HFzqXIWrlkJcb3Jw0uGTQ5kmluVM/srv77GYg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.AduitEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.AduitEntity.html",
+          "hash": "+yIj96OSnf12xzpUtCrFGN6NUX/5OTQ7KOA1C+pJ5ug="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseApiDescriptionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseApiDescriptionProvider.html",
+          "hash": "lyKqMs3zIbodyU2FONVdw0Zt4UVmxleQupEwlicxSm4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseQueryValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseQueryValueProvider.html",
+          "hash": "gZjAzw4Gku14cQbig7HQb/J2UNT684Ob/fl1ppBSngw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseValueProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.CamelCaseValueProviderFactory.html",
+          "hash": "5mv9Z+ixpqNDGwXBPBxsoV27ggPt2GvwCRZ0bSQI3gs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.LowerApiDescriptionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.LowerApiDescriptionProvider.html",
+          "hash": "DWt0cYa5zbcw+d7bHolUlHfUzdd1EEiJjXv+NHocVbU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.LowerCaseQueryValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.LowerCaseQueryValueProvider.html",
+          "hash": "W5EimrtfzYg4lAHbSoCgAKSOxTLvovBxwJ+k/0VImyQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.LowerCaseValueProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.LowerCaseValueProviderFactory.html",
+          "hash": "NPsaBjk0v5F43XhPhMrL6xSbcOElSHtXins9aVrpsyI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.SnakeApiDescriptionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.SnakeApiDescriptionProvider.html",
+          "hash": "CBhdd4fAAqMyzGZu4MHJIBzxlvnq/l5EvuLbxnRK8jc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.SnakeCaseQueryValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.SnakeCaseQueryValueProvider.html",
+          "hash": "XoXuaeCe3mkaQCmtRgNnsgP7XYesK8WUN6B67I9eDmg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.SnakeCaseValueProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.SnakeCaseValueProviderFactory.html",
+          "hash": "yDOTbTKF9WboTUh0Vs7hjGY8gXe5JuTCnj8FV6/fh/4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.CaseQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.CaseQuery.html",
+          "hash": "NZtXL53Au4FgF8orWsshOf1NjzuycJr8gAkN3Z8Ui+Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.DisableConventionalRegistrationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.DisableConventionalRegistrationAttribute.html",
+          "hash": "48mHURxGTnCFdMS7UrP2basVK/IWTrFMR3zPLpCAmCU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.FreeKitModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.FreeKitModule.html",
+          "hash": "icx2RY7Dkz9pj0smiRqjy0RKgmvnaZ894L51fWUdpaw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.IScopedDependency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.IScopedDependency.html",
+          "hash": "t2TBoZoXtdelHk1Mj+eghe50L1VAXUbi+OgnDrx6h0I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.ISingletonDependency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.ISingletonDependency.html",
+          "hash": "QKtXdZWSr3x8EiMk3hF6ri/wc+TF7NAnfgRL/yVCkeg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.ITransientDependency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.ITransientDependency.html",
+          "hash": "ohEXygPUMYuXS0hp2yIlpVYvTcHQ77pxMuOIdxPBB9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.UnitOfWorkModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.UnitOfWorkModule.html",
+          "hash": "x82cfAmz2SjTV3e7z+lFPEbhVxPF0jZptfvyRqkUnuQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dependency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dependency.html",
+          "hash": "6ZHUv4DVtfmnPIdP1AF3MquwoMA0YnEIoa96+ain3jw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dto.PagedResultDto-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dto.PagedResultDto-1.html",
+          "hash": "rb29iXHPPMNPD5/z5X70wHe+y/ohTF0VdnBZsDwCeyA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Dto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Dto.html",
+          "hash": "6hiE7bXMPAaqAySeIO+1v0X7AlMvDfxC6OJWIc2AVws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Extensions.DateTimeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Extensions.DateTimeExtensions.html",
+          "hash": "+alxiTnfsmi+3/Y41n/QM/PpMdRiCON3bPKwXyb22vA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Extensions.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Extensions.StringExtensions.html",
+          "hash": "ELt7CAyU+4We5z7FxoMLrjPaTa4wa78Kp4mjnf9R5Vc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Extensions.html",
+          "hash": "QHdXKU6gj5fuh4UmEjcq+heb+10kA9YirpswqwSrfPs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.BaseRepository-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.BaseRepository-3.html",
+          "hash": "sqOWVX77dBtOVmxV3LmPCHY/F1/qnsGcreMxGniRh8s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.DefaultRepository-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.DefaultRepository-3.html",
+          "hash": "i1HEGNIkBYjBf6prO8zA7U579gg6d/Me2yc8kYtEXG8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.FreeSqlExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.FreeSqlExtension.html",
+          "hash": "UxVSsTdE+Ewdh9MoTmYtkf7OfZvA5WUSXpE7oU89eR4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.IBaseRepository-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.IBaseRepository-3.html",
+          "hash": "qKuD2rE4h17FHh0SLOh2Eadaic/PYSganS2KG5KBDxk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.ISelectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.ISelectExtensions.html",
+          "hash": "cm0ULw4kGmwimngmhdfjVqRj5zLvQ2fpJmj8ueudPXc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.ReflexHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.ReflexHelper.html",
+          "hash": "1gBjlBQxjvvOMHU9PMfRyT1CRQnzLjUdU5XQgTF3v/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.RepositoryDependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.RepositoryDependencyInjection.html",
+          "hash": "aaLvsCw15m5nUh4AGerT8KbJgX6+FkeqRhzv3iv8Ic8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.TransactionalAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.TransactionalAttribute.html",
+          "hash": "2ekWDt0uUTV8EypaUZBhjif3pvbX9KA+H5v4x1eFaBI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkAsyncInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkAsyncInterceptor.html",
+          "hash": "NDsGLOzTm7o4I3yYbaaN4Zccu9f7k+UFf27ZvEsClgM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkInterceptor.html",
+          "hash": "M4PLklE9P6RsqllQZvMiLLOzkGi4YbziDyiBlCCNOCg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.FreeSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.FreeSql.html",
+          "hash": "0pa4Kt2TVaNXS/G2V8ZhJddGLlkVL1NCgLFeomOylCQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.ClaimsIdentityExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.ClaimsIdentityExtensions.html",
+          "hash": "Z8hFWxQVee4/3XLuYAy8lIPVkuldlOkpOPYnmqDsFUk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.CurrentUser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.CurrentUser-1.html",
+          "hash": "uH3QnW1Bm8D/+VlvR/KnCudhcPhY44d11OkdV5umr+s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.CurrentUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.CurrentUser.html",
+          "hash": "K6FeTLlvAkq1SQlSw1+5SAa17/3IhruZcf9PtivD0QM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessor.html",
+          "hash": "D9pclEDAZzXOg4mwnHTzh9DY+6uCiIBVXEtigLy4HEc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessorExtensions.html",
+          "hash": "Mtoyb2tNKAb0nGMadMs5ym4tpVEDK2fLBd9kcb9fTIE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessorMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.CurrentUserAccessorMiddleware.html",
+          "hash": "dRmFDwfdE9zsD8pqB+1QdOeZxlgAVVkiS2GnvAfjXzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.ICurrentUser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.ICurrentUser-1.html",
+          "hash": "tzjeGHwn+xXtOSBFuuLnmeMroCilqw7C88sxdejLAIc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.ICurrentUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.ICurrentUser.html",
+          "hash": "bbN/ebSjk+THjhtzMsiQ0At7kCfh89QB/0VZAKhS6RM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.ICurrentUserAccessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.ICurrentUserAccessor.html",
+          "hash": "ZPU6QmQYIw5WjlRQxxLsH7U9Xg24D5sRoQ5UL7uXn2E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.ICurrentUserExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.ICurrentUserExtensions.html",
+          "hash": "6U7gUW27e/spogmCfHQnvdD1pbuo/vgVsEcPwjmbl/g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.Tokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.Tokens.html",
+          "hash": "9RYoNgkJDvGROlJaNGU6rUSTCgCrqO6dnfaGcmwJnRk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Extras.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Extras.Security.html",
+          "hash": "vCr9ZKAEQrIWsVexKpzKMLptyL8+qCIIbqZ00cqqlI8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.IModuleStartup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.IModuleStartup.html",
+          "hash": "jDHJTSnwDt+QBa0yItWCk2I9FqaUO/uUDKP2jkn/x7A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.ModuleInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.ModuleInfo.html",
+          "hash": "+sBg4jU1xapINAT+FhN52jakhGj1BnMxSg9frnYXd1Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.ModuleRoutingConvention.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.ModuleRoutingConvention.html",
+          "hash": "9Vp9L0oOaVswNkUWqqE2XJ7K/3gnyC472OM8pd6jRHM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.ModuleRoutingMvcOptionsPostConfigure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.ModuleRoutingMvcOptionsPostConfigure.html",
+          "hash": "vfEc2nqo+yS+At8X2/XsaJSOQos9kQfDh6nesFs2S8s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.ModuleServiceCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.ModuleServiceCollection.html",
+          "hash": "nNGT5xERpbjid3NNHhi1CQ1Rg2mgvrgAD0se7UG1AqI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.FreeKit.Modularity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.FreeKit.Modularity.html",
+          "hash": "YOO2qRl6HMphR7oaDqzphRF5wRV4RPUzTNFkJ80k+a4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizer-1.html",
+          "hash": "rB+/NqULRvvht0eE5a9OqnT9mgWSSZZqRdSc4VD0TSs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizer.html",
+          "hash": "9Zg7KcfgfVNRdbtgCab9b0TT7a90tm9fMc1GNMJ0QRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizerFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.FreeSqlStringLocalizerFactory.html",
+          "hash": "i3fRfMI0FblD0wvv7JlGHjlp8VkdMN2h7Gfi6A+38OQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.Models.LocalCulture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.Models.LocalCulture.html",
+          "hash": "a7F0U/FbCJ5u7cantkG6CCmbLh1neHAKu2M8kT0j6VY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.Models.LocalResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.Models.LocalResource.html",
+          "hash": "xRDYv8pryLl2wDsrqlM/+UUN3+glYDoxUSxGM414raY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.Models.html",
+          "hash": "XK8n9dYllWfW8t2RY/lHpT+rWfo86v3JFA//Qh5BWZ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/IGeekFan.Localization.FreeSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IGeekFan.Localization.FreeSql.html",
+          "hash": "cKPQEqlg6jhbpbw/a9ko9Z90WqqRoW1L4nNqg61gEVc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/Microsoft.AspNetCore.DataProtection.FreeRedisDataProtectionBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.DataProtection.FreeRedisDataProtectionBuilderExtensions.html",
+          "hash": "jH4ZbVy89sG5QX8U+hn9t5RVFxeZfa0ioM0sDIH2oAM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/Microsoft.AspNetCore.DataProtection.FreeSqlDataProtectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.DataProtection.FreeSqlDataProtectionExtensions.html",
+          "hash": "6G6hc77QGaEtA+mSeuih10TE8OoWsqcXVq2vehlYSus="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/Microsoft.AspNetCore.DataProtection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.DataProtection.html",
+          "hash": "ZQopiZUn9Q8ykTheKWvSYAxKN49THT2zBk6+XP142MA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/Microsoft.Extensions.DependencyInjection.FreeSqlHealthChecksBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.FreeSqlHealthChecksBuilderExtensions.html",
+          "hash": "k+F/2uOA9vmRp31m5zmBq85+8pwhlI80DMmVVN5XbKk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/docfxapi/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
+          "hash": "0KnsJE0D9UxfJoJ4U4Ucx8fGS4kT+nqoYK0tiRbB+fI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/temp/docfxapi/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "V65Yk2pwEROFB5vNoKXQslQUNHVYf2+ZCH98dDTrozk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "XdNKYnKGXbsv2qhHGrhZgX1gu2D4eYCJzS6GGewlMVY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 121,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
