@@ -1,19 +1,25 @@
-# IGeekFan.FreeKit.Email
+# Email 邮件
+
+## IGeekFan.FreeKit.Email
 
 该包是一个独立的开发包，内部由MailKit实现发送邮件。
 
 1. 安装包
+
 ```bash
 dotnet add package IGeekFan.FreeKit.Email
 ```
 
 1).通过配置文件配置Email服务
+
 - ConfigureServices方法
+
 ```csharp
     services.AddEmailSender(configuration);
 ```
 
 - appsettings.json
+
 ```json
   "MailKitOptions":{
     "Host": "smtp.163.com",
@@ -24,7 +30,9 @@ dotnet add package IGeekFan.FreeKit.Email
     "Domain": ""
   },
 ```
+
 2).通过回调函数配置
+
 ```csharp
     services.AddEmailSender(r =>
     {
@@ -38,6 +46,7 @@ dotnet add package IGeekFan.FreeKit.Email
 ```
 
 - 业务逻辑
+
 ```csharp
     public interface IAccountService
     {
@@ -77,7 +86,9 @@ dotnet add package IGeekFan.FreeKit.Email
         }
     }
 ```
+
 简单的实体，在发送之前应验证必填项、密码强度和邮件格式等
+
 ```csharp
     public class RegisterDto 
     {
