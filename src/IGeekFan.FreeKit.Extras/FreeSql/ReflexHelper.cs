@@ -21,13 +21,8 @@ public class ReflexHelper
         {
             foreach (Attribute attribute in itemType.GetCustomAttributes())
             {
-                if (attribute is TableAttribute tableAttribute)
-                {
-                    if (tableAttribute.DisableSyncStructure == false)
-                    {
-                        tableAssembies.Add(itemType);
-                    }
-                }
+                if (attribute is not TableAttribute { DisableSyncStructure: false }) continue;
+                tableAssembies.Add(itemType);
             }
         };
         return tableAssembies.ToArray();
@@ -47,7 +42,7 @@ public class ReflexHelper
         {
             foreach (var fullname in entitiesFullName)
             {
-                if (type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
+                if (type.FullName != null && type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
                 {
                     tableAssembies.Add(type);
                 }

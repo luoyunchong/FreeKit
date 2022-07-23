@@ -1,31 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Module1;
+using Module1.Services;
 
 [Route("[module]/[controller]")]
 public class TestController : Controller
 {
-    ILogger<TestController> logger;
-    private readonly ITestService testService;
+    private readonly ILogger<TestController> _logger;
+    private readonly ITestService _testService;
 
     public TestController(ILogger<TestController> logger, ITestService testService)
     {
-        this.logger = logger;
-        this.testService = testService;
+        this._logger = logger;
+        this._testService = testService;
     }
 
     [HttpGet("ExecuteConnectTest")]
     public ActionResult<bool> ExecuteConnectTest()
     {
-        logger.LogInformation("ojbbjbj");
-        return testService.ExecuteConnectTest();
+        _logger.LogInformation("ExecuteConnectTest");
+        return _testService.ExecuteConnectTest();
     }
 
     [HttpGet]
     public ActionResult<string> Index()
     {
-        logger.LogInformation("ojbbjbj");
-        return "Hello World from TestController in Module 1";
+        _logger.LogInformation("Index");
+        return "Hello World from TestController in Module 1 Index";
     }
 
     /// <summary>
@@ -35,6 +35,6 @@ public class TestController : Controller
     [HttpGet("InterModule")]
     public ActionResult<string> InterModule()
     {
-        return $"{0} in TestController in Module 1";
+        return $"{0} in TestController in Module 1 InterModule";
     }
 }

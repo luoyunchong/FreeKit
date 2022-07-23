@@ -1,4 +1,7 @@
-﻿using Castle.DynamicProxy;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Castle.DynamicProxy;
 using FreeSql;
 using Microsoft.Extensions.Logging;
 
@@ -18,8 +21,6 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
     private bool TryBegin(IInvocation invocation)
     {
-        //_unitOfWork = _unitOfWorkManager.Begin(Propagation.Requierd);
-        //return true;
         var method = invocation.MethodInvocationTarget ?? invocation.Method;
         var attribute = method.GetCustomAttributes(typeof(TransactionalAttribute), false).FirstOrDefault();
         if (attribute is TransactionalAttribute transaction)
@@ -27,7 +28,6 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation, transaction.IsolationLevel);
             return true;
         }
-
         return false;
     }
 
@@ -43,13 +43,13 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             try
             {
                 invocation.Proceed();
-                _logger.LogInformation($"----- 拦截同步执行的方法-事务 {hashCode} 提交前----- ");
+                _logger.LogInformation("----- 拦截同步执行的方法-事务 {HashCode} 提交前----- ", hashCode);
                 _unitOfWork.Commit();
-                _logger.LogInformation($"----- 拦截同步执行的方法-事务 {hashCode} 提交成功----- ");
+                _logger.LogInformation("----- 拦截同步执行的方法-事务 {HashCode} 提交成功----- ", hashCode);
             }
             catch
             {
-                _logger.LogError($"----- 拦截同步执行的方法-事务 {hashCode} 提交失败----- ");
+                _logger.LogError("----- 拦截同步执行的方法-事务 {HashCode} 提交失败----- ", hashCode);
                 _unitOfWork.Rollback();
                 throw;
             }
@@ -87,23 +87,23 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
         using (_logger.BeginScope("_unitOfWork:{hashCode}", hashCode))
         {
-            _logger.LogInformation($"----- async Task 开始事务{hashCode} {methodName}----- ");
+            _logger.LogInformation("----- async Task 开始事务{HashCode} {MethodName}----- ", hashCode, methodName);
 
-            invocation.Proceed();
             try
             {
+                invocation.Proceed();
                 //处理Task返回一个null值的情况会导致空指针
                 if (invocation.ReturnValue != null)
                 {
                     await (Task)invocation.ReturnValue;
                 }
                 _unitOfWork.Commit();
-                _logger.LogInformation($"----- async Task 事务 {hashCode} Commit----- ");
+                _logger.LogInformation("----- async Task 事务 {HashCode} Commit----- ", hashCode);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 _unitOfWork.Rollback();
-                _logger.LogError($"----- async Task 事务 {hashCode} Rollback----- ");
+                _logger.LogError("----- async Task 事务 {HashCode} Rollback----- ", hashCode);
                 throw;
             }
             finally
@@ -131,19 +131,19 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         {
             string methodName = $"{invocation.MethodInvocationTarget.DeclaringType?.FullName}.{invocation.Method.Name}()";
             int hashCode = _unitOfWork.GetHashCode();
-            _logger.LogInformation($"----- async Task<TResult> 开始事务{hashCode} {methodName}----- ");
-
+            _logger.LogInformation("----- async Task<TResult> 开始事务{HashCode} {MethodName}----- ", hashCode, methodName);
             try
             {
                 invocation.Proceed();
-                result = await (Task<TResult>)invocation.ReturnValue;
+                Task<TResult> task = (Task<TResult>)invocation.ReturnValue;
+                result = await task;
                 _unitOfWork.Commit();
-                _logger.LogInformation($"----- async Task<TResult> Commit事务{hashCode}----- ");
+                _logger.LogInformation("----- async Task<TResult> Commit事务{HashCode}----- ", hashCode);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 _unitOfWork.Rollback();
-                _logger.LogError($"----- async Task<TResult> Rollback事务{hashCode}----- ");
+                _logger.LogError("----- async Task<TResult> Rollback事务{HashCode}----- ", hashCode);
                 throw;
             }
             finally
@@ -154,7 +154,8 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         else
         {
             invocation.Proceed();
-            result = await (Task<TResult>)invocation.ReturnValue;
+            Task<TResult> task = (Task<TResult>)invocation.ReturnValue;
+            result = await task;
         }
         return result;
     }

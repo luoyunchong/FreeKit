@@ -1,35 +1,34 @@
-﻿namespace IGeekFan.FreeKit.Email
+﻿namespace IGeekFan.FreeKit.Email;
+
+/// <summary>
+///  邮件配置项
+/// </summary>
+public class MailKitOptions
 {
-    public class MailKitOptions
-    {
+    /// <summary>
+    /// SMTP Host Server address
+    /// </summary>
+    public string Host { get; set; }
 
-        /// <summary>
-        /// SMTP Host Server address
-        /// </summary>
-        public string Host { get; set; }
+    /// <summary>
+    /// SMTP Host Server Port ,default is 25
+    /// </summary>
+    public int Port { get; set; } = 25;
 
-        /// <summary>
-        /// SMTP Host Server Port ,default is 25
-        /// </summary>
-        public int Port { get; set; } = 25;
+    public bool EnableSsl { get; set; } = false;
 
-        public bool EnableSsl { get; set; } = false;
+    /// <summary>
+    /// send user name
+    /// </summary>
+    public string UserName { get; set; }
 
-        /// <summary>
-        /// send user name
-        /// </summary>
-        public string UserName { get; set; }
+    /// <summary>
+    /// send user password
+    /// </summary>
+    public string Password { get; set; }
 
-        /// <summary>
-        /// send user password
-        /// </summary>
-        public string Password { get; set; }
-
-        /// <summary>
-        /// Domain name to login to SMTP server.
-        /// </summary>
-        public string Domain { get; set; }
-
-
-    }
+    /// <summary>
+    /// Domain name to login to SMTP server.
+    /// </summary>
+    public string Domain { get; set; }
 }

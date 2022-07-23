@@ -3,7 +3,7 @@ using IGeekFan.FreeKit.Extras.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace IGeekFan.FreeKit.Extras.SnakeCaseQuery;
+namespace IGeekFan.FreeKit.Extras.CaseQuery;
 
 /// <summary>
 /// 下划线写法（SnakeCase）

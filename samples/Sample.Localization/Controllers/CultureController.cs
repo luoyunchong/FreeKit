@@ -10,20 +10,20 @@ namespace Sample.Localization.Controllers
     public class CultureController : Controller
     {
         private readonly ILogger<CultureController> _logger;
-        private readonly IFreeSql freeSql;
-        private readonly IStringLocalizer stringLocalizer;
+        private readonly IFreeSql _freeSql;
+        private readonly IStringLocalizer _stringLocalizer;
 
         public CultureController(ILogger<CultureController> logger, IFreeSql freeSql, IStringLocalizerFactory localizerFactory)
         {
             _logger = logger;
-            this.freeSql = freeSql;
-            this.stringLocalizer = localizerFactory.Create(null);
+            this._freeSql = freeSql;
+            this._stringLocalizer = localizerFactory.Create(null);
         }
 
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return stringLocalizer["Request Localization"] + id;
+            return _stringLocalizer["Request Localization"] + id;
         }
 
         [HttpGet("GetProvider")]
@@ -41,7 +41,7 @@ namespace Sample.Localization.Controllers
             var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
             var requestCulture = requestCultureFeature.RequestCulture;
 
-            ViewBag.SR = stringLocalizer;
+            ViewBag.SR = _stringLocalizer;
             ViewBag.requestCultureFeature = requestCultureFeature;
             ViewBag.requestCulture = requestCulture;
 

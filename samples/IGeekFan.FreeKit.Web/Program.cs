@@ -1,7 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using IGeekFan.FreeKit.Extras.Dependency;
-using IGeekFan.FreeKit.Extras.SnakeCaseQuery;
 using IGeekFan.FreeKit.Modularity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -9,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
 using System.Reflection;
+using IGeekFan.FreeKit.Extras.CaseQuery;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +17,9 @@ builder.Host
     .ConfigureContainer<ContainerBuilder>((webBuilder, containerBuilder) =>
     {
         //1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
-        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName.Contains("IGeekFan.FreeKit.Extras") || r.FullName.Contains("Module1")).ToArray();
+        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => 
+            r.FullName.Contains("IGeekFan.FreeKit.Extras") 
+            || r.FullName.Contains("Module1")).ToArray();
         containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
 
         ////2.根据程序集中的某个类获取程序集

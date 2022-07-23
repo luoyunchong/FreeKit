@@ -368,3 +368,5 @@ nupkg/nuget-api-key.txt
 nupkg/baget-api-key.txt
 nupkg/nuget-api-key-delete.txt
 nupkg/github-api-key.txt
+/src/IGeekFan.Extensions.Caching.FreeRedis
+/.idea/.idea.FreeKit/.idea

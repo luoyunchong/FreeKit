@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace IGeekFan.FreeKit.Extras.SnakeCaseQuery;
+namespace IGeekFan.FreeKit.Extras.CaseQuery;
 
 public class SnakeCaseValueProviderFactory : IValueProviderFactory
 {

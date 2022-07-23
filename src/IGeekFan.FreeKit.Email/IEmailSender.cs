@@ -1,11 +1,10 @@
-﻿using IGeekFan.FreeKit.Extras.Dependency;
-using MimeKit;
+﻿using MimeKit;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace IGeekFan.FreeKit.Email
 {
-    public interface IEmailSender : ITransientDependency
+    public interface IEmailSender 
     {
         /// <summary>
         /// Send an Email.

@@ -1,4 +1,4 @@
-﻿namespace Module1
+﻿namespace Module1.Services
 {
     public class TestService : ITestService
     {
@@ -7,7 +7,6 @@
         {
             _fsql = fsql;
         }
-
         public bool ExecuteConnectTest()
         {
             return _fsql.Ado.ExecuteConnectTest();

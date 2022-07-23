@@ -13,29 +13,29 @@ namespace Sample.Localization
             {
                 e.HasData(new List<LocalCulture>()
                     {
-                        new LocalCulture("en-US","en-US") ,
-                        new LocalCulture("ja-JP","ja-JP")
+                        new("en-US","en-US") ,
+                        new("ja-JP","ja-JP")
                         {
                             Resources=new List<LocalResource>()
                             {
-                                new LocalResource("Hello","こんにちは"),
-                                new LocalResource("Request Localization Sample","リクエストローカライズ"),
+                                new("Hello","こんにちは"),
+                                new("Request Localization Sample","リクエストローカライズ"),
                             }
                         },
-                        new LocalCulture("fr-FR","fr-FR")
+                        new("fr-FR","fr-FR")
                         {
                             Resources=new List<LocalResource>()
                             {
-                                new LocalResource("Hello","Bonjour"),
-                                new LocalResource("Request Localization Sample","Demander un échantillon localisé"),
+                                new("Hello","Bonjour"),
+                                new("Request Localization Sample","Demander un échantillon localisé"),
                             }
                         },
-                        new LocalCulture("zh-CN","中文")
+                        new("zh-CN","中文")
                         {
                             Resources=new List<LocalResource>()
                             {
-                                new LocalResource("Hello","你好"),
-                                new LocalResource("Request Localization Sample","请求资源示例"),
+                                new("Hello","你好"),
+                                new("Request Localization Sample","请求资源示例"),
                             }
                         }
                     });

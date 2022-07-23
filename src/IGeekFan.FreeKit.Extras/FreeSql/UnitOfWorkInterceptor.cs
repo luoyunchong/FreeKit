@@ -1,18 +1,21 @@
-﻿using Castle.DynamicProxy;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Castle.DynamicProxy;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
 public class UnitOfWorkInterceptor : IInterceptor
 {
-    private readonly UnitOfWorkAsyncInterceptor asyncInterceptor;
+    private readonly UnitOfWorkAsyncInterceptor _asyncInterceptor;
 
     public UnitOfWorkInterceptor(UnitOfWorkAsyncInterceptor interceptor)
     {
-        asyncInterceptor = interceptor;
+        _asyncInterceptor = interceptor;
     }
 
     public void Intercept(IInvocation invocation)
     {
-        asyncInterceptor.ToInterceptor().Intercept(invocation);
+        _asyncInterceptor.ToInterceptor().Intercept(invocation);
     }
 }

@@ -3,11 +3,11 @@
 [Route("[module]/[controller]")]
 public class TestController : Controller
 {
-    private readonly IFreeSql fsql;
+    private readonly IFreeSql _fsql;
 
     public TestController(IFreeSql fsql)
     {
-        this.fsql = fsql;
+        this._fsql = fsql;
     }
 
     [HttpGet]

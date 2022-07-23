@@ -1,4 +1,7 @@
-﻿using Autofac;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Autofac;
 using System.Reflection;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;
