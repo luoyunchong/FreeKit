@@ -199,7 +199,7 @@ containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule), typeof(
 
 #### 实体审计类
 
-- FullAduitEntity
+- FullAuditEntity
 
 #### CaseQuery 支持Get请求参数key，大小驼峰转换
 `HttpGet`请求时，参数的key和实体相同，比如创建如下类。

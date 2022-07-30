@@ -1,15 +1,14 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Xunit;
 
-namespace Microsoft.AspNetCore.Identity.Test;
+namespace IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests;
 
 /// <summary>
 /// Common functionality tests that all verifies user manager functionality regardless of store implementation

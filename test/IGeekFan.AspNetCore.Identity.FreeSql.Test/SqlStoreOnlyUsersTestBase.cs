@@ -10,6 +10,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using FreeSql.DataAnnotations;
+using IdentityResultAssert = IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests.IdentityResultAssert;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test;
 
@@ -22,7 +23,7 @@ public class SqlStoreOnlyUserTest : SqlStoreOnlyUsersTestBase<AppUser, Guid>
 {
 }
 
-public abstract class SqlStoreOnlyUsersTestBase<TUser, TKey> : UserManagerSpecificationTestBase<TUser, TKey>
+public abstract class SqlStoreOnlyUsersTestBase<TUser, TKey> : Specification.Tests.UserManagerSpecificationTestBase<TUser, TKey>
     where TUser : IdentityUser<TKey>, new()
     where TKey : IEquatable<TKey>
 {

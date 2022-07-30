@@ -4,8 +4,7 @@ using MimeKit;
 using Xunit;
 using Xunit.Abstractions;
 
-
-namespace LinCms.Test.Core
+namespace IGeekFan.FreeKit.xUnit.Email
 {
     public class EmailSenderTest 
     {

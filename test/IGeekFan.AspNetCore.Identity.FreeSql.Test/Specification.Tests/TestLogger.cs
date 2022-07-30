@@ -3,7 +3,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace Microsoft.AspNetCore.Identity.Test;
+namespace IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests;
 
 /// <summary>
 /// test logger.

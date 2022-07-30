@@ -3,7 +3,7 @@
 
 using FreeSql.DataAnnotations;
 
-namespace IGeekFan.FreeKit.Extras.AduitEntity;
+namespace IGeekFan.FreeKit.Extras.AuditEntity;
 
 public abstract class Entity : Entity<Guid>
 {
@@ -36,7 +36,7 @@ public abstract class Entity<T> : IEntity<T> where T : IEquatable<T>
 /// </summary>
 /// <typeparam name="TKey">主键类型</typeparam>
 /// <typeparam name="TUKey">用户表类型</typeparam>
-public class CreateAduitEntity<TKey, TUKey> : Entity<TKey>, ICreateAduitEntity<TUKey>
+public class CreateAuditEntity<TKey, TUKey> : Entity<TKey>, ICreateAuditEntity<TUKey>
     where TKey : IEquatable<TKey>
     where TUKey : struct, IEquatable<TUKey>
 {
@@ -57,7 +57,7 @@ public class CreateAduitEntity<TKey, TUKey> : Entity<TKey>, ICreateAduitEntity<T
     public DateTime CreateTime { get; set; }
 }
 
-public class CreateAduitEntity : CreateAduitEntity<Guid, Guid>, ICreateAduitEntity
+public class CreateAuditEntity : CreateAuditEntity<Guid, Guid>, ICreateAuditEntity
 {
 
 }

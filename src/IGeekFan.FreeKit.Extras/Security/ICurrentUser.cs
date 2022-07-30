@@ -8,8 +8,8 @@ namespace IGeekFan.FreeKit.Extras.Security;
 
 public interface ICurrentUser : ICurrentUser<string>
 {
-
 }
+
 public interface ICurrentUser<T> : ITransientDependency
 {
     /// <summary>
@@ -59,6 +59,12 @@ public static class ICurrentUserExtensions
         return long.Parse(currentUser.Id);
     }
 
+    public static int? FindUserIdToInt(this ICurrentUser currentUser)
+    {
+        if (currentUser.Id == null) return null;
+        return int.Parse(currentUser.Id);
+    }
+
     public static Guid? FindUserIdToGuid(this ICurrentUser currentUser)
     {
         if (currentUser.Id == null) return null;
@@ -67,9 +73,15 @@ public static class ICurrentUserExtensions
         {
             return guid;
         }
+
         return null;
     }
 
+    /// <summary>
+    ///  用户姓名
+    /// </summary>
+    /// <param name="currentUser"></param>
+    /// <returns></returns>
     public static string? FindRealName(this ICurrentUser currentUser)
     {
         Claim? claim = currentUser.FindClaim(ClaimTypes.Surname);
@@ -77,12 +89,33 @@ public static class ICurrentUserExtensions
     }
 
     /// <summary>
-    /// 无法确定用户的Id是什么类型，所以将方法复制到自己项目中，可直接修改此字段
+    /// 
     /// </summary>
     /// <param name="currentUser"></param>
     /// <returns></returns>
-    //public static string? FindUserId(this ICurrentUser currentUser)
-    //{
-    //    return currentUser.Id;
-    //}
+    public static T? FindUserId<T>(this ICurrentUser currentUser) where T : struct
+    {
+        if (currentUser.Id == null) return default;
+        if (typeof(T) == typeof(string))
+        {
+            return (T) (object) currentUser.Id;
+        }
+
+        if (typeof(T) == typeof(Guid))
+        {
+            return (T) (object) currentUser.FindUserIdToGuid();
+        }
+
+        if (typeof(T) == typeof(long))
+        {
+            return (T) (object) currentUser.FindUserIdToLong();
+        }
+
+        if (typeof(T) == typeof(int))
+        {
+            return (T) (object) currentUser.FindUserIdToInt();
+        }
+
+        return (T) (object) currentUser.Id;
+    }
 }

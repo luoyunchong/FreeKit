@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Logging;
 using Module1.Services;
 
+namespace Module1;
+
 [Route("[module]/[controller]")]
 public class TestController : Controller
 {

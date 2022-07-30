@@ -1,11 +1,13 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using IGeekFan.Extensions.Diagnostics.HealthChecks;
+using IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql;
+using IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Microsoft.AspNetCore.Diagnostics.HealthChecks.DependencyInjection
 {
     public class FreeSqlHealthChecksBuilderExtensionsTest
     {

@@ -1,4 +1,4 @@
-﻿namespace IGeekFan.FreeKit.Extras.AduitEntity;
+﻿namespace IGeekFan.FreeKit.Extras.AuditEntity;
 
 public interface IEntityDto
 {

@@ -1,14 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
-using FreeSql;
-using FreeSql.Internal;
+using IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql;
+using IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 
-namespace IGeekFan.Extensions.Diagnostics.HealthChecks;
+namespace Microsoft.AspNetCore.Diagnostics.HealthChecks;
 public class DbContextHealthCheckTest
 {
     // Just testing healthy here since it would be complicated to simulate a failure. All of that logic lives in EF anyway.
@@ -127,7 +126,7 @@ public class DbContextHealthCheckTest
         Func<TestDbContext, CancellationToken, Task<bool>> testQuery = null,
         HealthStatus? failureStatus = HealthStatus.Unhealthy)
     {
-        var serviceCollection = Microsoft.Extensions.DependencyInjection.FreeUtil.GetFreeSqlServiceCollection<TestDbContext>();
+        var serviceCollection = DependencyInjection.FreeUtil.GetFreeSqlServiceCollection<TestDbContext>();
 
         var builder = serviceCollection.AddHealthChecks();
         builder.AddDbContextCheck("test", failureStatus, new[] { "tag1", "tag2", }, testQuery);

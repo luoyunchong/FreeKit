@@ -3,10 +3,10 @@
 
 using FreeSql.DataAnnotations;
 
-namespace IGeekFan.FreeKit.Extras.AduitEntity;
+namespace IGeekFan.FreeKit.Extras.AuditEntity;
 
 [Serializable]
-public class FullAduitEntity : FullAduitEntity<Guid, Guid>, IFullAduitEntity<Guid, Guid>
+public class FullAuditEntity : FullAuditEntity<Guid, Guid>, IFullAuditEntity<Guid, Guid>
 {
 }
 
@@ -15,7 +15,7 @@ public class FullAduitEntity : FullAduitEntity<Guid, Guid>, IFullAduitEntity<Gui
 /// </summary>
 /// <typeparam name="T">当前主键类型</typeparam>
 /// <typeparam name="U">用户表主键类型</typeparam>
-public class FullAduitEntity<T, U> : Entity<T>, ICreateAduitEntity<U>, IUpdateAuditEntity<U>, IDeleteAduitEntity<U>
+public class FullAuditEntity<T, U> : Entity<T>, ICreateAuditEntity<U>, IUpdateAuditEntity<U>, IDeleteAuditEntity<U>
     where T :  IEquatable<T>
     where U : struct, IEquatable<U>
 {

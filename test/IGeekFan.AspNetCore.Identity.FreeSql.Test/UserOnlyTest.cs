@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.Test;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using IdentityResultAssert = IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests.IdentityResultAssert;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test;
 

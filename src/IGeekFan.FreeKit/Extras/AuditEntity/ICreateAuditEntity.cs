@@ -1,10 +1,10 @@
-﻿namespace IGeekFan.FreeKit.Extras.AduitEntity;
+﻿namespace IGeekFan.FreeKit.Extras.AuditEntity;
 
 /// <summary>
-/// 参考<see cref="ICreateAduitEntity"/> 
+/// 参考<see cref="ICreateAuditEntity"/> 
 /// </summary>
 /// <typeparam name="T">用户表主键</typeparam>
-public interface ICreateAduitEntity<T> where T : struct, IEquatable<T>
+public interface ICreateAuditEntity<T> where T : struct, IEquatable<T>
 {
     /// <summary>
     /// 创建者ID
@@ -26,7 +26,7 @@ public interface ICreateAduitEntity<T> where T : struct, IEquatable<T>
 /// <summary>
 /// 使用此接口可存储创建者信息（创建者id，创建人，创建时间）
 /// </summary>
-public interface ICreateAduitEntity : ICreateAduitEntity<Guid>
+public interface ICreateAuditEntity : ICreateAuditEntity<Guid>
 {
 
 }

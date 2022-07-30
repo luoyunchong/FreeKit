@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+namespace Module2;
+
 [Route("[module]/[controller]")]
 public class TestController : Controller
 {

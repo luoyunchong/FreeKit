@@ -5,6 +5,7 @@ using FreeSql;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+
 namespace IGeekFan.AspNetCore.Identity.FreeSql;
 
 /// <summary>

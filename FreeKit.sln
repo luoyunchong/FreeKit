@@ -72,6 +72,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.DataPro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGeekFan.AspNetCore.DataProtection.FreeSql.Tests", "test\IGeekFan.AspNetCore.DataProtection.FreeSql.Tests\IGeekFan.AspNetCore.DataProtection.FreeSql.Tests.csproj", "{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.OpenIddict.FreeSql", "src\IGeekFan.OpenIddict.FreeSql\IGeekFan.OpenIddict.FreeSql.csproj", "{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.OpenIddict.FreeSql.Models", "src\IGeekFan.OpenIddict.FreeSql.Models\IGeekFan.OpenIddict.FreeSql.Models.csproj", "{6F697B5F-D515-45BB-9A24-82BF5C87B712}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,6 +150,14 @@ Global
 		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F697B5F-D515-45BB-9A24-82BF5C87B712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F697B5F-D515-45BB-9A24-82BF5C87B712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F697B5F-D515-45BB-9A24-82BF5C87B712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F697B5F-D515-45BB-9A24-82BF5C87B712}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +180,8 @@ Global
 		{B2A29967-D00A-4150-914F-DB9B613CA916} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
 		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{6F11BAA1-EDB8-4610-9F4C-79529EFE6FF3} = {BC4330FE-DF00-4BFA-B9D9-D167626825BA}
+		{AC68BE7B-ACE0-4AA9-9E5E-FDEC347FF43C} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{6F697B5F-D515-45BB-9A24-82BF5C87B712} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}

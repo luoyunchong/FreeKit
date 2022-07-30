@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.Test;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityResultAssert = IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests.IdentityResultAssert;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test
 {

@@ -9,10 +9,11 @@ using FreeSql;
 using Microsoft.AspNetCore.Identity.Test;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityResultAssert = IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests.IdentityResultAssert;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test;
 
-public class UserStoreTest : IdentitySpecificationTestBase<IdentityUser, IdentityRole>, IClassFixture<ScratchDatabaseFixture>
+public class UserStoreTest : Specification.Tests.IdentitySpecificationTestBase<IdentityUser, IdentityRole>, IClassFixture<ScratchDatabaseFixture>
 {
     private readonly ScratchDatabaseFixture _fixture;
 

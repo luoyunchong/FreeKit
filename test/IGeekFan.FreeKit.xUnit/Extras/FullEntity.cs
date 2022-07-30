@@ -1,18 +1,23 @@
-﻿using Xunit.Abstractions;
+﻿using IGeekFan.FreeKit.Extras.AuditEntity;
+using IGeekFan.FreeKit.Extras.FreeSql;
+using Xunit.Abstractions;
 using Xunit;
+using IGeekFan.FreeKit.Extras.Extensions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras
 {
-    public class FullEntity : FullAduitEntity
+    public class FullEntity : FullAuditEntity
     {
     }
-    public class UseFullEntity : FullAduitEntity<Guid, Guid>
+
+    public class UseFullEntity : FullAuditEntity<Guid, Guid>
     {
     }
 
     public class FullAduitEntityTest
     {
         private readonly ITestOutputHelper testOutputHelper;
+
         public FullAduitEntityTest(ITestOutputHelper testOut)
         {
             testOutputHelper = testOut;
@@ -47,7 +52,15 @@ namespace IGeekFan.FreeKit.xUnit.Extras
             full.DeleteTime = DateTime.Now;
 
             full.IsDeleted = false;
+            var x = typeof(FullAuditEntity).IsAssignableFrom(typeof(FullEntity));
+            testOutputHelper.WriteLine(x + "");
+            x = typeof(FullEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
+            testOutputHelper.WriteLine(x + "");
+
+             x = full is ICreateAuditEntity<Guid> createAuditEntity;
+             testOutputHelper.WriteLine(x + "");
             await Task.CompletedTask;
         }
     }
+
 }

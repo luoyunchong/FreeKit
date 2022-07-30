@@ -5,10 +5,11 @@ using FreeSql;
 using System.Globalization;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using IdentityResultAssert = IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests.IdentityResultAssert;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql.Test;
 
-public abstract class SqlStoreTestBase<TUser, TRole, TKey> : IdentitySpecificationTestBase<TUser, TRole, TKey>, IClassFixture<ScratchDatabaseFixture>
+public abstract class SqlStoreTestBase<TUser, TRole, TKey> : Specification.Tests.IdentitySpecificationTestBase<TUser, TRole, TKey>, IClassFixture<ScratchDatabaseFixture>
     where TUser : IdentityUser<TKey>, new()
     where TRole : IdentityRole<TKey>, new()
     where TKey : IEquatable<TKey>

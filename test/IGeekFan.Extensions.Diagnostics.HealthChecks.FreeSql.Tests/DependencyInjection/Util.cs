@@ -1,12 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using FreeSql.Internal;
-using FreeSql;
-using IGeekFan.Extensions.Diagnostics.HealthChecks;
 using System.Diagnostics;
+using FreeSql;
+using FreeSql.Internal;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Microsoft.AspNetCore.Diagnostics.HealthChecks.DependencyInjection
 {
     public class FreeUtil
     {

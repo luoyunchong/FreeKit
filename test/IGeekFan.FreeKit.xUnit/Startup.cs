@@ -2,6 +2,7 @@
 using Autofac;
 using System.Reflection;
 using Autofac.Extensions.DependencyInjection;
+using FreeSql;
 using IGeekFan.FreeKit.Email;
 using IGeekFan.FreeKit.Extras.FreeSql;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using System.Security.Claims;
 
 namespace IGeekFan.FreeKit.xUnit
 {
@@ -19,6 +21,15 @@ namespace IGeekFan.FreeKit.xUnit
         // 自定义 host 构建
         public void ConfigureHost(IHostBuilder hostBuilder)
         {
+            var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Name,"Name"),
+                new Claim(ClaimTypes.Surname,"Surname"),
+                new Claim(ClaimTypes.GivenName,"GivenName"),
+                new Claim(ClaimTypes.Email,"testemail@foxmail.com")
+            }));
+            Thread.CurrentPrincipal = claimsPrincipal;
             hostBuilder.UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureAppConfiguration((context, builder) =>
                 {
@@ -52,15 +63,15 @@ namespace IGeekFan.FreeKit.xUnit
                     configuration = context.Configuration;
                     // 注册自定义服务
                     services.AddEmailSender(configuration);
-                    services.AddEmailSender(r =>
-                    {
-                        r.Host = "smtp.163.com";
-                        r.Port = 25;
-                        r.EnableSsl = true;
-                        r.UserName = "igeekfan@163.com";
-                        r.Password = "";
-                        r.Domain = "";
-                    });
+                    // services.AddEmailSender(r =>
+                    // {
+                    //     r.Host = "smtp.163.com";
+                    //     r.Port = 25;
+                    //     r.EnableSsl = true;
+                    //     r.UserName = "igeekfan@163.com";
+                    //     r.Password = "";
+                    //     r.Domain = "";
+                    // });
                 }).UseSerilog();
         }
 
@@ -81,7 +92,11 @@ namespace IGeekFan.FreeKit.xUnit
                     cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
                 )
                 .Build();
-
+            services.AddSingleton(fsql);
+            services.AddFreeRepository();
+            services.AddScoped<UnitOfWorkManager>();
+            services.AddCompositeRepostiory();
+            services.AddAuditRepostiory();
             #endregion
 
             // 配置日志
@@ -90,10 +105,8 @@ namespace IGeekFan.FreeKit.xUnit
                 builder.AddConsole();
                 builder.AddDebug();
             });
-            services.AddSingleton(fsql);
             services.AddHttpClient();
             services.AddHttpContextAccessor();
-            services.AddCompositeRepostiory();
         }
 
         // 可以添加要用到的方法参数，会自动从注册的服务中获取服务实例，类似于 asp.net core 里 Configure 方法

@@ -4,7 +4,7 @@
 
 using FreeSql;
 
-namespace IGeekFan.Extensions.Diagnostics.HealthChecks;
+namespace Microsoft.AspNetCore.Diagnostics.HealthChecks;
 public class TestDbContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }

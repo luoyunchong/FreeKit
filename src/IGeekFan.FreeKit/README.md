@@ -15,9 +15,9 @@ dotnet add package IGeekFan.FreeKit
 - Entity
 - IEntity
 - IEntityDto
-- ICreateAduitEntity
+- ICreateAuditEntity
 - IUpdateAuditEntity
-- IDeleteAduitEntity
+- IDeleteAuditEntity
 - ISoftDelete
 
 ### 依赖注入接口

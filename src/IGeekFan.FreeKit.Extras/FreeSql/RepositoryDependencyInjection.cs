@@ -19,28 +19,38 @@ public interface IBaseRepository<TEntity, TKey, Ukey> : IBaseRepository<TEntity>
     Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default);
 }
 
-public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity>, IBaseRepository<TEntity, TKey, Ukey>
+public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity>,
+    IBaseRepository<TEntity, TKey, Ukey>
     where TEntity : class
 {
-    protected BaseRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter, Func<string, string> asTable = null) : base(fsql, filter, asTable)
+    protected BaseRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter, Func<string, string> asTable = null)
+        : base(fsql, filter, asTable)
     {
     }
+
     TEntity CheckTKeyAndReturnIdEntity(TKey id, Ukey uid)
     {
         var tb = Orm.CodeFirst.GetTableByEntity(EntityType);
-        if (tb.Primarys.Length != 2) throw new Exception(DbContextStrings.EntityType_PrimaryKeyIsNotOne(EntityType.Name));
-        if (tb.Primarys[0].CsType.NullableTypeOrThis() != typeof(TKey).NullableTypeOrThis()) throw new Exception(DbContextStrings.EntityType_PrimaryKeyError(EntityType.Name, typeof(TKey).FullName));
-        if (tb.Primarys[1].CsType.NullableTypeOrThis() != typeof(Ukey).NullableTypeOrThis()) throw new Exception(DbContextStrings.EntityType_PrimaryKeyError(EntityType.Name, typeof(Ukey).FullName));
+        if (tb.Primarys.Length != 2)
+            throw new Exception(DbContextStrings.EntityType_PrimaryKeyIsNotOne(EntityType.Name));
+        if (tb.Primarys[0].CsType.NullableTypeOrThis() != typeof(TKey).NullableTypeOrThis())
+            throw new Exception(DbContextStrings.EntityType_PrimaryKeyError(EntityType.Name, typeof(TKey).FullName));
+        if (tb.Primarys[1].CsType.NullableTypeOrThis() != typeof(Ukey).NullableTypeOrThis())
+            throw new Exception(DbContextStrings.EntityType_PrimaryKeyError(EntityType.Name, typeof(Ukey).FullName));
         var obj = Activator.CreateInstance(tb.Type);
         Orm.SetEntityValueWithPropertyName(tb.Type, obj, tb.Primarys[0].CsName, id);
         Orm.SetEntityValueWithPropertyName(tb.Type, obj, tb.Primarys[1].CsName, uid);
         var ret = obj as TEntity;
-        if (ret == null) throw new Exception(DbContextStrings.EntityType_CannotConvert(EntityType.Name, typeof(TEntity).Name));
+        if (ret == null)
+            throw new Exception(DbContextStrings.EntityType_CannotConvert(EntityType.Name, typeof(TEntity).Name));
         return ret;
     }
 
     public virtual int Delete(TKey id, Ukey uid) => Delete(CheckTKeyAndReturnIdEntity(id, uid));
-    public virtual TEntity Find(TKey id, Ukey uid) => base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
+
+    public virtual TEntity Find(TKey id, Ukey uid) =>
+        base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
+
     public TEntity Get(TKey id, Ukey uid) => base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
 
     public Task<TEntity> GetAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
@@ -58,10 +68,17 @@ public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEnti
         return DeleteAsync(CheckTKeyAndReturnIdEntity(id, uid), cancellationToken);
     }
 }
+
 public class DefaultRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity, TKey, Ukey> where TEntity : class
 {
-    public DefaultRepository(IFreeSql fsql) : base(fsql, null, null) { }
-    public DefaultRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter) : base(fsql, filter, null) { }
+    public DefaultRepository(IFreeSql fsql) : base(fsql, null, null)
+    {
+    }
+
+    public DefaultRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter) : base(fsql, filter, null)
+    {
+    }
+
     public DefaultRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(uowManger?.Orm ?? fsql, null, null)
     {
         uowManger?.Binding(this);
@@ -82,6 +99,27 @@ public static class RepositoryDependencyInjection
     {
         services.TryAddScoped(typeof(IBaseRepository<,,>), typeof(DefaultRepository<,,>));
         services.TryAddScoped(typeof(BaseRepository<,,>), typeof(DefaultRepository<,,>));
+        return services;
+    }
+
+    /// <summary>
+    /// 用户Id是Guid或long类型的审计仓储批量注入,默认注入用户主键为Guid类型
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="typeUserkey">支持typeof(Guid)/typeof(long)指定用户的主键类型，方便绑定 CreateUserId\UpdateUserId等字段</param>
+    /// <returns></returns>
+    public static IServiceCollection AddAuditRepostiory(this IServiceCollection services, Type? typeUserkey = null)
+    {
+        if (typeUserkey == null || typeof(Guid) == typeUserkey)
+        {
+            services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditGuidRepository<>));
+            services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyGuidRepository<,>));
+        }
+        else if(typeof(long) == typeUserkey)
+        {
+            services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditLongRepository<>));
+            services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyLongRepository<,>));
+        }
         return services;
     }
 }

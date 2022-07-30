@@ -1,5 +1,6 @@
 ﻿using FreeSql;
 using FreeSql.DataAnnotations;
+using IGeekFan.AspNetCore.Identity.FreeSql.Test.Specification.Tests;
 using Microsoft.AspNetCore.Identity.Test;
 using Microsoft.Extensions.DependencyInjection;
 
