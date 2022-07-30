@@ -40,12 +40,16 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
     protected override void BeforeDelete(TEntity entity)
     {
         if (!isDeleteAudit) return;
+        if (entity is ISoftDelete softDelete)
+        {
+            softDelete.IsDeleted = true;
+        }
+
         if (entity is IDeleteAuditEntity<TUkey> deleteAudit)
         {
             deleteAudit.DeleteUserId = CurrentUser.FindUserId<TUkey>();
             deleteAudit.DeleteUserName = CurrentUser.UserName;
             deleteAudit.DeleteTime = DateTime.Now;
-            deleteAudit.IsDeleted = true;
         }
     }
 }

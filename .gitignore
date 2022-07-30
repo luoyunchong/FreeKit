@@ -370,3 +370,5 @@ nupkg/nuget-api-key-delete.txt
 nupkg/github-api-key.txt
 /src/IGeekFan.Extensions.Caching.FreeRedis
 /.idea/.idea.FreeKit/.idea
+/src/IGeekFan.OpenIddict.FreeSql.Models
+/src/IGeekFan.OpenIddict.FreeSql

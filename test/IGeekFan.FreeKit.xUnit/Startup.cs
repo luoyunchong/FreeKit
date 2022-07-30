@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Security.Claims;
+using IGeekFan.FreeKit.Extras.AuditEntity;
 
 namespace IGeekFan.FreeKit.xUnit
 {
@@ -23,11 +24,11 @@ namespace IGeekFan.FreeKit.xUnit
         {
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Name,"Name"),
-                new Claim(ClaimTypes.Surname,"Surname"),
-                new Claim(ClaimTypes.GivenName,"GivenName"),
-                new Claim(ClaimTypes.Email,"testemail@foxmail.com")
+                new (ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
+                new (ClaimTypes.Name,"Name"),
+                new (ClaimTypes.Surname,"Surname"),
+                new (ClaimTypes.GivenName,"GivenName"),
+                new (ClaimTypes.Email,"testemail@foxmail.com")
             }));
             Thread.CurrentPrincipal = claimsPrincipal;
             hostBuilder.UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -86,12 +87,14 @@ namespace IGeekFan.FreeKit.xUnit
             IFreeSql fsql = new FreeSql.FreeSqlBuilder()
                 .UseConnectionString(FreeSql.DataType.Sqlite, configuration["ConnectionStrings:DefaultConnection"])
                 .UseAutoSyncStructure(true)
-                //.UseGenerateCommandParameterWithLambda(true)
-                .UseLazyLoading(true)
+                .UseNoneCommandParameter(true)
+                .UseGenerateCommandParameterWithLambda(false)
+                .UseLazyLoading(false)
                 .UseMonitorCommand(
                     cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
                 )
                 .Build();
+            fsql.GlobalFilter.Apply<ISoftDelete>("IsDeleted", a => a.IsDeleted == false);
             services.AddSingleton(fsql);
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();

@@ -30,7 +30,8 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
         unitOfWorkManager?.Orm, unitOfWorkManager)
     {
         CurrentUser = currentUser;
-        isDeleteAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
+        isDeleteAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(ISoftDelete)) ||
+                        typeof(TEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
         isUpdateAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(IUpdateAuditEntity<>));
     }
 
@@ -113,6 +114,14 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     #region Delete
 
+    public override int Delete(TKey id)
+    {
+        if (!isDeleteAudit) return base.Delete(id);
+        TEntity entity = Get(id);
+        BeforeDelete(entity);
+        return base.Update(entity);
+    }
+
     public override int Delete(TEntity entity)
     {
         if (!isDeleteAudit) return base.Delete(entity);
@@ -129,7 +138,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
             BeforeDelete(entity);
         }
 
-        return Update(entities);
+        return base.Update(entities);
     }
 
     public override async Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default)
@@ -149,7 +158,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
             BeforeDelete(entity);
         }
 
-        return UpdateAsync(entities, cancellationToken);
+        return base.UpdateAsync(entities, cancellationToken);
     }
 
     public override Task<int> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
@@ -197,11 +206,19 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     #endregion
 
+    #region InsertOrUpdate
+    public override TEntity InsertOrUpdate(TEntity entity)
+    {
+        BeforeInsert(entity);
+        return base.InsertOrUpdate(entity);
+    }
+
     public override async Task<TEntity> InsertOrUpdateAsync(TEntity entity,
         CancellationToken cancellationToken = default)
     {
         BeforeInsert(entity);
-        await base.InsertOrUpdateAsync(entity, cancellationToken);
-        return entity;
+        return await base.InsertOrUpdateAsync(entity, cancellationToken);
     }
+
+    #endregion
 }
