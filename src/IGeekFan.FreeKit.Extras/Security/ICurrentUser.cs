@@ -28,11 +28,6 @@ public interface ICurrentUser<T> : ITransientDependency where T : IEquatable<T>
     string? UserName { get; }
 
     /// <summary>
-    /// 昵称
-    /// </summary>
-    string? NickName { get; }
-
-    /// <summary>
     /// 邮件
     /// </summary>
     string? Email { get; }
@@ -41,6 +36,16 @@ public interface ICurrentUser<T> : ITransientDependency where T : IEquatable<T>
     /// 角色
     /// </summary>
     string[] Roles { get; }
+
+    /// <summary>
+    /// 租户Id
+    /// </summary>
+    Guid? TenantId { get; }
+    
+    /// <summary>
+    /// 租户名
+    /// </summary>
+    string? TenantName { get; }
 
     Claim? FindClaim(string claimType);
 

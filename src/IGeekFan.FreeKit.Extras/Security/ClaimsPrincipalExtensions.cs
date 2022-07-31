@@ -11,6 +11,20 @@ namespace IGeekFan.FreeKit.Extras.Security;
 /// </summary>
 public static class ClaimsPrincipalExtensions
 {
+    public static Guid? FindTenantId(this ClaimsPrincipal principal)
+    {
+        Claim? tenantIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantId);
+
+        if (tenantIdOrNull == null || tenantIdOrNull.Value.IsNullOrWhiteSpace())
+        {
+            return null;
+        }
+        if (Guid.TryParse(tenantIdOrNull.Value, out Guid tenantId))
+        {
+            return tenantId;
+        }
+        return null;
+    }
     public static string? FindUserId(this ClaimsPrincipal principal)
     {
         Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);

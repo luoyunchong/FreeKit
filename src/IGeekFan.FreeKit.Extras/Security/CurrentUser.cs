@@ -13,7 +13,6 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser
     }
 }
 
-
 /// <summary>
 /// 当前用户上下文
 /// </summary>
@@ -27,17 +26,28 @@ public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
         ClaimsPrincipal = httpContextAccessor.HttpContext?.User ?? Thread.CurrentPrincipal as ClaimsPrincipal;
     }
 
+    /// <inheritdoc />
     public virtual bool IsAuthenticated => ClaimsPrincipal.FindUserId() != null;
+
+    /// <inheritdoc/>
 
     public virtual T? Id => ClaimsPrincipal.FindUserId<T>();
 
+    /// <inheritdoc />
     public virtual string? UserName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
 
-    public virtual string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
-
+    /// <inheritdoc />
     public virtual string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 
+    /// <inheritdoc />
     public virtual string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
+
+    /// <inheritdoc />
+    public Guid? TenantId => ClaimsPrincipal.FindTenantId();
+
+    /// <inheritdoc />
+    public string? TenantName =>
+        ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantName)?.Value;
 
     public virtual Claim? FindClaim(string claimType)
     {

@@ -6,8 +6,9 @@ using IGeekFan.FreeKit.Extras.Extensions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras
 {
-    public class FullEntity : FullAuditEntity
+    public class FullEntity : FullAuditEntity,ITenant
     {
+        public Guid? TenantId { get; set; }
     }
 
     public class UseFullEntity : FullAuditEntity<Guid, Guid>
@@ -16,11 +17,11 @@ namespace IGeekFan.FreeKit.xUnit.Extras
 
     public class FullAduitEntityTest
     {
-        private readonly ITestOutputHelper testOutputHelper;
+        private readonly ITestOutputHelper _testOutputHelper;
 
         public FullAduitEntityTest(ITestOutputHelper testOut)
         {
-            testOutputHelper = testOut;
+            _testOutputHelper = testOut;
         }
 
         [Fact]
@@ -53,12 +54,12 @@ namespace IGeekFan.FreeKit.xUnit.Extras
 
             full.IsDeleted = false;
             var x = typeof(FullAuditEntity).IsAssignableFrom(typeof(FullEntity));
-            testOutputHelper.WriteLine(x + "");
+            _testOutputHelper.WriteLine(x + "");
             x = typeof(FullEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
-            testOutputHelper.WriteLine(x + "");
+            _testOutputHelper.WriteLine(x + "");
 
              x = full is ICreateAuditEntity<Guid> createAuditEntity;
-             testOutputHelper.WriteLine(x + "");
+             _testOutputHelper.WriteLine(x + "");
             await Task.CompletedTask;
         }
     }

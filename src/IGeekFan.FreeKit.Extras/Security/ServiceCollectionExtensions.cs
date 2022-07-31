@@ -10,7 +10,7 @@ namespace IGeekFan.FreeKit.Extras.Security;
 /// <summary>
 /// 增加<see cref="ICurrentUserAccessor"/>和<see cref="CurrentUserAccessorMiddleware"/>的扩展方法
 /// </summary>
-public static class CurrentUserAccessorExtensions
+public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds a default implementation for the <see cref="ICurrentUser"/> service.
@@ -28,7 +28,7 @@ public static class CurrentUserAccessorExtensions
         services.TryAddTransient(typeof(ICurrentUser<>), typeof(CurrentUser<>));
         return services;
     }
-
+    
     /// <summary>
     /// Adds a default implementation for the <see cref="ICurrentUserAccessor"/> service.
     /// </summary>

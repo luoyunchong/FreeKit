@@ -3,7 +3,7 @@
 namespace IGeekFan.FreeKit.Extras.Security;
 
 /// <summary>
-/// UserId扩展
+/// CurrentUser扩展
 /// </summary>
 public static class CurrentUserExtensions
 {
@@ -67,10 +67,6 @@ public static class CurrentUserExtensions
 
         return null;
     }
-
-
-    
-
     #endregion
     
     /// <summary>
@@ -78,9 +74,10 @@ public static class CurrentUserExtensions
     /// </summary>
     /// <param name="currentUser"></param>
     /// <returns></returns>
-    public static string? FindRealName(this ICurrentUser currentUser)
+    public static string? FindName(this ICurrentUser currentUser)
     {
-        Claim? claim = currentUser.FindClaim(ClaimTypes.Surname);
+        Claim? claim = currentUser.FindClaim(ClaimTypes.GivenName);
         return claim?.Value;
     }
+    
 }
