@@ -120,6 +120,15 @@ public static class RepositoryDependencyInjection
             services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditLongRepository<>));
             services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyLongRepository<,>));
         }
+        else if(typeof(int) == typeUserkey)
+        {
+            services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditLongRepository<>));
+            services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyLongRepository<,>));
+        }
+        else
+        {
+            throw new NotSupportedException("用户ID仅支持Guid/long/int类型");
+        }
         return services;
     }
 }

@@ -27,7 +27,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
 
     protected override void BeforeUpdate(TEntity entity)
     {
-        if (!isUpdateAudit) return;
+        if (!IsUpdateAudit) return;
 
         if (entity is IUpdateAuditEntity<TUkey> updateAudit)
         {
@@ -39,7 +39,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
 
     protected override void BeforeDelete(TEntity entity)
     {
-        if (!isDeleteAudit) return;
+        if (!IsDeleteAudit) return;
         if (entity is ISoftDelete softDelete)
         {
             softDelete.IsDeleted = true;

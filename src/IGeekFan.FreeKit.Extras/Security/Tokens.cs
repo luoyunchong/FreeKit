@@ -29,6 +29,6 @@ public class Tokens
 
     public override string ToString()
     {
-        return $"Tokns AccessToken:{AccessToken},RefreshToken:{RefreshToken}";
+        return $"Tokens AccessToken:{AccessToken},RefreshToken:{RefreshToken}";
     }
 }

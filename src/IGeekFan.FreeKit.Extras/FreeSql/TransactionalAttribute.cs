@@ -9,7 +9,7 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 /// <summary>
 /// 事务
 /// </summary>
-[AttributeUsage(AttributeTargets.Method, Inherited = true)]
+[AttributeUsage(AttributeTargets.Method)]
 public class TransactionalAttribute : Attribute
 {
     /// <summary>

@@ -1,12 +1,11 @@
-﻿@{
-    @using Microsoft.AspNetCore.Localization;
-    @using Microsoft.Extensions.Localization;
-    @using System.Globalization;
-
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Localization
+@{
     IStringLocalizer SR = ViewBag.SR as IStringLocalizer;
     IRequestCultureFeature requestCultureFeature = ViewBag.requestCultureFeature as IRequestCultureFeature;
     RequestCulture requestCulture = ViewBag.requestCulture as RequestCulture;
-
     ViewData["Title"] = SR["Request Localization"];
 }
 

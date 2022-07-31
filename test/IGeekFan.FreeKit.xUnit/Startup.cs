@@ -12,12 +12,13 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Security.Claims;
 using IGeekFan.FreeKit.Extras.AuditEntity;
+using IGeekFan.FreeKit.Extras.Security;
 
 namespace IGeekFan.FreeKit.xUnit
 {
     public class Startup
     {
-        Microsoft.Extensions.Configuration.IConfiguration configuration;
+        IConfiguration configuration;
 
         // 自定义 host 构建
         public void ConfigureHost(IHostBuilder hostBuilder)
@@ -84,8 +85,8 @@ namespace IGeekFan.FreeKit.xUnit
         {
             #region fsql
 
-            IFreeSql fsql = new FreeSql.FreeSqlBuilder()
-                .UseConnectionString(FreeSql.DataType.Sqlite, configuration["ConnectionStrings:DefaultConnection"])
+            IFreeSql fsql = new FreeSqlBuilder()
+                .UseConnectionString(DataType.Sqlite, configuration["ConnectionStrings:DefaultConnection"])
                 .UseAutoSyncStructure(true)
                 .UseNoneCommandParameter(true)
                 .UseGenerateCommandParameterWithLambda(false)
@@ -99,7 +100,7 @@ namespace IGeekFan.FreeKit.xUnit
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();
             services.AddCompositeRepostiory();
-            services.AddAuditRepostiory();
+            services.AddAuditRepostiory().AddCurrentUser();
             #endregion
 
             // 配置日志

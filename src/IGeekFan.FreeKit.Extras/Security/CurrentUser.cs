@@ -11,17 +11,6 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser
     public CurrentUser(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
     }
-
-    /// <summary>
-    /// 用户Id
-    /// </summary>
-    public override string? Id
-    {
-        get
-        {
-            return ClaimsPrincipal.FindUserId();
-        }
-    }
 }
 
 
@@ -29,26 +18,26 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser
 /// 当前用户上下文
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class CurrentUser<T> : ICurrentUser<T>
+public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
 {
-    private static readonly Claim[] EmptyClaimsArray = Array.Empty<Claim>();
     protected readonly ClaimsPrincipal ClaimsPrincipal;
+
     public CurrentUser(IHttpContextAccessor httpContextAccessor)
     {
         ClaimsPrincipal = httpContextAccessor.HttpContext?.User ?? Thread.CurrentPrincipal as ClaimsPrincipal;
     }
 
-    public bool IsAuthenticated => ClaimsPrincipal.FindUserId() != null ? true : false;
+    public virtual bool IsAuthenticated => ClaimsPrincipal.FindUserId() != null;
 
-    public virtual T? Id => throw new Exception("需要重写");
+    public virtual T? Id => ClaimsPrincipal.FindUserId<T>();
 
-    public string UserName => ClaimsPrincipal.FindUserName();
+    public virtual string? UserName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
 
-    public string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
+    public virtual string? NickName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
 
-    public string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    public virtual string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 
-    public string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
+    public virtual string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
 
     public virtual Claim? FindClaim(string claimType)
     {
@@ -57,12 +46,12 @@ public abstract class CurrentUser<T> : ICurrentUser<T>
 
     public virtual Claim[] FindClaims(string claimType)
     {
-        return ClaimsPrincipal.Claims.Where(c => c.Type == claimType).ToArray() ?? EmptyClaimsArray;
+        return ClaimsPrincipal.Claims.Where(c => c.Type == claimType).ToArray();
     }
 
     public virtual Claim[] GetAllClaims()
     {
-        return ClaimsPrincipal.Claims.ToArray() ?? EmptyClaimsArray;
+        return ClaimsPrincipal.Claims.ToArray();
     }
 
     public virtual bool IsInRole(string roleId)

@@ -18,25 +18,47 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     IAuditBaseRepository<TEntity, TKey>
     where TEntity : class, new()
 {
+    #region Constructor+Fileld
     /// <summary>
     ///  当前登录人信息
     /// </summary>
     protected readonly ICurrentUser CurrentUser;
 
-    protected readonly bool isDeleteAudit;
-    protected readonly bool isUpdateAudit;
+    /// <summary>
+    /// 是否开户软删除审计
+    /// </summary>
+    protected readonly bool IsDeleteAudit;
+    /// <summary>
+    /// 是否开启修改审计
+    /// </summary>
+    protected readonly bool IsUpdateAudit;
 
     public AuditBaseRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
         unitOfWorkManager?.Orm, unitOfWorkManager)
     {
         CurrentUser = currentUser;
-        isDeleteAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(ISoftDelete)) ||
+        IsDeleteAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(ISoftDelete)) ||
                         typeof(TEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
-        isUpdateAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(IUpdateAuditEntity<>));
+        IsUpdateAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(IUpdateAuditEntity<>));
     }
+    #endregion
 
+    /// <summary>
+    /// 插入数据前方法
+    /// </summary>
+    /// <param name="entity"></param>
     protected abstract void BeforeInsert(TEntity entity);
+
+    /// <summary>
+    /// 修改数据前方法
+    /// </summary>
+    /// <param name="entity"></param>
     protected abstract void BeforeUpdate(TEntity entity);
+
+    /// <summary>
+    /// 删除数据方法
+    /// </summary>
+    /// <param name="entity"></param>
     protected abstract void BeforeDelete(TEntity entity);
 
     #region Insert
@@ -116,7 +138,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     public override int Delete(TKey id)
     {
-        if (!isDeleteAudit) return base.Delete(id);
+        if (!IsDeleteAudit) return base.Delete(id);
         TEntity entity = Get(id);
         BeforeDelete(entity);
         return base.Update(entity);
@@ -124,14 +146,14 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     public override int Delete(TEntity entity)
     {
-        if (!isDeleteAudit) return base.Delete(entity);
+        if (!IsDeleteAudit) return base.Delete(entity);
         BeforeDelete(entity);
         return base.Update(entity);
     }
 
     public override int Delete(IEnumerable<TEntity> entities)
     {
-        if (!entities.Any() || !isDeleteAudit) return base.Delete(entities);
+        if (!entities.Any() || !IsDeleteAudit) return base.Delete(entities);
         Attach(entities);
         foreach (TEntity entity in entities)
         {
@@ -143,7 +165,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     public override async Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default)
     {
-        if (!isDeleteAudit) return await base.DeleteAsync(id, cancellationToken);
+        if (!IsDeleteAudit) return await base.DeleteAsync(id, cancellationToken);
         TEntity entity = await GetAsync(id, cancellationToken);
         BeforeDelete(entity);
         return await base.UpdateAsync(entity, cancellationToken);
@@ -151,7 +173,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     public override Task<int> DeleteAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
     {
-        if (!entities.Any() || !isDeleteAudit) return base.DeleteAsync(entities, cancellationToken);
+        if (!entities.Any() || !IsDeleteAudit) return base.DeleteAsync(entities, cancellationToken);
         Attach(entities);
         foreach (TEntity entity in entities)
         {
@@ -163,14 +185,14 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
 
     public override Task<int> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        if (!isDeleteAudit) return base.DeleteAsync(entity, cancellationToken);
+        if (!IsDeleteAudit) return base.DeleteAsync(entity, cancellationToken);
         BeforeDelete(entity);
         return base.UpdateAsync(entity, cancellationToken);
     }
 
     public override int Delete(Expression<Func<TEntity, bool>> predicate)
     {
-        if (!isDeleteAudit) return base.Delete(predicate);
+        if (!IsDeleteAudit) return base.Delete(predicate);
         List<TEntity> items = base.Select.Where(predicate).ToList();
         if (items.Count == 0)
         {
@@ -188,7 +210,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
-        if (!isDeleteAudit) return await base.DeleteAsync(predicate, cancellationToken);
+        if (!IsDeleteAudit) return await base.DeleteAsync(predicate, cancellationToken);
 
         List<TEntity> items = await base.Select.Where(predicate).ToListAsync(cancellationToken);
         if (items.Count == 0)

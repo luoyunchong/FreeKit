@@ -13,6 +13,23 @@ namespace IGeekFan.FreeKit.Extras.Security;
 public static class CurrentUserAccessorExtensions
 {
     /// <summary>
+    /// Adds a default implementation for the <see cref="ICurrentUser"/> service.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/>.</param>
+    /// <returns>The service collection.</returns>
+    public static IServiceCollection AddCurrentUser(this IServiceCollection services)
+    {
+        if (services == null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
+        services.TryAddTransient<ICurrentUser, CurrentUser>();
+        services.TryAddTransient(typeof(ICurrentUser<>), typeof(CurrentUser<>));
+        return services;
+    }
+
+    /// <summary>
     /// Adds a default implementation for the <see cref="ICurrentUserAccessor"/> service.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
