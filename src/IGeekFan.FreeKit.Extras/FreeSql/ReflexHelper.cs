@@ -1,5 +1,5 @@
-﻿using FreeSql.DataAnnotations;
-using System.Reflection;
+﻿using System.Reflection;
+using FreeSql.DataAnnotations;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
@@ -38,16 +38,18 @@ public class ReflexHelper
     {
         List<Type> tableAssembies = new List<Type>();
         Assembly? assembly = Assembly.GetAssembly(assemblyType);
-        foreach (Type type in assembly.GetExportedTypes())
-        {
-            foreach (var fullname in entitiesFullName)
+        if (assembly != null)
+            foreach (Type type in assembly.GetExportedTypes())
             {
-                if (type.FullName != null && type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
+                foreach (var fullname in entitiesFullName)
                 {
-                    tableAssembies.Add(type);
+                    if (type.FullName != null && type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
+                    {
+                        tableAssembies.Add(type);
+                    }
                 }
             }
-        }
+
         return tableAssembies.ToArray();
     }
 }
