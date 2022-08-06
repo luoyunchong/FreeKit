@@ -1,4 +1,6 @@
-﻿namespace Module1.Services
+﻿using IGeekFan.FreeKit.Extras.FreeSql;
+
+namespace Module1.Services
 {
     public class TestService : ITestService
     {
@@ -7,6 +9,8 @@
         {
             _fsql = fsql;
         }
+
+        [Transactional]
         public bool ExecuteConnectTest()
         {
             return _fsql.Ado.ExecuteConnectTest();

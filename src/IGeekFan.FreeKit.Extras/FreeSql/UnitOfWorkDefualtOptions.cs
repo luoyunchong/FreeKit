@@ -6,11 +6,7 @@ using FreeSql;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
-/// <summary>
-/// 事务
-/// </summary>
-[AttributeUsage(AttributeTargets.Method)]
-public class TransactionalAttribute : Attribute
+public class UnitOfWorkDefualtOptions
 {
     /// <summary>
     /// 事务传播方式

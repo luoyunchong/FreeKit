@@ -7,7 +7,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.7" />
 	</ItemGroup>
 
 	<ItemGroup>

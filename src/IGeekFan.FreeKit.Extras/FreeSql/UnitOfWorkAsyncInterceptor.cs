@@ -4,6 +4,7 @@
 using Castle.DynamicProxy;
 using FreeSql;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
@@ -11,26 +12,42 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
     private readonly UnitOfWorkManager _unitOfWorkManager;
     private readonly ILogger<UnitOfWorkAsyncInterceptor> _logger;
-    IUnitOfWork _unitOfWork;
+    private IUnitOfWork _unitOfWork;
+    private readonly UnitOfWorkDefualtOptions _unitOfWorkDefualtOptions;
 
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, ILogger<UnitOfWorkAsyncInterceptor> logger)
+    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, ILogger<UnitOfWorkAsyncInterceptor> logger, IOptions<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
     {
         _unitOfWorkManager = unitOfWorkManager;
         _logger = logger;
+        _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.Value;
     }
 
+    /// <summary>
+    /// 当只配置特性标签，但未指定任意属性值时，默认根据UnitOfWorkDefualtOptions
+    /// </summary>
+    /// <param name="invocation"></param>
+    /// <returns></returns>
     private bool TryBegin(IInvocation invocation)
     {
         var method = invocation.MethodInvocationTarget ?? invocation.Method;
         var attribute = method.GetCustomAttributes(typeof(TransactionalAttribute), false).FirstOrDefault();
         if (attribute is TransactionalAttribute transaction)
         {
-            _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation, transaction.IsolationLevel);
+            if (transaction.IsolationLevel == null)
+            {
+                transaction.IsolationLevel = _unitOfWorkDefualtOptions.IsolationLevel;
+            }
+            if (transaction.Propagation == null)
+            {
+                transaction.Propagation = _unitOfWorkDefualtOptions.Propagation;
+            }
+            _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation ?? Propagation.Required, transaction.IsolationLevel);
             return true;
         }
         return false;
     }
 
+    #region 拦截同步执行的方法
     /// <summary>
     /// 拦截同步执行的方法
     /// </summary>
@@ -63,7 +80,9 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             invocation.Proceed();
         }
     }
+    #endregion
 
+    #region 拦截返回结果为Task的方法
     /// <summary>
     /// 拦截返回结果为Task的方法
     /// </summary>
@@ -114,7 +133,9 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
     }
 
+    #endregion
 
+    #region 拦截返回结果为Task<TResult>的方法
     /// <summary>
     /// 拦截返回结果为Task<TResult>的方法
     /// </summary>
@@ -159,4 +180,5 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         }
         return result;
     }
+    #endregion
 }

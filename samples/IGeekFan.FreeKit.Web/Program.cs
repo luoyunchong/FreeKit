@@ -2,25 +2,23 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using IGeekFan.FreeKit.Extras.Dependency;
 using IGeekFan.FreeKit.Modularity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
-using System.Diagnostics;
 using System.Reflection;
-using IGeekFan.FreeKit.Extras.CaseQuery;
+using IGeekFan.FreeKit.Web;
+using IGeekFan.FreeKit.Extras.FreeSql;
+using FreeSql;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 builder.Host
     .UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>((webBuilder, containerBuilder) =>
     {
         //1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
-        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => 
-            r.FullName.Contains("IGeekFan.FreeKit.Extras") 
+        Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r =>
+            r.FullName.Contains("IGeekFan.FreeKit.Extras")
             || r.FullName.Contains("Module1")).ToArray();
         containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
+        containerBuilder.RegisterModule(new UnitOfWorkModule(currentAssemblies));
 
         ////2.根据程序集中的某个类获取程序集
         //Assembly[] currentAssemblies2 = new Assembly[] { typeof(FreeKitModule).Assembly, typeof(Module1.Module1Startup).Assembly };
@@ -33,35 +31,23 @@ builder.Host
         //containerBuilder.RegisterModule(new FreeKitModule(typeof(FreeKitModule), typeof(Module1.Module1Startup)));
 
     });
-
 // Add services to the container.
-builder.Services.AddControllers(options =>
+
+IConfiguration c = builder.Configuration;
+
+builder.Services
+        .AddCustomMvc(c)
+        .AddSwagger(c)
+        .AddFreeSql(c)
+        .AddModuleServices(c)
+        ;
+
+
+builder.Services.Configure<UnitOfWorkDefualtOptions>(c =>
 {
-    options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());
+    c.IsolationLevel=System.Data.IsolationLevel.ReadCommitted;
+    c.Propagation = Propagation.Required;
 });
-builder.Services.TryAddEnumerable(ServiceDescriptor.Transient<IApiDescriptionProvider, CamelCaseApiDescriptionProvider>());
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "IGeekFan.FreeKit.Web", Version = "v1" });
-});
-
-
-IFreeSql fsql = new FreeSql.FreeSqlBuilder()
-    .UseConnectionString(FreeSql.DataType.Sqlite, builder.Configuration["ConnectionStrings:DefaultConnection"])
-    .UseAutoSyncStructure(true)
-    .UseMonitorCommand(
-        cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
-  ).Build();
-builder.Services.AddSingleton(fsql);
-// Register a convention allowing to us to prefix routes to modules.
-builder.Services.AddTransient<IPostConfigureOptions<MvcOptions>, ModuleRoutingMvcOptionsPostConfigure>();
-
-// Adds module1 with the route prefix module-1
-builder.Services.AddModule<Module1.Module1Startup>("module-1");
-
-// Adds module2 with the route prefix module-2
-builder.Services.AddModule<Module2.Module2Startup>("module-2");
 
 
 var app = builder.Build();
