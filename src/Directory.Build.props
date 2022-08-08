@@ -1,25 +1,25 @@
 <Project>
-	<Import Project="../Directory.Build.props" />
-	<PropertyGroup>
-		<RepositoryUrl>https://github.com/luoyunchong/FreeKit</RepositoryUrl>
-		<IncludeSymbols>true</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-	</PropertyGroup>
+    <Import Project="../Directory.Build.props" />
+    <PropertyGroup>
+        <RepositoryUrl>https://github.com/luoyunchong/FreeKit</RepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<Authors>igeekfan;luoyunchong</Authors>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Copyright>MIT License</Copyright>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<AssemblyName >$(AssemblyName)</AssemblyName>
-		<PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
-        <Version>0.0.509</Version>
-	</PropertyGroup>
+    <PropertyGroup>
+        <Authors>igeekfan;luoyunchong</Authors>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Copyright>MIT License</Copyright>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <AssemblyName>$(AssemblyName)</AssemblyName>
+        <PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
+        <Version>0.0.510</Version>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    </ItemGroup>
 </Project>
