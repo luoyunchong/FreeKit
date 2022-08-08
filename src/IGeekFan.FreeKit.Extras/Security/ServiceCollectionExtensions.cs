@@ -45,6 +45,11 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    /// <summary>
+    /// 请求过程中给单例的<see cref="ICurrentUserAccessor"/> 对象的CurrentUser赋值，方便全局获取用户信息
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <returns></returns>
     public static IApplicationBuilder UseCurrentUserAccessor(this IApplicationBuilder builder)
     {
         return builder.UseMiddleware<CurrentUserAccessorMiddleware>();

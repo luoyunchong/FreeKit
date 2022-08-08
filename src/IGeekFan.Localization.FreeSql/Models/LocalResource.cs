@@ -20,7 +20,7 @@ namespace IGeekFan.Localization.FreeSql.Models
         [Column(StringLength = 50)]
         public string Key { get; set; }
 
-        [Column(StringLength = 50)]
+        [Column(StringLength = 500)]
         public string Value { get; set; }
 
         public long CultureId { get; set; }

@@ -7,7 +7,7 @@ using FreeSql;
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
 /// <summary>
-/// 事务
+/// 事务特性标签
 /// </summary>
 [AttributeUsage(AttributeTargets.Method)]
 public class TransactionalAttribute : Attribute

@@ -6,7 +6,6 @@ namespace Sample.Localization
 {
     public static class CodeFirstExtension
     {
-
         public static ICodeFirst SeedData(this ICodeFirst @this)
         {
             @this.Entity<LocalCulture>(e =>
@@ -35,7 +34,7 @@ namespace Sample.Localization
                             Resources=new List<LocalResource>()
                             {
                                 new("Hello","你好"),
-                                new("Request Localization Sample","请求资源示例"),
+                                new("Request Localization Sample","这是一个请求资源示例"),
                             }
                         }
                     });

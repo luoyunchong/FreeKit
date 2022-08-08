@@ -9,6 +9,8 @@ using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +23,9 @@ var fsql = new FreeSqlBuilder()
 
 fsql.CodeFirst.SeedData();
 builder.Services.AddSingleton(fsql);
-builder.Services.AddSingleton<IStringLocalizerFactory, FreeSqlStringLocalizerFactory>(); 
+
+builder.Services.TryAddSingleton<IStringLocalizerFactory, FreeSqlStringLocalizerFactory>();
+builder.Services.TryAddTransient(typeof(IStringLocalizer<>), typeof(StringLocalizer<>));
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 

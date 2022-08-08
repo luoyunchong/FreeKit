@@ -8,6 +8,9 @@ using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
+/// <summary>
+/// 异步事务方法拦截
+/// </summary>
 public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
     private readonly UnitOfWorkManager _unitOfWorkManager;

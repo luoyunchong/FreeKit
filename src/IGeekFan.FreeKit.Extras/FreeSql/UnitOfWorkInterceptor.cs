@@ -5,6 +5,9 @@ using Castle.DynamicProxy;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
+/// <summary>
+/// 同步Uow拦截
+/// </summary>
 public class UnitOfWorkInterceptor : IInterceptor
 {
     private readonly UnitOfWorkAsyncInterceptor _asyncInterceptor;

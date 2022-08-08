@@ -4,7 +4,7 @@
 namespace IGeekFan.FreeKit.Extras.Security;
 
 /// <summary>
-/// 令牌
+/// 访问令牌
 /// </summary>
 [Serializable]
 public class Tokens

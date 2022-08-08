@@ -6,27 +6,23 @@ using System.Threading.Tasks;
 
 namespace Sample.Localization.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class CultureController : Controller
     {
         private readonly ILogger<CultureController> _logger;
-        private readonly IFreeSql _freeSql;
-        private readonly IStringLocalizer _stringLocalizer;
+        private readonly IStringLocalizer<CultureController> _stringLocalizer;
 
-        public CultureController(ILogger<CultureController> logger, IFreeSql freeSql, IStringLocalizerFactory localizerFactory)
+        public CultureController(ILogger<CultureController> logger, IStringLocalizer<CultureController> stringLocalizer)
         {
             _logger = logger;
-            this._freeSql = freeSql;
-            this._stringLocalizer = localizerFactory.Create(null);
+            _stringLocalizer = stringLocalizer;
         }
-
-        [HttpGet("{id}")]
-        public string Get(int id)
+        
+        public string Hello()
         {
-            return _stringLocalizer["Request Localization"] + id;
+            return _stringLocalizer["Hello"] ;
         }
-
-        [HttpGet("GetProvider")]
+        
         public async Task<ProviderCultureResult> GetProvider()
         {
             var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
@@ -34,8 +30,7 @@ namespace Sample.Localization.Controllers
 
             return providerResult;
         }
-
-        [HttpGet]
+        
         public IActionResult Index()
         {
             var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
