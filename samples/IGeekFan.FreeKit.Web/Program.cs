@@ -4,10 +4,8 @@ using IGeekFan.FreeKit.Extras.Dependency;
 using IGeekFan.FreeKit.Modularity;
 using System.Reflection;
 using IGeekFan.FreeKit.Web;
-using IGeekFan.FreeKit.Extras.FreeSql;
-using FreeSql;
 
-WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Host
     .UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -15,8 +13,8 @@ builder.Host
     {
         //1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
         Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r =>
-            r.FullName.Contains("IGeekFan.FreeKit.Extras")
-            || r.FullName.Contains("Module1")).ToArray();
+               r.FullName.Contains("IGeekFan.FreeKit.Extras") || r.FullName.Contains("Module1")
+            ).ToArray();
         containerBuilder.RegisterModule(new FreeKitModule(currentAssemblies));
         containerBuilder.RegisterModule(new UnitOfWorkModule(currentAssemblies));
 
@@ -39,15 +37,7 @@ builder.Services
         .AddCustomMvc(c)
         .AddSwagger(c)
         .AddFreeSql(c)
-        .AddModuleServices(c)
-        ;
-
-
-builder.Services.Configure<UnitOfWorkDefualtOptions>(c =>
-{
-    c.IsolationLevel=System.Data.IsolationLevel.ReadCommitted;
-    c.Propagation = Propagation.Required;
-});
+        .AddModuleServices(c);
 
 
 var app = builder.Build();

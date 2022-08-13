@@ -2,6 +2,7 @@
 using FreeSql;
 using FreeSql.Internal;
 using IGeekFan.FreeKit.Extras.CaseQuery;
+using IGeekFan.FreeKit.Extras.FreeSql;
 using IGeekFan.FreeKit.Modularity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
@@ -33,13 +34,23 @@ namespace IGeekFan.FreeKit.Web
 
         public static IServiceCollection AddFreeSql(this IServiceCollection services, IConfiguration c)
         {
-            IFreeSql fsql = new FreeSqlBuilder()
-                        .UseConnectionString(DataType.Sqlite, c["ConnectionStrings:DefaultConnection"])
-                        .UseAutoSyncStructure(true)
-                        .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
-                        .UseMonitorCommand(
-                            cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
-                      ).Build();
+            services.Configure<UnitOfWorkDefualtOptions>(c =>
+            {
+                c.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
+                c.Propagation = Propagation.Required;
+            });
+
+            Func<IServiceProvider, IFreeSql> fsql = r =>
+            {
+                IFreeSql fsql = new FreeSqlBuilder()
+                      .UseConnectionString(DataType.Sqlite, c["ConnectionStrings:DefaultConnection"])
+                      .UseAutoSyncStructure(true)
+                      .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
+                      .UseMonitorCommand(
+                          cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
+                    ).Build();
+                return fsql;
+            };
             services.AddSingleton(fsql);
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();

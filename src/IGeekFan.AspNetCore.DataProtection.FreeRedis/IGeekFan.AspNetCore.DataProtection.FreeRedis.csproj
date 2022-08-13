@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeRedis" Version="0.6.2" />
+		<PackageReference Include="FreeRedis" Version="0.6.3" />
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="$(DefaultAspNetCoreVersion)" />
 	</ItemGroup>
 </Project>
