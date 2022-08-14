@@ -1,24 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FreeSql;
-using FreeSql.DataAnnotations;
-using IGeekFan.FreeKit.Extras.FreeSql;
+﻿using IGeekFan.FreeKit.Extras.FreeSql;
+using IGeekFan.FreeKit.xUnit.Models;
 using Xunit;
 
 namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
 {
-    public class UserRole
-    {
-        [Column(IsPrimary = true)]
-        public int UserId { get; set; }
-        [Column(IsPrimary = true)]
-        public int RoleId { get; set; }
-        public DateTime CreateTime { get; set; }
-    }
-
     public class BaseRepositoryTest
     {
         private readonly IBaseRepository<UserRole, int, int> _repository;

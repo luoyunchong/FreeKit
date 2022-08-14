@@ -85,17 +85,22 @@ namespace IGeekFan.FreeKit.xUnit
         {
             #region fsql
 
-            IFreeSql fsql = new FreeSqlBuilder()
-                .UseConnectionString(DataType.Sqlite, configuration["ConnectionStrings:DefaultConnection"])
-                .UseAutoSyncStructure(true)
-                .UseNoneCommandParameter(true)
-                .UseGenerateCommandParameterWithLambda(false)
-                .UseLazyLoading(false)
-                .UseMonitorCommand(
-                    cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
-                )
-                .Build();
-            fsql.GlobalFilter.Apply<ISoftDelete>("IsDeleted", a => a.IsDeleted == false);
+            Func<IServiceProvider, IFreeSql> fsql = r =>
+            {
+                IFreeSql fsql = new FreeSqlBuilder()
+                        .UseConnectionString(DataType.Sqlite, configuration["ConnectionStrings:Sqlite"])
+                        .UseAutoSyncStructure(true)
+                        .UseNoneCommandParameter(true)
+                        .UseGenerateCommandParameterWithLambda(false)
+                        .UseLazyLoading(false)
+                        .UseMonitorCommand(
+                            cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
+                        )
+                        .Build();
+                fsql.GlobalFilter.Apply<ISoftDelete>("IsDeleted", a => a.IsDeleted == false);
+                return fsql;
+            };
+
             services.AddSingleton(fsql);
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();

@@ -1,18 +1,11 @@
-﻿using IGeekFan.FreeKit.Extras.AuditEntity;
-using IGeekFan.FreeKit.Extras.FreeSql;
+﻿using IGeekFan.FreeKit.Extras.FreeSql;
+using IGeekFan.FreeKit.xUnit.Models;
 using Newtonsoft.Json;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
 {
-    public class Todo : FullAuditEntity
-    {
-        public string Message { get; set; }
-        public DateTime? NotifictionTime { get; set; }
-
-        public bool IsDone { get; set; }
-    }
 
     public class AuditRepositoryTest
     {

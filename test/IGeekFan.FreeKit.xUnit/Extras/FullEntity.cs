@@ -1,5 +1,4 @@
 ﻿using IGeekFan.FreeKit.Extras.AuditEntity;
-using IGeekFan.FreeKit.Extras.FreeSql;
 using Xunit.Abstractions;
 using Xunit;
 using IGeekFan.FreeKit.Extras.Extensions;

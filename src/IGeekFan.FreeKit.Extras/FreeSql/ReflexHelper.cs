@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using FreeSql.DataAnnotations;
+using IGeekFan.FreeKit.Extras.AuditEntity;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
@@ -12,19 +13,14 @@ public class ReflexHelper
     /// 扫描type所在程序集，反射得到类上有特性标签为TableAttribute 的所有类
     /// </summary>
     /// <returns></returns>
-    public static Type[]? GetTypesByTableAttribute(Type type)
+    public static Type[] GetTypesByTableAttribute(Type type)
     {
-        List<Type> tableAssembies = new List<Type>();
-        Assembly? assembly = Assembly.GetAssembly(type);
-        if (assembly == null) return null;
-        foreach (Type itemType in assembly.GetExportedTypes())
-        {
-            foreach (Attribute attribute in itemType.GetCustomAttributes())
-            {
-                if (attribute is not TableAttribute { DisableSyncStructure: false }) continue;
-                tableAssembies.Add(itemType);
-            }
-        };
+        var assembly = Assembly.GetAssembly(type);
+        if (assembly == null) return Array.Empty<Type>();
+
+        List<Type> tableAssembies = assembly.GetExportedTypes()
+            .Where(t => t.GetCustomAttributes<TableAttribute>(false).FirstOrDefault()?.DisableSyncStructure == false)
+            .ToList();
         return tableAssembies.ToArray();
     }
 
@@ -36,19 +32,15 @@ public class ReflexHelper
     /// <returns></returns>
     public static Type[] GetTypesByNameSpace(Type assemblyType, List<string> entitiesFullName)
     {
-        List<Type> tableAssembies = new List<Type>();
         Assembly? assembly = Assembly.GetAssembly(assemblyType);
-        if (assembly != null)
-            foreach (Type type in assembly.GetExportedTypes())
-            {
-                foreach (var fullname in entitiesFullName)
-                {
-                    if (type.FullName != null && type.FullName.StartsWith(fullname) && type.IsClass && !type.IsAbstract)
-                    {
-                        tableAssembies.Add(type);
-                    }
-                }
-            }
+        if (assembly == null) return Array.Empty<Type>();
+
+        List<Type> tableAssembies = assembly
+            .GetExportedTypes()
+            .Where(t =>
+                entitiesFullName.Any(u => t.FullName != null && t.FullName.StartsWith(u) && t.IsClass)
+            )
+            .ToList();
 
         return tableAssembies.ToArray();
     }

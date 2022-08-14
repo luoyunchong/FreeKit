@@ -72,9 +72,7 @@
 ## IGeekFan.Localization.FreeSql
 
 - 数据库多语言本地化[IGeekFan.Localization.FreeSql](https://igeekfan.cn/dotnetcore/freekit/Localization.FreeSql.html)**文档**
-html)**
 
 ## IGeekFan.FreeKit.Modularity
 
 - 单体模块化[IGeekFan.FreeKit.Modularity](https://igeekfan.cn/dotnetcore/freekit/Modularity.html)**文档**
-html)**
