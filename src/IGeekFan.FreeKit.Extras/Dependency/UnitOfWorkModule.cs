@@ -30,6 +30,7 @@ public class UnitOfWorkModule : Autofac.Module
 
     protected override void Load(ContainerBuilder builder)
     {
+        //Instance Per Dependency是默认的模式
         builder.RegisterType<UnitOfWorkInterceptor>();
         builder.RegisterType<UnitOfWorkAsyncInterceptor>();
 

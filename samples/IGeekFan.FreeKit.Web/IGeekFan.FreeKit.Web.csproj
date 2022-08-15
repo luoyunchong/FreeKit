@@ -7,6 +7,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.SqlServer" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.Oracle" Version="$(DefaultFreeeSqlVersion)" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DefaultAspNetCoreVersion)" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(DefaultAspNetCoreVersion)" />

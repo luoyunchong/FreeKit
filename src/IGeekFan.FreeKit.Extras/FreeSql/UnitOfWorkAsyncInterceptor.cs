@@ -18,11 +18,11 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     private IUnitOfWork _unitOfWork;
     private readonly UnitOfWorkDefualtOptions _unitOfWorkDefualtOptions;
 
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, ILogger<UnitOfWorkAsyncInterceptor> logger, IOptions<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
+    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, ILogger<UnitOfWorkAsyncInterceptor> logger, IOptionsMonitor<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
     {
         _unitOfWorkManager = unitOfWorkManager;
         _logger = logger;
-        _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.Value;
+        _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.CurrentValue;
     }
 
     /// <summary>

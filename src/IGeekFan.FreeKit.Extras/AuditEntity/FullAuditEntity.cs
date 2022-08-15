@@ -11,7 +11,7 @@ public class FullAuditEntity : FullAuditEntity<Guid, Guid>, IFullAuditEntity<Gui
 }
 
 /// <summary>
-/// 实体基类
+/// 包含审计实体基类,包含 创建、修改、删除加主键等10个字段，其实T为当前主键类型，U为用户表主键类型
 /// </summary>
 /// <typeparam name="T">当前主键类型</typeparam>
 /// <typeparam name="U">用户表主键类型</typeparam>

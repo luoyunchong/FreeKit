@@ -34,16 +34,16 @@ namespace IGeekFan.FreeKit.Web
 
         public static IServiceCollection AddFreeSql(this IServiceCollection services, IConfiguration c)
         {
-            services.Configure<UnitOfWorkDefualtOptions>(c =>
-            {
-                c.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
-                c.Propagation = Propagation.Required;
-            });
+            // services.Configure<UnitOfWorkDefualtOptions>(c =>
+            // {
+            //     c.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
+            //     c.Propagation = Propagation.Required;
+            // });
 
             Func<IServiceProvider, IFreeSql> fsql = r =>
             {
                 IFreeSql fsql = new FreeSqlBuilder()
-                      .UseConnectionString(DataType.Sqlite, c["ConnectionStrings:DefaultConnection"])
+                      .UseConnectionString(c)
                       .UseAutoSyncStructure(true)
                       .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
                       .UseMonitorCommand(
