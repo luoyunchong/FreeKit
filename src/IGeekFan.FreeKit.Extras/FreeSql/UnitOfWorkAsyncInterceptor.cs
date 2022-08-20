@@ -1,12 +1,39 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Reflection;
 using Castle.DynamicProxy;
 using FreeSql;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
+
+public static class MethodInfoExtensions
+{
+    /// <summary>
+    /// 判断方法上或类上是否有TransactionalAttribute特性标签 
+    /// </summary>
+    /// <param name="methodInfo"></param>
+    /// <returns></returns>
+    public static TransactionalAttribute? GetUnitOfWorkAttributeOrNull(this MethodInfo methodInfo)
+    {
+        var attrs = methodInfo.GetCustomAttributes(true).OfType<TransactionalAttribute>().ToArray();
+        if (attrs.Length > 0)
+        {
+            return attrs[0];
+        }
+
+        if (methodInfo.DeclaringType == null) return null;
+        attrs = methodInfo.DeclaringType.GetTypeInfo().GetCustomAttributes(true).OfType<TransactionalAttribute>().ToArray();
+        if (attrs.Length > 0)
+        {
+            return attrs[0];
+        }
+
+        return null;
+    }
+}
 
 /// <summary>
 /// 异步事务方法拦截
@@ -25,6 +52,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.CurrentValue;
     }
 
+
     /// <summary>
     /// 当只配置特性标签，但未指定任意属性值时，默认根据UnitOfWorkDefualtOptions
     /// </summary>
@@ -33,17 +61,12 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     private bool TryBegin(IInvocation invocation)
     {
         var method = invocation.MethodInvocationTarget ?? invocation.Method;
-        var attribute = method.GetCustomAttributes(typeof(TransactionalAttribute), false).FirstOrDefault();
-        if (attribute is TransactionalAttribute transaction)
+        var transaction = method.GetUnitOfWorkAttributeOrNull();
+        if (transaction != null)
         {
-            if (transaction.IsolationLevel == null)
-            {
-                transaction.IsolationLevel = _unitOfWorkDefualtOptions.IsolationLevel;
-            }
-            if (transaction.Propagation == null)
-            {
-                transaction.Propagation = _unitOfWorkDefualtOptions.Propagation;
-            }
+            if (transaction.IsDisabled) return false;
+            transaction.IsolationLevel ??= _unitOfWorkDefualtOptions.IsolationLevel;
+            transaction.Propagation ??= _unitOfWorkDefualtOptions.Propagation;
             _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation ?? Propagation.Required, transaction.IsolationLevel);
             return true;
         }
@@ -59,17 +82,13 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     {
         if (TryBegin(invocation))
         {
-            int? hashCode = _unitOfWork.GetHashCode();
             try
             {
                 invocation.Proceed();
-                _logger.LogInformation("----- 拦截同步执行的方法-事务 {HashCode} 提交前----- ", hashCode);
                 _unitOfWork.Commit();
-                _logger.LogInformation("----- 拦截同步执行的方法-事务 {HashCode} 提交成功----- ", hashCode);
             }
             catch
             {
-                _logger.LogError("----- 拦截同步执行的方法-事务 {HashCode} 提交失败----- ", hashCode);
                 _unitOfWork.Rollback();
                 throw;
             }
@@ -104,34 +123,24 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
     private async Task InternalInterceptAsynchronous(IInvocation invocation)
     {
-        string methodName = $"{invocation.MethodInvocationTarget.DeclaringType?.FullName}.{invocation.Method.Name}()";
-        int? hashCode = _unitOfWork.GetHashCode();
-
-        using (_logger.BeginScope("_unitOfWork:{hashCode}", hashCode))
+        try
         {
-            _logger.LogInformation("----- async Task 开始事务{HashCode} {MethodName}----- ", hashCode, methodName);
-
-            try
+            invocation.Proceed();
+            //处理Task返回一个null值的情况会导致空指针
+            if (invocation.ReturnValue != null)
             {
-                invocation.Proceed();
-                //处理Task返回一个null值的情况会导致空指针
-                if (invocation.ReturnValue != null)
-                {
-                    await (Task)invocation.ReturnValue;
-                }
-                _unitOfWork.Commit();
-                _logger.LogInformation("----- async Task 事务 {HashCode} Commit----- ", hashCode);
+                await (Task)invocation.ReturnValue;
             }
-            catch (Exception)
-            {
-                _unitOfWork.Rollback();
-                _logger.LogError("----- async Task 事务 {HashCode} Rollback----- ", hashCode);
-                throw;
-            }
-            finally
-            {
-                _unitOfWork.Dispose();
-            }
+            _unitOfWork.Commit();
+        }
+        catch (Exception)
+        {
+            _unitOfWork.Rollback();
+            throw;
+        }
+        finally
+        {
+            _unitOfWork.Dispose();
         }
 
     }
@@ -153,21 +162,16 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         TResult result;
         if (TryBegin(invocation))
         {
-            string methodName = $"{invocation.MethodInvocationTarget.DeclaringType?.FullName}.{invocation.Method.Name}()";
-            int hashCode = _unitOfWork.GetHashCode();
-            _logger.LogInformation("----- async Task<TResult> 开始事务{HashCode} {MethodName}----- ", hashCode, methodName);
             try
             {
                 invocation.Proceed();
                 Task<TResult> task = (Task<TResult>)invocation.ReturnValue;
                 result = await task;
                 _unitOfWork.Commit();
-                _logger.LogInformation("----- async Task<TResult> Commit事务{HashCode}----- ", hashCode);
             }
             catch (Exception)
             {
                 _unitOfWork.Rollback();
-                _logger.LogError("----- async Task<TResult> Rollback事务{HashCode}----- ", hashCode);
                 throw;
             }
             finally

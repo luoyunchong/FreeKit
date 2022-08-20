@@ -23,60 +23,60 @@ public class FullAuditEntity<T, U> : Entity<T>, ICreateAuditEntity<U>, IUpdateAu
     /// 创建者ID
     /// </summary>
     [Column(Position = -4)]
-    public U? CreateUserId { get; set; }
+    public virtual U? CreateUserId { get; set; }
 
     /// <summary>
     /// 创建人
     /// </summary>
     [Column(Position = -4)]
-    public string? CreateUserName { get; set; }
+    public virtual string? CreateUserName { get; set; }
 
     /// <summary>
     /// 创建时间
     /// </summary>
     [Column(Position = -4)]
-    public DateTime CreateTime { get; set; }
+    public virtual DateTime CreateTime { get; set; }
 
     /// <summary>
     /// 最后修改人Id
     /// </summary>
     [Column(Position = -3)]
-    public U? UpdateUserId { get; set; }
+    public virtual U? UpdateUserId { get; set; }
 
     /// <summary>
     /// 修改人
     /// </summary>
     [Column(Position = -3)]
-    public string? UpdateUserName { get; set; }
+    public virtual string? UpdateUserName { get; set; }
 
     /// <summary>
     /// 修改时间
     /// </summary>
     [Column(Position = -3)]
-    public DateTime? UpdateTime { get; set; }
+    public virtual DateTime? UpdateTime { get; set; }
 
     /// <summary>
     /// 删除人id
     /// </summary>
     [Column(Position = -2)]
-    public U? DeleteUserId { get; set; }
+    public virtual U? DeleteUserId { get; set; }
 
     /// <summary>
     /// 删除人
     /// </summary>
     [Column(Position = -2)]
-    public string? DeleteUserName { get; set; }
+    public virtual string? DeleteUserName { get; set; }
 
     /// <summary>
     /// 删除时间
     /// </summary>
     [Column(Position = -2)]
-    public DateTime? DeleteTime { get; set; }
+    public virtual DateTime? DeleteTime { get; set; }
 
     /// <summary>
     /// 是否删除
     /// </summary>
     [Column(Position = -1)]
-    public bool IsDeleted { get; set; }
+    public virtual bool IsDeleted { get; set; }
 }
 

@@ -51,6 +51,7 @@ namespace IGeekFan.FreeKit.Web
                     ).Build();
                 return fsql;
             };
+
             services.AddSingleton(fsql);
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();
@@ -69,11 +70,13 @@ namespace IGeekFan.FreeKit.Web
                 options.LowercaseQueryStrings = true;
                 options.LowercaseUrls = true;
             });
-
+            services.AddTransient<UnitOfWorkActionFilter>();
             services.AddControllers(options =>
             {
                 options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());
                 //options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+                options.Filters.AddService(typeof(UnitOfWorkActionFilter));
+                //options.Filters.Add(typeof(UowActionFilter));
             })
             .AddNewtonsoftJson(opt =>
             {

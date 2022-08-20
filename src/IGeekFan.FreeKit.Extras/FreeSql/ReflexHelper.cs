@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Reflection;
 using FreeSql.DataAnnotations;
-using IGeekFan.FreeKit.Extras.AuditEntity;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 

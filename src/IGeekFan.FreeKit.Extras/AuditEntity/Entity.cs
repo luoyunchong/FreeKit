@@ -17,7 +17,7 @@ public abstract class Entity<T> : IEntity<T> where T : IEquatable<T>
     /// 主键Id
     /// </summary>
     [Column(IsPrimary = true, IsIdentity = true, Position = 1)]
-    public T Id { get; set; }
+    public virtual T Id { get; set; }
 
     public virtual object[] GetKeys()
     {
@@ -43,18 +43,18 @@ public class CreateAuditEntity<TKey, TUKey> : Entity<TKey>, ICreateAuditEntity<T
     /// <summary>
     /// 创建者ID
     /// </summary>
-    public TUKey? CreateUserId { get; set; }
+    public virtual TUKey? CreateUserId { get; set; }
 
     /// <summary>
     /// 创建人
     /// </summary>
-    public string? CreateUserName { get; set; }
+    public virtual string? CreateUserName { get; set; }
 
 
     /// <summary>
     /// 创建时间
     /// </summary>
-    public DateTime CreateTime { get; set; }
+    public virtual DateTime CreateTime { get; set; }
 }
 
 public class CreateAuditEntity : CreateAuditEntity<Guid, Guid>, ICreateAuditEntity
