@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace IGeekFan.FreeKit.Extras.Security;
 
+/// <summary>
+/// 默认的string 当前用户
+/// </summary>
 public class CurrentUser : CurrentUser<string>, ICurrentUser
 {
     public CurrentUser(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
@@ -19,11 +22,14 @@ public class CurrentUser : CurrentUser<string>, ICurrentUser
 /// <typeparam name="T"></typeparam>
 public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
 {
+    /// <summary>
+    /// 证件持有者
+    /// </summary>
     protected readonly ClaimsPrincipal ClaimsPrincipal;
 
     public CurrentUser(IHttpContextAccessor httpContextAccessor)
     {
-        ClaimsPrincipal = httpContextAccessor.HttpContext?.User ?? Thread.CurrentPrincipal as ClaimsPrincipal;
+        ClaimsPrincipal = (httpContextAccessor.HttpContext?.User ?? Thread.CurrentPrincipal as ClaimsPrincipal) ?? new  ClaimsPrincipal();
     }
 
     /// <inheritdoc />
@@ -34,36 +40,39 @@ public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
     public virtual T? Id => ClaimsPrincipal.FindUserId<T>();
 
     /// <inheritdoc />
-    public virtual string? UserName => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+    public virtual string? UserName => ClaimsPrincipal.FindUserName();
 
     /// <inheritdoc />
-    public virtual string? Email => ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    public virtual string? Email => ClaimsPrincipal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 
     /// <inheritdoc />
     public virtual string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
 
     /// <inheritdoc />
-    public Guid? TenantId => ClaimsPrincipal.FindTenantId();
+    public virtual Guid? TenantId => ClaimsPrincipal.FindTenantId();
 
     /// <inheritdoc />
-    public string? TenantName =>
-        ClaimsPrincipal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantName)?.Value;
+    public virtual string? TenantName => ClaimsPrincipal?.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantName)?.Value;
 
+    /// <inheritdoc />
     public virtual Claim? FindClaim(string claimType)
     {
         return ClaimsPrincipal.Claims.FirstOrDefault(c => c.Type == claimType);
     }
 
+    /// <inheritdoc />
     public virtual Claim[] FindClaims(string claimType)
     {
         return ClaimsPrincipal.Claims.Where(c => c.Type == claimType).ToArray();
     }
 
+    /// <inheritdoc />
     public virtual Claim[] GetAllClaims()
     {
         return ClaimsPrincipal.Claims.ToArray();
     }
 
+    /// <inheritdoc />
     public virtual bool IsInRole(string roleId)
     {
         return FindClaims(ClaimTypes.Role).Any(c => c.Value == roleId);

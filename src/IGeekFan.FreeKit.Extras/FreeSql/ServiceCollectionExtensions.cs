@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using FreeSql;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -50,6 +51,20 @@ public static class ServiceCollectionExtensions
         {
             throw new NotSupportedException("用户ID仅支持Guid/long/int类型");
         }
+        return services;
+    }
+
+
+
+    /// <summary>
+    /// 批量注入 IBaseRepository
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    public static IServiceCollection AddDefaultRepository(this IServiceCollection services)
+    {
+        services.TryAddScoped(typeof(IBaseRepository<>), typeof(GuidRepository<>));
+        services.TryAddScoped(typeof(IBaseRepository<,>), typeof(DefaultRepository<,>));
         return services;
     }
 }

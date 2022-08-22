@@ -1,6 +1,7 @@
 ﻿using IGeekFan.FreeKit.Extras.FreeSql;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Module1.Domain;
 using Module1.Services;
 
 namespace Module1;
@@ -11,11 +12,17 @@ public class SongController : ControllerBase
 {
     private readonly ILogger<SongController> _logger;
     private readonly ISongService _songService;
+    private readonly ITransientSongManager _songManager;
+    private readonly IScopedSongManager _scopedSongManager;
+    private readonly ISingletonSongManager _singletonSongManager;
 
-    public SongController(ILogger<SongController> logger, ISongService testService)
+    public SongController(ILogger<SongController> logger, ISongService testService, ITransientSongManager songManager, IScopedSongManager scopedSongManager, ISingletonSongManager singletonSongManager)
     {
         this._logger = logger;
         this._songService = testService;
+        _songManager = songManager;
+        _scopedSongManager = scopedSongManager;
+        _singletonSongManager = singletonSongManager;
     }
 
     [Transactional]
@@ -44,6 +51,18 @@ public class SongController : ControllerBase
     {
         _songService.DeleteSong(id);
     }
+
+    [HttpGet("gethashcode")]
+    public dynamic GetHashCode()
+    {
+        return new
+        {
+            transient = _songManager.GetHashCode(),
+            scope = _scopedSongManager.GetHashCode(),
+            singleton = _singletonSongManager.GetHashCode(),
+        };
+    }
+
     /// <summary>
     /// InterModule
     /// </summary>

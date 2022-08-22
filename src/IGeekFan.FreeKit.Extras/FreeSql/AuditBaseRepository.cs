@@ -31,6 +31,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     /// 是否开户软删除审计
     /// </summary>
     protected readonly bool IsDeleteAudit;
+    
     /// <summary>
     /// 是否开启修改审计
     /// </summary>

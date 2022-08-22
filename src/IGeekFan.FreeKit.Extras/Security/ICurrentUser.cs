@@ -10,6 +10,10 @@ public interface ICurrentUser : ICurrentUser<string>
 {
 }
 
+/// <summary>
+/// 登录人信息上下文 
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface ICurrentUser<T> : ITransientDependency where T : IEquatable<T>
 {
     /// <summary>
@@ -47,11 +51,30 @@ public interface ICurrentUser<T> : ITransientDependency where T : IEquatable<T>
     /// </summary>
     string? TenantName { get; }
 
+    /// <summary>
+    /// 根据声明类别获取声明
+    /// </summary>
+    /// <param name="claimType"></param>
+    /// <returns></returns>
     Claim? FindClaim(string claimType);
 
+    /// <summary>
+    /// 根据声明类别获取所有声明
+    /// </summary>
+    /// <param name="claimType"></param>
+    /// <returns></returns>
     Claim[] FindClaims(string claimType);
 
+    /// <summary>
+    /// 获取所有声明
+    /// </summary>
+    /// <returns></returns>
     Claim[] GetAllClaims();
 
+    /// <summary>
+    /// 判断用户是否拥有此角色
+    /// </summary>
+    /// <param name="roleId"></param>
+    /// <returns></returns>
     bool IsInRole(string roleId);
 }
