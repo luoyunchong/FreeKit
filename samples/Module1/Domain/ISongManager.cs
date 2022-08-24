@@ -31,4 +31,9 @@ namespace Module1.Domain
     {
 
     }
+
+    public class AsSelfSongManager : ITransientDependency
+    {
+
+    }
 }

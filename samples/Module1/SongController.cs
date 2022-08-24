@@ -12,17 +12,25 @@ public class SongController : ControllerBase
 {
     private readonly ILogger<SongController> _logger;
     private readonly ISongService _songService;
+    private readonly SongService _songService2;
     private readonly ITransientSongManager _songManager;
     private readonly IScopedSongManager _scopedSongManager;
     private readonly ISingletonSongManager _singletonSongManager;
+    private readonly AsSelfSongManager _asSelfSongManager;
+    private readonly AsSelfSongService _asSelfSongService;
+    private readonly TransientSongManager _transientSongManager;
 
-    public SongController(ILogger<SongController> logger, ISongService testService, ITransientSongManager songManager, IScopedSongManager scopedSongManager, ISingletonSongManager singletonSongManager)
+    public SongController(ILogger<SongController> logger, ISongService testService, ITransientSongManager songManager, IScopedSongManager scopedSongManager, ISingletonSongManager singletonSongManager, AsSelfSongManager asSelfSongManager, AsSelfSongService asSelfSongService, TransientSongManager transientSongManager, SongService songService2)
     {
-        this._logger = logger;
-        this._songService = testService;
+        _logger = logger;
+        _songService = testService;
         _songManager = songManager;
         _scopedSongManager = scopedSongManager;
         _singletonSongManager = singletonSongManager;
+        _asSelfSongManager = asSelfSongManager;
+        _asSelfSongService = asSelfSongService;
+        _transientSongManager = transientSongManager;
+        _songService2 = songService2;
     }
 
     [Transactional]
@@ -31,6 +39,20 @@ public class SongController : ControllerBase
     {
         _logger.LogInformation("InsertSong");
         _songService.InsertSong(song);
+
+        if (song.Title == "e")
+        {
+            throw new Exception("出现错误，会回滚吗");
+        }
+
+        return song;
+    }
+    [Transactional]
+    [HttpPost("asself")]
+    public Song InsertAsSelfSong([FromBody] Song song)
+    {
+        _logger.LogInformation("InsertSong");
+        _asSelfSongService.InsertSong(song);
 
         if (song.Title == "e")
         {
@@ -53,13 +75,15 @@ public class SongController : ControllerBase
     }
 
     [HttpGet("gethashcode")]
-    public dynamic GetHashCode()
+    public dynamic GetAllHashCode()
     {
         return new
         {
             transient = _songManager.GetHashCode(),
+            transientSongManager= _transientSongManager.GetHashCode(),
             scope = _scopedSongManager.GetHashCode(),
             singleton = _singletonSongManager.GetHashCode(),
+            asSelf = _asSelfSongManager.GetHashCode()
         };
     }
 

@@ -3,7 +3,6 @@ using IGeekFan.FreeKit.Extras.FreeSql;
 using IGeekFan.FreeKit.Extras.Security;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
 
 namespace IGeekFan.FreeKit.Extras;
 
@@ -22,6 +21,8 @@ public static class ServiceCollectionExtensions
         //当前登录人上下文的accessor
         //审计仓储
         //复合主键仓储)
+        services.AddHttpContextAccessor();
+
         services
             .AddTransient<UnitOfWorkActionFilter>()
             .AddCurrentUser()
@@ -33,24 +34,5 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<UnitOfWorkManager>();
 
         return services;
-    }
-
-
-    /// <summary>
-    /// 获取一下Scope Service 以执行 DbContext中的OnModelCreating
-    /// </summary>
-    /// <param name="serviceProvider"></param>
-    public static void RunScopeService<T>(this IServiceProvider serviceProvider) where T : DbContext
-    {
-        using var serviceScope = serviceProvider.CreateScope();
-        try
-        {
-            using var myDependency = serviceScope.ServiceProvider.GetRequiredService<T>();
-        }
-        catch (Exception ex)
-        {
-            var logger = serviceScope.ServiceProvider.GetRequiredService<ILogger<ICurrentUser>>();
-            logger.LogError(ex, "An error occurred.");
-        }
     }
 }

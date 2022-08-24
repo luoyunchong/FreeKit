@@ -45,7 +45,7 @@ public class FreeKitModule : Autofac.Module
         {
             return;
         }
-        
+
         //每次调用，都会重新实例化对象；每次请求都创建一个新的对象；
         bool TransientPredicate(Type t) => !t.IsDefined(typeof(DisableConventionalRegistrationAttribute), true) &&
                                            typeof(ITransientDependency).GetTypeInfo().IsAssignableFrom(t) &&
@@ -53,6 +53,7 @@ public class FreeKitModule : Autofac.Module
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(TransientPredicate)
+            .AsSelf()
             .AsImplementedInterfaces()
             .InstancePerDependency();
 
@@ -63,6 +64,7 @@ public class FreeKitModule : Autofac.Module
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(ScopePredicate)
+            .AsSelf()
             .AsImplementedInterfaces()
             .InstancePerLifetimeScope();
 
@@ -73,6 +75,7 @@ public class FreeKitModule : Autofac.Module
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(SingletonPredicate)
+            .AsSelf()
             .AsImplementedInterfaces()
             .SingleInstance();
 

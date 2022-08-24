@@ -43,12 +43,19 @@ public class UnitOfWorkModule : Autofac.Module
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(Predicate)
-            .AsImplementedInterfaces()
+            .AsImplementedInterfaces()//注册的类型，以接口的方式注册
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入
             .InterceptedBy(interceptorServiceTypes.ToArray())
             .EnableInterfaceInterceptors();
 
+        builder.RegisterAssemblyTypes(_currentAssemblies)
+            .Where(Predicate)
+            .AsSelf()
+            .InstancePerLifetimeScope()
+            .PropertiesAutowired()// 属性注入
+            .InterceptedBy(interceptorServiceTypes.ToArray())
+            .EnableClassInterceptors();
 
     }
 }

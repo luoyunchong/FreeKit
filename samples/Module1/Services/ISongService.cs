@@ -1,5 +1,6 @@
 ﻿
 using IGeekFan.FreeKit.Extras.Dependency;
+using Module1.Domain;
 
 namespace Module1.Services
 {

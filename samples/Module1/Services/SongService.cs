@@ -1,47 +1,50 @@
-﻿using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using FreeSql;
-using FreeSql.DataAnnotations;
 using IGeekFan.FreeKit.Extras.FreeSql;
+using Module1.Domain;
 
 namespace Module1.Services
 {
 
     public class SongService : ISongService
     {
-        private readonly IBaseRepository<Song, int> _useRepository;
-        public SongService(IBaseRepository<Song, int> useRepository)
+        private readonly IBaseRepository<Song, int> _songRepository;
+        public SongService(IBaseRepository<Song, int> songRepository)
         {
-            _useRepository = useRepository;
+            _songRepository = songRepository;
         }
 
         [Transactional(Propagation.Required)]
         public Song InsertSong(Song song)
         {
-            _useRepository.Insert(song);
+            _songRepository.Insert(song);
             return song;
         }
 
         public List<Song> GetSongs()
         {
-            return _useRepository.Select.ToList();
+            return _songRepository.Select.ToList();
         }
 
         public void DeleteSong(int id)
         {
-            _useRepository.Delete(id);
+            _songRepository.Delete(id);
         }
     }
 
-    [Description("Song歌曲")]
-    public class Song
+    public class AsSelfSongService
     {
-        /// <summary>
-        /// 自增
-        /// </summary>
-        [Column(IsIdentity = true)]
-        [Description("自增id")]
-        public int Id { get; set; }
-        public string Title { get; set; }
+        private readonly IBaseRepository<Song, int> _songRepository;
+        public AsSelfSongService(IBaseRepository<Song, int> songRepository)
+        {
+            _songRepository = songRepository;
+        }
+        [Transactional(Propagation.Required)]
+        public virtual Song InsertSong(Song song)
+        {
+            _songRepository.Insert(song);
+            return song;
+        }
+
     }
 }

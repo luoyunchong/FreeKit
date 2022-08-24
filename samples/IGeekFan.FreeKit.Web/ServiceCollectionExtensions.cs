@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using FreeSql;
 using FreeSql.Internal;
+using IGeekFan.FreeKit.Extras;
 using IGeekFan.FreeKit.Extras.CaseQuery;
 using IGeekFan.FreeKit.Extras.FreeSql;
 using IGeekFan.FreeKit.Modularity;
@@ -46,6 +47,8 @@ namespace IGeekFan.FreeKit.Web
                       .UseConnectionString(c)
                       .UseAutoSyncStructure(true)
                       .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
+                      .UseGenerateCommandParameterWithLambda(true)//默认false,针对 lambda 表达式解析,设置成true时方便查看SQL
+                      .UseNoneCommandParameter(true) //默认true,针对insert/update/delete是否参数化
                       .UseMonitorCommand(
                           cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
                     ).Build();
@@ -53,9 +56,12 @@ namespace IGeekFan.FreeKit.Web
             };
 
             services.AddSingleton(fsql);
-            services.AddFreeRepository();
-            services.AddScoped<UnitOfWorkManager>();
-
+            services.AddFreeKitCore();
+            using (IServiceScope scope = services.BuildServiceProvider().CreateScope())
+            {
+                var freeSql = scope.ServiceProvider.GetRequiredService<IFreeSql>();
+                //freeSql.CodeFirst.SyncStructure(ReflexHelper.GetTypesByTableAttribute(typeof(Program)));
+            }
             return services;
         }
 
@@ -70,7 +76,6 @@ namespace IGeekFan.FreeKit.Web
                 options.LowercaseQueryStrings = true;
                 options.LowercaseUrls = true;
             });
-            services.AddTransient<UnitOfWorkActionFilter>();
             services.AddControllers(options =>
             {
                 options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());

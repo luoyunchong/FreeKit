@@ -44,8 +44,8 @@ public static class ServiceCollectionExtensions
         }
         else if(typeof(int) == typeUserkey)
         {
-            services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditLongRepository<>));
-            services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyLongRepository<,>));
+            services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditIntRepository<>));
+            services.TryAddScoped(typeof(IAuditBaseRepository<,>), typeof(AuditTKeyIntRepository<,>));
         }
         else
         {
