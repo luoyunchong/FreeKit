@@ -29,7 +29,7 @@ namespace IGeekFan.FreeKit.xUnit.Extras.Security
         {
             _testOutputHelper.WriteLine(JsonConvert.SerializeObject(_currentUser));
             _testOutputHelper.WriteLine(JsonConvert.SerializeObject(_currentUserGuid));
-            string? nameIdentifier = _currentUser.FindClaim(ClaimTypes.NameIdentifier)?.Value;
+            string? nameIdentifier = _currentUser.FindClaim(FreeKitClaimTypes.NameIdentifier)?.Value;
             Assert.Equal(nameIdentifier,_currentUser.Id);
         }
     }

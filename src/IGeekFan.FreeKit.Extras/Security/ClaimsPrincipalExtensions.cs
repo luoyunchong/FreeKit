@@ -13,12 +13,12 @@ public static class ClaimsPrincipalExtensions
 {
     public static string? FindUserName(this ClaimsPrincipal principal)
     {       
-        return principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+        return principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.UserName)?.Value;
     }
 
     public static Guid? FindTenantId(this ClaimsPrincipal principal)
     {       
-        Claim? tenantIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantId);
+        Claim? tenantIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.TenantId);
 
         if (tenantIdOrNull == null || tenantIdOrNull.Value.IsNullOrWhiteSpace())
         {
@@ -33,7 +33,7 @@ public static class ClaimsPrincipalExtensions
 
     public static string? FindUserId(this ClaimsPrincipal principal)
     {
-        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.NameIdentifier);
 
         return userIdOrNull?.Value;
     }
@@ -41,7 +41,7 @@ public static class ClaimsPrincipalExtensions
     #region 无法确定用户Id类型，默认转换支持Guid,Long,Int
     public static Guid? FindUserIdToGuid(this ClaimsPrincipal principal)
     {
-        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.NameIdentifier);
         if (userIdOrNull == null || userIdOrNull.Value.IsNullOrWhiteSpace())
         {
             return null;
@@ -55,7 +55,7 @@ public static class ClaimsPrincipalExtensions
 
     public static long? FindUserIdToLong(this ClaimsPrincipal principal)
     {
-        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.NameIdentifier);
         if (userIdOrNull == null || userIdOrNull.Value.IsNullOrWhiteSpace())
         {
             return null;
@@ -69,7 +69,7 @@ public static class ClaimsPrincipalExtensions
 
     public static int? FindUserIdToInt(this ClaimsPrincipal principal)
     {
-        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.NameIdentifier);
         if (userIdOrNull == null || userIdOrNull.Value.IsNullOrWhiteSpace())
         {
             return null;

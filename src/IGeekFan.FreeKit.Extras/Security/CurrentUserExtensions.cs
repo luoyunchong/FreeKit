@@ -76,8 +76,7 @@ public static class CurrentUserExtensions
     /// <returns></returns>
     public static string? FindName(this ICurrentUser currentUser)
     {
-        Claim? claim = currentUser.FindClaim(ClaimTypes.GivenName);
+        Claim? claim = currentUser.FindClaim(FreeKitClaimTypes.Name);
         return claim?.Value;
     }
-    
 }

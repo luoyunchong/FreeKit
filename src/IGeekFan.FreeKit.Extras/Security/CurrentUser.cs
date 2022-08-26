@@ -43,16 +43,16 @@ public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
     public virtual string? UserName => ClaimsPrincipal.FindUserName();
 
     /// <inheritdoc />
-    public virtual string? Email => ClaimsPrincipal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    public virtual string? Email => ClaimsPrincipal.Claims.FirstOrDefault(c => c.Type == FreeKitClaimTypes.Email)?.Value;
 
     /// <inheritdoc />
-    public virtual string[] Roles => FindClaims(ClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
+    public virtual string[] Roles => FindClaims(FreeKitClaimTypes.Role).Select(c => c.Value.ToString()).ToArray();
 
     /// <inheritdoc />
     public virtual Guid? TenantId => ClaimsPrincipal.FindTenantId();
 
     /// <inheritdoc />
-    public virtual string? TenantName => ClaimsPrincipal?.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimType.TenantName)?.Value;
+    public virtual string? TenantName => ClaimsPrincipal?.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.TenantName)?.Value;
 
     /// <inheritdoc />
     public virtual Claim? FindClaim(string claimType)
@@ -75,6 +75,6 @@ public class CurrentUser<T> : ICurrentUser<T> where T : IEquatable<T>
     /// <inheritdoc />
     public virtual bool IsInRole(string roleId)
     {
-        return FindClaims(ClaimTypes.Role).Any(c => c.Value == roleId);
+        return FindClaims(FreeKitClaimTypes.Role).Any(c => c.Value == roleId);
     }
 }

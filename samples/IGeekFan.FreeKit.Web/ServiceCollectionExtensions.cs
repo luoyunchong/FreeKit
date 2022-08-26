@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using FreeSql;
 using FreeSql.Internal;
-using IGeekFan.FreeKit.Extras;
 using IGeekFan.FreeKit.Extras.CaseQuery;
 using IGeekFan.FreeKit.Extras.FreeSql;
 using IGeekFan.FreeKit.Modularity;
@@ -81,7 +80,6 @@ namespace IGeekFan.FreeKit.Web
                 options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());
                 //options.Filters.Add(typeof(HttpGlobalExceptionFilter));
                 options.Filters.AddService(typeof(UnitOfWorkActionFilter));
-                //options.Filters.Add(typeof(UowActionFilter));
             })
             .AddNewtonsoftJson(opt =>
             {

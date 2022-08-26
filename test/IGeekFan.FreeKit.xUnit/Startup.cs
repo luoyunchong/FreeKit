@@ -25,11 +25,10 @@ namespace IGeekFan.FreeKit.xUnit
         {
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
             {
-                new (ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
-                new (ClaimTypes.Name,"Name"),
-                new (ClaimTypes.Surname,"Surname"),
-                new (ClaimTypes.GivenName,"GivenName"),
-                new (ClaimTypes.Email,"testemail@foxmail.com")
+                new (FreeKitClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
+                new (FreeKitClaimTypes.UserName,"igeekfan"),
+                new (FreeKitClaimTypes.Name,"天上月"),
+                new (FreeKitClaimTypes.Email,"igeekfan@foxmail.com")
             }));
             Thread.CurrentPrincipal = claimsPrincipal;
             hostBuilder.UseServiceProviderFactory(new AutofacServiceProviderFactory())
