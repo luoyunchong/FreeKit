@@ -4,6 +4,7 @@
 		<TargetFrameworks>$(DefaultNetCoreTargetFramework);</TargetFrameworks>
 		<Description>Support for storing data protection keys in Redis.</Description>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PackageId>$(AssemblyName)</PackageId>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageTags>aspnetcore;dataprotection;redis</PackageTags>
 		<IsTrimmable>true</IsTrimmable>
