@@ -15,7 +15,7 @@ public class UserStore : UserStore<IdentityUser<string>>
     /// </summary>
     /// <param name="context">The <see cref="DbContext"/>.</param>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/>.</param>
-    public UserStore(DbContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+    public UserStore(DbContext context, IdentityErrorDescriber? describer = null) : base(context, describer) { }
 }
 
 /// <summary>
@@ -30,7 +30,7 @@ public class UserStore<TUser> : UserStore<TUser, IdentityRole, DbContext, string
     /// </summary>
     /// <param name="context">The <see cref="DbContext"/>.</param>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/>.</param>
-    public UserStore(DbContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+    public UserStore(DbContext context, IdentityErrorDescriber? describer = null) : base(context, describer) { }
 }
 
 /// <summary>
@@ -49,7 +49,7 @@ public class UserStore<TUser, TRole, TContext> : UserStore<TUser, TRole, TContex
     /// </summary>
     /// <param name="context">The <see cref="DbContext"/>.</param>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/>.</param>
-    public UserStore(TContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+    public UserStore(TContext context, IdentityErrorDescriber? describer = null) : base(context, describer) { }
 }
 
 /// <summary>
@@ -70,7 +70,7 @@ public class UserStore<TUser, TRole, TContext, TKey> : UserStore<TUser, TRole, T
     /// </summary>
     /// <param name="context">The <see cref="DbContext"/>.</param>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/>.</param>
-    public UserStore(TContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+    public UserStore(TContext context, IdentityErrorDescriber? describer = null) : base(context, describer) { }
 }
 
 public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim> :
@@ -91,7 +91,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// </summary>
     /// <param name="context">The context used to access the store.</param>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/> used to describe store errors.</param>
-    public UserStore(TContext context, IdentityErrorDescriber describer = null) : base(describer ?? new IdentityErrorDescriber())
+    public UserStore(TContext context, IdentityErrorDescriber? describer = null) : base(describer ?? new IdentityErrorDescriber())
     {
         if (context == null)
         {

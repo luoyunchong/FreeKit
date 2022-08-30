@@ -38,6 +38,8 @@ public class IdentityUserContext<TUser, TKey> : IdentityUserContext<TUser, TKey,
     /// <summary>
     /// Initializes a new instance of the db context.
     /// </summary>
+    /// <param name="identityOptions"></param>
+    /// <param name="fsql"></param>
     /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
     public IdentityUserContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(identityOptions, fsql, options) { }
 

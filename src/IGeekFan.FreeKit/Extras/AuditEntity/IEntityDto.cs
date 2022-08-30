@@ -6,6 +6,9 @@ public interface IEntityDto
 
 public interface IEntityDto<TKey> : IEntityDto where TKey : IEquatable<TKey>
 {
+    /// <summary>
+    /// 主键Id
+    /// </summary>
     TKey Id { get; set; }
 }
 

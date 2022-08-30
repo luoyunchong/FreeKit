@@ -10,7 +10,7 @@ public static class EmailSenderDependencyInjection
     /// <summary>
     /// 配置Email服务
     /// </summary>
-    /// <param name="service"></param>
+    /// <param name="services"></param>
     /// <param name="configuration"></param>
     /// <returns></returns>
     public static IServiceCollection AddEmailSender(this IServiceCollection services,IConfiguration configuration)

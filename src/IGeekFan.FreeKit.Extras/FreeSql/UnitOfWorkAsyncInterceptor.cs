@@ -4,7 +4,6 @@
 using System.Reflection;
 using Castle.DynamicProxy;
 using FreeSql;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
@@ -41,17 +40,14 @@ public static class MethodInfoExtensions
 public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
     private readonly UnitOfWorkManager _unitOfWorkManager;
-    private readonly ILogger<UnitOfWorkAsyncInterceptor> _logger;
     private IUnitOfWork _unitOfWork;
     private readonly UnitOfWorkDefualtOptions _unitOfWorkDefualtOptions;
 
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, ILogger<UnitOfWorkAsyncInterceptor> logger, IOptionsMonitor<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
+    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager,IOptionsMonitor<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
     {
         _unitOfWorkManager = unitOfWorkManager;
-        _logger = logger;
         _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.CurrentValue;
     }
-
 
     /// <summary>
     /// 当只配置特性标签，但未指定任意属性值时，默认根据UnitOfWorkDefualtOptions
@@ -149,7 +145,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
     #region 拦截返回结果为Task<TResult>的方法
     /// <summary>
-    /// 拦截返回结果为Task<TResult>的方法
+    /// 拦截返回结果为Task&lt;TResult&gt;的方法
     /// </summary>
     /// <typeparam name="TResult"></typeparam>
     /// <param name="invocation"></param>

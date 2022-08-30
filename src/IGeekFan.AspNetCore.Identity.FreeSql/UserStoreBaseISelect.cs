@@ -28,7 +28,7 @@ public abstract class UserStoreBaseISelect<TUser, TKey, TUserClaim, TUserLogin, 
     /// Creates a new instance.
     /// </summary>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/> used to describe store errors.</param>
-    public UserStoreBaseISelect(IdentityErrorDescriber describer)
+    public UserStoreBaseISelect(IdentityErrorDescriber? describer)
     {
         if (describer == null)
         {
@@ -1058,7 +1058,7 @@ public abstract class UserStoreBaseISelect<TUser, TRole, TKey, TUserClaim, TUser
     /// Creates a new instance.
     /// </summary>
     /// <param name="describer">The <see cref="IdentityErrorDescriber"/> used to describe store errors.</param>
-    public UserStoreBaseISelect(IdentityErrorDescriber describer) : base(describer) { }
+    public UserStoreBaseISelect(IdentityErrorDescriber? describer) : base(describer) { }
 
     /// <summary>
     /// Called to create a new instance of a <see cref="IdentityUserRole{TKey}"/>.
