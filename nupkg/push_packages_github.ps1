@@ -7,12 +7,12 @@ if (!$apiKey) {
     $pathExists = Test-Path -Path $passwordFileName -PathType Leaf
     if ($pathExists) {
         $apiKey = Get-Content $passwordFileName
-        Write-Output "Using BaGet API Key from $passwordFileName ..." 
+        Write-Output "Using GitHub API Key from $passwordFileName ..." 
     }
 }
  
 if (!$apiKey) {
-    $apiKey = Read-Host "Enter the BaGet API KEY"
+    $apiKey = Read-Host "Enter the GitHub API KEY"
 }
 # Get the version
 [xml]$commonPropsXml = Get-Content (Join-Path $rootFolder "src/Directory.Build.props")
