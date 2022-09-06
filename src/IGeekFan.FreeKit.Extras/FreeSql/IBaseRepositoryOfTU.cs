@@ -10,10 +10,8 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 public interface IBaseRepository<TEntity, TKey, Ukey> : IBaseRepository<TEntity> where TEntity : class
 {
     TEntity Get(TKey id, Ukey uid);
-    TEntity Find(TKey id, Ukey uid);
     int Delete(TKey id, Ukey uid);
     Task<TEntity> GetAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default);
-    Task<TEntity> FindAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default);
     Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default);
 }
 
@@ -46,22 +44,14 @@ public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEnti
 
     public virtual int Delete(TKey id, Ukey uid) => Delete(CheckTKeyAndReturnIdEntity(id, uid));
 
-    public virtual TEntity Find(TKey id, Ukey uid) =>
-        base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
+    public virtual TEntity Get(TKey id, Ukey uid) => base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
 
-    public TEntity Get(TKey id, Ukey uid) => base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOne();
-
-    public Task<TEntity> GetAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
+    public virtual Task<TEntity> GetAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
     {
         return base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOneAsync(cancellationToken);
     }
 
-    public Task<TEntity> FindAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
-    {
-        return base.Select.WhereDynamic(CheckTKeyAndReturnIdEntity(id, uid)).ToOneAsync(cancellationToken);
-    }
-
-    public Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
+    public virtual Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
     {
         return DeleteAsync(CheckTKeyAndReturnIdEntity(id, uid), cancellationToken);
     }

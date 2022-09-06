@@ -70,13 +70,24 @@ public static class CurrentUserExtensions
     #endregion
     
     /// <summary>
-    ///  用户姓名
+    ///  姓名
     /// </summary>
     /// <param name="currentUser"></param>
     /// <returns></returns>
     public static string? FindName(this ICurrentUser currentUser)
     {
         Claim? claim = currentUser.FindClaim(FreeKitClaimTypes.Name);
+        return claim?.Value;
+    }
+
+    /// <summary>
+    ///  手机号
+    /// </summary>
+    /// <param name="currentUser"></param>
+    /// <returns></returns>
+    public static string? FindPhoneNumber(this ICurrentUser currentUser)
+    {
+        Claim? claim = currentUser.FindClaim(FreeKitClaimTypes.PhoneNumber);
         return claim?.Value;
     }
 }

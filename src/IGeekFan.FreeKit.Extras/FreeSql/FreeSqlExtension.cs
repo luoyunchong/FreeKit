@@ -10,6 +10,12 @@ namespace FreeSql
 {
     public static class FreeSqlExtension
     {
+        /// <summary>
+        /// 根据配置文件配置
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration)
         {
             IConfigurationSection dbTypeCode = configuration.GetSection("ConnectionStrings:DefaultDB");
@@ -31,6 +37,12 @@ namespace FreeSql
             return @this;
         }
 
+        /// <summary>
+        /// 获取UseConnectionString中的数据库连接串
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string GetConnectionString(this FreeSqlBuilder @this)
         {
             Type type = @this.GetType();
@@ -99,6 +111,12 @@ namespace FreeSql.Aop
 {
     public static class AuditValueEventArgsExtension
     {
+        /// <summary>
+        /// 审计实体，创建、更新将自动审计
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="e"></param>
+        /// <param name="user"></param>
         public static void AuditValue<T>(this AuditValueEventArgs e, ICurrentUser? user) where T : struct
         {
             if (e.AuditValueType == AuditValueType.Insert)

@@ -11,11 +11,21 @@ namespace IGeekFan.FreeKit.Extras.Security;
 /// </summary>
 public static class ClaimsPrincipalExtensions
 {
+    /// <summary>
+    /// 登录名
+    /// </summary>
+    /// <param name="principal"></param>
+    /// <returns></returns>
     public static string? FindUserName(this ClaimsPrincipal principal)
     {       
         return principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.UserName)?.Value;
     }
 
+    /// <summary>
+    /// 租户Id
+    /// </summary>
+    /// <param name="principal"></param>
+    /// <returns></returns>
     public static Guid? FindTenantId(this ClaimsPrincipal principal)
     {       
         Claim? tenantIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.TenantId);
@@ -31,6 +41,11 @@ public static class ClaimsPrincipalExtensions
         return null;
     }
 
+    /// <summary>
+    /// 用户Id
+    /// </summary>
+    /// <param name="principal"></param>
+    /// <returns></returns>
     public static string? FindUserId(this ClaimsPrincipal principal)
     {
         Claim? userIdOrNull = principal.Claims?.FirstOrDefault(c => c.Type == FreeKitClaimTypes.NameIdentifier);
