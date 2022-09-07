@@ -22,11 +22,11 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
         {
             tenant.TenantId = CurrentUser.TenantId;
         }
-        if (entity is ICreateAuditEntity<TUkey> createAduit)
+        if (entity is ICreateAuditEntity<TUkey> createAudit)
         {
-            createAduit.CreateTime = DateTime.Now;
-            createAduit.CreateUserId = CurrentUser.FindUserId<TUkey>();
-            createAduit.CreateUserName = CurrentUser.UserName;
+            createAudit.CreateTime = DateTime.Now;
+            createAudit.CreateUserId = CurrentUser.FindUserId<TUkey>();
+            createAudit.CreateUserName = CurrentUser.UserName;
         }
 
         BeforeUpdate(entity);

@@ -14,11 +14,11 @@ namespace IGeekFan.FreeKit.xUnit.Extras
     {
     }
 
-    public class FullAduitEntityTest
+    public class FullAuditEntityTest
     {
         private readonly ITestOutputHelper _testOutputHelper;
 
-        public FullAduitEntityTest(ITestOutputHelper testOut)
+        public FullAuditEntityTest(ITestOutputHelper testOut)
         {
             _testOutputHelper = testOut;
         }

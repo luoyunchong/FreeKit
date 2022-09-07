@@ -52,14 +52,14 @@
 
 ## IGeekFan.FreeKit
 
-- AduitEntity 审计日志实体
+- AuditEntity 审计日志实体
 - Dependency 依赖注入接口
 - 查看[IGeekFan.FreeKit](https://igeekfan.cn/dotnetcore/freekit/Core.html)**文档**
 
 ## IGeekFan.FreeKit.Extras
 
 - FreeSql扩展+Autofac UnitOfWork
-- FreeSql+AduitEntity
+- FreeSql+AuditEntity
 - Autofac+ITransientDependency+IScopedDependency+ISingletonDependency
 - CaseQuery 
 - Security 登录人信息
