@@ -13,7 +13,7 @@
 		<PackageReference Include="Xunit.DependencyInjection" Version="8.5.0" />
 		<PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1" />
@@ -29,12 +29,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Identity.FreeSql\IGeekFan.AspNetCore.Identity.FreeSql.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Email\IGeekFan.FreeKit.Email.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.FreeKit\IGeekFan.FreeKit.csproj" />
-		<ProjectReference Include="..\..\src\IGeekFan.Localization.FreeSql\IGeekFan.Localization.FreeSql.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Identity.FreeSql\IGeekFan.AspNetCore.Identity.FreeSql.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Email\IGeekFan.FreeKit.Email.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
+	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit\IGeekFan.FreeKit.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

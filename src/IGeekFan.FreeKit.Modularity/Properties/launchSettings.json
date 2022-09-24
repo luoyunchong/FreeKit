@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "IGeekFan.FreeKit.Modularity": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:1434;http://localhost:1438"
+    }
+  }
+}

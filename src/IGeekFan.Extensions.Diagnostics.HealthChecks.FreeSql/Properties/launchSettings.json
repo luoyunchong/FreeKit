@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:1440;http://localhost:1441"
+    }
+  }
+}
