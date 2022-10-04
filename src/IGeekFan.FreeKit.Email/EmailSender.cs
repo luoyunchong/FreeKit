@@ -20,6 +20,14 @@ public class EmailSender : IEmailSender
 
     public void Send(MimeMessage message)
     {
+        if (message.From.Count == 0)
+        {
+            if (string.IsNullOrWhiteSpace(_options.DisplayName))
+            {
+                _options.DisplayName = _options.UserName;
+            }
+            message.From.Add(new MailboxAddress(_options.DisplayName, _options.UserName));
+        }
         using SmtpClient client = new SmtpClient();
 
         client.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls;//| SslProtocols.Ssl2 | SslProtocols.Ssl3
@@ -36,6 +44,14 @@ public class EmailSender : IEmailSender
 
     public async Task SendAsync(MimeMessage message, CancellationToken cancellationToken = default)
     {
+        if (message.From.Count == 0)
+        {
+            if (string.IsNullOrWhiteSpace(_options.DisplayName))
+            {
+                _options.DisplayName = _options.UserName;
+            }
+            message.From.Add(new MailboxAddress(_options.DisplayName, _options.UserName));
+        }
         using SmtpClient client = new SmtpClient();
 
         client.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls;//| SslProtocols.Ssl2 | SslProtocols.Ssl3
