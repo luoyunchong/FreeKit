@@ -3,11 +3,15 @@
 
 using System.Diagnostics;
 using System.Reflection;
+using IGeekFan.FreeKit.Extras.Extensions;
 using IGeekFan.FreeKit.Extras.Security;
 using Microsoft.Extensions.Configuration;
 
 namespace FreeSql
 {
+    /// <summary>
+    /// FreeSql相关的扩展类
+    /// </summary>
     public static class FreeSqlExtension
     {
         /// <summary>
@@ -19,15 +23,17 @@ namespace FreeSql
         public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration)
         {
             IConfigurationSection dbTypeCode = configuration.GetSection("ConnectionStrings:DefaultDB");
+            IConfigurationSection providerTypeSection = configuration.GetSection("ConnectionStrings:ProviderType");
+            var providerType = providerTypeSection.Value.IsNotNullOrWhiteSpace() ? Type.GetType(providerTypeSection.Value) : null;
+
             if (Enum.TryParse(dbTypeCode.Value, out DataType dataType))
             {
                 if (!Enum.IsDefined(typeof(DataType), dataType))
                 {
                     Trace.WriteLine($"数据库配置ConnectionStrings:DefaultDB:{dataType}无效");
                 }
-
-                IConfigurationSection configurationSection = configuration.GetSection($"ConnectionStrings:{dataType}");
-                @this.UseConnectionString(dataType, configurationSection.Value);
+                IConfigurationSection connectionStringSection = configuration.GetSection($"ConnectionStrings:{dataType}");
+                @this.UseConnectionString(dataType, connectionStringSection.Value, providerType);
             }
             else
             {

@@ -10,7 +10,7 @@
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeeSqlVersion)" />
 		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(DefaultAspNetCoreVersion)" />
-		<PackageReference Include="Xunit.DependencyInjection" Version="8.6.0" />
+		<PackageReference Include="Xunit.DependencyInjection" Version="8.6.1" />
 		<PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
 		<PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
@@ -22,7 +22,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="coverlet.collector" Version="3.1.2">
+		<PackageReference Include="coverlet.collector" Version="3.2.0">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
