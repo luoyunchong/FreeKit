@@ -151,6 +151,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override int Delete(TEntity entity)
     {
         if (!IsDeleteAudit) return base.Delete(entity);
+        base.Attach(entity);
         BeforeDelete(entity);
         return base.Update(entity);
     }
@@ -158,12 +159,11 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override int Delete(IEnumerable<TEntity> entities)
     {
         if (!entities.Any() || !IsDeleteAudit) return base.Delete(entities);
-        Attach(entities);
+        base.Attach(entities);
         foreach (TEntity entity in entities)
         {
             BeforeDelete(entity);
         }
-
         return base.Update(entities);
     }
 
@@ -190,6 +190,7 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override Task<int> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         if (!IsDeleteAudit) return base.DeleteAsync(entity, cancellationToken);
+        base.Attach(entity);
         BeforeDelete(entity);
         return base.UpdateAsync(entity, cancellationToken);
     }
