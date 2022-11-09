@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
-		<TargetFramework>$(DefaultNetCoreTargetFramework)</TargetFramework>
+		<TargetFramework>$(DefaultNetCoreTargetFramework7)</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
@@ -12,9 +12,9 @@
 		<PackageReference Include="FreeSql.Provider.SqlServer" Version="$(DefaultFreeeSqlVersion)" />
 		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="$(DefaultFreeeSqlVersion)" />
 		<PackageReference Include="FreeSql.Provider.Oracle" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DefaultAspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DefaultAspNetCoreVersion7)" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(DefaultAspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 
 	<ItemGroup>

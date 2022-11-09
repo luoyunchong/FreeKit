@@ -2,14 +2,15 @@
 
 	<PropertyGroup>
 		<Description>Components for performing health checks using FreeSql.	</Description>
-		<TargetFramework>$(DefaultNetCoreTargetFramework)</TargetFramework>
+		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFramework7)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageTags>diagnostics;healthchecks;freesql</PackageTags>
 		<BaseNamespace>IGeekFan.Extensions.Diagnostics.HealthChecks</BaseNamespace>
 		<IsTrimmable>true</IsTrimmable>
-	</PropertyGroup>
+	
+</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeeSqlVersion)" />
