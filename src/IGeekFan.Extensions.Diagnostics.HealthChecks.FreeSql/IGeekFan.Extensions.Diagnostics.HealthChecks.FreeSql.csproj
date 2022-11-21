@@ -9,15 +9,15 @@
 		<PackageTags>diagnostics;healthchecks;freesql</PackageTags>
 		<BaseNamespace>IGeekFan.Extensions.Diagnostics.HealthChecks</BaseNamespace>
 		<IsTrimmable>true</IsTrimmable>
-	
-</PropertyGroup>
 
+	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeeSqlVersion)" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' ">
 		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="$(DefaultAspNetCoreVersion)" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<InternalsVisibleTo Include="IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests" />
+	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework7)' ">
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 </Project>

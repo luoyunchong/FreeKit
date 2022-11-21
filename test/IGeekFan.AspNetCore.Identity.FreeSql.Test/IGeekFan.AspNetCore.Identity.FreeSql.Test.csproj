@@ -19,7 +19,7 @@
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="$(DefaultFreeeSqlVersion)" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(DefaultAspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(DefaultAspNetCoreVersion7)" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
 		<PackageReference Include="Moq" Version="4.18.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
