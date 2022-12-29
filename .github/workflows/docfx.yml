@@ -3,25 +3,8 @@ name: Deploy Docfx
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 7.0.101
-      - name: Install dependencies
-        run: dotnet restore FreeKit.sln
-      - name: Build solution
-        run: dotnet build FreeKit.sln --configuration Release --no-restore
-
   generate-docs:
     runs-on: windows-latest
     needs: build
@@ -33,6 +16,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.101
+      - name: Remove Examples
+        run: dotnet sln FreeKit.sln remove (ls -r samples/**/*.csproj)
+      - name: Remove Test
+        run:  dotnet sln FreeKit.sln remove (ls -r test/**/*.csproj)
       - name: Install dependencies
         run: dotnet restore FreeKit.sln
       - name: Setup DocFX
