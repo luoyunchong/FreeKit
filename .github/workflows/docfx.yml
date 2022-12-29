@@ -7,7 +7,6 @@ on:
 jobs:
   generate-docs:
     runs-on: windows-latest
-    needs: build
 
     steps:
       - name: Checkout
