@@ -15,7 +15,7 @@
         <Copyright>MIT License</Copyright>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
-        <Version>0.0.523</Version>
+        <Version>0.0.524</Version>
     </PropertyGroup>
 
     <ItemGroup>
