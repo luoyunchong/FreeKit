@@ -4,6 +4,6 @@
 		<DefaultNetCoreTargetFramework7>net7.0</DefaultNetCoreTargetFramework7>
 		<DefaultFreeeSqlVersion>3.2.687</DefaultFreeeSqlVersion>
 		<DefaultAspNetCoreVersion>6.0.11</DefaultAspNetCoreVersion>
-		<DefaultAspNetCoreVersion7>7.0.2</DefaultAspNetCoreVersion7>
+		<DefaultAspNetCoreVersion7>7.0.3</DefaultAspNetCoreVersion7>
 	</PropertyGroup>
 </Project>
