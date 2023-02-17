@@ -12,19 +12,39 @@ public class UnitOfWorkModule : Autofac.Module
 {
     private readonly Assembly[] _currentAssemblies;
 
-    public UnitOfWorkModule(params Assembly[] currentAssemblies)
+    readonly List<Type> _interceptorServiceTypes = new List<Type>()
+    {
+        typeof(UnitOfWorkInterceptor)
+    };
+
+    public UnitOfWorkModule(Assembly[] currentAssemblies)
     {
         _currentAssemblies = currentAssemblies;
     }
-    public UnitOfWorkModule(params Type[] types)
+
+    public UnitOfWorkModule(Assembly[] currentAssemblies,List<Type>? interceptorServiceTypes)
     {
-        if (types != null && types.Length != 0)
+        _currentAssemblies = currentAssemblies;
+        if (interceptorServiceTypes != null && interceptorServiceTypes.Count != 0)
         {
-            _currentAssemblies = new Assembly[types.Length];
-            for (int i = 0; i < types.Length; i++)
+            _interceptorServiceTypes.AddRange(interceptorServiceTypes);
+        }
+    }
+
+    public UnitOfWorkModule(Type[]? typeAssemblies, List<Type>? interceptorServiceTypes)
+    {
+        if (typeAssemblies != null && typeAssemblies.Length != 0)
+        {
+            _currentAssemblies = new Assembly[typeAssemblies.Length];
+            for (int i = 0; i < typeAssemblies.Length; i++)
             {
-                _currentAssemblies[i] = types[i].Assembly;
+                _currentAssemblies[i] = typeAssemblies[i].Assembly;
             }
+        }
+
+        if (interceptorServiceTypes != null && interceptorServiceTypes.Count != 0)
+        {
+            _interceptorServiceTypes.AddRange(interceptorServiceTypes);
         }
     }
 
@@ -34,11 +54,6 @@ public class UnitOfWorkModule : Autofac.Module
         builder.RegisterType<UnitOfWorkInterceptor>();
         builder.RegisterType<UnitOfWorkAsyncInterceptor>();
 
-        List<Type> interceptorServiceTypes = new List<Type>()
-        {
-            typeof(UnitOfWorkInterceptor),
-        };
-
         bool Predicate(Type a) => !a.IsDefined(typeof(DisableConventionalRegistrationAttribute), true) && a.Name.EndsWith("Service") && !a.IsAbstract && !a.IsInterface && a.IsPublic;
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
@@ -46,7 +61,7 @@ public class UnitOfWorkModule : Autofac.Module
             .AsImplementedInterfaces()//注册的类型，以接口的方式注册
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入
-            .InterceptedBy(interceptorServiceTypes.ToArray())
+            .InterceptedBy(_interceptorServiceTypes.ToArray())
             .EnableInterfaceInterceptors();
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
@@ -54,7 +69,7 @@ public class UnitOfWorkModule : Autofac.Module
             .AsSelf()
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入
-            .InterceptedBy(interceptorServiceTypes.ToArray())
+            .InterceptedBy(_interceptorServiceTypes.ToArray())
             .EnableClassInterceptors();
 
     }

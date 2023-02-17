@@ -3,6 +3,8 @@
 
 using Autofac;
 using System.Reflection;
+using Autofac.Extras.DynamicProxy;
+using IGeekFan.FreeKit.Extras.FreeSql;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;
 
@@ -13,35 +15,55 @@ public class FreeKitModule : Autofac.Module
 {
     private readonly Assembly[] _currentAssemblies;
 
+    private readonly List<Type> _interceptorServiceTypes = new List<Type>()
+    {
+    };
+
+    public FreeKitModule(Assembly[] currentAssemblies)
+    {
+        _currentAssemblies = currentAssemblies;
+    }
+
     /// <summary>
     /// 根据程序集批量注册服务
     /// </summary>
     /// <param name="currentAssemblies">需要处理的程序集</param>
-    public FreeKitModule(params Assembly[] currentAssemblies)
+    /// <param name="interceptorServiceTypes"></param>
+    public FreeKitModule(Assembly[] currentAssemblies, List<Type>? interceptorServiceTypes)
     {
         _currentAssemblies = currentAssemblies;
+        if (interceptorServiceTypes != null && interceptorServiceTypes.Count != 0)
+        {
+            _interceptorServiceTypes.AddRange(interceptorServiceTypes);
+        }
     }
 
     /// <summary>
     ///  根据Type批量注册其程序集下所有继承ITransientDependency/IScopedDependency/ISingletonDependency的类
     /// </summary>
     /// <param name="types"></param>
-    public FreeKitModule(params Type[] types)
+    /// <param name="interceptorServiceTypes"></param>
+    public FreeKitModule(Type[]? typeAssemblies, List<Type>? interceptorServiceTypes)
     {
-        if (types != null && types.Length > 0)
+        if (typeAssemblies is { Length: > 0 })
         {
-            _currentAssemblies = new Assembly[types.Length];
-            for (int i = 0; i < types.Length; i++)
+            _currentAssemblies = new Assembly[typeAssemblies.Length];
+            for (int i = 0; i < typeAssemblies.Length; i++)
             {
-                _currentAssemblies[i] = types[i].Assembly;
+                _currentAssemblies[i] = typeAssemblies[i].Assembly;
             }
         }
+        if (interceptorServiceTypes != null && interceptorServiceTypes.Count != 0)
+        {
+            _interceptorServiceTypes.AddRange(interceptorServiceTypes);
+        }
     }
+
     protected override void Load(ContainerBuilder builder)
     {
         //AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName == "IGeekFan.FreeKit.Extras").ToArray();
         //typeof(FreeKitModule).Assembly
-        if (_currentAssemblies == null || _currentAssemblies.Length == 0)
+        if (_currentAssemblies.Length == 0)
         {
             return;
         }
@@ -55,6 +77,7 @@ public class FreeKitModule : Autofac.Module
             .Where(TransientPredicate)
             .AsSelf()
             .AsImplementedInterfaces()
+            .InterceptedBy(_interceptorServiceTypes.ToArray())
             .InstancePerDependency();
 
         //同一个Lifetime生成的对象是同一个实例
@@ -66,6 +89,7 @@ public class FreeKitModule : Autofac.Module
             .Where(ScopePredicate)
             .AsSelf()
             .AsImplementedInterfaces()
+            .InterceptedBy(_interceptorServiceTypes.ToArray())
             .InstancePerLifetimeScope();
 
         //单例模式，每次调用，都会使用同一个实例化的对象；每次都用同一个对象；
@@ -77,6 +101,7 @@ public class FreeKitModule : Autofac.Module
             .Where(SingletonPredicate)
             .AsSelf()
             .AsImplementedInterfaces()
+            .InterceptedBy(_interceptorServiceTypes.ToArray())
             .SingleInstance();
 
     }
