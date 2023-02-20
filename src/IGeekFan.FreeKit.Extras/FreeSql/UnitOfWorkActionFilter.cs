@@ -30,9 +30,9 @@ public class UnitOfWorkActionFilter : IAsyncActionFilter
         if (transaction != null)
         {
             if (transaction.IsDisabled) return null;
-            var unitOfWorkDefualtOptions = context.HttpContext.RequestServices.GetRequiredService<IOptionsMonitor<UnitOfWorkDefualtOptions>>().CurrentValue;
-            transaction.IsolationLevel ??= unitOfWorkDefualtOptions.IsolationLevel;
-            transaction.Propagation ??= unitOfWorkDefualtOptions.Propagation;
+            var unitOfWorkDefaultOptions = context.HttpContext.RequestServices.GetRequiredService<IOptionsMonitor<UnitOfWorkDefaultOptions>>().CurrentValue;
+            transaction.IsolationLevel ??= unitOfWorkDefaultOptions.IsolationLevel;
+            transaction.Propagation ??= unitOfWorkDefaultOptions.Propagation;
             return transaction;
         }
         return null;

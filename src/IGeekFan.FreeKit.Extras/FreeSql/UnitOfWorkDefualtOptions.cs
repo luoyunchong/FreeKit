@@ -9,7 +9,7 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 /// <summary>
 /// 默认事务配置
 /// </summary>
-public class UnitOfWorkDefualtOptions
+public class UnitOfWorkDefaultOptions
 {
     /// <summary>
     /// 事务传播方式

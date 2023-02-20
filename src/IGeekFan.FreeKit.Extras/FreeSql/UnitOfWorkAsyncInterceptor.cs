@@ -41,12 +41,12 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
     private readonly UnitOfWorkManager _unitOfWorkManager;
     private IUnitOfWork _unitOfWork;
-    private readonly UnitOfWorkDefualtOptions _unitOfWorkDefualtOptions;
+    private readonly UnitOfWorkDefaultOptions _unitOfWorkDefaultOptions;
 
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager,IOptionsMonitor<UnitOfWorkDefualtOptions> unitOfWorkDefualtOptions)
+    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, IOptionsMonitor<UnitOfWorkDefaultOptions> unitOfWorkDefaultOptions)
     {
         _unitOfWorkManager = unitOfWorkManager;
-        _unitOfWorkDefualtOptions = unitOfWorkDefualtOptions.CurrentValue;
+        _unitOfWorkDefaultOptions = unitOfWorkDefaultOptions.CurrentValue;
     }
 
     /// <summary>
@@ -61,8 +61,8 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         if (transaction != null)
         {
             if (transaction.IsDisabled) return false;
-            transaction.IsolationLevel ??= _unitOfWorkDefualtOptions.IsolationLevel;
-            transaction.Propagation ??= _unitOfWorkDefualtOptions.Propagation;
+            transaction.IsolationLevel ??= _unitOfWorkDefaultOptions.IsolationLevel;
+            transaction.Propagation ??= _unitOfWorkDefaultOptions.Propagation;
             _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation ?? Propagation.Required, transaction.IsolationLevel);
             return true;
         }
@@ -107,38 +107,34 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     /// <param name="invocation"></param>
     public void InterceptAsynchronous(IInvocation invocation)
     {
-        if (TryBegin(invocation))
-        {
-            invocation.ReturnValue = InternalInterceptAsynchronous(invocation);
-        }
-        else
-        {
-            invocation.Proceed();
-        }
+        invocation.ReturnValue = InternalInterceptAsynchronous(invocation);
     }
 
     private async Task InternalInterceptAsynchronous(IInvocation invocation)
     {
-        try
+        if (TryBegin(invocation))
+        {
+            try
+            {
+                invocation.Proceed();
+                await (Task)invocation.ReturnValue;
+                _unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
+            finally
+            {
+                _unitOfWork.Dispose();
+            }
+        }
+        else
         {
             invocation.Proceed();
-            //处理Task返回一个null值的情况会导致空指针
-            if (invocation.ReturnValue != null)
-            {
-                await (Task)invocation.ReturnValue;
-            }
-            _unitOfWork.Commit();
+            await (Task)invocation.ReturnValue;
         }
-        catch (Exception)
-        {
-            _unitOfWork.Rollback();
-            throw;
-        }
-        finally
-        {
-            _unitOfWork.Dispose();
-        }
-
     }
 
     #endregion
