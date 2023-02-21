@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
+#region MethodInfoExtensions 扩展获取 TransactionalAttribute特性
 public static class MethodInfoExtensions
 {
     /// <summary>
@@ -32,13 +33,15 @@ public static class MethodInfoExtensions
 
         return null;
     }
-}
+} 
+#endregion
 
 /// <summary>
 /// 异步事务方法拦截
 /// </summary>
 public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
+    #region UnitOfWorkAsyncInterceptor
     private readonly UnitOfWorkManager _unitOfWorkManager;
     private IUnitOfWork _unitOfWork;
     private readonly UnitOfWorkDefaultOptions _unitOfWorkDefaultOptions;
@@ -67,7 +70,8 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             return true;
         }
         return false;
-    }
+    } 
+    #endregion
 
     #region 拦截同步执行的方法
     /// <summary>
@@ -117,7 +121,11 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             try
             {
                 invocation.Proceed();
-                await (Task)invocation.ReturnValue;
+                //处理Task返回一个null值的情况会导致空指针
+                if (invocation.ReturnValue != null)
+                {
+                    await (Task)invocation.ReturnValue;
+                }
                 _unitOfWork.Commit();
             }
             catch (Exception)
@@ -133,7 +141,10 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         else
         {
             invocation.Proceed();
-            await (Task)invocation.ReturnValue;
+            if (invocation.ReturnValue != null)
+            {
+                await (Task)invocation.ReturnValue;
+            }
         }
     }
 
@@ -157,8 +168,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             try
             {
                 invocation.Proceed();
-                Task<TResult> task = (Task<TResult>)invocation.ReturnValue;
-                result = await task;
+                result = await (Task<TResult>)invocation.ReturnValue;
                 _unitOfWork.Commit();
             }
             catch (Exception)
@@ -174,8 +184,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         else
         {
             invocation.Proceed();
-            Task<TResult> task = (Task<TResult>)invocation.ReturnValue;
-            result = await task;
+            result = await (Task<TResult>)invocation.ReturnValue;
         }
         return result;
     }
