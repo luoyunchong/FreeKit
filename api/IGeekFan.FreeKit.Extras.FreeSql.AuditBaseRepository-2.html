@@ -1,0 +1,1475 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AuditBaseRepository&lt;TEntity, TKey&gt;
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AuditBaseRepository&lt;TEntity, TKey&gt;
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2">
+  
+  
+  <h1 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2" class="text-break">Class AuditBaseRepository&lt;TEntity, TKey&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>审计仓储：实现如果实体类
+继承了ICreateAuditEntity  则自动增加创建时间/人信息
+继承了IUpdateAuditEntity，更新时，修改更新时间/人
+继承了IDeleteAuditEntity，删除时，自动改成软删除。仅注入此仓储或继承此仓储的实现才能实现如上功能。</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FreeSql.BaseRepository</span>&lt;TEntity&gt;</div>
+    <div class="level2"><span class="xref">FreeSql.BaseRepository</span>&lt;TEntity, TKey&gt;</div>
+    <div class="level3"><span class="xref">FreeSql.DefaultRepository</span>&lt;TEntity, TKey&gt;</div>
+    <div class="level4"><span class="xref">AuditBaseRepository&lt;TEntity, TKey&gt;</span></div>
+      <div class="level5"><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditDefaultRepository-3.html">AuditDefaultRepository&lt;TEntity, TKey, TUkey&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.IAuditBaseRepository-2.html">IAuditBaseRepository</a>&lt;TEntity, TKey&gt;</div>
+    <div><span class="xref">FreeSql.IBaseRepository</span>&lt;TEntity, TKey&gt;</div>
+    <div><span class="xref">FreeSql.IBaseRepository</span>&lt;TEntity&gt;</div>
+    <div><span class="xref">FreeSql.IBaseRepository</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.Delete(TKey)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.Find(TKey)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.Get(TKey)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.DeleteAsync(TKey, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.FindAsync(TKey, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.GetAsync(TKey, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.ApplyDataFilter(System.String, System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.AsType(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.AsTable(System.Func&lt;System.String, System.String&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Where(System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.WhereIf(System.Boolean, System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Delete(System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Delete(System.Collections.Generic.IEnumerable&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DeleteCascadeByDatabase(System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Insert(System.Collections.Generic.IEnumerable&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Update(System.Collections.Generic.IEnumerable&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Attach(TEntity)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Attach(System.Collections.Generic.IEnumerable&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.AttachOnlyPrimary(TEntity)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.FlushState()</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.CompareState(TEntity)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.SaveMany(TEntity, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.BeginEdit(System.Collections.Generic.List&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.EndEdit(System.Collections.Generic.List&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DeleteAsync(System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DeleteAsync(TEntity, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DeleteAsync(System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DeleteCascadeByDatabaseAsync(System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity, System.Boolean&gt;&gt;, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.InsertAsync(TEntity, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.InsertAsync(System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.UpdateAsync(TEntity, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.UpdateAsync(System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.InsertOrUpdateAsync(TEntity, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.SaveManyAsync(TEntity, System.String, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DataFilter</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.EntityType</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.DbContextOptions</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Orm</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.UnitOfWork</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.UpdateDiy</span>
+    </div>
+    <div>
+      <span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Select</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.html">IGeekFan.FreeKit.Extras.FreeSql</a></h6>
+  <h6><strong>Assembly</strong>: IGeekFan.FreeKit.Extras.dll</h6>
+  <h5 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class AuditBaseRepository&lt;TEntity, TKey&gt; : DefaultRepository&lt;TEntity, TKey&gt;, IAuditBaseRepository&lt;TEntity, TKey&gt;, IBaseRepository&lt;TEntity, TKey&gt;, IBaseRepository&lt;TEntity&gt;, IBaseRepository, IDisposable where TEntity : class, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2__ctor_FreeSql_UnitOfWorkManager_IGeekFan_FreeKit_Extras_Security_ICurrentUser_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.%23ctor(FreeSql.UnitOfWorkManager%2CIGeekFan.FreeKit.Extras.Security.ICurrentUser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L40">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2__ctor_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.#ctor*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2__ctor_FreeSql_UnitOfWorkManager_IGeekFan_FreeKit_Extras_Security_ICurrentUser_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.#ctor(FreeSql.UnitOfWorkManager,IGeekFan.FreeKit.Extras.Security.ICurrentUser)">AuditBaseRepository(UnitOfWorkManager, ICurrentUser)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AuditBaseRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FreeSql.UnitOfWorkManager</span></td>
+        <td><span class="parametername">unitOfWorkManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="IGeekFan.FreeKit.Extras.Security.ICurrentUser.html">ICurrentUser</a></td>
+        <td><span class="parametername">currentUser</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_CurrentUser.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.CurrentUser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L28">View Source</a>
+  </span>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_CurrentUser" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.CurrentUser">CurrentUser</h4>
+  <div class="markdown level1 summary"><p>当前登录人信息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ICurrentUser CurrentUser</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="IGeekFan.FreeKit.Extras.Security.ICurrentUser.html">ICurrentUser</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_IsDeleteAudit.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.IsDeleteAudit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L33">View Source</a>
+  </span>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_IsDeleteAudit" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.IsDeleteAudit">IsDeleteAudit</h4>
+  <div class="markdown level1 summary"><p>是否开户软删除审计</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly bool IsDeleteAudit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_IsUpdateAudit.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.IsUpdateAudit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L38">View Source</a>
+  </span>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_IsUpdateAudit" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.IsUpdateAudit">IsUpdateAudit</h4>
+  <div class="markdown level1 summary"><p>是否开启修改审计</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly bool IsUpdateAudit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeDelete__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.BeforeDelete(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L66">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeDelete_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeDelete*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeDelete__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeDelete(`0)">BeforeDelete(TEntity)</h4>
+  <div class="markdown level1 summary"><p>删除数据方法</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void BeforeDelete(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeInsert__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.BeforeInsert(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L54">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeInsert_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeInsert*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeInsert__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeInsert(`0)">BeforeInsert(TEntity)</h4>
+  <div class="markdown level1 summary"><p>插入数据前方法</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void BeforeInsert(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeUpdate__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.BeforeUpdate(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L60">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeUpdate_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeUpdate*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_BeforeUpdate__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.BeforeUpdate(`0)">BeforeUpdate(TEntity)</h4>
+  <div class="markdown level1 summary"><p>修改数据前方法</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void BeforeUpdate(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Delete(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L151">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete(`0)">Delete(TEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Delete(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Delete(TEntity)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete__1_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Delete(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L143">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete__1_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete(`1)">Delete(TKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Delete(TKey id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FreeSql.BaseRepository&lt;TEntity, TKey&gt;.Delete(TKey)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_IEnumerable__0__.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Delete(IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L159">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_IEnumerable__0__" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete(IEnumerable{`0})">Delete(IEnumerable&lt;TEntity&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Delete(IEnumerable&lt;TEntity&gt; entities)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_System_Linq_Expressions_Expression_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Delete(System.Linq.Expressions.Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L198">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Delete_System_Linq_Expressions_Expression_Func__0_System_Boolean___" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Delete(System.Linq.Expressions.Expression{Func{`0,System.Boolean}})">Delete(Expression&lt;Func&lt;TEntity, Boolean&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">Func</span>&lt;TEntity, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.DeleteAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L190">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync__0_CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync(`0,CancellationToken)">DeleteAsync(TEntity, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; DeleteAsync(TEntity entity, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync__1_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.DeleteAsync(%601%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L170">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync__1_CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync(`1,CancellationToken)">DeleteAsync(TKey, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override async Task&lt;int&gt; DeleteAsync(TKey id, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_IEnumerable__0__CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.DeleteAsync(IEnumerable%7B%600%7D%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L178">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_IEnumerable__0__CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync(IEnumerable{`0},CancellationToken)">DeleteAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; DeleteAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_System_Linq_Expressions_Expression_Func__0_System_Boolean___CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.DeleteAsync(System.Linq.Expressions.Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L215">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_DeleteAsync_System_Linq_Expressions_Expression_Func__0_System_Boolean___CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.DeleteAsync(System.Linq.Expressions.Expression{Func{`0,System.Boolean}},CancellationToken)">DeleteAsync(Expression&lt;Func&lt;TEntity, Boolean&gt;&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override async Task&lt;int&gt; DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">Func</span>&lt;TEntity, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Insert(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L70">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Insert*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Insert(`0)">Insert(TEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override TEntity Insert(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Insert(TEntity)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert_IEnumerable__0__.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Insert(IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L82">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Insert*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Insert_IEnumerable__0__" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Insert(IEnumerable{`0})">Insert(IEnumerable&lt;TEntity&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;TEntity&gt; Insert(IEnumerable&lt;TEntity&gt; entities)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;TEntity&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.InsertAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L76">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync__0_CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertAsync(`0,CancellationToken)">InsertAsync(TEntity, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;TEntity&gt; InsertAsync(TEntity entity, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TEntity&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync_IEnumerable__0__CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.InsertAsync(IEnumerable%7B%600%7D%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L92">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertAsync_IEnumerable__0__CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertAsync(IEnumerable{`0},CancellationToken)">InsertAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;List&lt;TEntity&gt;&gt; InsertAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">List</span>&lt;TEntity&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdate__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.InsertOrUpdate(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L237">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdate_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertOrUpdate*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdate__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertOrUpdate(`0)">InsertOrUpdate(TEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override TEntity InsertOrUpdate(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.InsertOrUpdate(TEntity)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdateAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.InsertOrUpdateAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L243">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdateAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertOrUpdateAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_InsertOrUpdateAsync__0_CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.InsertOrUpdateAsync(`0,CancellationToken)">InsertOrUpdateAsync(TEntity, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override async Task&lt;TEntity&gt; InsertOrUpdateAsync(TEntity entity, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TEntity&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update__0_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Update(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L107">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Update*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update__0_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Update(`0)">Update(TEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Update(TEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FreeSql.BaseRepository&lt;TEntity&gt;.Update(TEntity)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update_IEnumerable__0__.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.Update(IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L119">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Update*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_Update_IEnumerable__0__" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.Update(IEnumerable{`0})">Update(IEnumerable&lt;TEntity&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Update(IEnumerable&lt;TEntity&gt; entities)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.UpdateAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L113">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.UpdateAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync__0_CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.UpdateAsync(`0,CancellationToken)">UpdateAsync(TEntity, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; UpdateAsync(TEntity entity, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEntity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync_IEnumerable__0__CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602.UpdateAsync(IEnumerable%7B%600%7D%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L129">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.UpdateAsync*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2_UpdateAsync_IEnumerable__0__CancellationToken_" data-uid="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository`2.UpdateAsync(IEnumerable{`0},CancellationToken)">UpdateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; UpdateAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;TEntity&gt;</td>
+        <td><span class="parametername">entities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.IAuditBaseRepository-2.html">IAuditBaseRepository&lt;TEntity, TKey&gt;</a>
+  </div>
+  <div>
+      <span class="xref">FreeSql.IBaseRepository&lt;TEntity, TKey&gt;</span>
+  </div>
+  <div>
+      <span class="xref">FreeSql.IBaseRepository&lt;TEntity&gt;</span>
+  </div>
+  <div>
+      <span class="xref">FreeSql.IBaseRepository</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_FreeSql_AuditBaseRepository_2.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/FreeSql/AuditBaseRepository.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

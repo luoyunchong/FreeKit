@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class UserStore&lt;TUser, TRole, TContext, TKey&gt;
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class UserStore&lt;TUser, TRole, TContext, TKey&gt;
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStore`4">
+  
+  
+  <h1 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStore`4" class="text-break">Class UserStore&lt;TUser, TRole, TContext, TKey&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a new instance of a persistence store for the specified user and role types.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html">UserStoreBaseISelect</a>&lt;TUser, TKey, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserClaim</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserLogin</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserToken</span>&lt;TKey&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html">UserStoreBaseISelect</a>&lt;TUser, TRole, TKey, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserClaim</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserRole</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserLogin</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserToken</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityRoleClaim</span>&lt;TKey&gt;&gt;</div>
+    <div class="level3"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html">UserStore</a>&lt;TUser, TRole, TContext, TKey, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserClaim</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserRole</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserLogin</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserToken</span>&lt;TKey&gt;, <span class="xref">Microsoft.AspNetCore.Identity.IdentityRoleClaim</span>&lt;TKey&gt;&gt;</div>
+    <div class="level4"><span class="xref">UserStore&lt;TUser, TRole, TContext, TKey&gt;</span></div>
+      <div class="level5"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-1.html">UserStore&lt;TUser&gt;</a></div>
+      <div class="level5"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-3.html">UserStore&lt;TUser, TRole, TContext&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserLoginStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserClaimStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserPasswordStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserSecurityStampStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserEmailStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserLockoutStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserPhoneNumberStore</span>&lt;TUser&gt;</div>
+    <div><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.html">ISelectUserStore</a>&lt;TUser&gt;</div>
+    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticationTokenStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticatorKeyStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorRecoveryCodeStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserRoleStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IProtectedUserStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_Context">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.Context</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_AutoSaveChanges">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AutoSaveChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_SaveChanges_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.SaveChanges(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_CreateAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.CreateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_UpdateAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.UpdateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_DeleteAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.DeleteAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindByIdAsync_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindByIdAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindByNameAsync_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindByNameAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_Users">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.Users</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindRoleAsync_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindRoleAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindUserRoleAsync__3__3_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindUserRoleAsync(TKey, TKey, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindUserAsync__3_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindUserAsync(TKey, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindUserLoginAsync__3_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindUserLoginAsync(TKey, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindUserLoginAsync_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindUserLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_AddToRoleAsync__0_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AddToRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_RemoveFromRoleAsync__0_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.RemoveFromRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_GetRolesAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetRolesAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_IsInRoleAsync__0_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.IsInRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_GetClaimsAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetClaimsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_AddClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AddClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_ReplaceClaimAsync__0_System_Security_Claims_Claim_System_Security_Claims_Claim_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.ReplaceClaimAsync(TUser, Claim, Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_RemoveClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.RemoveClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_AddLoginAsync__0_Microsoft_AspNetCore_Identity_UserLoginInfo_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AddLoginAsync(TUser, UserLoginInfo, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_RemoveLoginAsync__0_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.RemoveLoginAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_GetLoginsAsync__0_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetLoginsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindByLoginAsync_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindByLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindByEmailAsync_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindByEmailAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_GetUsersForClaimAsync_System_Security_Claims_Claim_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetUsersForClaimAsync(Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_GetUsersInRoleAsync_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetUsersInRoleAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_FindTokenAsync__0_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_AddUserTokenAsync__7_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AddUserTokenAsync(IdentityUserToken&lt;TKey&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_SetTokenAsync__0_System_String_System_String_System_String_CancellationToken_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.SetTokenAsync(TUser, String, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStore_9_RemoveUserTokenAsync__7_">UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.RemoveUserTokenAsync(IdentityUserToken&lt;TKey&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_CreateUserRole__0__1_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.CreateUserRole(TUser, TRole)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetUsersInRoleAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetUsersInRoleAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_AddToRoleAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.AddToRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_RemoveFromRoleAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.RemoveFromRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetRolesAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.GetRolesAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_IsInRoleAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.IsInRoleAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindRoleAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindRoleAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-8.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindUserRoleAsync__2__2_CancellationToken_">UserStoreBaseISelect&lt;TUser, TRole, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;.FindUserRoleAsync(TKey, TKey, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ErrorDescriber">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ErrorDescriber</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserClaim__0_System_Security_Claims_Claim_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.CreateUserClaim(TUser, Claim)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserLogin__0_Microsoft_AspNetCore_Identity_UserLoginInfo_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.CreateUserLogin(TUser, UserLoginInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserToken__0_System_String_System_String_System_String_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.CreateUserToken(TUser, String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUserIdAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetUserIdAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUserNameAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetUserNameAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetUserNameAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetUserNameAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetNormalizedUserNameAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetNormalizedUserNameAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetNormalizedUserNameAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetNormalizedUserNameAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.CreateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_UpdateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.UpdateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_DeleteAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.DeleteAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByIdAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindByIdAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ConvertIdFromString_System_String_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ConvertIdFromString(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ConvertIdToString__1_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ConvertIdToString(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByNameAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindByNameAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_Users">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.Users</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPasswordHashAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetPasswordHashAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPasswordHashAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetPasswordHashAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_HasPasswordAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.HasPasswordAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserAsync__1_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindUserAsync(TKey, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserLoginAsync__1_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindUserLoginAsync(TKey, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserLoginAsync_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindUserLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ThrowIfDisposed">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ThrowIfDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_Dispose">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetClaimsAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetClaimsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.AddClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ReplaceClaimAsync__0_System_Security_Claims_Claim_System_Security_Claims_Claim_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ReplaceClaimAsync(TUser, Claim, Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.RemoveClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddLoginAsync__0_Microsoft_AspNetCore_Identity_UserLoginInfo_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.AddLoginAsync(TUser, UserLoginInfo, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveLoginAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.RemoveLoginAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLoginsAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetLoginsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByLoginAsync_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindByLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetEmailConfirmedAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetEmailConfirmedAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetEmailConfirmedAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetEmailConfirmedAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetEmailAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetEmailAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetEmailAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetEmailAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetNormalizedEmailAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetNormalizedEmailAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetNormalizedEmailAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetNormalizedEmailAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByEmailAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindByEmailAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLockoutEndDateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetLockoutEndDateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetLockoutEndDateAsync__0_System_Nullable_DateTimeOffset__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetLockoutEndDateAsync(TUser, Nullable&lt;DateTimeOffset&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_IncrementAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.IncrementAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ResetAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ResetAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLockoutEnabledAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetLockoutEnabledAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetLockoutEnabledAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetLockoutEnabledAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPhoneNumberAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetPhoneNumberAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPhoneNumberAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetPhoneNumberAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPhoneNumberConfirmedAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetPhoneNumberConfirmedAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPhoneNumberConfirmedAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetPhoneNumberConfirmedAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetSecurityStampAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetSecurityStampAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetSecurityStampAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetSecurityStampAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetTwoFactorEnabledAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetTwoFactorEnabledAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetTwoFactorEnabledAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetTwoFactorEnabledAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUsersForClaimAsync_System_Security_Claims_Claim_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetUsersForClaimAsync(Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.FindTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddUserTokenAsync__4_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.AddUserTokenAsync(IdentityUserToken&lt;TKey&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveUserTokenAsync__4_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.RemoveUserTokenAsync(IdentityUserToken&lt;TKey&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetTokenAsync__0_System_String_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetTokenAsync(TUser, String, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.RemoveTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetAuthenticatorKeyAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.SetAuthenticatorKeyAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetAuthenticatorKeyAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.GetAuthenticatorKeyAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CountCodesAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.CountCodesAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ReplaceCodesAsync__0_IEnumerable_System_String__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.ReplaceCodesAsync(TUser, IEnumerable&lt;String&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RedeemCodeAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;&gt;.RedeemCodeAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.html">IGeekFan.AspNetCore.Identity.FreeSql</a></h6>
+  <h6><strong>Assembly</strong>: IGeekFan.AspNetCore.Identity.FreeSql.dll</h6>
+  <h5 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UserStore&lt;TUser, TRole, TContext, TKey&gt; : UserStore&lt;TUser, TRole, TContext, TKey, IdentityUserClaim&lt;TKey&gt;, IdentityUserRole&lt;TKey&gt;, IdentityUserLogin&lt;TKey&gt;, IdentityUserToken&lt;TKey&gt;, IdentityRoleClaim&lt;TKey&gt;&gt;, IUserLoginStore&lt;TUser&gt;, IUserClaimStore&lt;TUser&gt;, IUserPasswordStore&lt;TUser&gt;, IUserSecurityStampStore&lt;TUser&gt;, IUserEmailStore&lt;TUser&gt;, IUserLockoutStore&lt;TUser&gt;, IUserPhoneNumberStore&lt;TUser&gt;, ISelectUserStore&lt;TUser&gt;, IUserTwoFactorStore&lt;TUser&gt;, IUserAuthenticationTokenStore&lt;TUser&gt;, IUserAuthenticatorKeyStore&lt;TUser&gt;, IUserTwoFactorRecoveryCodeStore&lt;TUser&gt;, IUserRoleStore&lt;TUser&gt;, IProtectedUserStore&lt;TUser&gt;, IUserStore&lt;TUser&gt;, IDisposable where TUser : IdentityUser&lt;TKey&gt; where TRole : IdentityRole&lt;TKey&gt; where TContext : DbContext where TKey : IEquatable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TUser</span></td>
+        <td><p>The type representing a user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRole</span></td>
+        <td><p>The type representing a role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TContext</span></td>
+        <td><p>The type of the data context class used to access the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type of the primary key for a role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4__ctor__2_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStore%604.%23ctor(%602%2CMicrosoft.AspNetCore.Identity.IdentityErrorDescriber)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStore.cs/#L73">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4__ctor_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStore`4.#ctor*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4__ctor__2_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStore`4.#ctor(`2,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">UserStore(TContext, IdentityErrorDescriber)</h4>
+  <div class="markdown level1 summary"><p>Constructs a new instance of <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-4.html">UserStore&lt;TUser, TRole, TContext, TKey&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserStore(TContext context, IdentityErrorDescriber describer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <span class="xref">FreeSql.DbContext</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span></td>
+        <td><span class="parametername">describer</span></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserLoginStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserClaimStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserPasswordStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserSecurityStampStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserEmailStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserLockoutStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserPhoneNumberStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.html">ISelectUserStore&lt;TUser&gt;</a>
+  </div>
+  <div>
+      <span class="xref">IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticationTokenStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticatorKeyStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorRecoveryCodeStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserRoleStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IProtectedUserStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStore_4.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStore%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStore.cs/#L62" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

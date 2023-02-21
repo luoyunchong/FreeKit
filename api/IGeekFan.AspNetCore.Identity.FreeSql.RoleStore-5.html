@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt;
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt;
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5">
+  
+  
+  <h1 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5" class="text-break">Class RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Creates a new instance of a persistence store for roles.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt;</span></div>
+      <div class="level2"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-3.html">RoleStore&lt;TRole, TContext, TKey&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectRoleStore-1.html">ISelectRoleStore</a>&lt;TRole&gt;</div>
+    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IRoleClaimStore</span>&lt;TRole&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IRoleStore</span>&lt;TRole&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.html">IGeekFan.AspNetCore.Identity.FreeSql</a></h6>
+  <h6><strong>Assembly</strong>: IGeekFan.AspNetCore.Identity.FreeSql.dll</h6>
+  <h5 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt; : ISelectRoleStore&lt;TRole&gt;, IRoleClaimStore&lt;TRole&gt;, IRoleStore&lt;TRole&gt;, IDisposable where TRole : IdentityRole&lt;TKey&gt; where TContext : DbContext where TKey : IEquatable&lt;TKey&gt; where TUserRole : IdentityUserRole&lt;TKey&gt;, new()
+    where TRoleClaim : IdentityRoleClaim&lt;TKey&gt;, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TRole</span></td>
+        <td><p>The type of the class representing a role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TContext</span></td>
+        <td><p>The type of the data context class used to access the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type of the primary key for a role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUserRole</span></td>
+        <td><p>The type of the class representing a user role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRoleClaim</span></td>
+        <td><p>The type of the class representing a role claim.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5__ctor__1_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.%23ctor(%601%2CMicrosoft.AspNetCore.Identity.IdentityErrorDescriber)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L87">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5__ctor_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.#ctor*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5__ctor__1_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">RoleStore(TContext, IdentityErrorDescriber)</h4>
+  <div class="markdown level1 summary"><p>Constructs a new instance of <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore-5.html">RoleStore&lt;TRole, TContext, TKey, TUserRole, TRoleClaim&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RoleStore(TContext context, IdentityErrorDescriber describer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <span class="xref">FreeSql.DbContext</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span></td>
+        <td><span class="parametername">describer</span></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AutoSaveChanges.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.AutoSaveChanges%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L116">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AutoSaveChanges_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.AutoSaveChanges*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AutoSaveChanges" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.AutoSaveChanges">AutoSaveChanges</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a flag indicating if changes should be persisted after CreateAsync, UpdateAsync and DeleteAsync are called.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoSaveChanges { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if changes should be automatically persisted, otherwise false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Context.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.Context%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L103">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Context_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Context*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Context" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Context">Context</h4>
+  <div class="markdown level1 summary"><p>Gets the database context for this store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TContext Context { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ErrorDescriber.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.ErrorDescriber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L108">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ErrorDescriber_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ErrorDescriber*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ErrorDescriber" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ErrorDescriber">ErrorDescriber</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span> for any error that occurred with the current operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IdentityErrorDescriber ErrorDescriber { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Roles.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L433">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Roles_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Roles*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Roles" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Roles">Roles</h4>
+  <div class="markdown level1 summary"><p>A navigation property for the roles the store contains.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ISelect&lt;TRole&gt; Roles { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FreeSql.ISelect</span>&lt;TRole&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AddClaimAsync__0_System_Security_Claims_Claim_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.AddClaimAsync(%600%2CSystem.Security.Claims.Claim%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L386">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AddClaimAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.AddClaimAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_AddClaimAsync__0_System_Security_Claims_Claim_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.AddClaimAsync(`0,System.Security.Claims.Claim,CancellationToken)">AddClaimAsync(TRole, Claim, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Adds the <code data-dev-comment-type="paramref" class="paramref">claim</code> given to the specified <code data-dev-comment-type="paramref" class="paramref">role</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task AddClaimAsync(TRole role, Claim claim, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role to add the claim to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span></td>
+        <td><span class="parametername">claim</span></td>
+        <td><p>The claim to add to the role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdFromString_System_String_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.ConvertIdFromString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L260">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdFromString_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ConvertIdFromString*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdFromString_System_String_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ConvertIdFromString(System.String)">ConvertIdFromString(String)</h4>
+  <div class="markdown level1 summary"><p>Converts the provided <code data-dev-comment-type="paramref" class="paramref">id</code> to a strongly typed key object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TKey ConvertIdFromString(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The id to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><p>An instance of <code data-dev-comment-type="typeparamref" class="typeparamref">TKey</code> representing the provided <code data-dev-comment-type="paramref" class="paramref">id</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdToString__2_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.ConvertIdToString(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L274">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdToString_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ConvertIdToString*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ConvertIdToString__2_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ConvertIdToString(`2)">ConvertIdToString(TKey)</h4>
+  <div class="markdown level1 summary"><p>Converts the provided <code data-dev-comment-type="paramref" class="paramref">id</code> to its string representation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ConvertIdToString(TKey id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The id to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>An <span class="xref">System.String</span> representation of the provided <code data-dev-comment-type="paramref" class="paramref">id</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.CreateAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L135">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.CreateAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.CreateAsync(`0,CancellationToken)">CreateAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Creates a new role in a store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IdentityResult&gt; CreateAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role to create in the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that represents the <span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span> of the asynchronous query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateRoleClaim__0_System_Security_Claims_Claim_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.CreateRoleClaim(%600%2CSystem.Security.Claims.Claim)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L443">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateRoleClaim_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.CreateRoleClaim*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_CreateRoleClaim__0_System_Security_Claims_Claim_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.CreateRoleClaim(`0,System.Security.Claims.Claim)">CreateRoleClaim(TRole, Claim)</h4>
+  <div class="markdown level1 summary"><p>Creates an entity representing a role claim.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TRoleClaim CreateRoleClaim(TRole role, Claim claim)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The associated role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span></td>
+        <td><span class="parametername">claim</span></td>
+        <td><p>The associated claim.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRoleClaim</span></td>
+        <td><p>The role claim entity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_DeleteAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.DeleteAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L182">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_DeleteAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.DeleteAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_DeleteAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.DeleteAsync(`0,CancellationToken)">DeleteAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Deletes a role from the store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IdentityResult&gt; DeleteAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role to delete from the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that represents the <span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span> of the asynchronous query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Dispose.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L360">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Dispose_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Dispose*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_Dispose" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Dispose the stores</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByIdAsync_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.FindByIdAsync(System.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L289">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByIdAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.FindByIdAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByIdAsync_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.FindByIdAsync(System.String,CancellationToken)">FindByIdAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Finds the role who has the specified ID as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;TRole&gt; FindByIdAsync(string id, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The role ID to look for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TRole&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that result of the look up.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByNameAsync_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.FindByNameAsync(System.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L303">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByNameAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.FindByNameAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_FindByNameAsync_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.FindByNameAsync(System.String,CancellationToken)">FindByNameAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Finds the role who has the specified normalized name as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;TRole&gt; FindByNameAsync(string normalizedName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedName</span></td>
+        <td><p>The normalized role name to look for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TRole&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that result of the look up.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetClaimsAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.GetClaimsAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L368">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetClaimsAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetClaimsAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetClaimsAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetClaimsAsync(`0,CancellationToken)">GetClaimsAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Get the claims associated with the specified <code data-dev-comment-type="paramref" class="paramref">role</code> as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IList&lt;Claim&gt;&gt; GetClaimsAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose claims should be retrieved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<span class="xref">System.Security.Claims.Claim</span>&gt;&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that contains the claims granted to a role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetNormalizedRoleNameAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.GetNormalizedRoleNameAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L316">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetNormalizedRoleNameAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetNormalizedRoleNameAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetNormalizedRoleNameAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetNormalizedRoleNameAsync(`0,CancellationToken)">GetNormalizedRoleNameAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Get a role's normalized name as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; GetNormalizedRoleNameAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose normalized name should be retrieved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that contains the name of the role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleIdAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.GetRoleIdAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L208">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleIdAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetRoleIdAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleIdAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetRoleIdAsync(`0,CancellationToken)">GetRoleIdAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets the ID for a role from the store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; GetRoleIdAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose ID should be returned.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that contains the ID of the role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleNameAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.GetRoleNameAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L225">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleNameAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetRoleNameAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_GetRoleNameAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.GetRoleNameAsync(`0,CancellationToken)">GetRoleNameAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets the name of a role from the store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; GetRoleNameAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose name should be returned.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that contains the name of the role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_RemoveClaimAsync__0_System_Security_Claims_Claim_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.RemoveClaimAsync(%600%2CSystem.Security.Claims.Claim%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L409">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_RemoveClaimAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.RemoveClaimAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_RemoveClaimAsync__0_System_Security_Claims_Claim_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.RemoveClaimAsync(`0,System.Security.Claims.Claim,CancellationToken)">RemoveClaimAsync(TRole, Claim, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Removes the <code data-dev-comment-type="paramref" class="paramref">claim</code> given from the specified <code data-dev-comment-type="paramref" class="paramref">role</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task RemoveClaimAsync(TRole role, Claim claim, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role to remove the claim from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span></td>
+        <td><span class="parametername">claim</span></td>
+        <td><p>The claim to remove from the role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SaveChanges_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.SaveChanges(CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L121">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SaveChanges_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SaveChanges*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SaveChanges_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SaveChanges(CancellationToken)">SaveChanges(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Saves the current store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SaveChanges(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetNormalizedRoleNameAsync__0_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.SetNormalizedRoleNameAsync(%600%2CSystem.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L334">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetNormalizedRoleNameAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SetNormalizedRoleNameAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetNormalizedRoleNameAsync__0_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SetNormalizedRoleNameAsync(`0,System.String,CancellationToken)">SetNormalizedRoleNameAsync(TRole, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Set a role's normalized name as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task SetNormalizedRoleNameAsync(TRole role, string normalizedName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose normalized name should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedName</span></td>
+        <td><p>The normalized name to set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetRoleNameAsync__0_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.SetRoleNameAsync(%600%2CSystem.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L243">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetRoleNameAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SetRoleNameAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_SetRoleNameAsync__0_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.SetRoleNameAsync(`0,System.String,CancellationToken)">SetRoleNameAsync(TRole, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sets the name of a role in the store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task SetRoleNameAsync(TRole role, string roleName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role whose name should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">roleName</span></td>
+        <td><p>The name of the role.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ThrowIfDisposed.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.ThrowIfDisposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L349">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ThrowIfDisposed_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ThrowIfDisposed*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_ThrowIfDisposed" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.ThrowIfDisposed">ThrowIfDisposed()</h4>
+  <div class="markdown level1 summary"><p>Throws if this class has been disposed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ThrowIfDisposed()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_UpdateAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605.UpdateAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L154">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_UpdateAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.UpdateAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5_UpdateAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.RoleStore`5.UpdateAsync(`0,CancellationToken)">UpdateAsync(TRole, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Updates a role in a store as an asynchronous operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IdentityResult&gt; UpdateAsync(TRole role, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The role to update in the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that represents the <span class="xref">Microsoft.AspNetCore.Identity.IdentityResult</span> of the asynchronous query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectRoleStore-1.html">ISelectRoleStore&lt;TRole&gt;</a>
+  </div>
+  <div>
+      <span class="xref">IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IRoleClaimStore&lt;TRole&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IRoleStore&lt;TRole&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_RoleStore_5.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.RoleStore%605%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/RoleStore.cs/#L73" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

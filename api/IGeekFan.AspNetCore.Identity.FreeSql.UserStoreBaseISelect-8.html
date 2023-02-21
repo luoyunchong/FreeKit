@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class UserStoreBaseISelect&lt;TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt;
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class UserStoreBaseISelect&lt;TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt;
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8">
+  
+  
+  <h1 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8" class="text-break">Class UserStoreBaseISelect&lt;TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt;
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html">UserStoreBaseISelect</a>&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;</div>
+    <div class="level2"><span class="xref">UserStoreBaseISelect&lt;TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt;</span></div>
+      <div class="level3"><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStore-9.html">UserStore&lt;TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserLoginStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserClaimStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserPasswordStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserSecurityStampStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserEmailStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserLockoutStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserPhoneNumberStore</span>&lt;TUser&gt;</div>
+    <div><a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.html">ISelectUserStore</a>&lt;TUser&gt;</div>
+    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticationTokenStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticatorKeyStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorRecoveryCodeStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserRoleStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">Microsoft.AspNetCore.Identity.IUserStore</span>&lt;TUser&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ErrorDescriber">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ErrorDescriber</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserClaim__0_System_Security_Claims_Claim_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.CreateUserClaim(TUser, Claim)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserLogin__0_Microsoft_AspNetCore_Identity_UserLoginInfo_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.CreateUserLogin(TUser, UserLoginInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateUserToken__0_System_String_System_String_System_String_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.CreateUserToken(TUser, String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUserIdAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetUserIdAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUserNameAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetUserNameAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetUserNameAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetUserNameAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetNormalizedUserNameAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetNormalizedUserNameAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetNormalizedUserNameAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetNormalizedUserNameAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CreateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.CreateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_UpdateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.UpdateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_DeleteAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.DeleteAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByIdAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindByIdAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ConvertIdFromString_System_String_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ConvertIdFromString(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ConvertIdToString__1_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ConvertIdToString(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByNameAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindByNameAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_Users">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.Users</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPasswordHashAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetPasswordHashAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPasswordHashAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetPasswordHashAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_HasPasswordAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.HasPasswordAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserAsync__1_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindUserAsync(TKey, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserLoginAsync__1_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindUserLoginAsync(TKey, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindUserLoginAsync_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindUserLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ThrowIfDisposed">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ThrowIfDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_Dispose">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetClaimsAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetClaimsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.AddClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ReplaceClaimAsync__0_System_Security_Claims_Claim_System_Security_Claims_Claim_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ReplaceClaimAsync(TUser, Claim, Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveClaimsAsync__0_IEnumerable_System_Security_Claims_Claim__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.RemoveClaimsAsync(TUser, IEnumerable&lt;Claim&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddLoginAsync__0_Microsoft_AspNetCore_Identity_UserLoginInfo_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.AddLoginAsync(TUser, UserLoginInfo, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveLoginAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.RemoveLoginAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLoginsAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetLoginsAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByLoginAsync_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindByLoginAsync(String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetEmailConfirmedAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetEmailConfirmedAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetEmailConfirmedAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetEmailConfirmedAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetEmailAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetEmailAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetEmailAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetEmailAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetNormalizedEmailAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetNormalizedEmailAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetNormalizedEmailAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetNormalizedEmailAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindByEmailAsync_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindByEmailAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLockoutEndDateAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetLockoutEndDateAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetLockoutEndDateAsync__0_System_Nullable_DateTimeOffset__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetLockoutEndDateAsync(TUser, Nullable&lt;DateTimeOffset&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_IncrementAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.IncrementAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ResetAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ResetAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetAccessFailedCountAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetAccessFailedCountAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetLockoutEnabledAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetLockoutEnabledAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetLockoutEnabledAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetLockoutEnabledAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPhoneNumberAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetPhoneNumberAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPhoneNumberAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetPhoneNumberAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetPhoneNumberConfirmedAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetPhoneNumberConfirmedAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetPhoneNumberConfirmedAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetPhoneNumberConfirmedAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetSecurityStampAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetSecurityStampAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetSecurityStampAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetSecurityStampAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetTwoFactorEnabledAsync__0_System_Boolean_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetTwoFactorEnabledAsync(TUser, Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetTwoFactorEnabledAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetTwoFactorEnabledAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetUsersForClaimAsync_System_Security_Claims_Claim_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetUsersForClaimAsync(Claim, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_FindTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.FindTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_AddUserTokenAsync__4_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.AddUserTokenAsync(TUserToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveUserTokenAsync__4_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.RemoveUserTokenAsync(TUserToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetTokenAsync__0_System_String_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetTokenAsync(TUser, String, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RemoveTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.RemoveTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetTokenAsync__0_System_String_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetTokenAsync(TUser, String, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_SetAuthenticatorKeyAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.SetAuthenticatorKeyAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_GetAuthenticatorKeyAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.GetAuthenticatorKeyAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_CountCodesAsync__0_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.CountCodesAsync(TUser, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_ReplaceCodesAsync__0_IEnumerable_System_String__CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.ReplaceCodesAsync(TUser, IEnumerable&lt;String&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect-5.html#IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_5_RedeemCodeAsync__0_System_String_CancellationToken_">UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;.RedeemCodeAsync(TUser, String, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.html">IGeekFan.AspNetCore.Identity.FreeSql</a></h6>
+  <h6><strong>Assembly</strong>: IGeekFan.AspNetCore.Identity.FreeSql.dll</h6>
+  <h5 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class UserStoreBaseISelect&lt;TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TUserToken, TRoleClaim&gt; : UserStoreBaseISelect&lt;TUser, TKey, TUserClaim, TUserLogin, TUserToken&gt;, IUserLoginStore&lt;TUser&gt;, IUserClaimStore&lt;TUser&gt;, IUserPasswordStore&lt;TUser&gt;, IUserSecurityStampStore&lt;TUser&gt;, IUserEmailStore&lt;TUser&gt;, IUserLockoutStore&lt;TUser&gt;, IUserPhoneNumberStore&lt;TUser&gt;, ISelectUserStore&lt;TUser&gt;, IUserTwoFactorStore&lt;TUser&gt;, IUserAuthenticationTokenStore&lt;TUser&gt;, IUserAuthenticatorKeyStore&lt;TUser&gt;, IUserTwoFactorRecoveryCodeStore&lt;TUser&gt;, IUserRoleStore&lt;TUser&gt;, IUserStore&lt;TUser&gt;, IDisposable where TUser : IdentityUser&lt;TKey&gt; where TRole : IdentityRole&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt; where TUserClaim : IdentityUserClaim&lt;TKey&gt;, new()
+    where TUserRole : IdentityUserRole&lt;TKey&gt;, new()
+    where TUserLogin : IdentityUserLogin&lt;TKey&gt;, new()
+    where TUserToken : IdentityUserToken&lt;TKey&gt;, new()
+    where TRoleClaim : IdentityRoleClaim&lt;TKey&gt;, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TUser</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRole</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUserClaim</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUserRole</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUserLogin</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUserToken</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRoleClaim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8__ctor_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.%23ctor(Microsoft.AspNetCore.Identity.IdentityErrorDescriber)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1061">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8__ctor_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.#ctor*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8__ctor_Microsoft_AspNetCore_Identity_IdentityErrorDescriber_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.#ctor(Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">UserStoreBaseISelect(IdentityErrorDescriber)</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserStoreBaseISelect(IdentityErrorDescriber describer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span></td>
+        <td><span class="parametername">describer</span></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Identity.IdentityErrorDescriber</span> used to describe store errors.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_AddToRoleAsync__0_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.AddToRoleAsync(%600%2CSystem.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1096">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_AddToRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.AddToRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_AddToRoleAsync__0_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.AddToRoleAsync(`0,System.String,CancellationToken)">AddToRoleAsync(TUser, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Adds the given <code data-dev-comment-type="paramref" class="paramref">normalizedRoleName</code> to the specified <code data-dev-comment-type="paramref" class="paramref">user</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task AddToRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user to add the role to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedRoleName</span></td>
+        <td><p>The role to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_CreateUserRole__0__1_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.CreateUserRole(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1069">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_CreateUserRole_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.CreateUserRole*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_CreateUserRole__0__1_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.CreateUserRole(`0,`1)">CreateUserRole(TUser, TRole)</h4>
+  <div class="markdown level1 summary"><p>Called to create a new instance of a <span class="xref">Microsoft.AspNetCore.Identity.IdentityUserRole`1</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TUserRole CreateUserRole(TUser user, TRole role)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The associated user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRole</span></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The associated role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUserRole</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindRoleAsync_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.FindRoleAsync(System.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1131">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.FindRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindRoleAsync_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.FindRoleAsync(System.String,CancellationToken)">FindRoleAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Return a role with the normalized name if it exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Task&lt;TRole&gt; FindRoleAsync(string normalizedRoleName, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedRoleName</span></td>
+        <td><p>The normalized role name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TRole&gt;</td>
+        <td><p>The role if it exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindUserRoleAsync__2__2_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.FindUserRoleAsync(%602%2C%602%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1140">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindUserRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.FindUserRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_FindUserRoleAsync__2__2_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.FindUserRoleAsync(`2,`2,CancellationToken)">FindUserRoleAsync(TKey, TKey, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Return a user role for the userId and roleId if it exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Task&lt;TUserRole&gt; FindUserRoleAsync(TKey userId, TKey roleId, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user's id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">roleId</span></td>
+        <td><p>The role's id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TUserRole&gt;</td>
+        <td><p>The user role if it exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetRolesAsync__0_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.GetRolesAsync(%600%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1113">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetRolesAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.GetRolesAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetRolesAsync__0_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.GetRolesAsync(`0,CancellationToken)">GetRolesAsync(TUser, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the roles the specified <code data-dev-comment-type="paramref" class="paramref">user</code> is a member of.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;IList&lt;string&gt;&gt; GetRolesAsync(TUser user, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user whose roles should be retrieved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> that contains the roles the user is a member of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetUsersInRoleAsync_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.GetUsersInRoleAsync(System.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1087">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetUsersInRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.GetUsersInRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_GetUsersInRoleAsync_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.GetUsersInRoleAsync(System.String,CancellationToken)">GetUsersInRoleAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Retrieves all users in the specified role.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;IList&lt;TUser&gt;&gt; GetUsersInRoleAsync(string normalizedRoleName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedRoleName</span></td>
+        <td><p>The role whose users should be retrieved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;TUser&gt;&gt;</td>
+        <td><p>The <see cref="!:Task"></see> contains a list of users, if any, that are in the specified role.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_IsInRoleAsync__0_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.IsInRoleAsync(%600%2CSystem.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1123">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_IsInRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.IsInRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_IsInRoleAsync__0_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.IsInRoleAsync(`0,System.String,CancellationToken)">IsInRoleAsync(TUser, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Returns a flag indicating if the specified user is a member of the give <code data-dev-comment-type="paramref" class="paramref">normalizedRoleName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;bool&gt; IsInRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user whose role membership should be checked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedRoleName</span></td>
+        <td><p>The role to check membership of</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>A <see cref="!:Task&lt;TResult>"></see> containing a flag indicating if the specified user is a member of the given group. If the
+user is a member of the group the returned value with be true, otherwise it will be false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_RemoveFromRoleAsync__0_System_String_CancellationToken_.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608.RemoveFromRoleAsync(%600%2CSystem.String%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1105">View Source</a>
+  </span>
+  <a id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_RemoveFromRoleAsync_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.RemoveFromRoleAsync*"></a>
+  <h4 id="IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8_RemoveFromRoleAsync__0_System_String_CancellationToken_" data-uid="IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect`8.RemoveFromRoleAsync(`0,System.String,CancellationToken)">RemoveFromRoleAsync(TUser, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Removes the given <code data-dev-comment-type="paramref" class="paramref">normalizedRoleName</code> from the specified <code data-dev-comment-type="paramref" class="paramref">user</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task RemoveFromRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user to remove the role from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">normalizedRoleName</span></td>
+        <td><p>The role to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The <see cref="!:CancellationToken"></see> used to propagate notifications that the operation should be canceled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The <see cref="!:Task"></see> that represents the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserLoginStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserClaimStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserPasswordStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserSecurityStampStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserEmailStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserLockoutStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserPhoneNumberStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="IGeekFan.AspNetCore.Identity.FreeSql.ISelectUserStore-1.html">ISelectUserStore&lt;TUser&gt;</a>
+  </div>
+  <div>
+      <span class="xref">IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticationTokenStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserAuthenticatorKeyStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserTwoFactorRecoveryCodeStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserRoleStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Identity.IUserStore&lt;TUser&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_AspNetCore_Identity_FreeSql_UserStoreBaseISelect_8.md&amp;value=---%0Auid%3A%20IGeekFan.AspNetCore.Identity.FreeSql.UserStoreBaseISelect%608%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.AspNetCore.Identity.FreeSql/UserStoreBaseISelect.cs/#L1045" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

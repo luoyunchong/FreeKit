@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CurrentUser&lt;T&gt;
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CurrentUser&lt;T&gt;
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1">
+  
+  
+  <h1 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1" class="text-break">Class CurrentUser&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>当前用户上下文</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CurrentUser&lt;T&gt;</span></div>
+      <div class="level2"><a class="xref" href="IGeekFan.FreeKit.Extras.Security.CurrentUser.html">CurrentUser</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="IGeekFan.FreeKit.Extras.Security.ICurrentUser-1.html">ICurrentUser</a>&lt;T&gt;</div>
+    <div><a class="xref" href="IGeekFan.FreeKit.Extras.Dependency.ITransientDependency.html">ITransientDependency</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="IGeekFan.FreeKit.Extras.Security.html">IGeekFan.FreeKit.Extras.Security</a></h6>
+  <h6><strong>Assembly</strong>: IGeekFan.FreeKit.Extras.dll</h6>
+  <h5 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CurrentUser&lt;T&gt; : ICurrentUser&lt;T&gt;, ITransientDependency where T : IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1__ctor_Microsoft_AspNetCore_Http_IHttpContextAccessor_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.%23ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L30">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1__ctor_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.#ctor*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1__ctor_Microsoft_AspNetCore_Http_IHttpContextAccessor_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">CurrentUser(IHttpContextAccessor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CurrentUser(IHttpContextAccessor httpContextAccessor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.IHttpContextAccessor</span></td>
+        <td><span class="parametername">httpContextAccessor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_ClaimsPrincipal.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.ClaimsPrincipal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L28">View Source</a>
+  </span>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_ClaimsPrincipal" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.ClaimsPrincipal">ClaimsPrincipal</h4>
+  <div class="markdown level1 summary"><p>证件持有者</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ClaimsPrincipal ClaimsPrincipal</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Security.Claims.ClaimsPrincipal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Email.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.Email%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L46">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Email_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Email*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Email" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Email">Email</h4>
+  <div class="markdown level1 summary"><p>邮件</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Email { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Id.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L40">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Id_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Id*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Id" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Id">Id</h4>
+  <div class="markdown level1 summary"><p>用户Id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T Id { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsAuthenticated.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.IsAuthenticated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L36">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsAuthenticated_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.IsAuthenticated*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsAuthenticated" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.IsAuthenticated">IsAuthenticated</h4>
+  <div class="markdown level1 summary"><p>是否认证（即已登录）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsAuthenticated { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Roles.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L49">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Roles_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Roles*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_Roles" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.Roles">Roles</h4>
+  <div class="markdown level1 summary"><p>角色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string[] Roles { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantId.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.TenantId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L52">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantId_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.TenantId*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantId" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.TenantId">TenantId</h4>
+  <div class="markdown level1 summary"><p>租户Id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Guid? TenantId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Guid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantName.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.TenantName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L55">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantName_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.TenantName*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_TenantName" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.TenantName">TenantName</h4>
+  <div class="markdown level1 summary"><p>租户名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string TenantName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_UserName.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.UserName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L43">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_UserName_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.UserName*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_UserName" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.UserName">UserName</h4>
+  <div class="markdown level1 summary"><p>登录名，用户名，唯一值</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string UserName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaim_System_String_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.FindClaim(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L58">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaim_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.FindClaim*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaim_System_String_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.FindClaim(System.String)">FindClaim(String)</h4>
+  <div class="markdown level1 summary"><p>根据声明类别获取声明</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Claim FindClaim(string claimType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">claimType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaims_System_String_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.FindClaims(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L64">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaims_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.FindClaims*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_FindClaims_System_String_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.FindClaims(System.String)">FindClaims(String)</h4>
+  <div class="markdown level1 summary"><p>根据声明类别获取所有声明</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Claim[] FindClaims(string claimType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">claimType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_GetAllClaims.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.GetAllClaims%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L70">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_GetAllClaims_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.GetAllClaims*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_GetAllClaims" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.GetAllClaims">GetAllClaims()</h4>
+  <div class="markdown level1 summary"><p>获取所有声明</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Claim[] GetAllClaims()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Security.Claims.Claim</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsInRole_System_String_.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601.IsInRole(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L76">View Source</a>
+  </span>
+  <a id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsInRole_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.IsInRole*"></a>
+  <h4 id="IGeekFan_FreeKit_Extras_Security_CurrentUser_1_IsInRole_System_String_" data-uid="IGeekFan.FreeKit.Extras.Security.CurrentUser`1.IsInRole(System.String)">IsInRole(String)</h4>
+  <div class="markdown level1 summary"><p>判断用户是否拥有此角色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsInRole(string roleId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">roleId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="IGeekFan.FreeKit.Extras.Security.ICurrentUser-1.html">ICurrentUser&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="IGeekFan.FreeKit.Extras.Dependency.ITransientDependency.html">ITransientDependency</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/new/master/apiSpec/new?filename=IGeekFan_FreeKit_Extras_Security_CurrentUser_1.md&amp;value=---%0Auid%3A%20IGeekFan.FreeKit.Extras.Security.CurrentUser%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/luoyunchong/FreeKit/blob/main/src/IGeekFan.FreeKit.Extras/Security/CurrentUser.cs/#L23" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

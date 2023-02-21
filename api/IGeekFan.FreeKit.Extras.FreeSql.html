@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace IGeekFan.FreeKit.Extras.FreeSql
+   | FreeKit API Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace IGeekFan.FreeKit.Extras.FreeSql
+   | FreeKit API Docs ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="IGeekFan.FreeKit.Extras.FreeSql">
+  
+  <h1 id="IGeekFan_FreeKit_Extras_FreeSql" data-uid="IGeekFan.FreeKit.Extras.FreeSql" class="text-break">Namespace IGeekFan.FreeKit.Extras.FreeSql
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditBaseRepository-2.html">AuditBaseRepository&lt;TEntity, TKey&gt;</a></h4>
+      <section><p>审计仓储：实现如果实体类
+继承了ICreateAuditEntity  则自动增加创建时间/人信息
+继承了IUpdateAuditEntity，更新时，修改更新时间/人
+继承了IDeleteAuditEntity，删除时，自动改成软删除。仅注入此仓储或继承此仓储的实现才能实现如上功能。</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditDefaultRepository-3.html">AuditDefaultRepository&lt;TEntity, TKey, TUkey&gt;</a></h4>
+      <section></section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditGuidRepository-1.html">AuditGuidRepository&lt;TEntity&gt;</a></h4>
+      <section><p>审计仓储，表的主键/用户主键类型都为Guid</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditIntRepository-1.html">AuditIntRepository&lt;TEntity&gt;</a></h4>
+      <section><p>审计仓储实现，用户主键类型为Int、表的主键为Guid</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditLongRepository-1.html">AuditLongRepository&lt;TEntity&gt;</a></h4>
+      <section><p>审计仓储实现，用户主键类型为long、表的主键为Guid</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditTKeyGuidRepository-2.html">AuditTKeyGuidRepository&lt;TEntity, TKey&gt;</a></h4>
+      <section><p>审计仓储，用户主键类型为Guid</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditTKeyIntRepository-2.html">AuditTKeyIntRepository&lt;TEntity, TKey&gt;</a></h4>
+      <section><p>审计仓储，用户主键类型为Int</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.AuditTKeyLongRepository-2.html">AuditTKeyLongRepository&lt;TEntity, TKey&gt;</a></h4>
+      <section><p>审计仓储，用户主键类型为long</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.BaseRepository-3.html">BaseRepository&lt;TEntity, TKey, Ukey&gt;</a></h4>
+      <section></section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.DefaultRepository-3.html">DefaultRepository&lt;TEntity, TKey, Ukey&gt;</a></h4>
+      <section></section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.MethodInfoExtensions.html">MethodInfoExtensions</a></h4>
+      <section></section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.ReflexHelper.html">ReflexHelper</a></h4>
+      <section></section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.TransactionalAttribute.html">TransactionalAttribute</a></h4>
+      <section><p>事务特性标签</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkActionFilter.html">UnitOfWorkActionFilter</a></h4>
+      <section><p>工作单元过滤器</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkAsyncInterceptor.html">UnitOfWorkAsyncInterceptor</a></h4>
+      <section><p>异步事务方法拦截</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkDefaultOptions.html">UnitOfWorkDefaultOptions</a></h4>
+      <section><p>默认事务配置</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.UnitOfWorkInterceptor.html">UnitOfWorkInterceptor</a></h4>
+      <section><p>同步Uow拦截</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.IAuditBaseRepository-1.html">IAuditBaseRepository&lt;TEntity&gt;</a></h4>
+      <section><p>审计仓储，表的主键为Guid</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.IAuditBaseRepository-2.html">IAuditBaseRepository&lt;TEntity, TKey&gt;</a></h4>
+      <section><p>审计仓储</p>
+</section>
+      <h4><a class="xref" href="IGeekFan.FreeKit.Extras.FreeSql.IBaseRepository-3.html">IBaseRepository&lt;TEntity, TKey, Ukey&gt;</a></h4>
+      <section></section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
