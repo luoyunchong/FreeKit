@@ -77,13 +77,12 @@ namespace FreeSql
         }
         public static ISelect<T> AsTable<T>(this ISelect<T> @this, string tableName, int count) where T : class
         {
-            string[] tableNames = Array.Empty<string>();
+            List<string> tableNames = new List<string>();
             for (int i = 0; i < count; i++)
             {
                 tableNames.AddIfNotContains($"{tableName}_{i}");
             }
-
-            @this.AsTable(tableNames);
+            @this.AsTable(tableNames.ToArray());
             return @this;
         }
 
@@ -93,7 +92,10 @@ namespace FreeSql
             {
                 @this.AsTable((type, oldname) =>
                 {
-                    if (type == typeof(T)) return tableName;
+                    if (type == typeof(T))
+                    {
+                        return tableName.Replace("{oldname}", oldname);
+                    }
                     return null;
                 });
             });
