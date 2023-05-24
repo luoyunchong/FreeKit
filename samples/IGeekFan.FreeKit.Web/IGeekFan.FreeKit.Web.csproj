@@ -6,18 +6,19 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="FreeSql.Provider.MySql" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="FreeSql.Provider.SqlServer" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="$(DefaultFreeeSqlVersion)" />
-		<PackageReference Include="FreeSql.Provider.Oracle" Version="$(DefaultFreeeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.MySql" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.SqlServer" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.Oracle" Version="$(DefaultFreeSqlVersion)" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DefaultAspNetCoreVersion7)" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.DataProtection.FreeSql\IGeekFan.AspNetCore.DataProtection.FreeSql.csproj" />
 		<ProjectReference Include="..\Module1\Module1.csproj" />
 		<ProjectReference Include="..\Module2\Module2.csproj" />
 	</ItemGroup>

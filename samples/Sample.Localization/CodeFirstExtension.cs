@@ -1,7 +1,7 @@
 ﻿using FreeSql;
 using IGeekFan.Localization.FreeSql.Models;
 using System.Collections.Generic;
-
+using FreeSql.Extensions;
 namespace Sample.Localization
 {
     public static class CodeFirstExtension

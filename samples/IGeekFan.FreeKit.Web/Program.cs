@@ -5,6 +5,10 @@ using IGeekFan.FreeKit.Modularity;
 using System.Reflection;
 using IGeekFan.FreeKit.Web;
 using IGeekFan.FreeKit.Extras.Security;
+using Autofac.Core;
+using Microsoft.AspNetCore.DataProtection;
+using FreeSql;
+using Microsoft.Extensions.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +43,7 @@ builder.Services
         .AddFreeSql(c)
         .AddModuleServices(c);
 
+builder.Services.AddDataProtection().PersistKeysToDbContext<DataProtectionKeyContext>();
 
 var app = builder.Build();
 

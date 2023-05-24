@@ -40,22 +40,27 @@ namespace IGeekFan.FreeKit.Web
             //     c.Propagation = Propagation.Required;
             // });
 
-            Func<IServiceProvider, IFreeSql> fsql = r =>
-            {
-                IFreeSql fsql = new FreeSqlBuilder()
-                      .UseConnectionString(c)
-                      .UseAutoSyncStructure(true)
-                      .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
-                      .UseGenerateCommandParameterWithLambda(true)//默认false,针对 lambda 表达式解析,设置成true时方便查看SQL
-                      .UseNoneCommandParameter(true) //默认true,针对insert/update/delete是否参数化
-                      .UseMonitorCommand(
-                          cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
-                    ).Build();
-                return fsql;
-            };
+            IFreeSql fsql = new FreeSqlBuilder()
+                     .UseConnectionString(c)
+                     .UseAutoSyncStructure(true)
+                     .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
+                     .UseGenerateCommandParameterWithLambda(true)//默认false,针对 lambda 表达式解析,设置成true时方便查看SQL
+                     .UseNoneCommandParameter(true) //默认true,针对insert/update/delete是否参数化
+                     .UseMonitorCommand(
+                         cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
+                   ).Build();
 
             services.AddSingleton(fsql);
             services.AddFreeKitCore();
+
+            services.AddFreeDbContext<DataProtectionKeyContext>(options =>
+                     options.UseFreeSql(fsql).UseOptions(
+                         new DbContextOptions()
+                         {
+                             EnableCascadeSave = true
+                         })
+                 );
+
             using (IServiceScope scope = services.BuildServiceProvider().CreateScope())
             {
                 var freeSql = scope.ServiceProvider.GetRequiredService<IFreeSql>();

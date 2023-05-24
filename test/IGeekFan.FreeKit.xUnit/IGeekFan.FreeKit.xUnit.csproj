@@ -12,8 +12,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(DefaultAspNetCoreVersion7)" />
 		<PackageReference Include="Xunit.DependencyInjection" Version="8.7.1" />
 		<PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
-		<PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
