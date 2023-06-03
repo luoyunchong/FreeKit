@@ -4,7 +4,6 @@
 using Autofac;
 using System.Reflection;
 using Autofac.Extras.DynamicProxy;
-using IGeekFan.FreeKit.Extras.FreeSql;
 
 namespace IGeekFan.FreeKit.Extras.Dependency;
 
