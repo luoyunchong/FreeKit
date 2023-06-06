@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql" Version="3.2.696" />
+		<PackageReference Include="FreeSql" Version="$(DefaultFreeSqlVersion)" />
 		<PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeSqlVersion)" />
 	</ItemGroup>
 
