@@ -1,4 +1,7 @@
 namespace IGeekFan.FreeKit.Extras.Extensions;
+/// <summary>
+/// 类型扩展
+/// </summary>
 public static class TypeExtensions
 {
     /// <summary>

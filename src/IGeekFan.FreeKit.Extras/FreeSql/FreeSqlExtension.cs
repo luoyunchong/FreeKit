@@ -24,7 +24,9 @@ namespace FreeSql
         {
             IConfigurationSection dbTypeCode = configuration.GetSection("ConnectionStrings:DefaultDB");
             IConfigurationSection providerTypeSection = configuration.GetSection("ConnectionStrings:ProviderType");
-            var providerType = providerTypeSection.Value.IsNotNullOrWhiteSpace() ? Type.GetType(providerTypeSection.Value) : null;
+            var providerType = providerTypeSection.Value.IsNotNullOrWhiteSpace()
+                ? Type.GetType(providerTypeSection.Value)
+                : null;
 
             if (Enum.TryParse(dbTypeCode.Value, out DataType dataType))
             {
@@ -32,7 +34,9 @@ namespace FreeSql
                 {
                     Trace.WriteLine($"数据库配置ConnectionStrings:DefaultDB:{dataType}无效");
                 }
-                IConfigurationSection connectionStringSection = configuration.GetSection($"ConnectionStrings:{dataType}");
+
+                IConfigurationSection connectionStringSection =
+                    configuration.GetSection($"ConnectionStrings:{dataType}");
                 @this.UseConnectionString(dataType, connectionStringSection.Value, providerType);
             }
             else
@@ -52,16 +56,19 @@ namespace FreeSql
         public static string GetConnectionString(this FreeSqlBuilder @this)
         {
             Type type = @this.GetType();
-            FieldInfo? fieldInfo = type.GetField("_masterConnectionString", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo? fieldInfo =
+                type.GetField("_masterConnectionString", BindingFlags.NonPublic | BindingFlags.Instance);
             if (fieldInfo is null)
             {
                 throw new ArgumentException("_masterConnectionString is null");
             }
+
             string? connectionString = fieldInfo.GetValue(@this)?.ToString();
             if (connectionString is null)
             {
                 throw new ArgumentException("_masterConnectionString is null");
             }
+
             return connectionString;
         }
 
@@ -75,6 +82,7 @@ namespace FreeSql
 
             return false;
         }
+
         public static ISelect<T> AsTable<T>(this ISelect<T> @this, string tableName, int count) where T : class
         {
             List<string> tableNames = new List<string>();
@@ -82,6 +90,7 @@ namespace FreeSql
             {
                 tableNames.AddIfNotContains($"{tableName}_{i}");
             }
+
             @this.AsTable(tableNames.ToArray());
             return @this;
         }
@@ -96,6 +105,7 @@ namespace FreeSql
                     {
                         return tableName.Replace("{oldname}", oldname);
                     }
+
                     return null;
                 });
             });
@@ -129,24 +139,41 @@ namespace FreeSql.Aop
         {
             if (e.AuditValueType == AuditValueType.Insert)
             {
-                e.Value = e.Column.CsName switch
+                switch (e.Column.CsName)
                 {
-                    "CreateUserId" => user?.FindUserId<T>(),
-                    "CreateUserName" => user?.UserName,
-                    "CreateTime" => DateTime.Now,
-                    "TenantId" => user?.TenantId,
-                    _ => e.Value
-                };
+                    case "CreateUserId":
+                        T? userId = user?.FindUserId<T>();
+                        if (userId.HasValue && e.Value != null) e.Value = userId;
+                        break;
+                    case "CreateUserName":
+                        string? userName = user?.UserName;
+                        if (userName.IsNotNullOrWhiteSpace() && e.Value != null) e.Value = userName;
+                        break;
+                    case "CreateTime":
+                        e.Value = DateTime.Now;
+                        break;
+                    case "TenantId":
+                        var tenantId = user?.TenantId;
+                        if (tenantId.HasValue && e.Value != null) e.Value = tenantId;
+                        break;
+                }
             }
             else if (e.AuditValueType == AuditValueType.Update)
             {
-                e.Value = e.Column.CsName switch
+                switch (e.Column.CsName)
                 {
-                    "UpdateUserId" => user?.FindUserId<T>(),
-                    "UpdateUserName" => user?.UserName,
-                    "UpdateTime" => DateTime.Now,
-                    _ => e.Value
-                };
+                    case "UpdateUserId":
+                        T? userId = user?.FindUserId<T>();
+                        if (userId.HasValue && e.Value != null) e.Value = userId;
+                        break;
+                    case "UpdateUserName":
+                        string? userName = user?.UserName;
+                        if (userName.IsNotNullOrWhiteSpace() && e.Value != null) e.Value = userName;
+                        break;
+                    case "UpdateTime":
+                        e.Value = DateTime.Now;
+                        break;
+                }
             }
         }
     }
