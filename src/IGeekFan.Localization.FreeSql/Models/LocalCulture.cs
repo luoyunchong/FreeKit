@@ -10,7 +10,8 @@ namespace IGeekFan.Localization.FreeSql.Models
         {
         }
 
-        public LocalCulture(string name, string displayName, ICollection<LocalResource> resources) : this(name, displayName)
+        public LocalCulture(string name, string displayName, ICollection<LocalResource> resources) : this(name,
+            displayName)
         {
             Resources = resources ?? throw new ArgumentNullException(nameof(resources));
         }
@@ -24,12 +25,10 @@ namespace IGeekFan.Localization.FreeSql.Models
         [Column(IsIdentity = true, IsPrimary = true)]
         public long Id { get; set; }
 
-        [Column(StringLength = 50)]
-        public string Name { get; set; }
+        [Column(StringLength = 50)] public string Name { get; set; }
 
 
-        [Column(StringLength = 50)]
-        public string DisplayName { get; set; }
+        [Column(StringLength = 50)] public string DisplayName { get; set; }
 
         public virtual ICollection<LocalResource> Resources { get; set; }
     }

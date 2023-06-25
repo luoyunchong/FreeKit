@@ -105,12 +105,12 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// </summary>
     public virtual TContext Context { get; private set; }
 
-    private DbSet<TUser> UsersSet { get { return Context.Set<TUser>(); } }
-    private DbSet<TRole> Roles { get { return Context.Set<TRole>(); } }
-    private DbSet<TUserClaim> UserClaims { get { return Context.Set<TUserClaim>(); } }
-    private DbSet<TUserRole> UserRoles { get { return Context.Set<TUserRole>(); } }
-    private DbSet<TUserLogin> UserLogins { get { return Context.Set<TUserLogin>(); } }
-    private DbSet<TUserToken> UserTokens { get { return Context.Set<TUserToken>(); } }
+    private DbSet<TUser> UsersSet => Context.Set<TUser>();
+    private DbSet<TRole> Roles => Context.Set<TRole>();
+    private DbSet<TUserClaim> UserClaims => Context.Set<TUserClaim>();
+    private DbSet<TUserRole> UserRoles => Context.Set<TUserRole>();
+    private DbSet<TUserLogin> UserLogins => Context.Set<TUserLogin>();
+    private DbSet<TUserToken> UserTokens => Context.Set<TUserToken>();
 
     /// <summary>
     /// Gets or sets a flag indicating if changes should be persisted after CreateAsync, UpdateAsync and DeleteAsync are called.
