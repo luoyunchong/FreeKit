@@ -13,7 +13,7 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="FreeSql.DbContext" Version="$(DefaultFreeSqlVersion)" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.0.0" />
+		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
 		<PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.1.0" />
 	</ItemGroup>
 
