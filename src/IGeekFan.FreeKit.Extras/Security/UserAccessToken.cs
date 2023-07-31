@@ -1,6 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.ComponentModel.DataAnnotations;
+
 namespace IGeekFan.FreeKit.Extras.Security;
 
 /// <summary>
@@ -23,12 +25,14 @@ public class UserAccessToken
     /// 授权接口调用凭证
     /// </summary>
     /// <value></value>
+    [Required]
     public string AccessToken { get; private set; }
 
     /// <summary>
     /// 用户刷新AccessToken
     /// </summary>
     /// <value></value>
+    [Required]
     public string RefreshToken { get; private set; }
 
     /// <summary>
@@ -39,6 +43,7 @@ public class UserAccessToken
     /// <summary>
     /// Token 类型
     /// </summary>
+    [Required]
     public string TokenType { get; private set; }
 
     /// <summary>

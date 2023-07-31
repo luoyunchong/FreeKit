@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.ComponentModel.DataAnnotations;
 using FreeSql.DataAnnotations;
 
 namespace IGeekFan.FreeKit.Extras.AuditEntity;
@@ -16,7 +17,7 @@ public abstract class Entity<T> : IEntity<T> where T : IEquatable<T>
     /// <summary>
     /// 主键Id
     /// </summary>
-    [Column(IsPrimary = true, IsIdentity = true, Position = 1)]
+    [Column(IsPrimary = true, IsIdentity = true, Position = 1)] 
     public virtual T Id { get; set; }
 
     public virtual object[] GetKeys()

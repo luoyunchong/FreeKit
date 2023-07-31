@@ -142,7 +142,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
         {
             throw new ArgumentNullException(nameof(user));
         }
-        Context.Add(user);
+        await Context.AddAsync(user, cancellationToken);
         await SaveChanges(cancellationToken);
         return IdentityResult.Success;
     }
@@ -164,7 +164,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
 
         //Context.Attach(user);
         //user.ConcurrencyStamp = Guid.NewGuid().ToString();
-        Context.Update(user);
+        await Context.UpdateAsync(user, cancellationToken);
         try
         {
             await SaveChanges(cancellationToken);

@@ -1,4 +1,6 @@
-﻿namespace IGeekFan.FreeKit.Extras.AuditEntity;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace IGeekFan.FreeKit.Extras.AuditEntity;
 
 public interface IEntityDto
 {
@@ -17,6 +19,7 @@ public abstract class EntityDto<TKey> : IEntityDto<TKey> where TKey : IEquatable
     /// <summary>
     /// 主键Id
     /// </summary>
+    [Required]
     public TKey Id { get; set; }
 }
 
