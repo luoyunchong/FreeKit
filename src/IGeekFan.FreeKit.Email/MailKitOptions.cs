@@ -1,4 +1,6 @@
-﻿namespace IGeekFan.FreeKit.Email;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace IGeekFan.FreeKit.Email;
 
 /// <summary>
 ///  邮件配置项
@@ -9,6 +11,7 @@ public class MailKitOptions
     /// SMTP主机服务器地址
     /// SMTP Host Server address
     /// </summary>
+    [Required]
     public string Host { get; set; }
 
     /// <summary>
@@ -33,12 +36,14 @@ public class MailKitOptions
     /// 发件人邮件
     /// send user name
     /// </summary>
+    [Required]
     public string UserName { get; set; }
 
     /// <summary>
     /// 发件人授权密码
     /// send user password
     /// </summary>
+    [Required]
     public string Password { get; set; }
 
 
@@ -46,5 +51,5 @@ public class MailKitOptions
     /// 要登录SMTP服务器的域名
     /// Domain name to login to SMTP server.
     /// </summary>
-    public string Domain { get; set; }
+    public string? Domain { get; set; }
 }

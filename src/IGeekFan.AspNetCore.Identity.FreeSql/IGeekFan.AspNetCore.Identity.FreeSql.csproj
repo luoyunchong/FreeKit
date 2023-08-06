@@ -15,10 +15,10 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' ">
-		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework7)' ">
-		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 
 	<ItemGroup>

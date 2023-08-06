@@ -11,6 +11,7 @@ public interface IEntityDto<TKey> : IEntityDto where TKey : IEquatable<TKey>
     /// <summary>
     /// 主键Id
     /// </summary>
+    [Required]
     TKey Id { get; set; }
 }
 

@@ -18,6 +18,7 @@ public abstract class Entity<T> : IEntity<T> where T : IEquatable<T>
     /// 主键Id
     /// </summary>
     [Column(IsPrimary = true, IsIdentity = true, Position = 1)] 
+    [Required]
     public virtual T Id { get; set; }
 
     public virtual object[] GetKeys()

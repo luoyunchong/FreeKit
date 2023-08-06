@@ -247,7 +247,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
     /// <summary>
     /// Return a role with the normalized name if it exists.
     /// </summary>
-    /// <param name="normalizedRoleName">The normalized role name.</param>
+    /// <param name="normalizedRoleName">The normalized role name.</param>_roles.
     /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
     /// <returns>The role if it exists.</returns>
     protected override Task<TRole> FindRoleAsync(string normalizedRoleName, CancellationToken cancellationToken)

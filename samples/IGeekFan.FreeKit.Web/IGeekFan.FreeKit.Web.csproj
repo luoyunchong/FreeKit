@@ -12,9 +12,9 @@
 		<PackageReference Include="FreeSql.Provider.SqlServer" Version="$(DefaultFreeSqlVersion)" />
 		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="$(DefaultFreeSqlVersion)" />
 		<PackageReference Include="FreeSql.Provider.Oracle" Version="$(DefaultFreeSqlVersion)" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DefaultAspNetCoreVersion7)" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(DefaultAspNetCoreVersion7)" />
 	</ItemGroup>
 
 	<ItemGroup>
