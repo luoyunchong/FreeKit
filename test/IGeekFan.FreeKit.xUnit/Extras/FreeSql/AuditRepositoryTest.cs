@@ -23,14 +23,14 @@ namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
         {
             var list = new List<Todo>()
             {
-                new Todo {Message = "这是一个要完成的TODO______1", NotifictionTime = null, IsDone = false},
-                new Todo {Message = "这是一个要完成的TODO______2", NotifictionTime = null, IsDone = false}
+                new() {Message = "这是一个要完成的TODO______1", NotifictionTime = null, IsDone = false},
+                new() {Message = "这是一个要完成的TODO______2", NotifictionTime = null, IsDone = false}
             };
             _repository.Insert(list);
             var list2 = new List<Todo>()
             {
-                new Todo(){Id = list[0].Id},
-                new Todo(){Id = list[1].Id},
+                new(){Id = list[0].Id},
+                new(){Id = list[1].Id},
             };
             _repository.Delete(list2);
         }
@@ -40,17 +40,21 @@ namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
         {
             var list = new List<Todo>()
             {
-                new Todo {Message = "这是一个要完成的TODO______1", NotifictionTime = null, IsDone = false},
-                new Todo {Message = "这是一个要完成的TODO______2", NotifictionTime = null, IsDone = false}
+                new() {Message = "这是一个要完成的TODO______1", NotifictionTime = null, IsDone = false},
+                new() {Message = "这是一个要完成的TODO______2", NotifictionTime = null, IsDone = false}
             };
             await _repository.InsertAsync(list);
             await _repository.DeleteAsync(list);
-
+            list = new List<Todo>()
+            {
+                new() {Message = "这是一个要完成的TODO______1", NotifictionTime = null, IsDone = false},
+                new() {Message = "这是一个要完成的TODO______2", NotifictionTime = null, IsDone = false}
+            };
             await _repository.InsertAsync(list);
             var list2 = new List<Todo>()
             {
-                new Todo(){Id = list[0].Id},
-                new Todo(){Id = list[1].Id},
+                new(){Id = list[0].Id},
+                new(){Id = list[1].Id},
             };
             await _repository.DeleteAsync(list2);
         }

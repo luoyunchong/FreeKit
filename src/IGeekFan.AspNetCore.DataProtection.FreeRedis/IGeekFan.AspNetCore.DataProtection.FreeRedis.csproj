@@ -11,12 +11,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeRedis" Version="1.1.5" />
+		<PackageReference Include="FreeRedis" Version="1.1.10" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' ">
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="$(DefaultAspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.11" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework7)' ">
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="$(DefaultAspNetCoreVersion7)" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.11" />
 	</ItemGroup>
 </Project>

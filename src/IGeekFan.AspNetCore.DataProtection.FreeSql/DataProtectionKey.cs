@@ -12,6 +12,7 @@ public class DataProtectionKey
     /// The entity identifier of the <see cref="DataProtectionKey"/>.
     /// </summary>
     [Column(IsPrimary = true, IsIdentity = true)]
+    [Required]
     public int Id { get; set; }
 
     /// <summary>
