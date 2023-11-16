@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net7.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
 		<PackageTags>freesql;freekit;localization;</PackageTags>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Description>.net core localization FreeSql</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql" Version="3.2.801" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.11" />
+		<PackageReference Include="FreeSql" Version="3.2.805" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
 	</ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFramework7)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFrameworkVersion)</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>

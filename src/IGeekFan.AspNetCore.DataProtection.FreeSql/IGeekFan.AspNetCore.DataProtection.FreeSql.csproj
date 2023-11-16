@@ -1,20 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFramework7)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFrameworkVersion)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>$(AssemblyName)</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.DbContext" Version="3.2.801" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' ">
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.11" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework7)' ">
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.11" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.2.805" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="8.0.0" />
 	</ItemGroup>
 </Project>

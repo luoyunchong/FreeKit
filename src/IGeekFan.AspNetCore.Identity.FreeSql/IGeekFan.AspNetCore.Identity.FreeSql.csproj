@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFramework7)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFrameworkVersion)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageTags>aspnetcore;freesql;freekit;identity;</PackageTags>
@@ -10,15 +10,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql" Version="3.2.801" />
-		<PackageReference Include="FreeSql.DbContext" Version="3.2.801" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' ">
-		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.11" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFramework7)' ">
-		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.11" />
+		<PackageReference Include="FreeSql" Version="3.2.805" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.2.805" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
