@@ -6,15 +6,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.805" />
-		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.2.805" />
-		<PackageReference Include="FreeSql.Provider.MySql" Version="3.2.805" />
-		<PackageReference Include="FreeSql.Provider.SqlServer" Version="3.2.805" />
-		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.805" />
-		<PackageReference Include="FreeSql.Provider.Oracle" Version="3.2.805" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.MySql" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.SqlServer" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.Oracle" Version="3.2.812" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.2" />
+		<PackageReference Include="Xunit.DependencyInjection" Version="8.9.1" />
 	</ItemGroup>
 
 	<ItemGroup>

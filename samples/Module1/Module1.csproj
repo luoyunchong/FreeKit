@@ -14,6 +14,4 @@
 	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
 	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
 	</ItemGroup>
-
-
 </Project>

@@ -12,8 +12,8 @@
 
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="FreeSql.DbContext" Version="3.2.805" />
-		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.2.812" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
