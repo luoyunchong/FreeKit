@@ -20,10 +20,10 @@ namespace FreeSql
         /// <param name="this"></param>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration)
+        public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration, string prefix = "ConnectionStrings")
         {
-            IConfigurationSection dbTypeCode = configuration.GetSection("ConnectionStrings:DefaultDB");
-            IConfigurationSection providerTypeSection = configuration.GetSection("ConnectionStrings:ProviderType");
+            IConfigurationSection dbTypeCode = configuration.GetSection($"{prefix}:DefaultDB");
+            IConfigurationSection providerTypeSection = configuration.GetSection($"{prefix}:ProviderType");
             var providerType = providerTypeSection.Value.IsNotNullOrWhiteSpace()
                 ? Type.GetType(providerTypeSection.Value)
                 : null;
@@ -32,16 +32,16 @@ namespace FreeSql
             {
                 if (!Enum.IsDefined(typeof(DataType), dataType))
                 {
-                    Trace.WriteLine($"数据库配置ConnectionStrings:DefaultDB:{dataType}无效");
+                    Trace.WriteLine($"数据库配置{{prefixs:DefaultDB:{dataType}无效");
                 }
 
                 IConfigurationSection connectionStringSection =
-                    configuration.GetSection($"ConnectionStrings:{dataType}");
+                    configuration.GetSection($"{prefix}:{dataType}");
                 @this.UseConnectionString(dataType, connectionStringSection.Value, providerType);
             }
             else
             {
-                Trace.WriteLine($"数据库配置ConnectionStrings:DefaultDB:{dbTypeCode.Value}无效");
+                Trace.WriteLine($"数据库配置{prefix}:DefaultDB:{dbTypeCode.Value}无效");
             }
 
             return @this;
