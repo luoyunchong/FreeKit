@@ -9,7 +9,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.DbContext" Version="3.2.812" />
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="6.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="8.0.2" />
 	</ItemGroup>
 </Project>
