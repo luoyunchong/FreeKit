@@ -19,6 +19,7 @@ namespace FreeSql
         /// </summary>
         /// <param name="this"></param>
         /// <param name="configuration"></param>
+        /// <param name="prefix"></param>
         /// <returns></returns>
         public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration, string prefix = "ConnectionStrings")
         {

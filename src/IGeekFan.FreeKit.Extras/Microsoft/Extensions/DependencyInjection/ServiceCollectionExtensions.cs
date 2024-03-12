@@ -8,12 +8,25 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
+ 
+    public static IServiceCollection AddUnitOfWorkManager<T>(this IServiceCollection serviceCollection) where T : class
+    {
+        serviceCollection.AddTransient<UnitOfWorkActionFilter>();
+        serviceCollection.TryAddScoped<UnitOfWorkManager<T>>();
+        return serviceCollection;
+    }
+
+    public static IServiceCollection AddUnitOfWorkManager(this IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddTransient<UnitOfWorkActionFilter>();
+        serviceCollection.TryAddScoped<UnitOfWorkManager>();
+
+        return serviceCollection;
+    }
+
     /// <summary>
     /// 统一配置服务，简化内部多个配置细节
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="typeUserkey">用户表类型，默认为guid</param>
-    /// <returns></returns>
     public static IServiceCollection AddFreeKitCore(this IServiceCollection services, Type? typeUserkey = null)
     {
         //(controller unitofwork fitler
@@ -22,16 +35,12 @@ public static class ServiceCollectionExtensions
         //审计仓储
         //复合主键仓储)
         services.AddHttpContextAccessor();
-
-        services
-            .AddTransient<UnitOfWorkActionFilter>()
-            .AddCurrentUser()
+        services.AddCurrentUser()
             .AddCurrentUserAccessor()
             .AddAuditRepostiory(typeUserkey)
             .AddCompositeRepostiory();
 
         services.AddDefaultRepository();
-        services.TryAddScoped<UnitOfWorkManager>();
 
         return services;
     }
@@ -76,9 +85,9 @@ public static class ServiceCollectionExtensions
         {
             throw new NotSupportedException("用户ID仅支持Guid/long/int类型");
         }
+
         return services;
     }
-
 
 
     /// <summary>
