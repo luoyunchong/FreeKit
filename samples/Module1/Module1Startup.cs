@@ -13,14 +13,8 @@ public class Module1Startup : IModuleStartup
         //services.AddSingleton<ITestService, TestService>();
     }
 
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(WebApplication app, IWebHostEnvironment env)
     {
-        app.UseEndpoints(endpoints =>
-            endpoints.MapGet("/TestEndpoint",
-                async context =>
-                {
-                    await context.Response.WriteAsync("Hello World from TestEndpoint in Module 1");
-                }).RequireAuthorization()
-        );
+      
     }
 }

@@ -71,7 +71,7 @@ foreach (var module in modules)
     app.Map($"/{module.RoutePrefix}", builder =>
     {
         builder.UseRouting();
-        module.Startup.Configure(builder, app.Environment);
+        module.Startup.Configure(app, app.Environment);
     });
 }
 

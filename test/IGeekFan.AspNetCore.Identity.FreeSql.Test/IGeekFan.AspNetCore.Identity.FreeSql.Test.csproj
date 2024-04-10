@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>$(DefaultNetCoreTargetFramework7)</TargetFramework>
+		<TargetFramework>$(DefaultNetCoreTargetFrameworkVersion)</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
@@ -17,19 +17,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="$(DefaultFreeSqlVersion)" />
+		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="3.2.812" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(DefaultAspNetCoreVersion7)" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
-		<PackageReference Include="Moq" Version="4.18.4" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.2" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+		<PackageReference Include="Moq" Version="4.20.70" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.5" />
-		<PackageReference Include="xunit" Version="2.5.0" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.8" />
+		<PackageReference Include="xunit" Version="2.7.0" />
+		<PackageReference Include="Xunit.DependencyInjection" Version="8.9.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="coverlet.collector" Version="6.0.0">
+		<PackageReference Include="coverlet.collector" Version="6.0.1">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>

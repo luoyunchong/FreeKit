@@ -7,5 +7,5 @@ namespace IGeekFan.FreeKit.Modularity;
 public interface IModuleStartup
 {
     void ConfigureServices(IServiceCollection services);
-    void Configure(IApplicationBuilder app, IWebHostEnvironment env);
+    void Configure(WebApplication app, IWebHostEnvironment env);
 }

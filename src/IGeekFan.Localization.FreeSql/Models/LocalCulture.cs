@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using FreeSql.DataAnnotations;
 
 namespace IGeekFan.Localization.FreeSql.Models
@@ -23,12 +24,13 @@ namespace IGeekFan.Localization.FreeSql.Models
         }
 
         [Column(IsIdentity = true, IsPrimary = true)]
+        [Required]
         public long Id { get; set; }
 
-        [Column(StringLength = 50)] public string Name { get; set; }
+        [Column(StringLength = 50)] [Required] public string Name { get; set; }
 
 
-        [Column(StringLength = 50)] public string DisplayName { get; set; }
+        [Column(StringLength = 50)] [Required] public string DisplayName { get; set; }
 
         public virtual ICollection<LocalResource> Resources { get; set; }
     }

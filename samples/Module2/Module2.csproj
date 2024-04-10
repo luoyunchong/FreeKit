@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>$(DefaultNetCoreTargetFramework7)</TargetFramework>
+		<TargetFramework>$(DefaultNetCoreTargetFrameworkVersion)</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
@@ -13,6 +13,10 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Extras\IGeekFan.FreeKit.Extras.csproj" />
 	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Xunit.DependencyInjection" Version="8.9.1" />
 	</ItemGroup>
 
 </Project>

@@ -33,8 +33,13 @@ public class IdentityDbContext<TUser> : IdentityDbContext<TUser, IdentityRole, s
     /// <summary>
     /// Initializes a new instance of <see cref="IdentityDbContext"/>.
     /// </summary>
+    /// <param name="identityOptions"></param>
+    /// <param name="fsql"></param>
     /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
-    public IdentityDbContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(identityOptions,fsql, options) { }
+    public IdentityDbContext(IdentityOptions identityOptions, IFreeSql fsql, DbContextOptions options) : base(
+        identityOptions, fsql, options)
+    {
+    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IdentityDbContext" /> class.
