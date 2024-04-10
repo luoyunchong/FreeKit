@@ -2,8 +2,8 @@
 	<PropertyGroup>
 		<DefaultNetCoreTargetFramework>net6.0</DefaultNetCoreTargetFramework>
 		<DefaultNetCoreTargetFramework7>net7.0</DefaultNetCoreTargetFramework7>
-		<DefaultFreeSqlVersion>3.2.698</DefaultFreeSqlVersion>
+		<DefaultFreeSqlVersion>3.2.700</DefaultFreeSqlVersion>
 		<DefaultAspNetCoreVersion>6.0.16</DefaultAspNetCoreVersion>
-		<DefaultAspNetCoreVersion7>7.0.9</DefaultAspNetCoreVersion7>
+		<DefaultAspNetCoreVersion7>7.0.10</DefaultAspNetCoreVersion7>
 	</PropertyGroup>
 </Project>
