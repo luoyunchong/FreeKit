@@ -22,7 +22,7 @@ $version = $commonPropsXml.Project.PropertyGroup[1].Version
 $i = 0
 $errorCount = 0
 $totalProjectsCount = $projects.length
-$nugetUrl = "http://124.70.130.97:5555/v3/index.json"
+$nugetUrl = "http://101.34.7.82:5555/v3/index.json"
 $MovepackFolder = Join-Path $packFolder "/packages/"
 Set-Location $MovepackFolder
 

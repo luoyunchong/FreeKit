@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
+using FreeSql;
 
 namespace Sample.Localization.Controllers
 {
@@ -18,11 +19,15 @@ namespace Sample.Localization.Controllers
             _stringLocalizer = stringLocalizer;
         }
         
+        public string FreeSql()
+        {
+            return CoreStrings.AsTable_PropertyName_FormatError("table name") ;
+        }
         public string Hello()
         {
             return _stringLocalizer["Hello"] ;
         }
-        
+
         public async Task<ProviderCultureResult> GetProvider()
         {
             var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
