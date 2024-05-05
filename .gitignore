@@ -372,3 +372,4 @@ nupkg/github-api-key.txt
 /.idea/.idea.FreeKit/.idea
 /src/IGeekFan.OpenIddict.FreeSql.Models
 /src/IGeekFan.OpenIddict.FreeSql
+/src/IGeekFan.AspNetCore.DataProtection.FreeRedis/IGeekFan - Backup.AspNetCore.DataProtection.FreeRedis.csproj

@@ -17,20 +17,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="3.2.812" />
+		<PackageReference Include="FreeSql.Provider.SqliteCore" Version="3.2.821" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.Specification.Tests" Version="5.0.17" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.4" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
 		<PackageReference Include="Moq" Version="4.20.70" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.8" />
-		<PackageReference Include="xunit" Version="2.7.0" />
-		<PackageReference Include="Xunit.DependencyInjection" Version="8.9.1" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
+		<PackageReference Include="xunit" Version="2.8.0" />
+		<PackageReference Include="Xunit.DependencyInjection" Version="9.2.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.0">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="coverlet.collector" Version="6.0.1">
+		<PackageReference Include="coverlet.collector" Version="6.0.2">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>

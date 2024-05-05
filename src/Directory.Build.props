@@ -8,14 +8,14 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
-
+    
     <PropertyGroup>
         <Authors>igeekfan;luoyunchong</Authors>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <Copyright>MIT License</Copyright>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
-        <Version>0.0.539</Version>
+        <Version>0.0.540</Version>
     </PropertyGroup>
 
     <ItemGroup>

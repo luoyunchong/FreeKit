@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql" Version="3.2.812" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.2" />
+		<PackageReference Include="FreeSql" Version="3.2.821" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.4" />
 	</ItemGroup>
 </Project>

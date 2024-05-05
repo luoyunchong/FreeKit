@@ -82,7 +82,7 @@ namespace IGeekFan.FreeKit.Web
             });
             services.AddControllers(options =>
             {
-                options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());
+                //options.ValueProviderFactories.Add(new CamelCaseValueProviderFactory());
                 //options.Filters.Add(typeof(HttpGlobalExceptionFilter));
                 options.Filters.AddService(typeof(UnitOfWorkActionFilter));
             })
@@ -111,7 +111,7 @@ namespace IGeekFan.FreeKit.Web
         public static IServiceCollection AddSwagger(this IServiceCollection services, IConfiguration c)
         {
             //Swagger重写PascalCase，改成小写开头模式
-            services.TryAddEnumerable(ServiceDescriptor.Transient<IApiDescriptionProvider, CamelCaseApiDescriptionProvider>());
+            //services.TryAddEnumerable(ServiceDescriptor.Transient<IApiDescriptionProvider, CamelCaseApiDescriptionProvider>());
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
