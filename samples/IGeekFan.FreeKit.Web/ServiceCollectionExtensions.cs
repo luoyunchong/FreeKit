@@ -40,32 +40,40 @@ namespace IGeekFan.FreeKit.Web
             //     c.Propagation = Propagation.Required;
             // });
 
-            IFreeSql fsql = new FreeSqlBuilder()
-                     .UseConnectionString(c)
-                     .UseAutoSyncStructure(true)
-                     .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
-                     .UseGenerateCommandParameterWithLambda(true)//默认false,针对 lambda 表达式解析,设置成true时方便查看SQL
-                     .UseNoneCommandParameter(true) //默认true,针对insert/update/delete是否参数化
-                     .UseMonitorCommand(
-                         cmd => Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText)
-                   ).Build();
+            services.AddSingleton(r =>
+            {
 
-            services.AddSingleton(fsql);
+                IFreeSql fsql = new FreeSqlBuilder()
+                    .UseConnectionString(c)
+                    .UseAutoSyncStructure(true)
+                    .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
+                    .UseGenerateCommandParameterWithLambda(true)//默认false,针对 lambda 表达式解析,设置成true时方便查看SQL
+                    .UseNoneCommandParameter(true) //默认true,针对insert/update/delete是否参数化
+                    .UseMonitorCommand(
+                        cmd =>
+                        {
+                            IHttpContextAccessor contextAccessor = r.GetService<IHttpContextAccessor>();
+                            Trace.WriteLine($"TraceIdentifier:{contextAccessor?.HttpContext?.TraceIdentifier}");
+                            Trace.WriteLine("\r\n线程" + Thread.CurrentThread.ManagedThreadId + ": " + cmd.CommandText);
+                        }
+                    ).Build();
+                return fsql;
+            });
+            services.AddUnitOfWorkManager();
             services.AddFreeKitCore();
 
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+
             services.AddFreeDbContext<DataProtectionKeyContext>(options =>
-                     options.UseFreeSql(fsql).UseOptions(
+                     options.UseFreeSql(serviceProvider.GetRequiredService<IFreeSql>()).UseOptions(
                          new DbContextOptions()
                          {
                              EnableCascadeSave = true
                          })
                  );
 
-            using (IServiceScope scope = services.BuildServiceProvider().CreateScope())
-            {
-                var freeSql = scope.ServiceProvider.GetRequiredService<IFreeSql>();
-                //freeSql.CodeFirst.SyncStructure(ReflexHelper.GetTypesByTableAttribute(typeof(Program)));
-            }
+            var freeSql = serviceProvider.GetRequiredService<IFreeSql>();
+            freeSql.CodeFirst.SyncStructure(ReflexHelper.GetTypesByTableAttribute(typeof(Program)));
             return services;
         }
 
@@ -73,7 +81,6 @@ namespace IGeekFan.FreeKit.Web
         public static IServiceCollection AddCustomMvc(this IServiceCollection services, IConfiguration c)
         {
             services.TryAddEnumerable(ServiceDescriptor.Transient<IApiDescriptionProvider, CamelCaseApiDescriptionProvider>());
-
 
             services.Configure<RouteOptions>(options =>
             {
