@@ -4,11 +4,7 @@ using IGeekFan.FreeKit.Extras.Dependency;
 using IGeekFan.FreeKit.Modularity;
 using System.Reflection;
 using IGeekFan.FreeKit.Web;
-using IGeekFan.FreeKit.Extras.Security;
-using Autofac.Core;
 using Microsoft.AspNetCore.DataProtection;
-using FreeSql;
-using Microsoft.Extensions.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -68,14 +64,14 @@ app.UseRouting()
         endpoints.MapControllers();
     });
 
-// Adds endpoints defined in modules
-//var modules = app.Services.GetRequiredService<IEnumerable<ModuleInfo>>();
-//foreach (var module in modules)
-//{
-//    app.Map($"/{module.RoutePrefix}", builder =>
-//    {
-//        module.Startup.Configure(app, app.Environment);
-//    });
-//}
+ // Adds endpoints defined in modules
+var modules = app.Services.GetRequiredService<IEnumerable<ModuleInfo>>();
+foreach (var module in modules)
+{
+    app.Map($"/{module.RoutePrefix}", builder =>
+    {
+        module.Startup.Configure(app, app.Environment);
+    });
+}
 
 app.Run();

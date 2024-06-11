@@ -24,10 +24,10 @@ namespace IGeekFan.FreeKit.Web
             services.AddTransient<IPostConfigureOptions<MvcOptions>, ModuleRoutingMvcOptionsPostConfigure>();
 
             // Adds module1 with the route prefix module-1
-            services.AddModule<Module1.Module1Startup>("module-1");
+            services.AddModule<Module1.Module1Startup>("module-1",c);
 
             // Adds module2 with the route prefix module-2
-            services.AddModule<Module2.Module2Startup>("module-2");
+            services.AddModule<Module2.Module2Startup>("module-2",c);
 
             return services;
         }
@@ -72,8 +72,6 @@ namespace IGeekFan.FreeKit.Web
                          })
                  );
 
-            var freeSql = serviceProvider.GetRequiredService<IFreeSql>();
-            freeSql.CodeFirst.SyncStructure(ReflexHelper.GetTypesByTableAttribute(typeof(Program)));
             return services;
         }
 
