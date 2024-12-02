@@ -8,6 +8,7 @@ namespace IGeekFan.FreeKit.Extras.Security;
 public static class CurrentUserExtensions
 {
     #region 获取UserId
+
     /// <summary>
     /// 获取泛型用户Id
     /// </summary>
@@ -18,32 +19,33 @@ public static class CurrentUserExtensions
         if (currentUser.Id == null) return default;
         if (typeof(T) == typeof(string))
         {
-            return (T)(object)currentUser.Id;
+            return (T) (object) currentUser.Id;
         }
 
         if (typeof(T) == typeof(Guid))
         {
             Guid? userGuid = currentUser.FindUserIdToGuid();
             if (userGuid == null) return default;
-            return (T)(object)userGuid;
+            return (T) (object) userGuid;
         }
 
         if (typeof(T) == typeof(long))
         {
             long? userLong = currentUser.FindUserIdToLong();
             if (userLong == null) return default;
-            return (T)(object)userLong;
+            return (T) (object) userLong;
         }
 
         if (typeof(T) == typeof(int))
         {
             long? userInt = currentUser.FindUserIdToInt();
             if (userInt == null) return default;
-            return (T)(object)userInt;
+            return (T) (object) userInt;
         }
 
-        return (T)(object)currentUser.Id;
+        return (T) (object) currentUser.Id;
     }
+
     public static long? FindUserIdToLong(this ICurrentUser currentUser)
     {
         if (currentUser.Id == null) return null;
@@ -67,8 +69,9 @@ public static class CurrentUserExtensions
 
         return null;
     }
+
     #endregion
-    
+
     /// <summary>
     ///  姓名
     /// </summary>
@@ -77,6 +80,17 @@ public static class CurrentUserExtensions
     public static string? FindName(this ICurrentUser currentUser)
     {
         Claim? claim = currentUser.FindClaim(FreeKitClaimTypes.Name);
+        return claim?.Value;
+    }
+
+    /// <summary>
+    /// 昵称
+    /// </summary>
+    /// <param name="currentUser"></param>
+    /// <returns></returns>
+    public static string? FindNickName(this ICurrentUser currentUser)
+    {
+        Claim? claim = currentUser.FindClaim(FreeKitClaimTypes.NickName);
         return claim?.Value;
     }
 

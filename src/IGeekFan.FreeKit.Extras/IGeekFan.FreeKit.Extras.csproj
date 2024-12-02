@@ -11,8 +11,8 @@
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-		<PackageReference Include="FreeSql.DbContext" Version="3.2.821" />
-		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.5.101" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
 		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
 		<PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.1.0" />
 	</ItemGroup>

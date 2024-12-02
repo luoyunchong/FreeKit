@@ -19,10 +19,10 @@ namespace Sample.Localization.Controllers
             _stringLocalizer = stringLocalizer;
         }
         
-        public string FreeSql()
-        {
-            return CoreStrings.AsTable_PropertyName_FormatError("table name") ;
-        }
+        //public string FreeSql()
+        //{
+        //    return CoreStrings.AsTable_PropertyName_FormatError("table name") ;
+        //}
         public string Hello()
         {
             return _stringLocalizer["Hello"] ;
