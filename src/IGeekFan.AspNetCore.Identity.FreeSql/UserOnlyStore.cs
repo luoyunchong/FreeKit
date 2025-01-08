@@ -1,10 +1,12 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Security.Claims;
 using System.Xml.Linq;
+
 using FreeSql;
 using FreeSql.Internal;
+
 using Microsoft.AspNetCore.Identity;
 
 namespace IGeekFan.AspNetCore.Identity.FreeSql;
@@ -233,7 +235,7 @@ public class UserOnlyStore<TUser, TContext, TKey, TUserClaim, TUserLogin, TUserT
         cancellationToken.ThrowIfCancellationRequested();
         ThrowIfDisposed();
         var id = ConvertIdFromString(userId);
-        return UsersSet.Select.WhereDynamic(new object[] {id}).FirstAsync(cancellationToken)!;
+        return UsersSet.Select.WhereDynamic(new object[] { id }).FirstAsync(cancellationToken)!;
     }
 
     /// <summary>
@@ -509,7 +511,7 @@ public class UserOnlyStore<TUser, TContext, TKey, TUserClaim, TUserLogin, TUserT
         cancellationToken.ThrowIfCancellationRequested();
         ThrowIfDisposed();
 
-        var users = await Users.Where(u => u.NormalizedEmail == normalizedEmail).ToListAsync(cancellationToken);
+        var users = await Users.Where(u => u.NormalizedEmail == normalizedEmail || u.UserName == normalizedEmail).ToListAsync(cancellationToken);
         if (users.Count > 1)
         {
             throw new InvalidOperationException(CoreStrings.DuplicateEmail);

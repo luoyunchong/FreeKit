@@ -47,6 +47,14 @@ public class SongController : ControllerBase
 
         return song;
     }
+
+    [HttpPut]
+    public Song UpdateSong([FromBody] Song song)
+    {
+        _songService.UpdateSong(song);
+        return song;
+    }
+
     [Transactional]
     [HttpPost("asself")]
     public Song InsertAsSelfSong([FromBody] Song song)

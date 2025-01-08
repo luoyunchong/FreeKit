@@ -5,6 +5,7 @@ using IGeekFan.FreeKit.Modularity;
 using System.Reflection;
 using IGeekFan.FreeKit.Web;
 using Microsoft.AspNetCore.DataProtection;
+using Module1;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,9 @@ builder.Host
 // Add services to the container.
 
 IConfiguration c = builder.Configuration;
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly(),typeof(Module1Startup).Assembly));
 
 builder.Services
         .AddCustomMvc(c)

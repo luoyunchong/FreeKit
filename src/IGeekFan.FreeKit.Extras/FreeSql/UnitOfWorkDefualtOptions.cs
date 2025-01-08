@@ -20,4 +20,9 @@ public class UnitOfWorkDefaultOptions
     /// 事务隔离级别
     /// </summary>
     public IsolationLevel? IsolationLevel { get; set; }
+
+    /// <summary>
+    /// 是否发布领域事件
+    /// </summary>
+    public bool PublishDomainEvent { get; set; } = true;
 }

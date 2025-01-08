@@ -144,4 +144,6 @@ public static class ServiceCollectionExtensions
     {
         return builder.UseMiddleware<CurrentUserAccessorMiddleware>();
     }
+
+    
 }

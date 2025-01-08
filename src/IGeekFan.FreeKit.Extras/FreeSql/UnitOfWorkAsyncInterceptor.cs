@@ -1,10 +1,22 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
+
 using Castle.DynamicProxy;
+
 using FreeSql;
+
+using IGeekFan.FreeKit.Extras.AuditEntity;
+using IGeekFan.FreeKit.Extras.Domain;
+
+using MediatR;
+
 using Microsoft.Extensions.Options;
+
+using static FreeSql.DbContext;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
@@ -33,7 +45,7 @@ public static class MethodInfoExtensions
 
         return null;
     }
-} 
+}
 #endregion
 
 /// <summary>
@@ -45,11 +57,12 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     private readonly UnitOfWorkManager _unitOfWorkManager;
     private IUnitOfWork _unitOfWork;
     private readonly UnitOfWorkDefaultOptions _unitOfWorkDefaultOptions;
-
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, IOptionsMonitor<UnitOfWorkDefaultOptions> unitOfWorkDefaultOptions)
+    IMediator mediator;
+    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, IOptionsMonitor<UnitOfWorkDefaultOptions> unitOfWorkDefaultOptions, IMediator mediator)
     {
         _unitOfWorkManager = unitOfWorkManager;
         _unitOfWorkDefaultOptions = unitOfWorkDefaultOptions.CurrentValue;
+        this.mediator = mediator;
     }
 
     /// <summary>
@@ -70,7 +83,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             return true;
         }
         return false;
-    } 
+    }
     #endregion
 
     #region 拦截同步执行的方法
@@ -85,6 +98,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             try
             {
                 invocation.Proceed();
+                DispatchDomainEventsAsync().GetAwaiter().GetResult();
                 _unitOfWork.Commit();
             }
             catch
@@ -100,6 +114,10 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         else
         {
             invocation.Proceed();
+            if (_unitOfWorkDefaultOptions.PublishDomainEvent)
+            {
+                DispatchDomainEventsAsync().GetAwaiter().GetResult();
+            }
         }
     }
     #endregion
@@ -126,6 +144,9 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
                 {
                     await (Task)invocation.ReturnValue;
                 }
+
+
+                await DispatchDomainEventsAsync();
                 _unitOfWork.Commit();
             }
             catch (Exception)
@@ -145,6 +166,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             {
                 await (Task)invocation.ReturnValue;
             }
+            await DispatchDomainEventsAsync();
         }
     }
 
@@ -169,6 +191,7 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             {
                 invocation.Proceed();
                 result = await (Task<TResult>)invocation.ReturnValue;
+                await DispatchDomainEventsAsync();
                 _unitOfWork.Commit();
             }
             catch (Exception)
@@ -184,9 +207,53 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         else
         {
             invocation.Proceed();
+            await DispatchDomainEventsAsync();
             result = await (Task<TResult>)invocation.ReturnValue;
         }
         return result;
     }
     #endregion
+
+    private const int Max_Deep = 10;
+
+    /// <summary>
+    /// 发布领域事件
+    /// </summary>
+    /// <returns></returns>
+    private async Task DispatchDomainEventsAsync(int deep = 0)
+    {
+        if (!_unitOfWorkDefaultOptions.PublishDomainEvent || _unitOfWork == null)
+        {
+            return;
+        }
+
+        if (deep > Max_Deep)
+        {
+            throw new RecursionOverflowException(Max_Deep, "领域事件发布超过最大递归深度");
+        }
+
+        var domainEntities = _unitOfWork.EntityChangeReport.Report
+         .Select(r => r.Object as IDomainEventBase)
+         .Where(r => r != null && r.DomainEvents.Any()).ToList();
+
+        if (domainEntities.Count == 0)
+        {
+            return;
+        }
+
+        var domainEvents = domainEntities.SelectMany(r => r.GetDomainEvents())
+         .ToList();
+
+        domainEntities.ForEach(entity => entity.ClearDomainEvents());
+
+        if (domainEvents.Any())
+        {
+            foreach (var domainEvent in domainEvents)
+            {
+                await mediator.Publish(domainEvent);
+            }
+        }
+
+        await DispatchDomainEventsAsync(deep + 1);
+    }
 }

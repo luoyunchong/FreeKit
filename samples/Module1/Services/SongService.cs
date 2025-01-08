@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 using FreeSql;
 using IGeekFan.FreeKit.Extras.FreeSql;
 using Module1.Domain;
@@ -19,6 +19,14 @@ namespace Module1.Services
         {
             _songRepository.Insert(song);
             return song;
+        }
+
+        [Transactional]
+        public void UpdateSong(Song song)
+        {
+            var old = _songRepository.Get(song.Id);
+            old.UpdateTitle(new Random().Next(1, 22122120).ToString());
+            _songRepository.Update(old);
         }
 
         public List<Song> GetSongs()
