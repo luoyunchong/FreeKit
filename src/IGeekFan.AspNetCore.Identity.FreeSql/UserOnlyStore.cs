@@ -251,7 +251,7 @@ public class UserOnlyStore<TUser, TContext, TKey, TUserClaim, TUserLogin, TUserT
         cancellationToken.ThrowIfCancellationRequested();
         ThrowIfDisposed();
 
-        return Users.Where(u => u.NormalizedUserName == normalizedUserName).FirstAsync(cancellationToken)!;
+        return Users.Where(u => u.NormalizedUserName == normalizedUserName || u.NormalizedEmail == normalizedUserName).FirstAsync(cancellationToken)!;
     }
 
     /// <summary>

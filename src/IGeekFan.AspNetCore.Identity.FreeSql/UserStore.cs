@@ -1,4 +1,4 @@
-﻿using FreeSql;
+using FreeSql;
 using FreeSql.Internal;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
@@ -232,7 +232,7 @@ public class UserStore<TUser, TRole, TContext, TKey, TUserClaim, TUserRole, TUse
         cancellationToken.ThrowIfCancellationRequested();
         ThrowIfDisposed();
 
-        return Users.Where(u => u.NormalizedUserName == normalizedUserName).FirstAsync(cancellationToken);
+        return Users.Where(u => u.NormalizedUserName == normalizedUserName || u.NormalizedEmail == normalizedUserName).FirstAsync(cancellationToken);
     }
 
     /// <summary>
