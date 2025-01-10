@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,8 +30,8 @@ public class EmailSender : IEmailSender
         }
         using SmtpClient client = new SmtpClient();
 
-        client.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls;//| SslProtocols.Ssl2 | SslProtocols.Ssl3
-        client.Connect(_options.Host, _options.Port, _options.EnableSsl == true ? SecureSocketOptions.StartTls : SecureSocketOptions.None);
+        client.SslProtocols = SslProtocols.Tls12;
+        client.Connect(_options.Host, _options.Port, _options.EnableSsl == true ? SecureSocketOptions.SslOnConnect : SecureSocketOptions.None);
 
         NetworkCredential credential = !string.IsNullOrEmpty(_options.Domain)
             ? new NetworkCredential(_options.UserName, _options.Password, _options.Domain)
@@ -54,8 +54,8 @@ public class EmailSender : IEmailSender
         }
         using SmtpClient client = new SmtpClient();
 
-        client.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls;//| SslProtocols.Ssl2 | SslProtocols.Ssl3
-        await client.ConnectAsync(_options.Host, _options.Port, _options.EnableSsl == true ? SecureSocketOptions.StartTls : SecureSocketOptions.None, cancellationToken);
+        client.SslProtocols = SslProtocols.Tls12;
+        await client.ConnectAsync(_options.Host, _options.Port, _options.EnableSsl == true ? SecureSocketOptions.SslOnConnect : SecureSocketOptions.None, cancellationToken);
 
         NetworkCredential credential = !string.IsNullOrEmpty(_options.Domain)
             ? new NetworkCredential(_options.UserName, _options.Password, _options.Domain)
