@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFrameworkVersion)</TargetFrameworks>
@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.DbContext" Version="3.5.101" />
+		<PackageReference Include="FreeSql.DbContext" Version="3.5.103" />
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="8.0.8" />
 	</ItemGroup>
 </Project>
