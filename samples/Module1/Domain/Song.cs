@@ -16,6 +16,7 @@ public class Song : IDomainEventBase
     [Description("自增id")]
     public int Id { get; set; }
     public string Title { get; set; }
+    [Column(IsIgnore = true)]
     public List<IDomainEvent> DomainEvents { get; set; } = new List<IDomainEvent>();
 
     public object[] GetKeys()

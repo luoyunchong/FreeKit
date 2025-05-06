@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.5.101" />
+		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.5.205" />
 		<PackageReference Include="MailKit" Version="4.8.0" />
 		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.8" />
 		<PackageReference Include="Xunit.DependencyInjection" Version="9.3.1" />
