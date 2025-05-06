@@ -1,4 +1,4 @@
-﻿using IGeekFan.FreeKit.Email;
+using IGeekFan.FreeKit.Email;
 using MimeKit;
 using Xunit;
 using Xunit.Abstractions;
