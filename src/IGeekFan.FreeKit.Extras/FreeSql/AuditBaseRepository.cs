@@ -9,15 +9,6 @@ using IGeekFan.FreeKit.Extras.Security;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
-public class DefaultRepository<TEntity, TKey> : BaseRepository<TEntity, TKey> where TEntity : class
-{
-    public DefaultRepository(IFreeSql fsql) : base(fsql) { }
-    public DefaultRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(uowManger?.Orm ?? fsql)
-    {
-        uowManger?.Binding(this);
-    }
-}
-
 class GuidRepository<TEntity> : BaseRepository<TEntity, Guid> where TEntity : class
 {
     public GuidRepository(IFreeSql fsql) : base(fsql) { }

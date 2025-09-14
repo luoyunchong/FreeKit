@@ -18,7 +18,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
 
     protected override void BeforeInsert(TEntity entity)
     {
-        if (entity is ITenant tenant)
+        if (entity is ITenant tenant && tenant.TenantId != null)
         {
             tenant.TenantId = CurrentUser.TenantId;
         }
