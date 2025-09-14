@@ -15,8 +15,4 @@
 	  <ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="Xunit.DependencyInjection" Version="9.3.1" />
-	</ItemGroup>
-
 </Project>

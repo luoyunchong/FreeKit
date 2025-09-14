@@ -13,8 +13,7 @@ namespace Module1.Services
         {
             _songRepository = songRepository;
         }
-
-        [Transactional(Propagation.Required)]
+        
         public Song InsertSong(Song song)
         {
             _songRepository.Insert(song);

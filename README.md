@@ -26,25 +26,6 @@
 | `IGeekFan.AspNetCore.DataProtection.FreeRedis`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.DataProtection.FreeRedis.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.AspNetCore.DataProtection.FreeRedis/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.DataProtection.FreeRedis.svg)|
 | `IGeekFan.AspNetCore.DataProtection.FreeSql`| [![NuGet](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.DataProtection.FreeSql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/IGeekFan.AspNetCore.DataProtection.FreeSql/)| ![downloads](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.DataProtection.FreeSql.svg)|
 
-
-
-
-## BaGet Packages
-
-| Package name                           | Version                                                                                                                                                                                                  |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `IGeekFan.AspNetCore.Identity.FreeSql` | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.Identity.FreeSql) |
-| `IGeekFan.FreeKit`                          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit)|
-| `IGeekFan.FreeKit.Extras`                 | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Extras)|
-| `IGeekFan.FreeKit.Modularity`            | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Modularity)|   
-| `IGeekFan.FreeKit.Email`                  | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.FreeKit.Email)|   
-| `IGeekFan.Localization.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Localization.FreeSql)|
-| `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql)|
-| `IGeekFan.AspNetCore.DataProtection.FreeRedis`          | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeRedis)|
-| `IGeekFan.AspNetCore.DataProtection.FreeSql`            | [BaGet](http://124.70.130.97:5555/packages/IGeekFan.AspNetCore.DataProtection.FreeSql)|
-
-
-
 ## IGeekFan.AspNetCore.Identity.FreeSql
 
 `asp.net core 6` 的`identity`的`freesql`实现
