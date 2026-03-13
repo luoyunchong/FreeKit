@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using IGeekFan.FreeKit.Extras.Security;
+﻿using IGeekFan.FreeKit.Extras.Security;
 using Newtonsoft.Json;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras.Security
 {

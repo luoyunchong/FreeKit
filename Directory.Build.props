@@ -1,8 +1,8 @@
 <Project>
 	<PropertyGroup>
-		<DefaultNetCoreTargetFramework>net6.0</DefaultNetCoreTargetFramework>
-		<DefaultNetCoreTargetFrameworkVersion>net8.0</DefaultNetCoreTargetFrameworkVersion>
-		<DefaultFreeSqlVersion>3.5.213</DefaultFreeSqlVersion>
+		<DefaultNetCoreTargetFrameworkVersion8>net8.0</DefaultNetCoreTargetFrameworkVersion8>
+		<DefaultNetCoreTargetFrameworkVersion10>net10.0</DefaultNetCoreTargetFrameworkVersion10>
+		<DefaultFreeSqlVersion>3.5.3033</DefaultFreeSqlVersion>
 		<DefaultAspNetCoreVersion>6.0.16</DefaultAspNetCoreVersion>
 		<DefaultAspNetCoreVersion7>8.0.4</DefaultAspNetCoreVersion7>
 	</PropertyGroup>

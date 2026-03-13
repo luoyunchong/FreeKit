@@ -13,26 +13,26 @@ public class PagedResultDto<T> : BasePagingInfo where T : class
     {
     }
 
-    public PagedResultDto(IReadOnlyList<T> data) : this(data, data.Count)
+    public PagedResultDto(IReadOnlyList<T> items) : this(items, items.Count)
     {
     }
 
-    public PagedResultDto(IReadOnlyList<T> data, long count)
+    public PagedResultDto(IReadOnlyList<T> items, long count)
     {
+        Items = items;
         Count = count;
-        Items = data;
     }
 
-    public PagedResultDto(IReadOnlyList<T> data, BasePagingInfo page) : this(data, page.Count, page.PageNumber,
+    public PagedResultDto(IReadOnlyList<T> items, BasePagingInfo page) : this(items, page.Count, page.PageNumber,
         page.PageSize)
     {
     }
 
-    public PagedResultDto(IReadOnlyList<T> data, long count, int pageNumber, int pageSize)
+    public PagedResultDto(IReadOnlyList<T> items, long count, int pageNumber, int pageSize)
     {
+        Items = items;
+        Count = count;
         PageNumber = pageNumber;
         PageSize = pageSize;
-        Count = count;
-        Items = data;
     }
 }

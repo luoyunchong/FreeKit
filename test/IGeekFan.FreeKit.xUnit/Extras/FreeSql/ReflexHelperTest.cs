@@ -1,6 +1,5 @@
 ﻿using IGeekFan.FreeKit.Extras.FreeSql;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
 {

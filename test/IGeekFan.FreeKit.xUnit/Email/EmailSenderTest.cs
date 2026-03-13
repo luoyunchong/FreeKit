@@ -1,7 +1,6 @@
 using IGeekFan.FreeKit.Email;
 using MimeKit;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace IGeekFan.FreeKit.xUnit.Email
 {

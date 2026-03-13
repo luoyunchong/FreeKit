@@ -2,7 +2,6 @@
 using IGeekFan.FreeKit.xUnit.Models;
 using Newtonsoft.Json;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
 {

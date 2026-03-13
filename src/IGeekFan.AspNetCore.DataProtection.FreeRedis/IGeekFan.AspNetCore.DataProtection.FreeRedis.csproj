@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFramework);$(DefaultNetCoreTargetFrameworkVersion)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
 		<Description>Support for storing data protection keys in Redis.</Description>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<PackageId>$(AssemblyName)</PackageId>
@@ -11,7 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreeRedis" Version="1.4.2" />
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="8.0.8" />
+		<PackageReference Include="FreeRedis" Version="1.5.5" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="10.0.5" />
 	</ItemGroup>
 </Project>
