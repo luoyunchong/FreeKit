@@ -144,18 +144,18 @@ namespace FreeSql.Aop
                 {
                     case "CreateUserId":
                         T? userId = user?.FindUserId<T>();
-                        if (userId.HasValue && e.Value != null) e.Value = userId;
+                        if (userId.HasValue && e.Value == null) e.Value = userId;
                         break;
                     case "CreateUserName":
                         string? userName = user?.UserName;
-                        if (userName.IsNotNullOrWhiteSpace() && e.Value != null) e.Value = userName;
+                        if (userName.IsNotNullOrWhiteSpace() && e.Value == null) e.Value = userName;
                         break;
                     case "CreateTime":
                         e.Value = DateTime.Now;
                         break;
                     case "TenantId":
                         var tenantId = user?.TenantId;
-                        if (tenantId.HasValue && e.Value != null) e.Value = tenantId;
+                        if (tenantId.HasValue && e.Value == null) e.Value = tenantId;
                         break;
                 }
             }
@@ -165,11 +165,11 @@ namespace FreeSql.Aop
                 {
                     case "UpdateUserId":
                         T? userId = user?.FindUserId<T>();
-                        if (userId.HasValue && e.Value != null) e.Value = userId;
+                        if (userId.HasValue && e.Value == null) e.Value = userId;
                         break;
                     case "UpdateUserName":
                         string? userName = user?.UserName;
-                        if (userName.IsNotNullOrWhiteSpace() && e.Value != null) e.Value = userName;
+                        if (userName.IsNotNullOrWhiteSpace() && e.Value == null) e.Value = userName;
                         break;
                     case "UpdateTime":
                         e.Value = DateTime.Now;
