@@ -9,6 +9,6 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="FreeRedis" Version="1.5.5" />
 		<PackageReference Include="MessagePack" Version="3.1.4" />
-		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.5" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.9" />
 	</ItemGroup>
 </Project>
