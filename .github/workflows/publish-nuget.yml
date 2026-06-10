@@ -1,0 +1,45 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Pack
+        run: |
+          dotnet pack src/IGeekFan.FreeKit --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.FreeKit.Email --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.FreeKit.Extras --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.FreeKit.Modularity --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.Localization.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.Identity.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeRedis --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql --configuration Release --no-build --output ./nupkg/packages
+
+      - name: Push to NuGet
+        run: dotnet nuget push ./nupkg/packages/*.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./nupkg/packages/*.nupkg
+          generate_release_notes: true
