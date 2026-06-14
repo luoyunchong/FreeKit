@@ -20,10 +20,10 @@ jobs:
             10.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore FreeKit.sln
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build FreeKit.sln --configuration Release --no-restore
 
       - name: Pack
         run: |

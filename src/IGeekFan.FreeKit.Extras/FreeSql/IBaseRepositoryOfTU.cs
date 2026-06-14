@@ -55,19 +55,3 @@ public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEnti
         return DeleteAsync(CheckTKeyAndReturnIdEntity(id, uid), cancellationToken);
     }
 }
-
-public class DefaultRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity, TKey, Ukey> where TEntity : class
-{
-    public DefaultRepository(IFreeSql fsql) : base(fsql)
-    {
-    }
-
-    public DefaultRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter) : base(fsql)
-    {
-    }
-
-    public DefaultRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(fsql)
-    {
-        uowManger?.Binding(this);
-    }
-}
