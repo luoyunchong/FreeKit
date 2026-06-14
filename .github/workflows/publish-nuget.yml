@@ -51,7 +51,7 @@ jobs:
           dotnet pack src/IGeekFan.R2.NET --configuration Release --no-build --output ./nupkg/packages
 
       - name: Push to NuGet
-        run: dotnet nuget push ./nupkg/packages/*.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.V3_API_KEY }}
+        run: dotnet nuget push ./nupkg/packages/*.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
