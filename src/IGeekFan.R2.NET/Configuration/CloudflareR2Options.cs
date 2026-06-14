@@ -1,4 +1,4 @@
-﻿namespace IGeekFan.R2.NET.Configuration;
+namespace IGeekFan.R2.NET.Configuration;
 
 public class CloudflareR2Options
 {
@@ -11,4 +11,5 @@ public class CloudflareR2Options
     public double? PresignedUrlExpiryInMinutes { get; set; } = 15;
     public string Bucket { get; set; } = string.Empty;
     public string AccountId { get; set; } = string.Empty;
+    public string PrefixPath { get; set; } = string.Empty;
 }
