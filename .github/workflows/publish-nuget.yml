@@ -36,7 +36,9 @@ jobs:
           dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeSql --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.SignalR.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.OpenIddict.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.R2.NET --configuration Release --no-build --output ./nupkg/packages
 
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/packages/*.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
