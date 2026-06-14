@@ -15,7 +15,9 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: |
+            8.0.x
+            10.0.x
 
       - name: Restore dependencies
         run: dotnet restore
@@ -34,6 +36,7 @@ jobs:
           dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeSql --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.OpenIddict.FreeSql --configuration Release --no-build --output ./nupkg/packages
 
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/packages/*.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}

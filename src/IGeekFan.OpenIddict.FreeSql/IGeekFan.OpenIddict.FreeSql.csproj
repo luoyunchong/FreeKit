@@ -1,10 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
+        <TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>IGeekFan.OpenIddict.FreeSql</RootNamespace>
+        <PackageTags>openiddict;freesql;freekit;oauth2;oidc;</PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>OpenIddict stores for FreeSql.</Description>
     </PropertyGroup>
 
     <ItemGroup>
