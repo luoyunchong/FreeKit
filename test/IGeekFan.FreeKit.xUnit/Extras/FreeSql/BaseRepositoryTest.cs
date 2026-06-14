@@ -6,8 +6,8 @@ namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
 {
     public class BaseRepositoryTest
     {
-        private readonly IBaseRepository<UserRole, int, int> _repository;
-        public BaseRepositoryTest(IBaseRepository<UserRole, int, int> repository)
+        private readonly ICompositeRepository<UserRole, int, int> _repository;
+        public BaseRepositoryTest(ICompositeRepository<UserRole, int, int> repository)
         {
             _repository = repository;
         }

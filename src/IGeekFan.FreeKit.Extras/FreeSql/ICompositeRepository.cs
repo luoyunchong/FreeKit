@@ -7,7 +7,7 @@ using FreeSql.Extensions.EntityUtil;
 
 namespace IGeekFan.FreeKit.Extras.FreeSql;
 
-public interface IBaseRepository<TEntity, TKey, Ukey> : IBaseRepository<TEntity> where TEntity : class
+public interface ICompositeRepository<TEntity, TKey, Ukey> : IBaseRepository<TEntity> where TEntity : class
 {
     TEntity Get(TKey id, Ukey uid);
     int Delete(TKey id, Ukey uid);
@@ -15,11 +15,11 @@ public interface IBaseRepository<TEntity, TKey, Ukey> : IBaseRepository<TEntity>
     Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default);
 }
 
-public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity>,
-    IBaseRepository<TEntity, TKey, Ukey>
+public abstract class CompositeRepository<TEntity, TKey, Ukey> : BaseRepository<TEntity>,
+    ICompositeRepository<TEntity, TKey, Ukey>
     where TEntity : class
 {
-    protected BaseRepository(IFreeSql fsql) : base(fsql)
+    protected CompositeRepository(IFreeSql fsql) : base(fsql)
     {
     }
 
@@ -53,5 +53,21 @@ public abstract class BaseRepository<TEntity, TKey, Ukey> : BaseRepository<TEnti
     public virtual Task<int> DeleteAsync(TKey id, Ukey uid, CancellationToken cancellationToken = default)
     {
         return DeleteAsync(CheckTKeyAndReturnIdEntity(id, uid), cancellationToken);
+    }
+}
+
+public class CompositeDefaultRepository<TEntity, TKey, Ukey> : CompositeRepository<TEntity, TKey, Ukey> where TEntity : class
+{
+    public CompositeDefaultRepository(IFreeSql fsql) : base(fsql)
+    {
+    }
+
+    public CompositeDefaultRepository(IFreeSql fsql, Expression<Func<TEntity, bool>> filter) : base(fsql)
+    {
+    }
+
+    public CompositeDefaultRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(fsql)
+    {
+        uowManger?.Binding(this);
     }
 }

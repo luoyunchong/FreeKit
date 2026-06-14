@@ -53,8 +53,8 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection AddCompositeRepostiory(this IServiceCollection services)
     {
-        services.TryAddScoped(typeof(IBaseRepository<,,>), typeof(DefaultRepository<,,>));
-        services.TryAddScoped(typeof(BaseRepository<,,>), typeof(DefaultRepository<,,>));
+        services.TryAddScoped(typeof(ICompositeRepository<,,>), typeof(CompositeDefaultRepository<,,>));
+        services.TryAddScoped(typeof(CompositeRepository<,,>), typeof(CompositeDefaultRepository<,,>));
         return services;
     }
 
