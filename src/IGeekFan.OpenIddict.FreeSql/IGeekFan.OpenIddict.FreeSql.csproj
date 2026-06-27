@@ -14,6 +14,7 @@
         <PackageReference Include="OpenIddict.Core" Version="7.5.0" />
         <PackageReference Include="FreeSql" Version="$(DefaultFreeSqlVersion)" />
         <PackageReference Include="FreeSql.Repository" Version="$(DefaultFreeSqlVersion)" />
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
     </ItemGroup>
 
     <ItemGroup>

@@ -12,4 +12,8 @@
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+	</ItemGroup>
 </Project>
