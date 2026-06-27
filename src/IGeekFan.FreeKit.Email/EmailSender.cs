@@ -8,19 +8,18 @@ using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using MimeKit;
 
 namespace IGeekFan.FreeKit.Email;
 
 public class EmailSender : IEmailSender
 {
-    private readonly MailKitOptions _options;
+    private readonly IEmailServerProvider _serverProvider;
     private readonly ILogger<EmailSender> _logger;
 
-    public EmailSender(IOptionsMonitor<MailKitOptions> options, ILogger<EmailSender> logger)
+    public EmailSender(IEmailServerProvider serverProvider, ILogger<EmailSender> logger)
     {
-        _options = options.CurrentValue;
+        _serverProvider = serverProvider;
         _logger = logger;
     }
 
@@ -33,7 +32,7 @@ public class EmailSender : IEmailSender
     {
         EnsureFromAddress(message);
 
-        var servers = _options.ToServers();
+        var servers = await _serverProvider.GetServersAsync(cancellationToken);
         if (servers.Count == 0)
             throw new InvalidOperationException("未配置任何邮件服务器，请设置 MailKitOptions 的 Host 或 Servers");
 
@@ -43,25 +42,28 @@ public class EmailSender : IEmailSender
             try
             {
                 await SendWithServerAsync(message, server, cancellationToken);
+                await _serverProvider.OnSendSuccessAsync(server, cancellationToken);
                 return;
             }
             catch (Exception ex) when (IsTransientError(ex))
             {
                 lastException = ex;
                 _logger.LogWarning(ex, "邮件服务器 [{Name}] ({Host}) 发送失败，尝试下一个", server.Name, server.Host);
+                await _serverProvider.OnSendFailureAsync(server, cancellationToken);
             }
         }
 
         throw lastException ?? new InvalidOperationException("所有邮件服务器均不可用");
     }
 
-    private void EnsureFromAddress(MimeMessage message)
+    private async Task EnsureFromAddress(MimeMessage message)
     {
         if (message.From.Count > 0) return;
 
-        var server = _options.ToServers().FirstOrDefault();
-        var displayName = server?.DisplayName ?? _options.DisplayName;
-        var userName = server?.UserName ?? _options.UserName;
+        var servers = await _serverProvider.GetServersAsync();
+        var server = servers.FirstOrDefault();
+        var displayName = server?.DisplayName;
+        var userName = server?.UserName;
 
         if (string.IsNullOrWhiteSpace(displayName))
             displayName = userName;
