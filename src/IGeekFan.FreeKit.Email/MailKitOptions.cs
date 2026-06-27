@@ -11,6 +11,11 @@ namespace IGeekFan.FreeKit.Email;
 public class MailKitOptions
 {
     /// <summary>
+    /// 服务器名称（多服务器模式下用于日志标识，如 "163"、"QQ"）
+    /// </summary>
+    public string? Name { get; set; }
+
+    /// <summary>
     /// SMTP主机服务器地址
     /// </summary>
     public string? Host { get; set; }
@@ -48,12 +53,12 @@ public class MailKitOptions
     /// <summary>
     /// 多服务器配置（优先使用，为空时回退到单服务器字段）
     /// </summary>
-    public List<SmtpServerOption> Servers { get; set; } = new();
+    public List<MailKitOptions> Servers { get; set; } = new();
 
     /// <summary>
-    /// 将当前配置转为 SmtpServerOption 列表（兼容单服务器模式）
+    /// 将当前配置转为服务器列表（兼容单服务器模式）
     /// </summary>
-    public List<SmtpServerOption> ToServers()
+    public List<MailKitOptions> ToServers()
     {
         if (Servers is { Count: > 0 })
             return Servers;
@@ -61,18 +66,6 @@ public class MailKitOptions
         if (string.IsNullOrWhiteSpace(Host))
             return [];
 
-        return [
-            new SmtpServerOption
-            {
-                Name = "默认",
-                Host = Host,
-                Port = Port,
-                EnableSsl = EnableSsl,
-                DisplayName = DisplayName,
-                UserName = UserName ?? string.Empty,
-                Password = Password ?? string.Empty,
-                Domain = Domain
-            }
-        ];
+        return [this];
     }
 }

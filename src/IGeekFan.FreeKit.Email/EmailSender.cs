@@ -74,7 +74,7 @@ public class EmailSender : IEmailSender
     /// 使用指定服务器发送邮件
     /// </summary>
     public static async Task SendWithServerAsync(
-        MimeMessage message, SmtpServerOption server, CancellationToken cancellationToken)
+        MimeMessage message, MailKitOptions server, CancellationToken cancellationToken)
     {
         using var client = new SmtpClient();
         var secureOptions = server.EnableSsl
