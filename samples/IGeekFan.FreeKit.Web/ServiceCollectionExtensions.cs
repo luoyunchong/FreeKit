@@ -5,11 +5,9 @@ using IGeekFan.FreeKit.Extras.CaseQuery;
 using IGeekFan.FreeKit.Extras.FreeSql;
 using IGeekFan.FreeKit.Modularity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi;
 using Newtonsoft.Json;
 
@@ -20,10 +18,6 @@ namespace IGeekFan.FreeKit.Web
 
         public static IServiceCollection AddModuleServices(this IServiceCollection services, IConfiguration c)
         {
-
-            // Register a convention allowing to us to prefix routes to modules.
-            services.AddTransient<IPostConfigureOptions<MvcOptions>, ModuleRoutingMvcOptionsPostConfigure>();
-
             // Adds module1 with the route prefix module-1
             services.AddModule<Module1.Module1Startup>("module-1",c);
 

@@ -20,6 +20,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.DataProtection.FreeSql\IGeekFan.AspNetCore.DataProtection.FreeSql.csproj" />
+		<ProjectReference Include="..\..\src\IGeekFan.FreeKit.Modularity\IGeekFan.FreeKit.Modularity.csproj" />
 		<ProjectReference Include="..\Module1\Module1.csproj" />
 		<ProjectReference Include="..\Module2\Module2.csproj" />
 	</ItemGroup>

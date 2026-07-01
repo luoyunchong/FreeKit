@@ -4,6 +4,9 @@ using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Modularity;
 
+/// <summary>
+/// Adds module routing conventions to MVC options after configuration.
+/// </summary>
 public class ModuleRoutingMvcOptionsPostConfigure : IPostConfigureOptions<MvcOptions>
 {
     private readonly IEnumerable<ModuleInfo> _modules;
@@ -13,7 +16,7 @@ public class ModuleRoutingMvcOptionsPostConfigure : IPostConfigureOptions<MvcOpt
         _modules = modules;
     }
 
-    public void PostConfigure(string name, MvcOptions options)
+    public void PostConfigure(string? name, MvcOptions options)
     {
         options.Conventions.Add(new ModuleRoutingConvention(_modules));
     }
