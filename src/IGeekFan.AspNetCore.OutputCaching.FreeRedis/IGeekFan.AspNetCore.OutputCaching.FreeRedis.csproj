@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Description>FreeRedis distributed store for ASP.NET Core output caching.</Description>
+		<PackageId>$(AssemblyName)</PackageId>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageTags>aspnetcore;outputcaching;redis;freeredis</PackageTags>
+		<IsTrimmable>true</IsTrimmable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="FreeRedis" Version="1.5.5" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.9" />
+	</ItemGroup>
+
+</Project>

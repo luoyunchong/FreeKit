@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.31911.260
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11822.322 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A395AA61-C752-410E-AD37-1015A8398A2F}"
 	ProjectSection(SolutionItems) = preProject
@@ -58,6 +58,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenIddict", "OpenIddict", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FreeKit", "FreeKit", "{4C4E5530-4C67-48C6-B321-FAB2F9E97B8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.OpenIddict.FreeSql", "src\IGeekFan.OpenIddict.FreeSql\IGeekFan.OpenIddict.FreeSql.csproj", "{450C0244-4B75-F212-3673-6F5FCAAF7112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGeekFan.AspNetCore.SignalR.FreeRedis", "src\IGeekFan.AspNetCore.SignalR.FreeRedis\IGeekFan.AspNetCore.SignalR.FreeRedis.csproj", "{920886E4-B365-CB0C-DA0C-0C1715DCF8E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,14 @@ Global
 		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C16AB03-CCC4-4D2D-8991-30A95BB145A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450C0244-4B75-F212-3673-6F5FCAAF7112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450C0244-4B75-F212-3673-6F5FCAAF7112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450C0244-4B75-F212-3673-6F5FCAAF7112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450C0244-4B75-F212-3673-6F5FCAAF7112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920886E4-B365-CB0C-DA0C-0C1715DCF8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920886E4-B365-CB0C-DA0C-0C1715DCF8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920886E4-B365-CB0C-DA0C-0C1715DCF8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920886E4-B365-CB0C-DA0C-0C1715DCF8E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +129,8 @@ Global
 		{A8B6EBAA-6A08-43CB-96E5-9224DC8135E6} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{C10E29E0-CAF6-48F5-9DE1-D36028D802EE} = {A395AA61-C752-410E-AD37-1015A8398A2F}
 		{4C4E5530-4C67-48C6-B321-FAB2F9E97B8A} = {A395AA61-C752-410E-AD37-1015A8398A2F}
+		{450C0244-4B75-F212-3673-6F5FCAAF7112} = {C10E29E0-CAF6-48F5-9DE1-D36028D802EE}
+		{920886E4-B365-CB0C-DA0C-0C1715DCF8E8} = {A8B6EBAA-6A08-43CB-96E5-9224DC8135E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDD736E4-F4F4-4523-B70A-C0E562D3CF57}
