@@ -76,6 +76,7 @@ $projects = (
     "src/IGeekFan.AspNetCore.DataProtection.FreeSql",
     "src/IGeekFan.AspNetCore.DataProtection.FreeRedis",
     "src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql",
+    "src/IGeekFan.AspNetCore.OutputCaching.FreeRedis",
     "src/IGeekFan.AspNetCore.SignalR.FreeRedis",
     "src/IGeekFan.OpenIddict.FreeSql",
     "src/IGeekFan.R2.NET"

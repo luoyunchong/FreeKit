@@ -44,8 +44,9 @@ jobs:
           dotnet pack src/IGeekFan.Localization.FreeSql --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.AspNetCore.Identity.FreeSql --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeSql --configuration Release --no-build --output ./nupkg/packages
-          dotnet pack src/IGeekFan.AspNetCore.DataProtection.FreeRedis --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.Data  Protection.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql --configuration Release --no-build --output ./nupkg/packages
+          dotnet pack src/IGeekFan.AspNetCore.OutputCaching.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.AspNetCore.SignalR.FreeRedis --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.OpenIddict.FreeSql --configuration Release --no-build --output ./nupkg/packages
           dotnet pack src/IGeekFan.R2.NET --configuration Release --no-build --output ./nupkg/packages
