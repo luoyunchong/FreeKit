@@ -4,7 +4,7 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IGeekFan.FreeKit.Web.Controllers;
+namespace IGeekFan.FreeKit.Sample.Controllers;
 
 /// <summary>
 /// Test

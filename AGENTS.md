@@ -75,7 +75,7 @@ Local scripts in `nupkg/` (`build-all-release.ps1`, `pack.ps1`, `deploy.ps1`) au
 
 ## Samples (`samples/`)
 
-- `IGeekFan.FreeKit.Web` — main demo app (ASP.NET Core Web, SQLite + multiple DB providers, JWT auth, Swagger)
+- `IGeekFan.FreeKit.Sample` — main demo app (ASP.NET Core Web, SQLite + multiple DB providers, JWT auth, Swagger)
 - `Module1`, `Module2` — modularity demo modules
 - `Sample.Localization` — localization demo
 

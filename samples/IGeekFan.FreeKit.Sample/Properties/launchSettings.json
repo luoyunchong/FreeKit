@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "IGeekFan.FreeKit.Web": {
+    "IGeekFan.FreeKit.Sample": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

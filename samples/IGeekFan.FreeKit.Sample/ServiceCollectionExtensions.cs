@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi;
 using Newtonsoft.Json;
 
-namespace IGeekFan.FreeKit.Web
+namespace IGeekFan.FreeKit.Sample
 {
     public static class ServiceCollectionExtensions
     {
@@ -116,7 +116,7 @@ namespace IGeekFan.FreeKit.Web
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "IGeekFan.FreeKit.Web - HTTP API",
+                    Title = "IGeekFan.FreeKit.Sample - HTTP API",
                     Version = "v1",
                     Description = "The Todo Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
                 });

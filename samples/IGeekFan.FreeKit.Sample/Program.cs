@@ -3,7 +3,7 @@ using Autofac.Extensions.DependencyInjection;
 using IGeekFan.FreeKit.Extras.Dependency;
 using IGeekFan.FreeKit.Modularity;
 using System.Reflection;
-using IGeekFan.FreeKit.Web;
+using IGeekFan.FreeKit.Sample;
 using Microsoft.AspNetCore.DataProtection;
 using Module1;
 
@@ -15,7 +15,7 @@ builder.Host
     {
         //1.获取所有的程序集合，然后根据FullName，一般为项目名，过滤具体的程序集
         Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r =>
-               r.FullName.Contains("IGeekFan.FreeKit.Web") 
+               r.FullName.Contains("IGeekFan.FreeKit.Sample") 
                || r.FullName.Contains("Module1")
                || r.FullName.Contains("Module2")
             ).ToArray();
@@ -52,7 +52,7 @@ if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IGeekFan.FreeKit.Web v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IGeekFan.FreeKit.Sample v1"));
 }
 
 app.UseHttpsRedirection();

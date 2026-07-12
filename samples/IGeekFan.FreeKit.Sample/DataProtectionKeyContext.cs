@@ -1,7 +1,7 @@
 ﻿using FreeSql;
 using IGeekFan.AspNetCore.DataProtection.FreeSql;
 
-namespace IGeekFan.FreeKit.Web
+namespace IGeekFan.FreeKit.Sample
 {
     public class DataProtectionKeyContext : DbContext, IDataProtectionKeyContext
     {
