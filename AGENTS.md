@@ -3,9 +3,9 @@
 ## Build & test
 
 ```bash
-dotnet restore FreeKit.sln
-dotnet build FreeKit.sln -c Release
-dotnet test FreeKit.sln
+dotnet restore FreeKit.slnx
+dotnet build FreeKit.slnx -c Release
+dotnet test FreeKit.slnx
 ```
 
 Run a single test project:
@@ -19,11 +19,11 @@ No custom lint, format, or typecheck config — standard `dotnet build` is the f
 
 | File | Scope |
 |---|---|
-| `FreeKit.sln` | Everything: src + test + samples + nupkg scripts |
-| `FreeKit-Core.sln` | Source libraries only (fastest build) |
-| `FreeKit-OpenIddict.sln` | OpenIddict projects only |
+| `FreeKit.slnx` | Everything: src + test + samples + nupkg scripts |
+| `FreeKit-Core.slnx` | Source libraries only (fastest build) |
+| `FreeKit-OpenIddict.slnx` | OpenIddict projects only |
 
-Using the wrong `.sln` wastes build time or misses projects.
+Using the wrong `.slnx` wastes build time or misses projects.
 
 ## Directory.Build.props hierarchy
 

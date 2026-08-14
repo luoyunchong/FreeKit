@@ -1,0 +1,68 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/nupkg/">
+    <File Path="nupkg/build-all-release.ps1" />
+    <File Path="nupkg/build-all.ps1" />
+    <File Path="nupkg/common.ps1" />
+    <File Path="nupkg/deploy.ps1" />
+    <File Path="nupkg/git-commit-tag.ps1" />
+    <File Path="nupkg/nuget-api-key.txt" />
+    <File Path="nupkg/pack.ps1" />
+    <File Path="nupkg/push_packages_baget.ps1" />
+    <File Path="nupkg/push_packages_github.ps1" />
+    <File Path="nupkg/push_packages_nuget.ps1" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/IGeekFan.FreeKit.Sample/IGeekFan.FreeKit.Sample.csproj" />
+    <Project Path="samples/Module1/Module1.csproj" />
+    <Project Path="samples/Module2/Module2.csproj" />
+    <Project Path="samples/Sample.Localization/Sample.Localization.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/docfx.yml" />
+    <File Path=".github/workflows/gitee-mirror.yml" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="NuGet.config" />
+    <File Path="README.md" />
+    <File Path="tools/Resources.tt" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/Directory.Build.props" />
+  </Folder>
+  <Folder Name="/src/AspNetCore/">
+    <Project Path="src/IGeekFan.AspNetCore.DataProtection.FreeRedis/IGeekFan.AspNetCore.DataProtection.FreeRedis.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.DataProtection.FreeSql/IGeekFan.AspNetCore.DataProtection.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.Identity.FreeSql/IGeekFan.AspNetCore.Identity.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.OutputCaching.FreeRedis/IGeekFan.AspNetCore.OutputCaching.FreeRedis.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.SignalR.FreeRedis/IGeekFan.AspNetCore.SignalR.FreeRedis.csproj" />
+  </Folder>
+  <Folder Name="/src/Extensions/">
+    <Project Path="src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.Localization.FreeSql/IGeekFan.Localization.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.R2.NET/IGeekFan.R2.NET.csproj" />
+  </Folder>
+  <Folder Name="/src/FreeKit/">
+    <Project Path="src/IGeekFan.FreeKit.Email/IGeekFan.FreeKit.Email.csproj" />
+    <Project Path="src/IGeekFan.FreeKit.Extras/IGeekFan.FreeKit.Extras.csproj" />
+    <Project Path="src/IGeekFan.FreeKit.Modularity/IGeekFan.FreeKit.Modularity.csproj" />
+    <Project Path="src/IGeekFan.FreeKit/IGeekFan.FreeKit.csproj" />
+  </Folder>
+  <Folder Name="/src/OpenIddict/">
+    <Project Path="src/IGeekFan.OpenIddict.FreeSql/IGeekFan.OpenIddict.FreeSql.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/IGeekFan.AspNetCore.DataProtection.FreeSql.Tests/IGeekFan.AspNetCore.DataProtection.FreeSql.Tests.csproj" />
+    <Project Path="test/IGeekFan.AspNetCore.Identity.FreeSql.Test/IGeekFan.AspNetCore.Identity.FreeSql.Test.csproj" />
+    <Project Path="test/IGeekFan.AspNetCore.OutputCaching.FreeRedis.Tests/IGeekFan.AspNetCore.OutputCaching.FreeRedis.Tests.csproj" />
+    <Project Path="test/IGeekFan.AspNetCore.SignalR.FreeRedis.Tests/IGeekFan.AspNetCore.SignalR.FreeRedis.Tests.csproj" />
+    <Project Path="test/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests.csproj" />
+    <Project Path="test/IGeekFan.FreeKit.xUnit/IGeekFan.FreeKit.xUnit.csproj" />
+  </Folder>
+</Solution>

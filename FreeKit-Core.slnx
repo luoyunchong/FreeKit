@@ -1,0 +1,45 @@
+<Solution>
+  <Folder Name="/nupkg/">
+    <File Path="nupkg/build-all-release.ps1" />
+    <File Path="nupkg/build-all.ps1" />
+    <File Path="nupkg/common.ps1" />
+    <File Path="nupkg/deploy.ps1" />
+    <File Path="nupkg/git-commit-tag.ps1" />
+    <File Path="nupkg/pack.ps1" />
+    <File Path="nupkg/push_packages_baget.ps1" />
+    <File Path="nupkg/push_packages_github.ps1" />
+    <File Path="nupkg/push_packages_nuget.ps1" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/docfx.yml" />
+    <File Path=".github/workflows/gitee-mirror.yml" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="NuGet.config" />
+    <File Path="README.md" />
+    <File Path="tools/Resources.tt" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/Directory.Build.props" />
+    <Project Path="src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.Localization.FreeSql/IGeekFan.Localization.FreeSql.csproj" />
+  </Folder>
+  <Folder Name="/src/AspNetCore/">
+    <Project Path="src/IGeekFan.AspNetCore.DataProtection.FreeRedis/IGeekFan.AspNetCore.DataProtection.FreeRedis.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.DataProtection.FreeSql/IGeekFan.AspNetCore.DataProtection.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.Identity.FreeSql/IGeekFan.AspNetCore.Identity.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.OutputCaching.FreeRedis/IGeekFan.AspNetCore.OutputCaching.FreeRedis.csproj" />
+    <Project Path="src/IGeekFan.AspNetCore.SignalR.FreeRedis/IGeekFan.AspNetCore.SignalR.FreeRedis.csproj" />
+  </Folder>
+  <Folder Name="/src/FreeKit/">
+    <Project Path="src/IGeekFan.FreeKit.Email/IGeekFan.FreeKit.Email.csproj" />
+    <Project Path="src/IGeekFan.FreeKit.Extras/IGeekFan.FreeKit.Extras.csproj" />
+    <Project Path="src/IGeekFan.FreeKit.Modularity/IGeekFan.FreeKit.Modularity.csproj" />
+    <Project Path="src/IGeekFan.FreeKit/IGeekFan.FreeKit.csproj" />
+  </Folder>
+  <Folder Name="/src/OpenIddict/">
+    <Project Path="src/IGeekFan.OpenIddict.FreeSql/IGeekFan.OpenIddict.FreeSql.csproj" />
+  </Folder>
+</Solution>
