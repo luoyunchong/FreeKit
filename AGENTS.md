@@ -28,7 +28,7 @@ Using the wrong `.slnx` wastes build time or misses projects.
 ## Directory.Build.props hierarchy
 
 - **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultFreeSqlVersion` (`3.5.310`).
-- **`src/Directory.Build.props`**: imports root, adds NuGet packaging. Version is set here (`<Version>0.0.550</Version>`). `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
+- **`src/Directory.Build.props`**: imports root, adds NuGet packaging. Version is set here (`<Version>0.0.557</Version>`). `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
 
 All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>`). Change versions centrally, not per-project.
 
