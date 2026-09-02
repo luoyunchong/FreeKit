@@ -151,7 +151,7 @@ namespace FreeSql.Aop
                         if (userName.IsNotNullOrWhiteSpace() && e.Value == null) e.Value = userName;
                         break;
                     case "CreateTime":
-                        e.Value = DateTime.Now;
+                        e.Value = DateTime.UtcNow;
                         break;
                     case "TenantId":
                         var tenantId = user?.TenantId;
@@ -172,7 +172,7 @@ namespace FreeSql.Aop
                         if (userName.IsNotNullOrWhiteSpace() && e.Value == null) e.Value = userName;
                         break;
                     case "UpdateTime":
-                        e.Value = DateTime.Now;
+                        e.Value = DateTime.UtcNow;
                         break;
                 }
             }

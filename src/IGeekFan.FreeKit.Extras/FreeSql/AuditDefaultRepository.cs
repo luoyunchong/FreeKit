@@ -25,7 +25,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
 
         if (entity is ICreateAuditEntity<TUkey> createAudit)
         {
-            createAudit.CreateTime = DateTime.Now;
+            createAudit.CreateTime = DateTime.UtcNow;
             createAudit.CreateUserId ??= CurrentUser.FindUserId<TUkey>();
             createAudit.CreateUserName ??= CurrentUser.UserName;
         }
@@ -39,7 +39,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
 
         if (entity is IUpdateAuditEntity<TUkey> updateAudit)
         {
-            updateAudit.UpdateTime = DateTime.Now;
+            updateAudit.UpdateTime = DateTime.UtcNow;
             updateAudit.UpdateUserName ??= CurrentUser.UserName;
             updateAudit.UpdateUserId ??= CurrentUser.FindUserId<TUkey>();
         }
@@ -57,7 +57,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
         {
             deleteAudit.DeleteUserId ??= CurrentUser.FindUserId<TUkey>();
             deleteAudit.DeleteUserName ??= CurrentUser.UserName;
-            deleteAudit.DeleteTime = DateTime.Now;
+            deleteAudit.DeleteTime = DateTime.UtcNow;
         }
     }
 }

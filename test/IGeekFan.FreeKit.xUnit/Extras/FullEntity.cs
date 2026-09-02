@@ -30,9 +30,9 @@ namespace IGeekFan.FreeKit.xUnit.Extras
             full.UpdateUserId = Guid.NewGuid();
             full.DeleteUserId = null;
 
-            full.CreateTime = DateTime.Now;
-            full.UpdateTime = DateTime.Now;
-            full.DeleteTime = DateTime.Now;
+            full.CreateTime = DateTime.UtcNow;
+            full.UpdateTime = DateTime.UtcNow;
+            full.DeleteTime = DateTime.UtcNow;
 
             full.IsDeleted = false;
             await Task.CompletedTask;
@@ -46,9 +46,9 @@ namespace IGeekFan.FreeKit.xUnit.Extras
             full.UpdateUserId = Guid.Empty;
             full.DeleteUserId = null;
 
-            full.CreateTime = DateTime.Now;
-            full.UpdateTime = DateTime.Now;
-            full.DeleteTime = DateTime.Now;
+            full.CreateTime = DateTime.UtcNow;
+            full.UpdateTime = DateTime.UtcNow;
+            full.DeleteTime = DateTime.UtcNow;
 
             full.IsDeleted = false;
             var x = typeof(FullAuditEntity).IsAssignableFrom(typeof(FullEntity));

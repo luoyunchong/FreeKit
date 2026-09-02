@@ -15,7 +15,7 @@ namespace IGeekFan.FreeKit.xUnit.Extras.FreeSql
         [Fact]
         public void GetTest()
         {
-            _repository.Insert(new UserRole() { UserId = 1, RoleId = 1, CreateTime = DateTime.Now });
+            _repository.Insert(new UserRole() { UserId = 1, RoleId = 1, CreateTime = DateTime.UtcNow });
             UserRole userRole = _repository.Get(1, 1);
             _repository.Delete(1, 1);
         }
