@@ -23,21 +23,25 @@ public abstract class CompositeRepository<TEntity, TKey, Ukey> : BaseRepository<
     {
     }
 
-    TEntity CheckTKeyAndReturnIdEntity(TKey id, Ukey uid)
+    private TEntity CheckTKeyAndReturnIdEntity(TKey id, Ukey uid)
     {
         var tb = Orm.CodeFirst.GetTableByEntity(EntityType);
         if (tb.Primarys.Length != 2)
-            throw new Exception($"{EntityType.Name}");
+            throw new InvalidOperationException(
+                $"Entity '{EntityType.FullName}' must define exactly two primary keys.");
         if (tb.Primarys[0].CsType.NullableTypeOrThis() != typeof(TKey).NullableTypeOrThis())
-            throw new Exception($"{EntityType.Name},{typeof(TKey).FullName}");
+            throw new InvalidOperationException(
+                $"The first primary key of '{EntityType.FullName}' is not '{typeof(TKey).FullName}'.");
         if (tb.Primarys[1].CsType.NullableTypeOrThis() != typeof(Ukey).NullableTypeOrThis())
-            throw new Exception($"{EntityType.Name},{typeof(TKey).FullName}");
+            throw new InvalidOperationException(
+                $"The second primary key of '{EntityType.FullName}' is not '{typeof(Ukey).FullName}'.");
         var obj = Activator.CreateInstance(tb.Type);
         Orm.SetEntityValueWithPropertyName(tb.Type, obj, tb.Primarys[0].CsName, id);
         Orm.SetEntityValueWithPropertyName(tb.Type, obj, tb.Primarys[1].CsName, uid);
         var ret = obj as TEntity;
         if (ret == null)
-            throw new Exception($"{EntityType.Name} Cannot Conver {typeof(TKey).Name}");
+            throw new InvalidOperationException(
+                $"Unable to create an instance of '{EntityType.FullName}'.");
         return ret;
     }
 
@@ -66,8 +70,8 @@ public class CompositeDefaultRepository<TEntity, TKey, Ukey> : CompositeReposito
     {
     }
 
-    public CompositeDefaultRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(fsql)
+    public CompositeDefaultRepository(IFreeSql fsql, IUnitOfWorkManager uowManager) : base(uowManager?.Orm ?? fsql)
     {
-        uowManger?.Binding(this);
+        uowManager?.Binding(this);
     }
 }

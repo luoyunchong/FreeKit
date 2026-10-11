@@ -13,7 +13,7 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 public class AuditGuidRepository<TEntity> : AuditDefaultRepository<TEntity, Guid, Guid>, IAuditBaseRepository<TEntity>
     where TEntity : class, new()
 {
-    public AuditGuidRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
+    public AuditGuidRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
         currentUser)
     {
     }
@@ -27,7 +27,7 @@ public class AuditGuidRepository<TEntity> : AuditDefaultRepository<TEntity, Guid
 public class AuditTKeyGuidRepository<TEntity, TKey> : AuditDefaultRepository<TEntity, TKey, Guid>, IAuditBaseRepository<TEntity, TKey>
     where TEntity : class, new()
 {
-    public AuditTKeyGuidRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
+    public AuditTKeyGuidRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
         currentUser)
     {
     }

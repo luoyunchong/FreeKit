@@ -12,9 +12,9 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 class GuidRepository<TEntity> : BaseRepository<TEntity, Guid> where TEntity : class
 {
     public GuidRepository(IFreeSql fsql) : base(fsql) { }
-    public GuidRepository(IFreeSql fsql, UnitOfWorkManager uowManger) : base(uowManger?.Orm ?? fsql)
+    public GuidRepository(IFreeSql fsql, IUnitOfWorkManager uowManager) : base(uowManager?.Orm ?? fsql)
     {
-        uowManger?.Binding(this);
+        uowManager?.Binding(this);
     }
 }
 /// <summary>
@@ -45,9 +45,10 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     /// </summary>
     protected readonly bool IsUpdateAudit;
 
-    public AuditBaseRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
-        unitOfWorkManager?.Orm, unitOfWorkManager)
+    public AuditBaseRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
+        unitOfWorkManager?.Orm ?? throw new ArgumentNullException(nameof(unitOfWorkManager)))
     {
+        unitOfWorkManager.Binding(this);
         CurrentUser = currentUser;
         IsDeleteAudit = typeof(TEntity).HasImplementedRawGeneric(typeof(ISoftDelete)) ||
                         typeof(TEntity).HasImplementedRawGeneric(typeof(IDeleteAuditEntity<>));
@@ -151,7 +152,12 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override int Delete(TKey id)
     {
         if (!IsDeleteAudit) return base.Delete(id);
-        TEntity entity = Get(id);
+        TEntity? entity = Get(id);
+        if (entity is null)
+        {
+            return 0;
+        }
+
         BeforeDelete(entity);
         return base.Update(entity);
     }
@@ -178,7 +184,12 @@ public abstract class AuditBaseRepository<TEntity, TKey> : DefaultRepository<TEn
     public override async Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default)
     {
         if (!IsDeleteAudit) return await base.DeleteAsync(id, cancellationToken);
-        TEntity entity = await GetAsync(id, cancellationToken);
+        TEntity? entity = await GetAsync(id, cancellationToken);
+        if (entity is null)
+        {
+            return 0;
+        }
+
         BeforeDelete(entity);
         return await base.UpdateAsync(entity, cancellationToken);
     }

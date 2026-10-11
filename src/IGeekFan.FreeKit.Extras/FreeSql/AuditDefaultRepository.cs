@@ -11,7 +11,7 @@ public class AuditDefaultRepository<TEntity, TKey, TUkey> : AuditBaseRepository<
     where TEntity : class, new()
     where TUkey : struct, IEquatable<TUkey>
 {
-    public AuditDefaultRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
+    public AuditDefaultRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
         unitOfWorkManager, currentUser)
     {
     }

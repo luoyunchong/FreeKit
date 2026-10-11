@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.MultiTenancy;
 
@@ -11,12 +12,17 @@ public class QueryStringTenantResolver : ITenantResolver
         _queryStringKey = queryStringKey;
     }
 
+    public QueryStringTenantResolver(IOptions<MultiTenancyOptions> options)
+        : this(options?.Value.QueryStringKey ?? "tenantId")
+    {
+    }
+
     public int Priority => 30;
 
     public Task<TenantInfo?> ResolveAsync(HttpContext context)
     {
-        var tenantIdValue = context.Request.Query[_queryStringKey].ToString();
-        if (string.IsNullOrEmpty(tenantIdValue))
+        var tenantIdValue = context.Request.Query[_queryStringKey].ToString().Trim();
+        if (string.IsNullOrWhiteSpace(tenantIdValue))
         {
             return Task.FromResult<TenantInfo?>(null);
         }

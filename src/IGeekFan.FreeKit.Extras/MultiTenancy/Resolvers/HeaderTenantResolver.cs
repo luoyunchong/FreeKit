@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.MultiTenancy;
 
@@ -11,6 +12,11 @@ public class HeaderTenantResolver : ITenantResolver
         _headerName = headerName;
     }
 
+    public HeaderTenantResolver(IOptions<MultiTenancyOptions> options)
+        : this(options?.Value.HeaderName ?? "X-Tenant-Id")
+    {
+    }
+
     public int Priority => 20;
 
     public Task<TenantInfo?> ResolveAsync(HttpContext context)
@@ -20,8 +26,8 @@ public class HeaderTenantResolver : ITenantResolver
             return Task.FromResult<TenantInfo?>(null);
         }
 
-        var tenantIdStr = tenantIdValue.ToString();
-        if (string.IsNullOrEmpty(tenantIdStr))
+        var tenantIdStr = tenantIdValue.ToString().Trim();
+        if (string.IsNullOrWhiteSpace(tenantIdStr))
         {
             return Task.FromResult<TenantInfo?>(null);
         }

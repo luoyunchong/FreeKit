@@ -55,6 +55,8 @@ public class UnitOfWorkModule : Autofac.Module
         builder.RegisterType<UnitOfWorkAsyncInterceptor>();
 
         bool Predicate(Type a) => !a.IsDefined(typeof(DisableConventionalRegistrationAttribute), true) && a.Name.EndsWith("Service") && !a.IsAbstract && !a.IsInterface && a.IsPublic;
+        bool ClassProxyPredicate(Type a) => Predicate(a) && !a.IsSealed;
+        bool SealedServicePredicate(Type a) => Predicate(a) && a.IsSealed;
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
             .Where(Predicate)
@@ -65,12 +67,18 @@ public class UnitOfWorkModule : Autofac.Module
             .EnableInterfaceInterceptors();
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
-            .Where(Predicate)
+            .Where(ClassProxyPredicate)
             .AsSelf()
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入
             .InterceptedBy(_interceptorServiceTypes.ToArray())
             .EnableClassInterceptors();
+
+        builder.RegisterAssemblyTypes(_currentAssemblies)
+            .Where(SealedServicePredicate)
+            .AsSelf()
+            .InstancePerLifetimeScope()
+            .PropertiesAutowired();
 
     }
 }

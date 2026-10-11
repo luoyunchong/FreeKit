@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace IGeekFan.FreeKit.Extras.MultiTenancy;
 
@@ -13,6 +14,11 @@ public class HostTenantResolver : ITenantResolver
         _useSubdomain = useSubdomain;
     }
 
+    public HostTenantResolver(IOptions<MultiTenancyOptions> options)
+        : this(options?.Value.TenantDomainSuffix, options?.Value.UseSubdomain ?? true)
+    {
+    }
+
     public int Priority => 40;
 
     public Task<TenantInfo?> ResolveAsync(HttpContext context)
@@ -24,9 +30,12 @@ public class HostTenantResolver : ITenantResolver
             return Task.FromResult<TenantInfo?>(null);
         }
 
-        if (!string.IsNullOrEmpty(_tenantDomainSuffix) && host.EndsWith(_tenantDomainSuffix))
+        string suffix = _tenantDomainSuffix.Trim().TrimStart('.');
+        string suffixWithBoundary = $".{suffix}";
+        if (!string.IsNullOrEmpty(suffix) &&
+            host.EndsWith(suffixWithBoundary, StringComparison.OrdinalIgnoreCase))
         {
-            var subdomain = host[..^_tenantDomainSuffix.Length].TrimEnd('.');
+            var subdomain = host[..^suffixWithBoundary.Length];
             if (!string.IsNullOrEmpty(subdomain) && !subdomain.Contains('.'))
             {
                 return Task.FromResult<TenantInfo?>(new TenantInfo { Code = subdomain });

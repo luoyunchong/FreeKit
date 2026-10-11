@@ -41,8 +41,9 @@ public static class FreeSqlMultiTenancyExtensions
 
     public static IDisposable BeginIgnoreTenant()
     {
+        bool previousValue = _ignoreTenant.Value;
         _ignoreTenant.Value = true;
-        return new IgnoreTenantScope(() => _ignoreTenant.Value = false);
+        return new IgnoreTenantScope(() => _ignoreTenant.Value = previousValue);
     }
 
     private class IgnoreTenantScope(Action? disposeAction) : IDisposable

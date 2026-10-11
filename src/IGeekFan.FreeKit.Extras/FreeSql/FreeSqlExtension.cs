@@ -1,7 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using System.Reflection;
 using IGeekFan.FreeKit.Extras.Extensions;
 using IGeekFan.FreeKit.Extras.Security;
@@ -23,27 +22,32 @@ namespace FreeSql
         /// <returns></returns>
         public static FreeSqlBuilder UseConnectionString(this FreeSqlBuilder @this, IConfiguration configuration, string prefix = "ConnectionStrings")
         {
+            ArgumentNullException.ThrowIfNull(@this);
+            ArgumentNullException.ThrowIfNull(configuration);
+            ArgumentException.ThrowIfNullOrWhiteSpace(prefix);
+
             IConfigurationSection dbTypeCode = configuration.GetSection($"{prefix}:DefaultDB");
             IConfigurationSection providerTypeSection = configuration.GetSection($"{prefix}:ProviderType");
             var providerType = providerTypeSection.Value.IsNotNullOrWhiteSpace()
-                ? Type.GetType(providerTypeSection.Value)
+                ? Type.GetType(providerTypeSection.Value!)
                 : null;
 
-            if (Enum.TryParse(dbTypeCode.Value, out DataType dataType))
+            if (!Enum.TryParse(dbTypeCode.Value, true, out DataType dataType) ||
+                !Enum.IsDefined(typeof(DataType), dataType))
             {
-                if (!Enum.IsDefined(typeof(DataType), dataType))
-                {
-                    Trace.WriteLine($"数据库配置{{prefixs:DefaultDB:{dataType}无效");
-                }
+                throw new InvalidOperationException(
+                    $"Database configuration '{prefix}:DefaultDB' must contain a valid FreeSql data type.");
+            }
 
-                IConfigurationSection connectionStringSection =
-                    configuration.GetSection($"{prefix}:{dataType}");
-                @this.UseConnectionString(dataType, connectionStringSection.Value, providerType);
-            }
-            else
+            IConfigurationSection connectionStringSection =
+                configuration.GetSection($"{prefix}:{dataType}");
+            if (connectionStringSection.Value.IsNullOrWhiteSpace())
             {
-                Trace.WriteLine($"数据库配置{prefix}:DefaultDB:{dbTypeCode.Value}无效");
+                throw new InvalidOperationException(
+                    $"Database configuration '{prefix}:{dataType}' does not contain a connection string.");
             }
+
+            @this.UseConnectionString(dataType, connectionStringSection.Value, providerType);
 
             return @this;
         }
@@ -56,18 +60,26 @@ namespace FreeSql
         /// <exception cref="ArgumentException"></exception>
         public static string GetConnectionString(this FreeSqlBuilder @this)
         {
-            Type type = @this.GetType();
-            FieldInfo? fieldInfo =
-                type.GetField("_masterConnectionString", BindingFlags.NonPublic | BindingFlags.Instance);
+            ArgumentNullException.ThrowIfNull(@this);
+
+            Type? type = @this.GetType();
+            FieldInfo? fieldInfo = null;
+            while (type is not null && fieldInfo is null)
+            {
+                fieldInfo = type.GetField("_masterConnectionString",
+                    BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                type = type.BaseType;
+            }
+
             if (fieldInfo is null)
             {
-                throw new ArgumentException("_masterConnectionString is null");
+                throw new InvalidOperationException("FreeSqlBuilder does not expose a master connection string.");
             }
 
             string? connectionString = fieldInfo.GetValue(@this)?.ToString();
             if (connectionString is null)
             {
-                throw new ArgumentException("_masterConnectionString is null");
+                throw new InvalidOperationException("FreeSqlBuilder has not been configured with a connection string.");
             }
 
             return connectionString;

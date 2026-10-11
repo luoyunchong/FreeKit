@@ -16,11 +16,9 @@ public static class CurrentUserExtensions
     /// <returns></returns>
     public static T? FindUserId<T>(this ICurrentUser currentUser) where T : struct
     {
+        ArgumentNullException.ThrowIfNull(currentUser);
+
         if (currentUser.Id == null) return default;
-        if (typeof(T) == typeof(string))
-        {
-            return (T) (object) currentUser.Id;
-        }
 
         if (typeof(T) == typeof(Guid))
         {
@@ -38,24 +36,24 @@ public static class CurrentUserExtensions
 
         if (typeof(T) == typeof(int))
         {
-            long? userInt = currentUser.FindUserIdToInt();
+            int? userInt = currentUser.FindUserIdToInt();
             if (userInt == null) return default;
             return (T) (object) userInt;
         }
 
-        return (T) (object) currentUser.Id;
+        return default;
     }
 
     public static long? FindUserIdToLong(this ICurrentUser currentUser)
     {
         if (currentUser.Id == null) return null;
-        return long.Parse(currentUser.Id);
+        return long.TryParse(currentUser.Id, out long value) ? value : null;
     }
 
     public static int? FindUserIdToInt(this ICurrentUser currentUser)
     {
         if (currentUser.Id == null) return null;
-        return int.Parse(currentUser.Id);
+        return int.TryParse(currentUser.Id, out int value) ? value : null;
     }
 
     public static Guid? FindUserIdToGuid(this ICurrentUser currentUser)

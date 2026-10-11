@@ -55,34 +55,37 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 {
     #region UnitOfWorkAsyncInterceptor
     private readonly UnitOfWorkManager _unitOfWorkManager;
-    private IUnitOfWork _unitOfWork;
-    private readonly UnitOfWorkDefaultOptions _unitOfWorkDefaultOptions;
-    IMediator mediator;
-    public UnitOfWorkAsyncInterceptor(UnitOfWorkManager unitOfWorkManager, IOptionsMonitor<UnitOfWorkDefaultOptions> unitOfWorkDefaultOptions, IMediator mediator)
+    private readonly IOptionsMonitor<UnitOfWorkDefaultOptions> _unitOfWorkOptions;
+    private readonly IMediator _mediator;
+
+    public UnitOfWorkAsyncInterceptor(
+        UnitOfWorkManager unitOfWorkManager,
+        IOptionsMonitor<UnitOfWorkDefaultOptions> unitOfWorkOptions,
+        IMediator mediator)
     {
-        _unitOfWorkManager = unitOfWorkManager;
-        _unitOfWorkDefaultOptions = unitOfWorkDefaultOptions.CurrentValue;
-        this.mediator = mediator;
+        _unitOfWorkManager = unitOfWorkManager ?? throw new ArgumentNullException(nameof(unitOfWorkManager));
+        _unitOfWorkOptions = unitOfWorkOptions ?? throw new ArgumentNullException(nameof(unitOfWorkOptions));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
     /// <summary>
-    /// 当只配置特性标签，但未指定任意属性值时，默认根据UnitOfWorkDefualtOptions
+    /// 当只配置特性标签，但未指定任意属性值时，默认根据 UnitOfWorkDefaultOptions。
     /// </summary>
     /// <param name="invocation"></param>
-    /// <returns></returns>
-    private bool TryBegin(IInvocation invocation)
+    /// <returns>新的工作单元；如果当前方法没有事务特性则返回 null。</returns>
+    private IUnitOfWork? TryBegin(IInvocation invocation)
     {
         var method = invocation.MethodInvocationTarget ?? invocation.Method;
-        var transaction = method.GetUnitOfWorkAttributeOrNull();
-        if (transaction != null)
+        TransactionalAttribute? attribute = method.GetUnitOfWorkAttributeOrNull();
+        if (attribute is null || attribute.IsDisabled)
         {
-            if (transaction.IsDisabled) return false;
-            transaction.IsolationLevel ??= _unitOfWorkDefaultOptions.IsolationLevel;
-            transaction.Propagation ??= _unitOfWorkDefaultOptions.Propagation;
-            _unitOfWork = _unitOfWorkManager.Begin(transaction.Propagation ?? Propagation.Required, transaction.IsolationLevel);
-            return true;
+            return null;
         }
-        return false;
+
+        UnitOfWorkDefaultOptions options = _unitOfWorkOptions.CurrentValue;
+        return _unitOfWorkManager.Begin(
+            attribute.Propagation ?? options.Propagation ?? Propagation.Required,
+            attribute.IsolationLevel ?? options.IsolationLevel);
     }
     #endregion
 
@@ -93,31 +96,28 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     /// <param name="invocation"></param>
     public void InterceptSynchronous(IInvocation invocation)
     {
-        if (TryBegin(invocation))
+        IUnitOfWork? unitOfWork = TryBegin(invocation);
+        if (unitOfWork is not null)
         {
             try
             {
                 invocation.Proceed();
-                DispatchDomainEventsAsync().GetAwaiter().GetResult();
-                _unitOfWork.Commit();
+                DispatchDomainEventsAsync(unitOfWork).GetAwaiter().GetResult();
+                unitOfWork.Commit();
             }
             catch
             {
-                _unitOfWork.Rollback();
+                unitOfWork.Rollback();
                 throw;
             }
             finally
             {
-                _unitOfWork.Dispose();
+                unitOfWork.Dispose();
             }
         }
         else
         {
             invocation.Proceed();
-            if (_unitOfWorkDefaultOptions.PublishDomainEvent)
-            {
-                DispatchDomainEventsAsync().GetAwaiter().GetResult();
-            }
         }
     }
     #endregion
@@ -134,7 +134,8 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
 
     private async Task InternalInterceptAsynchronous(IInvocation invocation)
     {
-        if (TryBegin(invocation))
+        IUnitOfWork? unitOfWork = TryBegin(invocation);
+        if (unitOfWork is not null)
         {
             try
             {
@@ -145,18 +146,17 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
                     await (Task)invocation.ReturnValue;
                 }
 
-
-                await DispatchDomainEventsAsync();
-                _unitOfWork.Commit();
+                await DispatchDomainEventsAsync(unitOfWork);
+                unitOfWork.Commit();
             }
-            catch (Exception)
+            catch
             {
-                _unitOfWork.Rollback();
+                unitOfWork.Rollback();
                 throw;
             }
             finally
             {
-                _unitOfWork.Dispose();
+                unitOfWork.Dispose();
             }
         }
         else
@@ -166,7 +166,6 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             {
                 await (Task)invocation.ReturnValue;
             }
-            await DispatchDomainEventsAsync();
         }
     }
 
@@ -184,33 +183,30 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     }
     private async Task<TResult> InternalInterceptAsynchronous<TResult>(IInvocation invocation)
     {
-        TResult result;
-        if (TryBegin(invocation))
+        IUnitOfWork? unitOfWork = TryBegin(invocation);
+        if (unitOfWork is not null)
         {
             try
             {
                 invocation.Proceed();
-                result = await (Task<TResult>)invocation.ReturnValue;
-                await DispatchDomainEventsAsync();
-                _unitOfWork.Commit();
+                TResult result = await (Task<TResult>)invocation.ReturnValue!;
+                await DispatchDomainEventsAsync(unitOfWork);
+                unitOfWork.Commit();
+                return result;
             }
-            catch (Exception)
+            catch
             {
-                _unitOfWork.Rollback();
+                unitOfWork.Rollback();
                 throw;
             }
             finally
             {
-                _unitOfWork.Dispose();
+                unitOfWork.Dispose();
             }
         }
-        else
-        {
-            invocation.Proceed();
-            await DispatchDomainEventsAsync();
-            result = await (Task<TResult>)invocation.ReturnValue;
-        }
-        return result;
+
+        invocation.Proceed();
+        return await (Task<TResult>)invocation.ReturnValue!;
     }
     #endregion
 
@@ -220,9 +216,9 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
     /// 发布领域事件
     /// </summary>
     /// <returns></returns>
-    private async Task DispatchDomainEventsAsync(int deep = 0)
+    private async Task DispatchDomainEventsAsync(IUnitOfWork unitOfWork, int deep = 0)
     {
-        if (!_unitOfWorkDefaultOptions.PublishDomainEvent || _unitOfWork == null)
+        if (!_unitOfWorkOptions.CurrentValue.PublishDomainEvent)
         {
             return;
         }
@@ -232,9 +228,11 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
             throw new RecursionOverflowException(Max_Deep, "领域事件发布超过最大递归深度");
         }
 
-        var domainEntities = _unitOfWork.EntityChangeReport.Report
+        List<IDomainEventBase> domainEntities = unitOfWork.EntityChangeReport.Report
          .Select(r => r.Object as IDomainEventBase)
-         .Where(r => r != null && r.DomainEvents.Any()).ToList();
+         .Where(r => r is not null && r.DomainEvents.Any())
+         .Select(r => r!)
+         .ToList();
 
         if (domainEntities.Count == 0)
         {
@@ -250,10 +248,10 @@ public class UnitOfWorkAsyncInterceptor : IAsyncInterceptor
         {
             foreach (var domainEvent in domainEvents)
             {
-                await mediator.Publish(domainEvent);
+                await _mediator.Publish(domainEvent);
             }
         }
 
-        await DispatchDomainEventsAsync(deep + 1);
+        await DispatchDomainEventsAsync(unitOfWork, deep + 1);
     }
 }

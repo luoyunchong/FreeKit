@@ -25,8 +25,21 @@ public class CurrentUserAccessorMiddleware
     public async Task InvokeAsync(HttpContext context)
     {
         var currentAccessor = context.RequestServices.GetService<ICurrentUserAccessor>();
-        if (currentAccessor != null) currentAccessor.CurrentUser = context.RequestServices.GetRequiredService<ICurrentUser>();
-        await _next.Invoke(context);
-        if (currentAccessor != null) currentAccessor.CurrentUser = null;
+        if (currentAccessor is null)
+        {
+            await _next(context);
+            return;
+        }
+
+        ICurrentUser? previousUser = currentAccessor.CurrentUser;
+        currentAccessor.CurrentUser = context.RequestServices.GetRequiredService<ICurrentUser>();
+        try
+        {
+            await _next(context);
+        }
+        finally
+        {
+            currentAccessor.CurrentUser = previousUser;
+        }
     }
 }

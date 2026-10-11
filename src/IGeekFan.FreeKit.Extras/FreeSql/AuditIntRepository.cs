@@ -10,10 +10,10 @@ namespace IGeekFan.FreeKit.Extras.FreeSql;
 /// 审计仓储实现，用户主键类型为Int、表的主键为Guid
 /// </summary>
 /// <typeparam name="TEntity"></typeparam>
-public class AuditIntRepository<TEntity> : AuditDefaultRepository<TEntity, Guid, long>, IAuditBaseRepository<TEntity>
+public class AuditIntRepository<TEntity> : AuditDefaultRepository<TEntity, Guid, int>, IAuditBaseRepository<TEntity>
     where TEntity : class, new()
 {
-    public AuditIntRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
+    public AuditIntRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager,
         currentUser)
     {
     }
@@ -27,7 +27,7 @@ public class AuditIntRepository<TEntity> : AuditDefaultRepository<TEntity, Guid,
 public class AuditTKeyIntRepository<TEntity, TKey> : AuditDefaultRepository<TEntity, TKey, long>
     where TEntity : class, new()
 {
-    public AuditTKeyIntRepository(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
+    public AuditTKeyIntRepository(IUnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(
         unitOfWorkManager,
         currentUser)
     {

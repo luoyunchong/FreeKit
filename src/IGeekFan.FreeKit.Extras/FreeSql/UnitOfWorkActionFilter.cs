@@ -22,20 +22,26 @@ public class UnitOfWorkActionFilter : IAsyncActionFilter
     /// <param name="context"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    private TransactionalAttribute? TryGetTransactional(ActionExecutingContext context)
+    private static TransactionalAttribute? TryGetTransactional(ActionExecutingContext context)
     {
         ControllerActionDescriptor? descriptor = context.ActionDescriptor as ControllerActionDescriptor;
         MethodInfo method = descriptor?.MethodInfo ?? throw new ArgumentNullException("context");
-        var transaction = method.GetUnitOfWorkAttributeOrNull();
-        if (transaction != null)
+        TransactionalAttribute? attribute = method.GetUnitOfWorkAttributeOrNull();
+        if (attribute is null || attribute.IsDisabled)
         {
-            if (transaction.IsDisabled) return null;
-            var unitOfWorkDefaultOptions = context.HttpContext.RequestServices.GetRequiredService<IOptionsMonitor<UnitOfWorkDefaultOptions>>().CurrentValue;
-            transaction.IsolationLevel ??= unitOfWorkDefaultOptions.IsolationLevel;
-            transaction.Propagation ??= unitOfWorkDefaultOptions.Propagation;
-            return transaction;
+            return null;
         }
-        return null;
+
+        UnitOfWorkDefaultOptions options = context.HttpContext.RequestServices
+            .GetRequiredService<IOptionsMonitor<UnitOfWorkDefaultOptions>>()
+            .CurrentValue;
+
+        // Attributes are cached by the runtime. Never mutate the instance while applying defaults.
+        return new TransactionalAttribute
+        {
+            IsolationLevel = attribute.IsolationLevel ?? options.IsolationLevel,
+            Propagation = attribute.Propagation ?? options.Propagation
+        };
     }
 
     /// <summary>
@@ -58,7 +64,9 @@ public class UnitOfWorkActionFilter : IAsyncActionFilter
             return;
         }
 
-        UnitOfWorkManager unitOfWorkManager = context.HttpContext.RequestServices.GetRequiredService<UnitOfWorkManager>();
+        IUnitOfWorkManager unitOfWorkManager = context.HttpContext.RequestServices
+            .GetService<IUnitOfWorkManager>()
+            ?? context.HttpContext.RequestServices.GetRequiredService<UnitOfWorkManager>();
         using IUnitOfWork unitOfWork = unitOfWorkManager.Begin(transaction.Propagation ?? Propagation.Required, transaction.IsolationLevel);
         ActionExecutedContext result = await next();
 

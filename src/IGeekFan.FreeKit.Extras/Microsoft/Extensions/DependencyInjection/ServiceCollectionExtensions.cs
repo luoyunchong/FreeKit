@@ -8,18 +8,33 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
- 
+    /// <summary>
+    /// Registers the default FreeSql unit of work manager and its interface.
+    /// </summary>
     public static IServiceCollection AddUnitOfWorkManager<T>(this IServiceCollection serviceCollection) where T : class
     {
+        ArgumentNullException.ThrowIfNull(serviceCollection);
+
         serviceCollection.AddTransient<UnitOfWorkActionFilter>();
         serviceCollection.TryAddScoped<UnitOfWorkManager<T>>();
+        serviceCollection.TryAddScoped<IUnitOfWorkManager>(provider =>
+            provider.GetRequiredService<UnitOfWorkManager<T>>());
+        serviceCollection.AddOptions<UnitOfWorkDefaultOptions>();
         return serviceCollection;
     }
 
+    /// <summary>
+    /// Registers the default FreeSql unit of work manager and its interface.
+    /// </summary>
     public static IServiceCollection AddUnitOfWorkManager(this IServiceCollection serviceCollection)
     {
+        ArgumentNullException.ThrowIfNull(serviceCollection);
+
         serviceCollection.AddTransient<UnitOfWorkActionFilter>();
         serviceCollection.TryAddScoped<UnitOfWorkManager>();
+        serviceCollection.TryAddScoped<IUnitOfWorkManager>(provider =>
+            provider.GetRequiredService<UnitOfWorkManager>());
+        serviceCollection.AddOptions<UnitOfWorkDefaultOptions>();
 
         return serviceCollection;
     }
@@ -29,6 +44,8 @@ public static class ServiceCollectionExtensions
     /// </summary>
     public static IServiceCollection AddFreeKitCore(this IServiceCollection services, Type? typeUserkey = null)
     {
+        ArgumentNullException.ThrowIfNull(services);
+
         //(controller unitofwork fitler
         //当前登录人信息
         //当前登录人上下文的accessor
@@ -37,8 +54,8 @@ public static class ServiceCollectionExtensions
         services.AddHttpContextAccessor();
         services.AddCurrentUser()
             .AddCurrentUserAccessor()
-            .AddAuditRepostiory(typeUserkey)
-            .AddCompositeRepostiory();
+            .AddAuditRepository(typeUserkey)
+            .AddCompositeRepository();
 
         services.AddDefaultRepository();
 
@@ -51,12 +68,21 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <returns></returns>
-    public static IServiceCollection AddCompositeRepostiory(this IServiceCollection services)
+    public static IServiceCollection AddCompositeRepository(this IServiceCollection services)
     {
+        ArgumentNullException.ThrowIfNull(services);
+
         services.TryAddScoped(typeof(ICompositeRepository<,,>), typeof(CompositeDefaultRepository<,,>));
         services.TryAddScoped(typeof(CompositeRepository<,,>), typeof(CompositeDefaultRepository<,,>));
         return services;
     }
+
+    /// <summary>
+    /// Compatibility alias for the misspelled API kept in earlier releases.
+    /// </summary>
+    [Obsolete("Use AddCompositeRepository instead.")]
+    public static IServiceCollection AddCompositeRepostiory(this IServiceCollection services) =>
+        services.AddCompositeRepository();
 
     /// <summary>
     /// 用户Id是Guid或long类型的审计仓储批量注入,默认注入用户主键为Guid类型
@@ -64,8 +90,10 @@ public static class ServiceCollectionExtensions
     /// <param name="services"></param>
     /// <param name="typeUserkey">支持typeof(Guid)/typeof(long)指定用户的主键类型，方便绑定 CreateUserId\UpdateUserId等字段</param>
     /// <returns></returns>
-    public static IServiceCollection AddAuditRepostiory(this IServiceCollection services, Type? typeUserkey = null)
+    public static IServiceCollection AddAuditRepository(this IServiceCollection services, Type? typeUserkey = null)
     {
+        ArgumentNullException.ThrowIfNull(services);
+
         if (typeUserkey == null || typeof(Guid) == typeUserkey)
         {
             services.TryAddScoped(typeof(IAuditBaseRepository<>), typeof(AuditGuidRepository<>));
@@ -83,11 +111,19 @@ public static class ServiceCollectionExtensions
         }
         else
         {
-            throw new NotSupportedException("用户ID仅支持Guid/long/int类型");
+            throw new NotSupportedException(
+                $"The audit user key type '{typeUserkey.FullName}' is not supported. Use Guid, long, or int.");
         }
 
         return services;
     }
+
+    /// <summary>
+    /// Compatibility alias for the misspelled API kept in earlier releases.
+    /// </summary>
+    [Obsolete("Use AddAuditRepository instead.")]
+    public static IServiceCollection AddAuditRepostiory(this IServiceCollection services, Type? typeUserkey = null) =>
+        services.AddAuditRepository(typeUserkey);
 
 
     /// <summary>
@@ -97,10 +133,18 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection AddDefaultRepository(this IServiceCollection services)
     {
+        ArgumentNullException.ThrowIfNull(services);
+
         services.TryAddScoped(typeof(IBaseRepository<>), typeof(GuidRepository<>));
         services.TryAddScoped(typeof(IBaseRepository<,>), typeof(DefaultRepository<,>));
         return services;
     }
+
+    /// <summary>
+    /// Compatibility alias for the original repository registration name.
+    /// </summary>
+    public static IServiceCollection AddFreeRepository(this IServiceCollection services) =>
+        services.AddDefaultRepository();
 
     /// <summary>
     /// Adds a default implementation for the <see cref="ICurrentUser"/> service.

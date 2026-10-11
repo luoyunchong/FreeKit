@@ -103,8 +103,8 @@ namespace IGeekFan.FreeKit.xUnit
             services.AddSingleton(fsql);
             services.AddFreeRepository();
             services.AddScoped<UnitOfWorkManager>();
-            services.AddCompositeRepostiory();
-            services.AddAuditRepostiory().AddCurrentUser();
+            services.AddCompositeRepository();
+            services.AddAuditRepository().AddCurrentUser();
             #endregion
 
             // 配置日志
