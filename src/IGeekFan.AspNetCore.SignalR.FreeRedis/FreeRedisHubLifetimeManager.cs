@@ -67,21 +67,17 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         _connections.Add(connection);
         connection.Features.Set<IRedisFeature>(new RedisFeature());
 
-        var connectionTask = SubscribeToConnection(connection);
-        Task userTask = Task.CompletedTask;
+        await SubscribeToConnection(connection);
         if (!string.IsNullOrEmpty(connection.UserIdentifier))
         {
-            userTask = SubscribeToUser(connection, connection.UserIdentifier);
+            await SubscribeToUser(connection, connection.UserIdentifier);
         }
-
-        await Task.WhenAll(connectionTask, userTask);
     }
 
-    public override Task OnDisconnectedAsync(HubConnectionContext connection)
+    public override async Task OnDisconnectedAsync(HubConnectionContext connection)
     {
         _connections.Remove(connection);
 
-        var tasks = new List<Task>();
         var connectionChannel = _channels.Connection(connection.ConnectionId);
         RedisLog.Unsubscribe(_logger, connectionChannel);
         Unsubscribe(connectionChannel);
@@ -89,15 +85,13 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         var feature = connection.Features.GetRequiredFeature<IRedisFeature>();
         foreach (var group in feature.Groups)
         {
-            tasks.Add(RemoveGroupAsyncCore(connection, group));
+            await RemoveGroupAsyncCore(connection, group);
         }
 
         if (!string.IsNullOrEmpty(connection.UserIdentifier))
         {
-            tasks.Add(RemoveUserAsync(connection));
+            await RemoveUserAsync(connection);
         }
-
-        return Task.WhenAll(tasks);
     }
 
     public override Task SendAllAsync(string methodName, object?[] args, CancellationToken cancellationToken = default)
@@ -126,16 +120,13 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         return PublishAsync(_channels.Connection(connectionId), message);
     }
 
-    public override Task SendConnectionsAsync(IReadOnlyList<string> connectionIds, string methodName, object?[] args, CancellationToken cancellationToken = default)
+    public override async Task SendConnectionsAsync(IReadOnlyList<string> connectionIds, string methodName, object?[] args, CancellationToken cancellationToken = default)
     {
-        var tasks = new List<Task>(connectionIds.Count);
         var payload = _protocol.WriteInvocation(methodName, args);
         foreach (var connectionId in connectionIds)
         {
-            tasks.Add(PublishAsync(_channels.Connection(connectionId), payload));
+            await PublishAsync(_channels.Connection(connectionId), payload);
         }
-
-        return Task.WhenAll(tasks);
     }
 
     public override Task SendGroupAsync(string groupName, string methodName, object?[] args, CancellationToken cancellationToken = default)
@@ -150,19 +141,16 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         return PublishAsync(_channels.Group(groupName), message);
     }
 
-    public override Task SendGroupsAsync(IReadOnlyList<string> groupNames, string methodName, object?[] args, CancellationToken cancellationToken = default)
+    public override async Task SendGroupsAsync(IReadOnlyList<string> groupNames, string methodName, object?[] args, CancellationToken cancellationToken = default)
     {
-        var tasks = new List<Task>(groupNames.Count);
         var payload = _protocol.WriteInvocation(methodName, args);
         foreach (var groupName in groupNames)
         {
             if (!string.IsNullOrEmpty(groupName))
             {
-                tasks.Add(PublishAsync(_channels.Group(groupName), payload));
+                await PublishAsync(_channels.Group(groupName), payload);
             }
         }
-
-        return Task.WhenAll(tasks);
     }
 
     public override Task SendUserAsync(string userId, string methodName, object?[] args, CancellationToken cancellationToken = default)
@@ -171,19 +159,16 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         return PublishAsync(_channels.User(userId), message);
     }
 
-    public override Task SendUsersAsync(IReadOnlyList<string> userIds, string methodName, object?[] args, CancellationToken cancellationToken = default)
+    public override async Task SendUsersAsync(IReadOnlyList<string> userIds, string methodName, object?[] args, CancellationToken cancellationToken = default)
     {
-        var tasks = new List<Task>(userIds.Count);
         var payload = _protocol.WriteInvocation(methodName, args);
         foreach (var userId in userIds)
         {
             if (!string.IsNullOrEmpty(userId))
             {
-                tasks.Add(PublishAsync(_channels.User(userId), payload));
+                await PublishAsync(_channels.User(userId), payload);
             }
         }
-
-        return Task.WhenAll(tasks);
     }
 
     public override Task AddToGroupAsync(string connectionId, string groupName, CancellationToken cancellationToken = default)
@@ -329,16 +314,13 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         return SubscribeAsync(_channels.All, async payload =>
         {
             var invocation = RedisProtocol.ReadInvocation(payload);
-            var tasks = new List<Task>(_connections.Count);
             foreach (var connection in _connections)
             {
                 if (invocation.ExcludedConnectionIds is null || !invocation.ExcludedConnectionIds.Contains(connection.ConnectionId))
                 {
-                    tasks.Add(connection.WriteAsync(invocation.Message).AsTask());
+                    await connection.WriteAsync(invocation.Message);
                 }
             }
-
-            await Task.WhenAll(tasks);
         });
     }
 
@@ -438,13 +420,10 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
             SubscribeAsync(channelName, async payload =>
             {
                 var invocation = RedisProtocol.ReadInvocation(payload);
-                var tasks = new List<Task>(subscriptions.Count);
                 foreach (var userConnection in subscriptions)
                 {
-                    tasks.Add(userConnection.WriteAsync(invocation.Message).AsTask());
+                    await userConnection.WriteAsync(invocation.Message);
                 }
-
-                await Task.WhenAll(tasks);
             }));
     }
 
@@ -453,7 +432,6 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
         return SubscribeAsync(groupChannel, async payload =>
         {
             var invocation = RedisProtocol.ReadInvocation(payload);
-            var tasks = new List<Task>(groupConnections.Count);
             foreach (var groupConnection in groupConnections)
             {
                 if (invocation.ExcludedConnectionIds?.Contains(groupConnection.ConnectionId) == true)
@@ -461,10 +439,8 @@ public sealed class FreeRedisHubLifetimeManager<THub> : HubLifetimeManager<THub>
                     continue;
                 }
 
-                tasks.Add(groupConnection.WriteAsync(invocation.Message).AsTask());
+                await groupConnection.WriteAsync(invocation.Message);
             }
-
-            await Task.WhenAll(tasks);
         });
     }
 
