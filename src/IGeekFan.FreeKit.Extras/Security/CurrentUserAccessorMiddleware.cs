@@ -31,15 +31,7 @@ public class CurrentUserAccessorMiddleware
             return;
         }
 
-        ICurrentUser? previousUser = currentAccessor.CurrentUser;
-        currentAccessor.CurrentUser = context.RequestServices.GetRequiredService<ICurrentUser>();
-        try
-        {
-            await _next(context);
-        }
-        finally
-        {
-            currentAccessor.CurrentUser = previousUser;
-        }
+        using var userScope = currentAccessor.Change(context.RequestServices.GetRequiredService<ICurrentUser>());
+        await _next(context);
     }
 }

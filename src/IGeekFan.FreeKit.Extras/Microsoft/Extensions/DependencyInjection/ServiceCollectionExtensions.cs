@@ -45,23 +45,25 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddFreeKitCore(this IServiceCollection services, Type? typeUserkey = null)
     {
         ArgumentNullException.ThrowIfNull(services);
-
-        //(controller unitofwork fitler
-        //当前登录人信息
-        //当前登录人上下文的accessor
-        //审计仓储
-        //复合主键仓储)
-        services.AddHttpContextAccessor();
-        services.AddCurrentUser()
-            .AddCurrentUserAccessor()
-            .AddAuditRepository(typeUserkey)
-            .AddCompositeRepository();
-
-        services.AddDefaultRepository();
-
-        return services;
+        return services.AddFreeKitRuntime().AddFreeKitRepositories(typeUserkey);
     }
 
+    /// <summary>Registers the current user and request context without requiring a database.</summary>
+    public static IServiceCollection AddFreeKitRuntime(this IServiceCollection services)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        services.AddHttpContextAccessor();
+        return services.AddCurrentUser().AddCurrentUserAccessor();
+    }
+
+    /// <summary>Registers audit, composite-key and default repositories.</summary>
+    public static IServiceCollection AddFreeKitRepositories(this IServiceCollection services, Type? typeUserkey = null)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        return services.AddAuditRepository(typeUserkey)
+            .AddCompositeRepository()
+            .AddDefaultRepository();
+    }
 
     /// <summary>
     /// 批量注入复合主键的 Repository

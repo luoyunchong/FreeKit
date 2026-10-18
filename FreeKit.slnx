@@ -64,5 +64,6 @@
     <Project Path="test/IGeekFan.AspNetCore.SignalR.FreeRedis.Tests/IGeekFan.AspNetCore.SignalR.FreeRedis.Tests.csproj" />
     <Project Path="test/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests.csproj" />
     <Project Path="test/IGeekFan.FreeKit.xUnit/IGeekFan.FreeKit.xUnit.csproj" />
+    <Project Path="test/IGeekFan.FreeKit.PackageCompatibility.Tests/IGeekFan.FreeKit.PackageCompatibility.Tests.csproj" />
   </Folder>
 </Solution>

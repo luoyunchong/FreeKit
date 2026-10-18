@@ -66,6 +66,18 @@ public static class ModuleServiceCollection
             }
         });
 
+        return services.AddModuleServices(startupType, routePrefix, c);
+    }
+
+    /// <summary>
+    /// 注册模块服务和生命周期，不自动注册 MVC 或暴露 Controller。
+    /// </summary>
+    public static IServiceCollection AddModuleServices(
+        this IServiceCollection services, Type startupType, string routePrefix, IConfiguration c)
+    {
+        if (!typeof(IModuleStartup).IsAssignableFrom(startupType))
+            throw new ArgumentException($"{startupType.FullName} must implement {nameof(IModuleStartup)}.", nameof(startupType));
+
         var startup = (IModuleStartup?)Activator.CreateInstance(startupType)
             ?? throw new InvalidOperationException($"Cannot create module startup instance: {startupType.FullName}.");
         startup.ConfigureServices(services, c);

@@ -19,12 +19,12 @@ public class UnitOfWorkModule : Autofac.Module
 
     public UnitOfWorkModule(Assembly[] currentAssemblies)
     {
-        _currentAssemblies = currentAssemblies;
+        _currentAssemblies = currentAssemblies.Distinct().ToArray();
     }
 
     public UnitOfWorkModule(Assembly[] currentAssemblies,List<Type>? interceptorServiceTypes)
     {
-        _currentAssemblies = currentAssemblies;
+        _currentAssemblies = currentAssemblies.Distinct().ToArray();
         if (interceptorServiceTypes != null && interceptorServiceTypes.Count != 0)
         {
             _interceptorServiceTypes.AddRange(interceptorServiceTypes);
@@ -33,6 +33,7 @@ public class UnitOfWorkModule : Autofac.Module
 
     public UnitOfWorkModule(Type[]? typeAssemblies, List<Type>? interceptorServiceTypes)
     {
+        _currentAssemblies = [];
         if (typeAssemblies != null && typeAssemblies.Length != 0)
         {
             _currentAssemblies = new Assembly[typeAssemblies.Length];
@@ -59,7 +60,7 @@ public class UnitOfWorkModule : Autofac.Module
         bool SealedServicePredicate(Type a) => Predicate(a) && a.IsSealed;
 
         builder.RegisterAssemblyTypes(_currentAssemblies)
-            .Where(Predicate)
+            .Where(a => Predicate(a) && a.GetInterfaces().Length > 0)
             .AsImplementedInterfaces()//注册的类型，以接口的方式注册
             .InstancePerLifetimeScope()
             .PropertiesAutowired()// 属性注入

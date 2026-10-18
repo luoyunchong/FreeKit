@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <TestFreeKitPackages Condition="'$(TestFreeKitPackages)' == ''">false</TestFreeKitPackages>
+    <FreeKitPackageVersion Condition="'$(FreeKitPackageVersion)' == ''">0.0.560</FreeKitPackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeSqlVersion)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="xunit.v3" Version="3.2.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TestFreeKitPackages)' == 'true'">
+    <PackageReference Include="IGeekFan.FreeKit.Extras" Version="$(FreeKitPackageVersion)" />
+    <PackageReference Include="IGeekFan.FreeKit.Modularity" Version="$(FreeKitPackageVersion)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TestFreeKitPackages)' != 'true'">
+    <ProjectReference Include="../../src/IGeekFan.FreeKit.Extras/IGeekFan.FreeKit.Extras.csproj" />
+    <ProjectReference Include="../../src/IGeekFan.FreeKit.Modularity/IGeekFan.FreeKit.Modularity.csproj" />
+  </ItemGroup>
+</Project>

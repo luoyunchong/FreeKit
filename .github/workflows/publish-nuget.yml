@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: dotnet build FreeKit.slnx --configuration Release --no-restore
 
+      - name: Test runtime and module compatibility
+        run: dotnet test test/IGeekFan.FreeKit.PackageCompatibility.Tests/IGeekFan.FreeKit.PackageCompatibility.Tests.csproj --configuration Release --no-build --no-restore
+
       - name: Pack
         run: |
           dotnet pack src/IGeekFan.FreeKit --configuration Release --no-build --output ./nupkg/packages
