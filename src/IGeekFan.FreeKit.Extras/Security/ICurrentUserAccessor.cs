@@ -16,4 +16,9 @@ public interface ICurrentUserAccessor
     /// Gets or sets the current user <see cref="ICurrentUser"/>
     /// </summary>
     ICurrentUser? CurrentUser { get; set; }
+
+    /// <summary>
+    /// 临时切换当前用户，释放作用域时恢复原上下文并清理当前上下文。
+    /// </summary>
+    IDisposable Change(ICurrentUser currentUser);
 }

@@ -29,19 +29,30 @@ public static class ServiceCollectionExtensions
     /// </summary>
     public static IServiceCollection AddFreeKitCore(this IServiceCollection services, Type? typeUserkey = null)
     {
-        //(controller unitofwork fitler
-        //当前登录人信息
-        //当前登录人上下文的accessor
-        //审计仓储
-        //复合主键仓储)
+        return services.AddFreeKitRuntime().AddFreeKitRepositories(typeUserkey);
+    }
+
+    /// <summary>
+    /// 注册当前用户和请求上下文，适用于没有数据库的 Host。
+    /// </summary>
+    public static IServiceCollection AddFreeKitRuntime(this IServiceCollection services)
+    {
+        ArgumentNullException.ThrowIfNull(services);
         services.AddHttpContextAccessor();
         services.AddCurrentUser()
-            .AddCurrentUserAccessor()
-            .AddAuditRepostiory(typeUserkey)
+            .AddCurrentUserAccessor();
+        return services;
+    }
+
+    /// <summary>
+    /// 注册审计、复合主键和默认仓储；由数据访问注册入口按需调用。
+    /// </summary>
+    public static IServiceCollection AddFreeKitRepositories(this IServiceCollection services, Type? typeUserkey = null)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        services.AddAuditRepostiory(typeUserkey)
             .AddCompositeRepostiory();
-
         services.AddDefaultRepository();
-
         return services;
     }
 
