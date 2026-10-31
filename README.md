@@ -1,16 +1,16 @@
-[English](README.en.md) | **简体中文**
+**English** | [简体中文](README.zh-CN.md)
 
 # FreeKit
 
 <div align="center">
 <h1 align="center"> .NET <img alt="logo" src="docs/images/logo.png" width="80px"/>YEARS </h1>
 
-**Freekit** 为.NET Core提供了更多的扩展实现
+**FreeKit** provides additional extensions for .NET Core.
 
 [![.NET IDE Rider](https://img.shields.io/static/v1?style=float&logo=rider&label=Rider&message=jetbrains&color=red)](https://www.jetbrains.com/rider/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.RapiDoc/master/LICENSE)
 <p>
-     <a href="README.en.md">English</a> |  <a href="README.md">简体中文</a>
+     <a href="README.md">English</a> |  <a href="README.zh-CN.md">简体中文</a>
 </p>
 </div>
 
@@ -30,32 +30,32 @@
 
 ## IGeekFan.AspNetCore.Identity.FreeSql
 
-`asp.net core 6` 的`identity`的`freesql`实现
-- 查看[IGeekFan.AspNetCore.Identity.FreeSql](https://igeekfan.cn/dotnetcore/freekit/AspNetCore.Identity.FreeSql.html)**文档**
+A FreeSql implementation of ASP.NET Core 6 Identity.
+- See [IGeekFan.AspNetCore.Identity.FreeSql](https://igeekfan.cn/dotnetcore/freekit/AspNetCore.Identity.FreeSql.html) **documentation**
 
 ## IGeekFan.FreeKit
 
-- AuditEntity 审计日志实体
-- Dependency 依赖注入接口
-- 查看[IGeekFan.FreeKit](https://igeekfan.cn/dotnetcore/freekit/Core.html)**文档**
+- AuditEntity: audit log entity
+- Dependency: dependency-injection interfaces
+- See [IGeekFan.FreeKit](https://igeekfan.cn/dotnetcore/freekit/Core.html) **documentation**
 
 ## IGeekFan.FreeKit.Extras
 
-- FreeSql扩展+Autofac UnitOfWork
+- FreeSql extensions + Autofac UnitOfWork
 - FreeSql+AuditEntity
 - Autofac+ITransientDependency+IScopedDependency+ISingletonDependency
 - CaseQuery 
-- Security 登录人信息
-- 查看[IGeekFan.FreeKit.Extras](https://igeekfan.cn/dotnetcore/freekit/Extras.html)**文档**
+- Security: current-user information
+- See [IGeekFan.FreeKit.Extras](https://igeekfan.cn/dotnetcore/freekit/Extras.html) **documentation**
 
 ## IGeekFan.FreeKit.Email
 
-- 基于MailKit实现的邮件[IGeekFan.FreeKit.Email](https://igeekfan.cn/dotnetcore/freekit/Email.html)**文档**
+- MailKit-based email. See [IGeekFan.FreeKit.Email](https://igeekfan.cn/dotnetcore/freekit/Email.html) **documentation**
 
 ## IGeekFan.Localization.FreeSql
 
-- 数据库多语言本地化[IGeekFan.Localization.FreeSql](https://igeekfan.cn/dotnetcore/freekit/Localization.FreeSql.html)**文档**
+- Database-backed localization. See [IGeekFan.Localization.FreeSql](https://igeekfan.cn/dotnetcore/freekit/Localization.FreeSql.html) **documentation**
 
 ## IGeekFan.FreeKit.Modularity
 
-- 单体模块化[IGeekFan.FreeKit.Modularity](https://igeekfan.cn/dotnetcore/freekit/Modularity.html)**文档**
+- Modular monolith support. See [IGeekFan.FreeKit.Modularity](https://igeekfan.cn/dotnetcore/freekit/Modularity.html) **documentation**
