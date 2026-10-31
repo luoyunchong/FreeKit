@@ -1,3 +1,5 @@
+[English](README.en.md) | **简体中文**
+
 # FreeKit
 
 <div align="center">
@@ -8,7 +10,7 @@
 [![.NET IDE Rider](https://img.shields.io/static/v1?style=float&logo=rider&label=Rider&message=jetbrains&color=red)](https://www.jetbrains.com/rider/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.RapiDoc/master/LICENSE)
 <p>
-     <a href="README.md">英文</a> |  <a href="README.md">中文</a>
+     <a href="README.en.md">English</a> |  <a href="README.md">简体中文</a>
 </p>
 </div>
 
