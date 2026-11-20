@@ -6,5 +6,8 @@
 		<DefaultFreeSqlVersion>3.5.311</DefaultFreeSqlVersion>
 		<DefaultAspNetCoreVersion>6.0.16</DefaultAspNetCoreVersion>
 		<DefaultAspNetCoreVersion7>8.0.4</DefaultAspNetCoreVersion7>
+
+		<!-- The SDK defines NETCoreAppMaximumVersion after Directory.Build.props. -->
+		<AfterMicrosoftNetSdkProps>$(AfterMicrosoftNetSdkProps);$(MSBuildThisFileDirectory)TargetFrameworks.props</AfterMicrosoftNetSdkProps>
 	</PropertyGroup>
 </Project>

@@ -14,6 +14,10 @@
 </p>
 </div>
 
+## 源码构建
+
+使用 .NET 10 或 .NET 11 SDK 执行 `dotnet build FreeKit.slnx -c Release`。.NET 10 SDK 编译 `net10.0` 及库原有的旧框架目标。.NET 11 SDK 增加 `net11.0` 并生成包含全部目标框架的 NuGet 包。使用 .NET 11 SDK 时可加 `-p:FreeKitBuildNet11=false`，按 .NET 10 SDK 的目标范围编译。
+
 ## Nuget Packages
 
 | Package name| Version| Downloads|

@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<FreeKitBuildNet11 Condition="'$(FreeKitBuildNet11)' == '' and '$(NETCoreAppMaximumVersion)' != '' and $([MSBuild]::VersionGreaterThanOrEquals('$(NETCoreAppMaximumVersion)', '11.0'))">true</FreeKitBuildNet11>
+		<FreeKitTargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion10)</FreeKitTargetFrameworks>
+		<FreeKitTargetFrameworks Condition="'$(FreeKitBuildNet11)' == 'true'">$(FreeKitTargetFrameworks);$(DefaultNetCoreTargetFrameworkVersion11)</FreeKitTargetFrameworks>
+		<FreeKitLibraryTargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(FreeKitTargetFrameworks)</FreeKitLibraryTargetFrameworks>
+
+		<FreeKitAppAspNetCoreVersion>10.0.15</FreeKitAppAspNetCoreVersion>
+		<FreeKitAppAspNetCoreVersion Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFrameworkVersion11)'">11.0.0</FreeKitAppAspNetCoreVersion>
+	</PropertyGroup>
+</Project>

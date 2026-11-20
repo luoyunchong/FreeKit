@@ -28,9 +28,10 @@ Using the wrong `.slnx` wastes build time or misses projects.
 ## Directory.Build.props hierarchy
 
 - **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultNetCoreTargetFrameworkVersion11` (`net11.0`), and `DefaultFreeSqlVersion`.
+- **Root** `TargetFrameworks.props`: selects targets after the SDK sets its maximum supported framework. Libraries use `FreeKitLibraryTargetFrameworks` to retain .NET 8 and `FreeKitTargetFrameworks` covers .NET 10 and, with SDK 11 or newer, .NET 11. Set `-p:FreeKitBuildNet11=false` to build the .NET 10 SDK target set with a newer SDK.
 - **`src/Directory.Build.props`**: imports root, adds NuGet packaging. The package version is set here. `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
 
-All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10);$(DefaultNetCoreTargetFrameworkVersion11)</TargetFrameworks>`). Change versions centrally, not per-project.
+Use SDK 11 or newer to pack all supported framework assets. Keep .NET 11-only package versions conditioned on the `net11.0` target.
 
 ## Source layout (`src/`)
 
@@ -54,7 +55,7 @@ All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNe
 - **Framework**: xUnit v3 + `Xunit.DependencyInjection` (DI via `Startup.cs`, not constructor injection).
 - **Database**: SQLite in-memory via `FreeSql.Provider.Sqlite` or `FreeSql.Provider.SqliteCore`.
 - **Shared helpers**: `test/Shared/` contains `ApiConsistencyTestBase.cs`, `MockHelpers.cs`, etc. Included via `<Compile Include="..\Shared\**\*.cs" />`.
-- Test projects target `net11.0`.
+- Test projects and samples use `FreeKitTargetFrameworks`. Pass `--framework net10.0` or `--framework net11.0` when running a sample.
 
 ## Code generation (T4 templates)
 

@@ -14,6 +14,10 @@
 </p>
 </div>
 
+## Build from source
+
+Run `dotnet build FreeKit.slnx -c Release` with either SDK. .NET 10 SDK builds the `net10.0` projects and existing legacy library targets. .NET 11 SDK adds `net11.0` and produces the complete NuGet packages. Use `-p:FreeKitBuildNet11=false` with SDK 11 to build the same target set as SDK 10.
+
 ## Nuget Packages
 
 | Package name| Version| Downloads|
