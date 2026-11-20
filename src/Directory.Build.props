@@ -13,12 +13,8 @@
         <Authors>igeekfan;luoyunchong</Authors>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <Copyright>MIT License</Copyright>
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
-        <Version>0.0.561</Version>
+        <Version>0.0.562</Version>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All" />
-    </ItemGroup>
 </Project>

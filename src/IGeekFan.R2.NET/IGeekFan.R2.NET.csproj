@@ -2,7 +2,7 @@
 
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFrameworks>$(FreeKitTargetFrameworks)</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>A .NET client for interacting with Cloudflare R2.</Description>
@@ -26,8 +26,10 @@
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
 	</ItemGroup>
   
-  <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="10.0.400" />
+  <ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFrameworkVersion11)'">
+    <PackageReference Update="Microsoft.Extensions.Http" Version="11.0.0" />
+    <PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="11.0.0" />
+    <PackageReference Update="Microsoft.Extensions.Options" Version="11.0.0" />
+    <PackageReference Update="Microsoft.Extensions.Options.ConfigurationExtensions" Version="11.0.0" />
   </ItemGroup>
-
 </Project>

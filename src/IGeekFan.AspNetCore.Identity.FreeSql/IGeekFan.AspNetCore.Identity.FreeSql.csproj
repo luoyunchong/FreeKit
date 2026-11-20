@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
+		<TargetFrameworks>$(FreeKitLibraryTargetFrameworks)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageTags>aspnetcore;freesql;freekit;identity;</PackageTags>
@@ -41,5 +41,8 @@
 		<EmbeddedResource Update="Properties\CoreStrings.resx">
 			<CustomToolNamespace>IGeekFan.AspNetCore.Identity.FreeSql</CustomToolNamespace>
 		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFrameworkVersion11)'">
+		<PackageReference Update="Microsoft.Extensions.Identity.Stores" Version="11.0.0" />
 	</ItemGroup>
 </Project>

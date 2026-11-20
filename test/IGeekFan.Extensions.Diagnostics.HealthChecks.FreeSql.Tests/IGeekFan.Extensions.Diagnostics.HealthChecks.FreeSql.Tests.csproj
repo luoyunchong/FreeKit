@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>$(DefaultNetCoreTargetFrameworkVersion10)</TargetFramework>
+		<TargetFrameworks>$(FreeKitTargetFrameworks)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>Microsoft.AspNetCore.Diagnostics.HealthChecks</RootNamespace>
@@ -10,8 +10,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="$(DefaultFreeSqlVersion)" />
-		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="10.0.9" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="$(FreeKitAppAspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(FreeKitAppAspNetCoreVersion)" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
 		<PackageReference Include="xunit.v3" Version="3.2.1" />
 		<PackageReference Include="Xunit.DependencyInjection" Version="11.2.0" />

@@ -25,6 +25,7 @@
     <File Path="src/Directory.Build.props" />
     <Project Path="src/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql/IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.csproj" />
     <Project Path="src/IGeekFan.Localization.FreeSql/IGeekFan.Localization.FreeSql.csproj" />
+    <Project Path="src/IGeekFan.R2.NET/IGeekFan.R2.NET.csproj" />
   </Folder>
   <Folder Name="/src/AspNetCore/">
     <Project Path="src/IGeekFan.AspNetCore.DataProtection.FreeRedis/IGeekFan.AspNetCore.DataProtection.FreeRedis.csproj" />

@@ -27,10 +27,12 @@ Using the wrong `.slnx` wastes build time or misses projects.
 
 ## Directory.Build.props hierarchy
 
-- **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultFreeSqlVersion` (`3.5.310`).
-- **`src/Directory.Build.props`**: imports root, adds NuGet packaging. Version is set here (`<Version>0.0.557</Version>`). `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
+- **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultNetCoreTargetFrameworkVersion11` (`net11.0`), and `DefaultFreeSqlVersion`.
+- **Root** `TargetFrameworks.props`: selects targets after the SDK sets its maximum supported framework. Libraries use `FreeKitLibraryTargetFrameworks` to retain .NET 8 and `FreeKitTargetFrameworks` covers .NET 10 and, with SDK 11 or newer, .NET 11. Set `-p:FreeKitBuildNet11=false` to build the .NET 10 SDK target set with a newer SDK.
+- **`src/Directory.Build.props`**: imports root and defines the NuGet package version and metadata.
+- **`src/Directory.Build.targets`**: requires both `net10.0` and `net11.0` when packing a library.
 
-All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>`). Change versions centrally, not per-project.
+Use SDK 11 or newer to pack all supported framework assets. Keep .NET 11-only package versions conditioned on the `net11.0` target.
 
 ## Source layout (`src/`)
 
@@ -47,14 +49,14 @@ All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNe
 | `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql` | FreeSql | Health checks |
 | `IGeekFan.AspNetCore.SignalR.FreeRedis` | FreeRedis | SignalR backplane |
 | `IGeekFan.OpenIddict.FreeSql` | OpenIddict.Core, FreeSql | OpenIddict stores |
-| `IGeekFan.R2.NET` | AWSSDK.S3 | Cloudflare R2 client. **net10.0 only** |
+| `IGeekFan.R2.NET` | AWSSDK.S3 | Cloudflare R2 client. `net10.0` and `net11.0` |
 
 ## Tests (`test/`)
 
 - **Framework**: xUnit v3 + `Xunit.DependencyInjection` (DI via `Startup.cs`, not constructor injection).
 - **Database**: SQLite in-memory via `FreeSql.Provider.Sqlite` or `FreeSql.Provider.SqliteCore`.
 - **Shared helpers**: `test/Shared/` contains `ApiConsistencyTestBase.cs`, `MockHelpers.cs`, etc. Included via `<Compile Include="..\Shared\**\*.cs" />`.
-- All test projects target `net10.0` only.
+- Test projects and samples use `FreeKitTargetFrameworks`. Pass `--framework net10.0` or `--framework net11.0` when running a sample.
 
 ## Code generation (T4 templates)
 
@@ -66,12 +68,13 @@ These `*.Designer.cs` files are auto-generated — do not edit by hand.
 
 ## NuGet packaging & release
 
-CI (`.github/workflows/publish-nuget.yml`) publishes on `v*` tags. Uses `dotnet pack` per-project (not per-solution):
+CI (`.github/workflows/publish-nuget.yml`) publishes on `v*` tags. Pack the full library set with the .NET 11 SDK.
+
 ```bash
-dotnet pack src/IGeekFan.FreeKit -c Release --no-build --output ./nupkg/packages
+dotnet pack FreeKit-Core.slnx -c Release "-p:PackageOutputPath=$PWD/nupkg/packages"
 ```
 
-Local scripts in `nupkg/` (`build-all-release.ps1`, `pack.ps1`, `deploy.ps1`) automate version bump, build, pack, and push. Version is read from `src/Directory.Build.props`.
+`nupkg/pack.ps1` runs the same pack command locally. `nupkg/deploy.ps1` packs, tags, and pushes.
 
 ## Samples (`samples/`)
 

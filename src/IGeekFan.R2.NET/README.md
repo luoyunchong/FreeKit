@@ -1,3 +1,5 @@
+**English** | [简体中文](README.zh-CN.md)
+
 # R2.NET
 
 R2.NET is a .NET client for interacting with Cloudflare R2. This package provides a simple and efficient way to manage your Cloudflare R2 buckets and objects. It includes both direct client initiation and a factory pattern for generating and fetching clients.
