@@ -13,7 +13,6 @@
         <Authors>igeekfan;luoyunchong</Authors>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <Copyright>MIT License</Copyright>
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/luoyunchong/FreeKit</PackageProjectUrl>
         <Version>0.0.562</Version>
     </PropertyGroup>

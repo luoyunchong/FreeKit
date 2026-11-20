@@ -16,7 +16,9 @@
 
 ## Build from source
 
-Run `dotnet build FreeKit.slnx -c Release` with either SDK. .NET 10 SDK builds the `net10.0` projects and existing legacy library targets. .NET 11 SDK adds `net11.0` and produces the complete NuGet packages. Use `-p:FreeKitBuildNet11=false` with SDK 11 to build the same target set as SDK 10.
+Use `dotnet build FreeKit.slnx -c Release -f net10.0` to build the .NET 10 target or `dotnet build FreeKit.slnx -c Release -f net11.0` to build the .NET 11 target. Omit `-f` to build every framework supported by the active SDK.
+
+Run `dotnet pack FreeKit-Core.slnx -c Release` with the .NET 11 SDK to produce the release packages. Each package includes both `net10.0` and `net11.0` assets so consuming projects can update FreeKit while keeping their target framework.
 
 ## Nuget Packages
 

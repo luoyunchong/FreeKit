@@ -16,7 +16,9 @@
 
 ## 源码构建
 
-使用 .NET 10 或 .NET 11 SDK 执行 `dotnet build FreeKit.slnx -c Release`。.NET 10 SDK 编译 `net10.0` 及库原有的旧框架目标。.NET 11 SDK 增加 `net11.0` 并生成包含全部目标框架的 NuGet 包。使用 .NET 11 SDK 时可加 `-p:FreeKitBuildNet11=false`，按 .NET 10 SDK 的目标范围编译。
+单独编译 .NET 10 时用 `dotnet build FreeKit.slnx -c Release -f net10.0`，编译 .NET 11 时用 `dotnet build FreeKit.slnx -c Release -f net11.0`。省略 `-f` 会编译当前 SDK 支持的全部目标框架。
+
+使用 .NET 11 SDK 执行 `dotnet pack FreeKit-Core.slnx -c Release` 生成正式包。每个包同时包含 `net10.0` 和 `net11.0` 资产，两类项目都可以保持自己的目标框架并升级 FreeKit。
 
 ## Nuget Packages
 

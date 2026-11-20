@@ -1,6 +1,8 @@
 
 
 
+$ErrorActionPreference = 'Stop'
+
 ./pack.ps1
 ./git-commit-tag.ps1
 ##./push_packages_baget.ps1

@@ -1,0 +1,9 @@
+<Project>
+    <Target Name="RequireFreeKitPackageFrameworks" BeforeTargets="GenerateNuspec" Condition="'$(IsPackable)' == 'true'">
+        <PropertyGroup>
+            <_FreeKitPackageFrameworks>;$(TargetFrameworks);</_FreeKitPackageFrameworks>
+        </PropertyGroup>
+        <Error Condition="'$(TargetFramework)' != '' or !$(_FreeKitPackageFrameworks.Contains(';net10.0;')) or !$(_FreeKitPackageFrameworks.Contains(';net11.0;'))"
+               Text="A FreeKit NuGet package requires both net10.0 and net11.0. Pack the project with the .NET 11 SDK and its full target framework list." />
+    </Target>
+</Project>
