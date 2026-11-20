@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10);$(DefaultNetCoreTargetFrameworkVersion11)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Description>FreeRedis distributed store for ASP.NET Core output caching.</Description>
@@ -17,4 +17,7 @@
 		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.11" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFrameworkVersion11)'">
+		<PackageReference Update="Microsoft.Extensions.Options" Version="11.0.0" />
+	</ItemGroup>
 </Project>

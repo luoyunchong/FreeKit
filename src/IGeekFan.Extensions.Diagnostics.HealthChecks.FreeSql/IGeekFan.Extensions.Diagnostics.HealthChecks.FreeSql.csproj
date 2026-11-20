@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<Description>Components for performing health checks using FreeSql.	</Description>
-		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>
+		<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10);$(DefaultNetCoreTargetFrameworkVersion11)</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -18,5 +18,8 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql.Tests" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == '$(DefaultNetCoreTargetFrameworkVersion11)'">
+		<PackageReference Update="Microsoft.Extensions.Diagnostics.HealthChecks" Version="11.0.0" />
 	</ItemGroup>
 </Project>

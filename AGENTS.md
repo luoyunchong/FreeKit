@@ -27,10 +27,10 @@ Using the wrong `.slnx` wastes build time or misses projects.
 
 ## Directory.Build.props hierarchy
 
-- **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultFreeSqlVersion` (`3.5.310`).
-- **`src/Directory.Build.props`**: imports root, adds NuGet packaging. Version is set here (`<Version>0.0.557</Version>`). `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
+- **Root** `Directory.Build.props`: defines MSBuild properties `DefaultNetCoreTargetFrameworkVersion8` (`net8.0`), `DefaultNetCoreTargetFrameworkVersion10` (`net10.0`), `DefaultNetCoreTargetFrameworkVersion11` (`net11.0`), and `DefaultFreeSqlVersion`.
+- **`src/Directory.Build.props`**: imports root, adds NuGet packaging. The package version is set here. `GeneratePackageOnBuild=True` — every build of a src project produces a `.nupkg`.
 
-All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10)</TargetFrameworks>`). Change versions centrally, not per-project.
+All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNetCoreTargetFrameworkVersion8);$(DefaultNetCoreTargetFrameworkVersion10);$(DefaultNetCoreTargetFrameworkVersion11)</TargetFrameworks>`). Change versions centrally, not per-project.
 
 ## Source layout (`src/`)
 
@@ -47,14 +47,14 @@ All csproj files reference these properties (e.g. `<TargetFrameworks>$(DefaultNe
 | `IGeekFan.Extensions.Diagnostics.HealthChecks.FreeSql` | FreeSql | Health checks |
 | `IGeekFan.AspNetCore.SignalR.FreeRedis` | FreeRedis | SignalR backplane |
 | `IGeekFan.OpenIddict.FreeSql` | OpenIddict.Core, FreeSql | OpenIddict stores |
-| `IGeekFan.R2.NET` | AWSSDK.S3 | Cloudflare R2 client. **net10.0 only** |
+| `IGeekFan.R2.NET` | AWSSDK.S3 | Cloudflare R2 client. `net10.0` and `net11.0` |
 
 ## Tests (`test/`)
 
 - **Framework**: xUnit v3 + `Xunit.DependencyInjection` (DI via `Startup.cs`, not constructor injection).
 - **Database**: SQLite in-memory via `FreeSql.Provider.Sqlite` or `FreeSql.Provider.SqliteCore`.
 - **Shared helpers**: `test/Shared/` contains `ApiConsistencyTestBase.cs`, `MockHelpers.cs`, etc. Included via `<Compile Include="..\Shared\**\*.cs" />`.
-- All test projects target `net10.0` only.
+- Test projects target `net11.0`.
 
 ## Code generation (T4 templates)
 

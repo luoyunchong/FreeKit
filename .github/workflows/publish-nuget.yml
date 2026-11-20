@@ -22,7 +22,7 @@ jobs:
         with:
           dotnet-version: |
             8.0.x
-            10.0.x
+            11.0.x
 
       - uses: NuGet/login@v1
         with:
